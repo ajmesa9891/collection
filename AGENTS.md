@@ -92,7 +92,8 @@ When the user requests a new SPA:
      ```
    - Update the pre-rendered HTML card in `index.html` so it renders even if JavaScript is delayed or disabled.
 
-4. **Test the New App**:
+4. **Test the New App Locally**:
+   - Run `powershell -ExecutionPolicy Bypass -File .\serve.ps1` (or double-click `serve.bat`).
    - Ensure the app loads without console errors.
    - Test audio, touch interactions, responsiveness on mobile viewports, and edge cases.
    - Verify that clicking the app card from the root `index.html` successfully navigates to `apps/<spa-name>/`.

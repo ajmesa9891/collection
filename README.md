@@ -27,20 +27,24 @@ A curated monorepo of completely independent, frontend-only Single-Page Applicat
 
 ## 💻 Local Development
 
-Because all applications are static, you can serve the repository using any local web server:
+### Option 1: Built-in Windows Launcher (Zero Installation Required)
+Simply double-click [`serve.bat`](serve.bat) in File Explorer, or run in PowerShell:
+```powershell
+.\serve.ps1
+```
+This automatically starts a local HTTP server at `http://localhost:8000` and opens your browser. Any edits made to apps or the index page appear immediately on refresh (F5).
 
-### Option 1: Python
+### Option 2: Python (if installed)
 ```bash
 python -m http.server 8000
 ```
-Open `http://localhost:8000` in your browser.
 
-### Option 2: Node / npx
+### Option 3: Node / npx (if installed)
 ```bash
 npx serve .
 ```
 
-### Option 3: VS Code
+### Option 4: VS Code / Live Server
 Install the **Live Server** extension, right-click `index.html`, and select **Open with Live Server**.
 
 ---
