@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>React + Tailwind SPA Template</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚛️</text></svg>">
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Babel Standalone for direct in-browser JSX compilation -->
+  <script src="https://unpkg.com/@babel/standalone@7.24.4/babel.min.js"></script>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col font-sans selection:bg-indigo-500 selection:text-white">
+  <div id="root" class="flex-grow flex flex-col"></div>
+
+  <script type="text/babel" data-type="module">
+    import React, { useState, useEffect } from "https://esm.sh/react@18.3.1";
+    import { createRoot } from "https://esm.sh/react-dom@18.3.1/client";
+
+    function App() {
+      const [count, setCount] = useState(0);
+      const [history, setHistory] = useState([]);
+
+      const handleIncrement = () => {
+        setCount(prev => {
+          const next = prev + 1;
+          setHistory(h => [next, ...h.slice(0, 4)]);
+          return next;
+        });
+      };
+
+      const handleReset = () => {
+        setCount(0);
+        setHistory([]);
+      };
+
+      return (
+        <div class="min-h-screen flex flex-col justify-between p-6 max-w-4xl mx-auto w-full">
+          {/* Header */}
+          <header class="flex items-center justify-between border-b border-slate-800 pb-4">
+            <div class="flex items-center gap-3">
+              <span class="text-3xl">⚛️</span>
+              <div>
+                <h1 class="text-xl font-bold text-white">React + Tailwind Template</h1>
+                <p class="text-xs text-slate-400">Pure frontend, zero build step required</p>
+              </div>
+            </div>
+            <a
+              href="../../index.html"
+              class="text-xs font-medium px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition flex items-center gap-1.5 border border-slate-700"
+            >
+              <span>←</span>
+              <span>Back to Collection</span>
+            </a>
+          </header>
+
+          {/* Interactive Card */}
+          <main class="my-auto py-12 flex flex-col items-center text-center">
+            <div class="bg-slate-800/80 border border-slate-700/80 rounded-2xl p-8 max-w-md w-full shadow-2xl backdrop-blur">
+              <span class="inline-block px-3 py-1 bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 rounded-full text-xs font-semibold mb-4 tracking-wide uppercase">
+                Starter Component
+              </span>
+              <h2 class="text-2xl font-bold mb-2">Interactive Counter</h2>
+              <p class="text-slate-400 text-sm mb-6">
+                Duplicate this folder to create a new React + Tailwind single-page app in minutes.
+              </p>
+
+              <div class="text-6xl font-black text-indigo-400 my-6 font-mono tracking-tight">
+                {count}
+              </div>
+
+              <div class="flex items-center justify-center gap-3">
+                <button
+                  onClick={handleIncrement}
+                  class="bg-indigo-600 hover:bg-indigo-500 active:scale-95 text-white font-semibold px-6 py-2.5 rounded-xl shadow-lg shadow-indigo-600/30 transition duration-150"
+                >
+                  Count Up (+1)
+                </button>
+                <button
+                  onClick={handleReset}
+                  class="bg-slate-700 hover:bg-slate-600 active:scale-95 text-slate-200 font-semibold px-4 py-2.5 rounded-xl transition duration-150"
+                >
+                  Reset
+                </button>
+              </div>
+
+              {history.length > 0 && (
+                <div class="mt-6 pt-4 border-t border-slate-700/50 text-xs text-slate-400">
+                  <span class="font-medium text-slate-500">Recent values: </span>
+                  {history.join(", ")}
+                </div>
+              )}
+            </div>
+          </main>
+
+          {/* Footer */}
+          <footer class="text-center text-xs text-slate-500 pt-6 border-t border-slate-800">
+            Self-contained SPA • Served on GitHub Pages
+          </footer>
+        </div>
+      );
+    }
+
+    const root = createRoot(document.getElementById("root"));
+    root.render(<App />);
+  </script>
+</body>
+</html>

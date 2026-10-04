@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Green Light, Red Light</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚦</text></svg>">
+  <style>
+    :root {
+      --bg-red: #e11d48;   /* rose-600 */
+      --bg-green: #16a34a; /* green-600 */
+      --bg-neutral: #0b1020; /* deep navy */
+      --text: #ffffff;
+      --muted: #cbd5e1;
+    }
+
+    html, body {
+      margin: 0;
+      height: 100%;
+      overflow: hidden;
+      touch-action: manipulation; /* eliminate dbl-tap zoom */
+      -webkit-tap-highlight-color: transparent;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--text);
+      background: var(--bg-neutral);
+      transition: background-color 140ms ease;
+    }
+
+    body[data-color="red"] { background: var(--bg-red); }
+    body[data-color="green"] { background: var(--bg-green); }
+    body[data-color="neutral"] { background: var(--bg-neutral); }
+
+    .screen {
+      position: fixed;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      padding: 6vmin;
+      text-align: center;
+      gap: 2rem;
+    }
+
+    .hidden { display: none !important; }
+
+    .title {
+      font-size: clamp(20px, 6vmin, 48px);
+      letter-spacing: 0.5px;
+      opacity: 0.9;
+    }
+
+    .cta, .result-emoji, .play-again-emoji {
+      font-size: clamp(64px, 22vmin, 180px);
+      line-height: 1;
+    }
+
+    .hint {
+      font-size: clamp(14px, 3.5vmin, 20px);
+      color: var(--muted);
+    }
+
+    .button {
+      border: none;
+      background: rgba(255,255,255,0.12);
+      color: var(--text);
+      padding: 0.75rem 1.25rem;
+      border-radius: 1rem;
+      font-size: clamp(16px, 4vmin, 20px);
+      cursor: pointer;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .button:active { transform: scale(0.98); }
+
+    /* Accessibility: respect reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; animation: none !important; }
+    }
+  </style>
+</head>
+<body data-color="neutral">
+  <!-- START SCREEN -->
+  <section id="start" class="screen" aria-label="Tap to play">
+    <div>
+      <div class="cta" aria-hidden="true">🏃‍♂️🦖</div>
+      <h1 class="title">Tap anywhere to play</h1>
+      <p class="hint">Win by tapping on <strong>green</strong>. Tap on <strong>red</strong> and you lose.</p>
+      <p class="hint" id="soundHint" hidden>🔊 Sounds are on</p>
+      <button id="startBtn" class="button" aria-label="Start game">Start</button>
+    </div>
+  </section>
+
+  <!-- GAME SCREEN (color fills background) -->
+  <section id="game" class="screen hidden" aria-live="polite" aria-atomic="true">
+    <div>
+      <p class="hint" id="statusText">Get ready…</p>
+      <p class="hint">Tap now if it's green!</p>
+    </div>
+  </section>
+
+  <!-- RESULT SCREEN -->
+  <section id="result" class="screen hidden" aria-label="Result">
+    <div>
+      <div id="resultEmoji" class="result-emoji" role="img" aria-live="assertive" aria-atomic="true">👍</div>
+      <p class="hint" id="resultText">You win!</p>
+      <div id="againEmoji" class="play-again-emoji" role="button" aria-label="Play again">🏃‍♂️ 🔄</div>
+    </div>
+  </section>
+
+  <script>
+    (function(){
+      const startScreen = document.getElementById('start');
+      const startBtn = document.getElementById('startBtn');
+      const gameScreen = document.getElementById('game');
+      const resultScreen = document.getElementById('result');
+      const resultEmoji = document.getElementById('resultEmoji');
+      const resultText = document.getElementById('resultText');
+      const againEmoji = document.getElementById('againEmoji');
+      const statusText = document.getElementById('statusText');
+
+      const SOUND_ENABLED = false; // change to true if you want simple beeps
+      const audioCtx = (SOUND_ENABLED && 'AudioContext' in window) ? new (window.AudioContext || window.webkitAudioContext)() : null;
+
+      let state = 'start'; // 'start' | 'running' | 'result'
+      let currentColor = 'neutral'; // 'red' | 'green' | 'neutral'
+      let switchTimer = null;
+      let gameJustEnded = false; // Flag to prevent immediate restart after game ends
+
+      function setScreen(next) {
+        startScreen.classList.toggle('hidden', next !== 'start');
+        gameScreen.classList.toggle('hidden', next !== 'game');
+        resultScreen.classList.toggle('hidden', next !== 'result');
+      }
+
+      function setBg(color) {
+        document.body.setAttribute('data-color', color);
+        currentColor = color;
+        if (state === 'running') {
+          statusText.textContent = color === 'green' ? 'GREEN — Tap now!' : 'RED — Don\'t move!';
+        }
+      }
+
+      function rand(min, max) { return Math.random() * (max - min) + min; }
+      function randInt(min, max) { return Math.floor(rand(min, max)); }
+
+      function tone(freq = 600, dur = 120) {
+        if (!audioCtx) return;
+        const o = audioCtx.createOscillator();
+        const g = audioCtx.createGain();
+        o.connect(g); g.connect(audioCtx.destination);
+        o.type = 'sine'; o.frequency.value = freq;
+        g.gain.setValueAtTime(0.0001, audioCtx.currentTime);
+        g.gain.exponentialRampToValueAtTime(0.2, audioCtx.currentTime + 0.01);
+        o.start();
+        o.stop(audioCtx.currentTime + dur/1000);
+        o.onended = () => g.disconnect();
+      }
+
+      function vibrate(ms) { try { navigator.vibrate && navigator.vibrate(ms); } catch(_){} }
+
+      function scheduleSwitch() {
+        clearTimeout(switchTimer);
+        const delay = randInt(1000, 3001); // 1–3 seconds inclusive of 3s upper bound
+        switchTimer = setTimeout(() => {
+          // Choose next color randomly; may repeat
+          const next = Math.random() < 0.5 ? 'red' : 'green';
+          setBg(next);
+          if (next === 'green') { tone(800, 120); } else { tone(400, 120); }
+          scheduleSwitch();
+        }, delay);
+      }
+
+      function startGame() {
+        state = 'running';
+        setScreen('game');
+        // Start with random color immediately so first interval isn't neutral
+        const first = Math.random() < 0.5 ? 'red' : 'green';
+        setBg(first);
+        if (first === 'green') { tone(800, 120); } else { tone(400, 120); }
+        scheduleSwitch();
+      }
+
+      function endGame(won) {
+        state = 'result';
+        clearTimeout(switchTimer);
+        setBg('neutral');
+        setScreen('result');
+        resultEmoji.textContent = won ? '👍' : '👎';
+        resultEmoji.setAttribute('aria-label', won ? 'You win' : 'You lose');
+        resultText.textContent = won ? 'You win!' : 'You lose!';
+        if (won) { tone(880, 180); vibrate(30); } else { tone(220, 220); vibrate([50, 40, 50]); }
+        
+        // Prevent immediate restart from the same tap that ended the game
+        gameJustEnded = true;
+        setTimeout(() => { gameJustEnded = false; }, 300);
+      }
+
+      function resetToStart() {
+        state = 'start';
+        clearTimeout(switchTimer);
+        setBg('neutral');
+        setScreen('start');
+      }
+
+      // Input handling during game
+      function onPrimaryTap(e) {
+        if (state !== 'running') return;
+        // Prevent accidental text selection/zoom and event bubbling
+        e.preventDefault();
+        e.stopPropagation();
+        const won = currentColor === 'green';
+        endGame(won);
+      }
+
+      // Wire up events
+      startBtn.addEventListener('click', startGame);
+      startScreen.addEventListener('click', (e) => {
+        if (e.target !== startBtn) startGame();
+      });
+
+      // Pointer/touch for the whole page during play
+      document.addEventListener('pointerdown', (e) => {
+        // Only handle pointer events during game state, ignore on other screens
+        if (state === 'running') {
+          onPrimaryTap(e);
+        }
+      });
+
+      againEmoji.addEventListener('click', resetToStart);
+      resultScreen.addEventListener('click', (e) => {
+        if (gameJustEnded) return; // Ignore clicks immediately after game ends
+        if (e.target !== againEmoji) resetToStart();
+      });
+
+      // Handle app visibility (pause timer when tab hidden to avoid unfair switches)
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+          clearTimeout(switchTimer);
+        } else if (state === 'running') {
+          scheduleSwitch();
+        }
+      });
+
+      // Resize-safe: ensure viewport units behave on mobile address bars
+      const setVh = () => document.documentElement.style.setProperty('--vh', window.innerHeight * 0.01 + 'px');
+      window.addEventListener('resize', setVh, { passive: true });
+      setVh();
+
+      // Keyboard support for desktop users
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          if (state === 'start') startGame();
+          else if (state === 'running') endGame(currentColor === 'green');
+          else if (state === 'result') resetToStart();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

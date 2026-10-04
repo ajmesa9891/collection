@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Snake Timer</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐍</text></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.js"></script>
+    <style>
+        body {
+            touch-action: manipulation;
+            background-color: #FBBF24; /* Bright Yellow */
+            overscroll-behavior: none;
+        }
+        .canvas-container {
+            position: relative;
+            width: 100%;
+            padding-top: 100%; /* 1:1 Aspect Ratio */
+        }
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .screen {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .visible {
+            display: flex;
+        }
+        #rain-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 5; /* Behind the happy face */
+        }
+    </style>
+</head>
+<body class="bg-yellow-300 overflow-hidden">
+
+    <!-- Selection Screen -->
+    <div id="selection-screen" class="screen visible p-4 sm:p-8">
+        <div class="grid grid-cols-2 sm:grid-cols-6 gap-4 sm:gap-4 w-full max-w-sm sm:max-w-5xl mx-auto">
+            <div id="timer-30" class="canvas-container cursor-pointer rounded-full bg-yellow-100 shadow-lg hover:shadow-xl transition-shadow">
+                <canvas id="canvas-30"></canvas>
+            </div>
+            <div id="timer-60" class="canvas-container cursor-pointer rounded-full bg-yellow-100 shadow-lg hover:shadow-xl transition-shadow">
+                <canvas id="canvas-60"></canvas>
+            </div>
+            <div id="timer-90" class="canvas-container cursor-pointer rounded-full bg-yellow-100 shadow-lg hover:shadow-xl transition-shadow">
+                <canvas id="canvas-90"></canvas>
+            </div>
+            <div id="timer-120" class="canvas-container cursor-pointer rounded-full bg-yellow-100 shadow-lg hover:shadow-xl transition-shadow">
+                <canvas id="canvas-120"></canvas>
+            </div>
+            <div id="timer-180" class="canvas-container cursor-pointer rounded-full bg-yellow-100 shadow-lg hover:shadow-xl transition-shadow">
+                <canvas id="canvas-180"></canvas>
+            </div>
+            <div id="timer-custom" class="canvas-container cursor-pointer rounded-full bg-yellow-100 shadow-lg hover:shadow-xl transition-shadow">
+                <canvas id="canvas-custom"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Timer Screen -->
+    <div id="timer-screen" class="screen p-4">
+        <div class="canvas-container max-w-md mx-auto">
+            <canvas id="timer-canvas"></canvas>
+        </div>
+    </div>
+
+    <!-- End Screen -->
+    <div id="end-screen" class="screen cursor-pointer bg-yellow-300">
+         <canvas id="rain-canvas"></canvas>
+         <div class="canvas-container max-w-md mx-auto" style="z-index: 10; position: relative;">
+            <canvas id="end-canvas"></canvas>
+        </div>
+    </div>
+
+    <!-- Custom Timer Dialog -->
+    <dialog id="custom-timer-dialog" class="p-6 rounded-lg shadow-xl bg-yellow-100 border-4 border-yellow-300">
+        <form method="dialog" class="flex flex-col items-center space-y-4">
+            <h2 class="text-2xl font-bold text-gray-800 mb-2">Custom Timer</h2>
+            <div class="flex flex-col items-center space-y-2">
+                <label for="minutes-input" class="text-lg font-semibold text-gray-700">Enter minutes:</label>
+                <input 
+                    type="number" 
+                    id="minutes-input" 
+                    min="1" 
+                    value="5" 
+                    class="w-20 p-2 text-center text-xl font-bold border-2 border-yellow-300 rounded-lg focus:border-yellow-500 focus:outline-none"
+                    autofocus
+                >
+            </div>
+            <div class="flex space-x-4 mt-4">
+                <button 
+                    type="button" 
+                    id="start-custom-timer" 
+                    class="px-6 py-2 bg-green-500 text-white font-bold rounded-lg hover:bg-green-600 transition-colors"
+                >
+                    Start Timer
+                </button>
+                <button 
+                    type="button" 
+                    id="cancel-custom-timer" 
+                    class="px-6 py-2 bg-gray-500 text-white font-bold rounded-lg hover:bg-gray-600 transition-colors"
+                >
+                    Cancel
+                </button>
+            </div>
+        </form>
+    </dialog>
+
+    <script>
+        // --- DOM Elements ---
+        const selectionScreen = document.getElementById('selection-screen');
+        const timerScreen = document.getElementById('timer-screen');
+        const endScreen = document.getElementById('end-screen');
+        const customTimerDialog = document.getElementById('custom-timer-dialog');
+        const minutesInput = document.getElementById('minutes-input');
+        const startCustomTimerBtn = document.getElementById('start-custom-timer');
+        const cancelCustomTimerBtn = document.getElementById('cancel-custom-timer');
+
+        const timerButtons = [
+            { id: 'timer-30', duration: 30, canvasId: 'canvas-30', color: '#FBBF24' }, // Amber Yellow
+            { id: 'timer-60', duration: 60, canvasId: 'canvas-60', color: '#4ADE80' }, // Green
+            { id: 'timer-90', duration: 90, canvasId: 'canvas-90', color: '#60A5FA' },   // Blue
+            { id: 'timer-120', duration: 120, canvasId: 'canvas-120', color: '#F87171' }, // Red
+            { id: 'timer-180', duration: 180, canvasId: 'canvas-180', color: '#A855F7' }, // Purple
+            { id: 'timer-custom', duration: 0, canvasId: 'canvas-custom', color: '#EC4899', isCustom: true } // Pink
+        ];
+        
+        const timerCanvas = document.getElementById('timer-canvas');
+        const timerCtx = timerCanvas.getContext('2d');
+        const endCanvas = document.getElementById('end-canvas');
+        const endCtx = endCanvas.getContext('2d');
+        const rainCanvas = document.getElementById('rain-canvas');
+        const rainCtx = rainCanvas.getContext('2d');
+
+        // --- State Variables ---
+        let animationFrameId;
+        let timerDuration = 0;
+        let startTime = 0;
+        let snakeColor = '#4ADE80';
+        let fishes = [];
+        const fishCount = 12;
+        let alarmLoop;
+        let fishRainArray = [];
+        let fishRainAnimationId;
+
+        // --- Audio Setup (Tone.js) ---
+        let alarmSynth;
+        let yummyPlayer;
+	      let bitePlayer;
+
+        function setupAudio() {
+            if (Tone.context.state !== 'running') {
+                Tone.start();
+            }
+            if (!alarmSynth) {
+                alarmSynth = new Tone.Synth({
+                    oscillator: { type: 'sine' },
+                    envelope: { attack: 0.01, decay: 0.2, sustain: 0.2, release: 0.5 }
+                }).toDestination();
+            }
+            // NEW: Initialize Tone.Player with a CORS-friendly URL
+            if (!yummyPlayer) {
+                yummyPlayer = new Tone.Player({
+                    url: "./roblox-yummy.mp3",
+                    autostart: false,
+                }).toDestination();
+            }
+            if (!bitePlayer) {
+                bitePlayer = new Tone.Player({
+                    url: "./bite.mp3",
+                    autostart: false,
+                }).toDestination();
+            }
+        }
+
+        function playEndSound() {
+            if (!alarmSynth) setupAudio();
+            
+            if (!alarmLoop) {
+                let note = 0;
+                const notes = ['C5', 'E5', 'G5', 'E5'];
+                alarmLoop = new Tone.Loop(time => {
+                    alarmSynth.triggerAttackRelease(notes[note % notes.length], '8n', time);
+                    note++;
+                }, '4n').start(0);
+            }
+            
+            Tone.Transport.start();
+        }
+        
+        function playYummySound() {
+            console.log("playYummySound called");
+            if (!yummyPlayer) {
+                console.log("Setting up yummyPlayer for the first time.");
+                setupAudio();
+            }
+            if (yummyPlayer.loaded) {
+                console.log("Yummy sound is loaded, playing now.");
+                yummyPlayer.start();
+            } else {
+                console.log("Yummy sound is not loaded yet. It will play once it loads.");
+            }
+        }
+      
+        function playBiteSound() {
+            console.log("playBiteSound called");
+            if (!bitePlayer) {
+                console.log("Setting up bitePlayer for the first time.");
+                setupAudio();
+            }
+            if (bitePlayer.loaded) {
+                console.log("bitePlayer sound is loaded, playing now.");
+                bitePlayer.start();
+            } else {
+                console.log("bitePlayer sound is not loaded yet. It will play once it loads.");
+            }
+        }
+
+        function stopEndSound() {
+            if (Tone.Transport.state === 'started') {
+                Tone.Transport.stop();
+                Tone.Transport.position = 0;
+            }
+        }
+
+
+        // --- Drawing Functions ---
+        function resizeCanvas(canvas) {
+            const container = canvas.parentElement;
+            const size = container.clientWidth;
+            if (size === 0) return;
+            canvas.width = size * window.devicePixelRatio;
+            canvas.height = size * window.devicePixelRatio;
+            canvas.style.width = `${size}px`;
+            canvas.style.height = `${size}px`;
+            canvas.getContext('2d').scale(window.devicePixelRatio, window.devicePixelRatio);
+        }
+        
+        function resizeFullscreenCanvas(canvas) {
+            canvas.width = window.innerWidth * window.devicePixelRatio;
+            canvas.height = window.innerHeight * window.devicePixelRatio;
+            canvas.style.width = `${window.innerWidth}px`;
+            canvas.style.height = `${window.innerHeight}px`;
+            canvas.getContext('2d').scale(window.devicePixelRatio, window.devicePixelRatio);
+        }
+
+        function getDurationFromCanvasId(canvasId) {
+            // Extract duration from canvas ID (e.g., 'canvas-30' -> 30)
+            const match = canvasId.match(/canvas-(\d+)/);
+            return match ? parseInt(match[1]) : null;
+        }
+
+        function drawStaticSnake(canvasId, color) {
+            const canvas = document.getElementById(canvasId);
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            resizeCanvas(canvas);
+            
+            const size = canvas.clientWidth;
+            const center = size / 2;
+            const radius = size * 0.35;
+            const snakeWidth = size * 0.1;
+
+            ctx.beginPath();
+            ctx.arc(center, center, radius, 0, Math.PI * 1.8);
+            ctx.lineWidth = snakeWidth;
+            ctx.strokeStyle = color;
+            ctx.lineCap = 'round';
+            ctx.stroke();
+
+            const headAngle = Math.PI * 1.8;
+            const headX = center + Math.cos(headAngle) * radius;
+            const headY = center + Math.sin(headAngle) * radius;
+            ctx.beginPath();
+            ctx.arc(headX, headY, snakeWidth / 1.5, 0, Math.PI * 2);
+            ctx.fillStyle = color;
+            ctx.fill();
+
+            const eyeRadius = snakeWidth * 0.15;
+            const eyeOffsetX = Math.cos(headAngle + Math.PI / 2) * eyeRadius * 1.5;
+            const eyeOffsetY = Math.sin(headAngle + Math.PI / 2) * eyeRadius * 1.5;
+            ctx.fillStyle = 'white';
+            ctx.beginPath();
+            ctx.arc(headX + eyeOffsetX, headY + eyeOffsetY, eyeRadius, 0, 2 * Math.PI);
+            ctx.arc(headX - eyeOffsetX, headY - eyeOffsetY, eyeRadius, 0, 2 * Math.PI);
+            ctx.fill();
+            ctx.fillStyle = 'black';
+            ctx.beginPath();
+            ctx.arc(headX + eyeOffsetX, headY + eyeOffsetY, eyeRadius / 2, 0, 2 * Math.PI);
+            ctx.arc(headX - eyeOffsetX, headY - eyeOffsetY, eyeRadius / 2, 0, 2 * Math.PI);
+            ctx.fill();
+
+            // Add timer duration text in the center
+            const duration = getDurationFromCanvasId(canvasId);
+            let displayText;
+            
+            if (canvasId === 'canvas-custom') {
+                displayText = "?m";
+            } else if (duration) {
+                if (duration === 30) {
+                    displayText = "30s";
+                } else {
+                    const minutes = duration / 60;
+                    displayText = minutes % 1 === 0 ? `${minutes}m` : `${minutes}m`;
+                }
+            }
+            
+            if (displayText) {
+                ctx.fillStyle = color;
+                ctx.font = `bold ${size * 0.15}px Arial`;
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText(displayText, center, center);
+            }
+        }
+
+        function drawHappySnakeFace() {
+            const size = endCanvas.clientWidth;
+            const ctx = endCtx;
+            ctx.clearRect(0,0, size, size);
+            
+            ctx.beginPath();
+            ctx.arc(size / 2, size / 2, size * 0.45, 0, Math.PI * 2);
+            ctx.fillStyle = snakeColor;
+            ctx.fill();
+            ctx.strokeStyle = '#333';
+            ctx.lineWidth = size * 0.02;
+            ctx.stroke();
+
+            const eyeRadius = size * 0.1;
+            const eyeY = size / 2 - size * 0.1;
+            const eyeXOffset = size * 0.18;
+            ctx.fillStyle = 'white';
+            ctx.beginPath();
+            ctx.arc(size / 2 - eyeXOffset, eyeY, eyeRadius, 0, Math.PI * 2);
+            ctx.arc(size / 2 + eyeXOffset, eyeY, eyeRadius, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.fillStyle = 'black';
+            ctx.beginPath();
+            ctx.arc(size / 2 - eyeXOffset + eyeRadius * 0.2, eyeY + eyeRadius * 0.1, eyeRadius * 0.5, 0, Math.PI * 2);
+            ctx.arc(size / 2 + eyeXOffset + eyeRadius * 0.2, eyeY + eyeRadius * 0.1, eyeRadius * 0.5, 0, Math.PI * 2);
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.arc(size / 2, size / 2 + size * 0.05, size * 0.25, 0.2 * Math.PI, 0.8 * Math.PI);
+            ctx.lineWidth = size * 0.03;
+            ctx.strokeStyle = 'black';
+            ctx.stroke();
+        }
+
+        function generateFishes(size) {
+            fishes = [];
+            const center = size / 2;
+            const radius = size * 0.4;
+            for (let i = 0; i < fishCount; i++) {
+                const angle = (Math.PI * 2 * (i + 0.5)) / fishCount - Math.PI / 2;
+                fishes.push({
+                    x: center + Math.cos(angle) * radius,
+                    y: center + Math.sin(angle) * radius,
+                    angle: angle,
+                    eaten: false,
+                    isBig: i === fishCount - 1
+                });
+            }
+        }
+        
+        function generateFishRain() {
+            fishRainArray = [];
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+            const numberOfFish = 50;
+            for (let i = 0; i < numberOfFish; i++) {
+                fishRainArray.push({
+                    x: Math.random() * width,
+                    y: Math.random() * -height,
+                    speed: 2 + Math.random() * 3,
+                    baseSize: (width * 0.015) * (0.5 + Math.random()),
+                    angle: Math.random() * Math.PI * 2,
+                    isBig: false
+                });
+            }
+        }
+
+        function drawFish(ctx, x, y, baseSize, isBig, angle) {
+            const size = isBig ? baseSize * 1.8 : baseSize;
+            const bodyLength = size * 2.5;
+            const bodyHeight = size * 1.5;
+
+            ctx.save();
+            ctx.translate(x, y);
+            ctx.rotate(angle);
+
+            ctx.fillStyle = '#3B82F6';
+            ctx.beginPath();
+            ctx.moveTo(-bodyLength / 2, 0);
+            ctx.lineTo(-bodyLength / 2 - size, -size);
+            ctx.lineTo(-bodyLength / 2 - size, size);
+            ctx.closePath();
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.ellipse(0, 0, bodyLength / 2, bodyHeight / 2, 0, 0, 2 * Math.PI);
+            ctx.fill();
+
+            ctx.fillStyle = 'white';
+            ctx.beginPath();
+            ctx.arc(bodyLength / 4, 0, size / 3, 0, 2 * Math.PI);
+            ctx.fill();
+            ctx.fillStyle = 'black';
+            ctx.beginPath();
+            ctx.arc(bodyLength / 4, 0, size / 6, 0, 2 * Math.PI);
+            ctx.fill();
+            
+            ctx.restore();
+        }
+
+        function drawTimer(progress) {
+            resizeCanvas(timerCanvas);
+            const size = timerCanvas.clientWidth;
+            const ctx = timerCtx;
+            const center = size / 2;
+            const trackRadius = size * 0.4;
+            const snakeWidth = size * 0.08;
+
+            ctx.clearRect(0, 0, size, size);
+
+            ctx.beginPath();
+            ctx.arc(center, center, trackRadius, 0, Math.PI * 2);
+            ctx.strokeStyle = '#FDE68A';
+            ctx.lineWidth = snakeWidth * 1.2;
+            ctx.stroke();
+
+            const startAngle = -Math.PI / 2;
+            const endAngle = startAngle + progress * Math.PI * 2;
+            
+            const fishBaseSize = size * 0.02;
+            fishes.forEach((fish) => {
+                 if (!fish.eaten && endAngle > fish.angle) {
+                    fish.eaten = true;
+                    if (fish.isBig) {
+                        playYummySound();
+                    } else {
+                        playBiteSound();
+                    }
+                }
+                if (!fish.eaten) {
+                    drawFish(ctx, fish.x, fish.y, fishBaseSize, fish.isBig, fish.angle);
+                }
+            });
+
+            
+            ctx.beginPath();
+            ctx.arc(center, center, trackRadius, startAngle, endAngle);
+            ctx.strokeStyle = snakeColor;
+            ctx.lineWidth = snakeWidth;
+            ctx.lineCap = 'round';
+            ctx.stroke();
+
+            const headX = center + Math.cos(endAngle) * trackRadius;
+            const headY = center + Math.sin(endAngle) * trackRadius;
+            ctx.beginPath();
+            ctx.arc(headX, headY, snakeWidth / 1.5, 0, Math.PI * 2);
+            ctx.fillStyle = snakeColor;
+            ctx.fill();
+
+            const eyeRadius = snakeWidth * 0.15;
+            const eyeAngle = endAngle + Math.PI / 2;
+            const eyeOffsetX = Math.cos(eyeAngle) * eyeRadius * 1.5;
+            const eyeOffsetY = Math.sin(eyeAngle) * eyeRadius * 1.5;
+            ctx.fillStyle = 'white';
+            ctx.beginPath();
+            ctx.arc(headX + eyeOffsetX, headY + eyeOffsetY, eyeRadius, 0, 2 * Math.PI);
+            ctx.arc(headX - eyeOffsetX, headY - eyeOffsetY, eyeRadius, 0, 2 * Math.PI);
+            ctx.fill();
+            ctx.fillStyle = 'black';
+            ctx.beginPath();
+            ctx.arc(headX + eyeOffsetX, headY + eyeOffsetY, eyeRadius / 2, 0, 2 * Math.PI);
+            ctx.arc(headX - eyeOffsetX, headY - eyeOffsetY, eyeRadius / 2, 0, 2 * Math.PI);
+            ctx.fill();
+        }
+
+        // --- Animation Loops ---
+        function animateTimer() {
+            const now = Date.now();
+            const elapsed = (now - startTime) / 1000;
+            const progress = Math.min(elapsed / timerDuration, 1);
+
+            drawTimer(progress);
+
+            if (progress >= 1) {
+                endTimer();
+            } else {
+                animationFrameId = requestAnimationFrame(animateTimer);
+            }
+        }
+        
+        function animateFishRain() {
+            resizeFullscreenCanvas(rainCanvas);
+            const width = rainCanvas.clientWidth;
+            const height = rainCanvas.clientHeight;
+            
+            rainCtx.clearRect(0, 0, width, height);
+
+            fishRainArray.forEach(fish => {
+                fish.y += fish.speed;
+                if (fish.y > height + fish.baseSize * 4) {
+                    fish.y = Math.random() * -100;
+                    fish.x = Math.random() * width;
+                }
+                drawFish(rainCtx, fish.x, fish.y, fish.baseSize, fish.isBig, fish.angle);
+            });
+
+            fishRainAnimationId = requestAnimationFrame(animateFishRain);
+        }
+
+        // --- App Logic ---
+        function startTimer(duration, color) {
+            setupAudio();
+            timerDuration = duration;
+            snakeColor = color;
+            startTime = Date.now();
+            selectionScreen.classList.remove('visible');
+            timerScreen.classList.add('visible');
+            resizeCanvas(timerCanvas);
+            generateFishes(timerCanvas.clientWidth);
+            if (animationFrameId) {
+                cancelAnimationFrame(animationFrameId);
+            }
+            animateTimer();
+        }
+
+        function endTimer() {
+            cancelAnimationFrame(animationFrameId);
+            playEndSound();
+            timerScreen.classList.remove('visible');
+            endScreen.classList.add('visible');
+            
+            resizeCanvas(endCanvas);
+            drawHappySnakeFace();
+            
+            generateFishRain();
+            animateFishRain();
+        }
+
+        function resetApp() {
+            stopEndSound();
+            cancelAnimationFrame(fishRainAnimationId);
+            fishRainArray = [];
+            rainCtx.clearRect(0, 0, rainCanvas.width, rainCanvas.height);
+            endScreen.classList.remove('visible');
+            selectionScreen.classList.add('visible');
+        }
+
+        function openCustomTimerDialog() {
+            minutesInput.value = 5; // Reset to default value
+            customTimerDialog.showModal();
+            minutesInput.focus();
+        }
+
+        // --- Event Listeners ---
+        timerButtons.forEach(button => {
+            document.getElementById(button.id).addEventListener('click', () => {
+                if (button.isCustom) {
+                    openCustomTimerDialog();
+                } else {
+                    startTimer(button.duration, button.color);
+                }
+            });
+            document.getElementById(button.id).addEventListener('touchstart', (e) => {
+                e.preventDefault();
+                if (button.isCustom) {
+                    openCustomTimerDialog();
+                } else {
+                    startTimer(button.duration, button.color);
+                }
+            }, { passive: false });
+        });
+
+        // Custom timer dialog event listeners
+        startCustomTimerBtn.addEventListener('click', () => {
+            const minutes = parseInt(minutesInput.value);
+            if (minutes >= 1) {
+                const duration = minutes * 60;
+                const customButton = timerButtons.find(btn => btn.isCustom);
+                customTimerDialog.close();
+                startTimer(duration, customButton.color);
+            }
+        });
+
+        cancelCustomTimerBtn.addEventListener('click', () => {
+            customTimerDialog.close();
+        });
+
+        // Handle Enter key in the input
+        minutesInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                startCustomTimerBtn.click();
+            }
+        });
+
+        endScreen.addEventListener('click', resetApp);
+        endScreen.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            resetApp();
+        }, { passive: false });
+        
+        // --- Initial Setup ---
+        function initialize() {
+            timerButtons.forEach(button => {
+                drawStaticSnake(button.canvasId, button.color);
+            });
+        }
+        
+        window.addEventListener('load', initialize);
+        window.addEventListener('resize', () => {
+            if (selectionScreen.classList.contains('visible')) {
+                initialize();
+            }
+            if (endScreen.classList.contains('visible')) {
+                resizeCanvas(endCanvas);
+                drawHappySnakeFace();
+            }
+        });
+
+    </script>
+</body>
+</html>
