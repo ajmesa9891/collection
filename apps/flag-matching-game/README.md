@@ -4,12 +4,15 @@ A stateless, minimalist, pastel-themed flag matching single-page application (SP
 
 ## Features
 
-- **Child-Friendly Gameplay**:
-  - **Type A Questions (50%)**: Large flag prompt with 3 country name choices.
-  - **Type B Questions (50%)**: Clear country name prompt with 3 flag choices (plus a speech button to sound out the country name).
-  - Massive touch targets with soft feedback.
-  - No double-tap zoom delay (`touch-action: manipulation`).
-  - Font: Large, rounded **Nunito** sans-serif typography to aid sounding out letters.
+- **Child-Friendly & Distraction-Free**:
+  - Zero unnecessary headers or text banners to keep focus on the matching activity.
+  - Discreet, optional sound toggle.
+  - Large, rounded **Nunito** sans-serif typography to aid sounding out letters.
+  - Massive touch targets with `touch-action: manipulation` to prevent double-tap zoom lag.
+
+- **50/50 Question Types**:
+  - **Type A**: Large flag prompt with 3 country name choices.
+  - **Type B**: Clear country name prompt with 3 flag choices (plus a speech button to sound out the country name).
 
 - **Non-Punitive Feedback**:
   - **Correct**: Bright emerald highlight, soft harmonic chime via Web Audio API, 1.5s celebratory pause before next question.
@@ -19,14 +22,19 @@ A stateless, minimalist, pastel-themed flag matching single-page application (SP
   - Randomized country queue from a pool of 18 countries.
   - If incorrect on first try, the country is re-inserted 2 positions back in the queue to reinforce learning naturally.
 
-- **Momma Snake Visual Progression**:
-  - Starts as 2 segments (cute expressive head + tail).
-  - Each correct answer (+1) feeds Momma Snake and adds a green body segment with a joyful pop animation.
-  - Reaching **11 correct answers** triggers the full-width Momma Snake celebration with a happy undulating wiggle dance, confetti, and a clean "Play Again" button.
+- **Momma Snake Visual Progression (Mobile-Optimized)**:
+  - 13 segments (Head + 11 body slots + Tail) visible on a compact bottom track that fits 100% on any mobile screen.
+  - Unfilled slots are shown as soft dashed gray circles so the child can clearly see their progress towards the goal.
+  - Each correct answer fills the next slot with bright emerald green and pops into place.
 
-- **Zero Dependencies & Universal Flag SVGs**:
+- **Momma Snake on a Nest Win Celebration**:
+  - Reaching **11 correct answers** triggers the victory screen featuring an animated illustration of **Momma Snake cozy on her nest**, gently bobbing and wagging her tail with floating love hearts.
+  - Responsive vector illustration that fits comfortably on any phone screen.
+  - "Play Again" button cleanly resets state.
+
+- **Universal Vector SVG Flags**:
   - 18 custom-crafted, scalable vector SVG flags embedded directly in code.
-  - Solves the Windows emoji issue where country flags render as two-letter country codes instead of colored flags.
+  - Solves the Windows emoji limitation where country flags render as two-letter country codes instead of colored flags.
   - No backend, no local storage, works 100% offline.
 
 ## Target Countries
