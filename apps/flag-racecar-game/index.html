@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>Flag Racer - Grand Prix Track</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏎️</text></svg>" />
+  <!-- Google Fonts: Nunito -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet" />
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      height: 100dvh;
+      overflow: hidden;
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at 50% 50%, #15803d 0%, #166534 60%, #14532d 100%);
+      font-family: 'Nunito', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      touch-action: manipulation;
+      color: #0f172a;
+    }
+
+    /* Track SVG Styles */
+    .track-asphalt {
+      stroke: #1e293b;
+      fill: none;
+      stroke-linejoin: round;
+      stroke-linecap: round;
+    }
+
+    .track-kerb-white {
+      stroke: #ffffff;
+      fill: none;
+      stroke-linejoin: round;
+      stroke-linecap: round;
+    }
+
+    .track-kerb-red {
+      stroke: #ef4444;
+      fill: none;
+      stroke-linejoin: round;
+      stroke-linecap: round;
+      stroke-dasharray: 20 20;
+    }
+
+    .track-centerline {
+      stroke: #facc15;
+      fill: none;
+      stroke-width: 3.5;
+      stroke-dasharray: 18 16;
+      stroke-linecap: round;
+      opacity: 0.9;
+    }
+
+    /* Flag card frame */
+    .flag-card-shadow {
+      box-shadow: 0 12px 30px -4px rgba(0, 0, 0, 0.18), 0 6px 12px -2px rgba(0, 0, 0, 0.1);
+    }
+
+    .flag-svg-container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border-radius: 0.85rem;
+    }
+
+    .flag-svg-container svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+      border-radius: 0.75rem;
+      border: 2px solid rgba(0, 0, 0, 0.1);
+    }
+
+    /* Massive Touch Buttons */
+    .btn-option {
+      transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+      cursor: pointer;
+    }
+
+    .btn-option:active:not(:disabled) {
+      transform: scale(0.95);
+    }
+
+    /* Shake on Incorrect */
+    @keyframes carCrashWobble {
+      0%, 100% { transform: translate(-50%, -50%) scale(1) rotate(0deg); }
+      20% { transform: translate(-58%, -48%) scale(1.1) rotate(-8deg); }
+      40% { transform: translate(-42%, -52%) scale(1.1) rotate(8deg); }
+      60% { transform: translate(-54%, -50%) scale(1.05) rotate(-4deg); }
+      80% { transform: translate(-48%, -50%) scale(1.02) rotate(4deg); }
+    }
+
+    .car-skid-anim {
+      animation: carCrashWobble 0.45s ease-in-out;
+    }
+
+    @keyframes gentleShake {
+      0%, 100% { transform: translateX(0); }
+      20% { transform: translateX(-8px); }
+      40% { transform: translateX(8px); }
+      60% { transform: translateX(-5px); }
+      80% { transform: translateX(5px); }
+    }
+
+    .shake-anim {
+      animation: gentleShake 0.4s ease-in-out;
+    }
+
+    /* Car Boost Flames Animation */
+    @keyframes exhaustFlicker {
+      0%, 100% { transform: scaleX(1) scaleY(1); opacity: 0.95; }
+      50% { transform: scaleX(1.4) scaleY(1.2); opacity: 1; }
+    }
+
+    .boost-active .car-flame {
+      display: block !important;
+      animation: exhaustFlicker 0.12s infinite alternate;
+    }
+
+    /* Speed lines streak */
+    @keyframes speedStreak {
+      0% { opacity: 0; transform: translateX(0); }
+      50% { opacity: 1; transform: translateX(-15px); }
+      100% { opacity: 0; transform: translateX(-35px); }
+    }
+
+    .boost-active .speed-streak {
+      display: block !important;
+      animation: speedStreak 0.2s infinite linear;
+    }
+
+    /* Confetti Particle */
+    @keyframes confettiFall {
+      0% { transform: translateY(-20px) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+    }
+
+    .confetti-piece {
+      position: absolute;
+      width: 12px;
+      height: 18px;
+      top: -20px;
+      border-radius: 3px;
+      animation: confettiFall 2.8s ease-out forwards;
+      pointer-events: none;
+      z-index: 60;
+    }
+
+    /* Trophy Bounce */
+    @keyframes trophyBounce {
+      0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
+      50% { transform: translateY(-16px) rotate(3deg) scale(1.06); }
+    }
+
+    .trophy-anim {
+      animation: trophyBounce 1.5s ease-in-out infinite;
+    }
+
+    /* Compact & Short Screen (Landscape) Adaptations to Guarantee Zero Scroll */
+    @media (max-height: 540px) {
+      #game-card {
+        padding: 0.5rem 0.85rem !important;
+        max-height: 85vh !important;
+      }
+      #question-container {
+        flex-direction: row !important;
+        gap: 0.75rem !important;
+        align-items: center !important;
+      }
+      #prompt-left-col {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        flex-shrink: 0 !important;
+      }
+      #prompt-label {
+        font-size: 0.85rem !important;
+        margin-bottom: 0.25rem !important;
+      }
+      #prompt-content {
+        min-height: auto !important;
+        margin-bottom: 0 !important;
+      }
+      #prompt-content .flag-card-shadow {
+        width: 110px !important;
+        height: 70px !important;
+      }
+      #options-container {
+        flex: 1 !important;
+        flex-direction: column !important;
+        gap: 0.3rem !important;
+      }
+      .btn-option {
+        min-height: 40px !important;
+        padding: 0.2rem 0.5rem !important;
+        font-size: 0.9rem !important;
+      }
+      .btn-option .flag-svg-container {
+        height: 38px !important;
+      }
+      #feedback-bar {
+        height: 1.5rem !important;
+        font-size: 0.85rem !important;
+      }
+    }
+  </style>
+</head>
+<body class="w-full h-full relative select-none">
+
+  <!-- ==========================================================================
+       1. RACE CIRCUIT SVG LAYER (Surrounds the entire screen)
+       ========================================================================== -->
+  <svg id="circuit-svg" class="absolute inset-0 w-full h-full pointer-events-none z-10" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <!-- Checkered Start/Finish Pattern -->
+      <pattern id="checkered-pattern" width="16" height="16" patternUnits="userSpaceOnUse">
+        <rect width="8" height="8" fill="#ffffff" />
+        <rect x="8" width="8" height="8" fill="#0f172a" />
+        <rect y="8" width="8" height="8" fill="#0f172a" />
+        <rect x="8" y="8" width="8" height="8" fill="#ffffff" />
+      </pattern>
+    </defs>
+
+    <!-- Invisible math path for getPointAtLength() -->
+    <path id="track-path" fill="none" stroke="none" />
+
+    <!-- Outer & Inner Rumble Strip Curbs (White base + Red dashed overlay) -->
+    <path id="track-border-outer" class="track-kerb-white" />
+    <path id="track-kerb-red" class="track-kerb-red" />
+
+    <!-- Dark Asphalt Road -->
+    <path id="track-asphalt" class="track-asphalt" />
+
+    <!-- Yellow Dashed Racing Centerline -->
+    <path id="track-centerline" class="track-centerline" />
+
+    <!-- Start / Finish Line Banner & Checkered Grid -->
+    <g id="start-finish-group"></g>
+  </svg>
+
+  <!-- ==========================================================================
+       2. RACECAR SPRITE (Drives smoothly along track perimeter)
+       ========================================================================== -->
+  <div id="car-container" class="absolute top-0 left-0 pointer-events-none z-20" style="will-change: transform; transform: translate(-200px, -200px);">
+    <svg id="car-svg" width="68" height="38" viewBox="0 0 68 38" class="overflow-visible" style="transform-origin: 34px 19px;">
+      <!-- Speed lines behind car when boosting -->
+      <g class="speed-streak hidden">
+        <line x1="-12" y1="12" x2="-2" y2="12" stroke="#facc15" stroke-width="3" stroke-linecap="round" />
+        <line x1="-20" y1="19" x2="-6" y2="19" stroke="#ffffff" stroke-width="3" stroke-linecap="round" />
+        <line x1="-14" y1="26" x2="-3" y2="26" stroke="#facc15" stroke-width="3" stroke-linecap="round" />
+      </g>
+
+      <!-- Twin Boost Flames from Exhaust -->
+      <g class="car-flame hidden">
+        <path d="M 4 12 Q -12 12 -18 10 Q -10 13 -4 14 Z" fill="#f97316" />
+        <path d="M 4 12 Q -8 12 -12 11 Q -6 13 -4 13.5 Z" fill="#facc15" />
+        <path d="M 4 26 Q -12 26 -18 28 Q -10 25 -4 24 Z" fill="#f97316" />
+        <path d="M 4 26 Q -8 26 -12 27 Q -6 25 -4 24.5 Z" fill="#facc15" />
+      </g>
+
+      <!-- Skid Smoke Puff when moving backward -->
+      <g id="skid-smoke" class="hidden">
+        <circle cx="2" cy="10" r="7" fill="rgba(255,255,255,0.7)" />
+        <circle cx="-3" cy="19" r="9" fill="rgba(255,255,255,0.8)" />
+        <circle cx="2" cy="28" r="7" fill="rgba(255,255,255,0.7)" />
+      </g>
+
+      <!-- 4 Wide Racing Tires -->
+      <!-- Front Top Tire -->
+      <rect x="42" y="2" width="14" height="6.5" rx="2.5" fill="#111827" stroke="#374151" stroke-width="1" />
+      <circle cx="49" cy="5.2" r="1.5" fill="#9ca3af" />
+      <!-- Front Bottom Tire -->
+      <rect x="42" y="29.5" width="14" height="6.5" rx="2.5" fill="#111827" stroke="#374151" stroke-width="1" />
+      <circle cx="49" cy="32.8" r="1.5" fill="#9ca3af" />
+      <!-- Rear Top Tire -->
+      <rect x="8" y="1" width="16" height="7.5" rx="2.5" fill="#111827" stroke="#374151" stroke-width="1" />
+      <circle cx="16" cy="4.7" r="1.8" fill="#9ca3af" />
+      <!-- Rear Bottom Tire -->
+      <rect x="8" y="29.5" width="16" height="7.5" rx="2.5" fill="#111827" stroke="#374151" stroke-width="1" />
+      <circle cx="16" cy="33.2" r="1.8" fill="#9ca3af" />
+
+      <!-- Rear Wing Spoiler -->
+      <rect x="2" y="4" width="7" height="30" rx="2" fill="#991b1b" stroke="#7f1d1d" stroke-width="1" />
+      <path d="M 9 10 L 15 13 L 15 25 L 9 28 Z" fill="#b91c1c" />
+
+      <!-- Aerodynamic Main Chassis / Body (Vibrant Racing Red) -->
+      <path d="M 6 8 Q 28 8 46 12 Q 62 16 66 19 Q 62 22 46 26 Q 28 30 6 30 Z" fill="#ef4444" stroke="#991b1b" stroke-width="1.8" />
+
+      <!-- Front Wing / Nose Splitter -->
+      <path d="M 60 7 L 66 19 L 60 31 L 57 28 L 62 19 L 57 10 Z" fill="#b91c1c" stroke="#7f1d1d" stroke-width="1" />
+
+      <!-- White & Yellow Racing Stripe -->
+      <path d="M 12 16 L 63 16 L 64 19 L 63 22 L 12 22 Z" fill="#ffffff" opacity="0.9" />
+      <path d="M 14 17.5 L 61 17.5 L 62 19 L 61 20.5 L 14 20.5 Z" fill="#facc15" />
+
+      <!-- Racing #1 Badge -->
+      <circle cx="27" cy="19" r="5" fill="#ffffff" stroke="#991b1b" stroke-width="1" />
+      <text x="27" y="22.5" font-size="8.5" font-family="'Nunito', sans-serif" font-weight="900" fill="#dc2626" text-anchor="middle">1</text>
+
+      <!-- Cockpit & Driver Helmet with Shiny Visor -->
+      <ellipse cx="38" cy="19" rx="8" ry="5.5" fill="#1e293b" />
+      <!-- Pilot Helmet (Bright Yellow with smile) -->
+      <circle cx="37" cy="19" r="4.2" fill="#fbbf24" stroke="#d97706" stroke-width="0.8" />
+      <!-- Dark Blue Racing Visor -->
+      <path d="M 37 16.5 Q 41 19 37 21.5 Q 39 19 37 16.5 Z" fill="#0284c7" />
+    </svg>
+  </div>
+
+  <!-- ==========================================================================
+       3. CENTER ARENA (Guaranteed 100% Fullscreen Fit, No Scrolling)
+       ========================================================================== -->
+  <div id="center-arena" class="absolute inset-0 flex items-center justify-center pointer-events-none z-30 p-12 sm:p-14 md:p-16">
+    
+    <!-- Central Game Card -->
+    <div id="game-card" class="pointer-events-auto w-full max-w-xl max-h-[88vh] sm:max-h-[82vh] bg-white/95 backdrop-blur-md rounded-3xl p-3.5 sm:p-5 shadow-2xl border-4 border-slate-900 flex flex-col justify-between items-center text-center transition-all overflow-hidden">
+      
+      <!-- Top HUD: Progress Bar & Lap Counter & Sound Toggle -->
+      <div class="w-full flex items-center justify-between gap-2 border-b-2 border-slate-200 pb-2 mb-2">
+        
+        <!-- Lap & Spot Counter -->
+        <div class="flex items-center gap-1.5 sm:gap-2">
+          <span class="text-xl sm:text-2xl animate-pulse">🏎️</span>
+          <div class="text-left leading-tight">
+            <div class="text-xs sm:text-sm font-black text-slate-500 uppercase tracking-wider">Race Progress</div>
+            <div class="text-base sm:text-xl font-black text-slate-800">
+              Spot <span id="hud-spot" class="text-emerald-600 font-black">0</span> <span class="text-slate-400 font-bold">/ 40</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mini Progress Meter Bar -->
+        <div class="flex-1 max-w-[120px] sm:max-w-[180px] bg-slate-200 h-3.5 sm:h-4 rounded-full overflow-hidden border border-slate-300 relative mx-1">
+          <div id="hud-progress-fill" class="h-full bg-gradient-to-r from-amber-400 via-emerald-500 to-green-500 rounded-full transition-all duration-300 w-0"></div>
+        </div>
+
+        <!-- Sound Toggle Button -->
+        <button id="sound-btn" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-slate-100 hover:bg-slate-200 active:scale-90 text-slate-700 flex items-center justify-center text-base sm:text-lg border-2 border-slate-300 shadow-xs transition-all" aria-label="Toggle Sound" title="Toggle Sound">
+          🔊
+        </button>
+      </div>
+
+      <!-- Question Prompt Area -->
+      <div id="question-container" class="w-full my-auto flex flex-col items-center justify-center">
+        <div id="prompt-left-col" class="w-full flex flex-col items-center">
+          <h2 id="prompt-label" class="text-base sm:text-lg md:text-xl font-extrabold text-slate-600 mb-2">
+            <!-- Dynamic prompt text -->
+          </h2>
+
+          <div id="prompt-content" class="w-full flex items-center justify-center mb-2 min-h-[90px] sm:min-h-[120px]">
+            <!-- Flag SVG or Country Name badge -->
+          </div>
+        </div>
+
+        <!-- 3 Interactive Big Option Buttons -->
+        <div id="options-container" class="w-full flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 mt-1">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- Dynamic Feedback Bar -->
+      <div id="feedback-bar" class="w-full h-8 sm:h-9 mt-1 flex items-center justify-center font-black text-sm sm:text-base md:text-lg text-emerald-600 transition-opacity duration-200 opacity-0">
+        <!-- "VROOOOM! +4 SPOTS!" or "SKID! -1 Spot!" -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       4. VICTORY GRAND PRIX MODAL
+       ========================================================================== -->
+  <div id="win-modal" class="fixed inset-0 z-50 bg-slate-900/80 backdrop-blur-md flex items-center justify-center p-4 hidden">
+    <div class="w-full max-w-md bg-white rounded-3xl p-6 sm:p-8 shadow-2xl border-4 border-amber-400 text-center flex flex-col items-center">
+      
+      <!-- Checkered Racing Header -->
+      <div class="flex items-center justify-center gap-2 text-3xl sm:text-4xl mb-2">
+        <span>🏁</span>
+        <span class="font-black text-slate-800 tracking-tight">WINNER!</span>
+        <span>🏁</span>
+      </div>
+
+      <p class="text-slate-600 font-bold text-base sm:text-lg mb-4">
+        You crossed the finish line in 1st Place!
+      </p>
+
+      <!-- Giant Golden Trophy with Toddler Bounce -->
+      <div class="w-32 h-32 sm:w-40 sm:h-40 my-2 flex items-center justify-center trophy-anim">
+        <svg viewBox="0 0 160 160" class="w-full h-full drop-shadow-xl">
+          <!-- Golden Cup Base & Pedestal -->
+          <rect x="52" y="132" width="56" height="14" rx="4" fill="#78350f" />
+          <rect x="62" y="122" width="36" height="10" rx="3" fill="#b45309" />
+          <polygon points="70,122 90,122 84,95 76,95" fill="#f59e0b" />
+          <!-- Handles -->
+          <path d="M 46 44 C 18 44 18 84 48 84" fill="none" stroke="#d97706" stroke-width="9" stroke-linecap="round" />
+          <path d="M 114 44 C 142 44 142 84 112 84" fill="none" stroke="#d97706" stroke-width="9" stroke-linecap="round" />
+          <path d="M 46 44 C 22 44 22 84 48 84" fill="none" stroke="#fcd34d" stroke-width="5" stroke-linecap="round" />
+          <path d="M 114 44 C 138 44 138 84 112 84" fill="none" stroke="#fcd34d" stroke-width="5" stroke-linecap="round" />
+          <!-- Cup Chalice -->
+          <path d="M 44 32 L 116 32 L 106 88 Q 80 102 54 88 Z" fill="#fbbf24" stroke="#d97706" stroke-width="3" />
+          <!-- Star on cup -->
+          <polygon points="80,48 83,57 92,57 85,63 88,72 80,66 72,72 75,63 68,57 77,57" fill="#ffffff" />
+          <!-- Sparkles -->
+          <circle cx="120" cy="24" r="4" fill="#fef08a" />
+          <circle cx="36" cy="30" r="3" fill="#fef08a" />
+        </svg>
+      </div>
+
+      <!-- Play Again Button -->
+      <button id="play-again-btn" class="w-full py-4 mt-4 bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 active:scale-95 text-white font-black text-xl sm:text-2xl rounded-2xl shadow-lg shadow-emerald-500/30 transition-all flex items-center justify-center gap-3 border-2 border-emerald-400">
+        <span>Race Again!</span>
+        <span>🏎️💨</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       5. JAVASCRIPT: LOGIC, TRACK GEOMETRY, SOUND & ANIMATIONS
+       ========================================================================== -->
+  <script>
+    /* ==========================================================================
+       A. COMPLETE 26-FLAG VECTOR DATABASE
+       Includes all 18 from Flag Match + Australia, Germany, Greece, Ecuador,
+       Ireland, Uruguay, Ghana, Croatia. Crisp offline SVGs!
+       ========================================================================== */
+    const COUNTRIES = [
+      {
+        id: 'spain',
+        name: 'Spain',
+        svg: `<svg viewBox="0 0 300 200"><rect width="300" height="50" fill="#AA151B"/><rect y="50" width="300" height="100" fill="#F1BF00"/><rect y="150" width="300" height="50" fill="#AA151B"/><g transform="translate(68, 68)"><rect x="-16" y="12" width="6" height="42" rx="3" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="1"/><rect x="34" y="12" width="6" height="42" rx="3" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="1"/><path d="M-6,8 L3,-4 L12,8 L21,-4 L30,8 Z" fill="#F1BF00" stroke="#AA151B" stroke-width="1.5"/><circle cx="12" cy="-5" r="2.5" fill="#AA151B"/><path d="M-4,10 L28,10 L28,38 Q28,52 12,56 Q-4,52 -4,38 Z" fill="#AA151B" stroke="#F1BF00" stroke-width="2.5"/><rect x="0" y="14" width="10" height="18" fill="#AA151B"/><rect x="14" y="14" width="10" height="18" fill="#FFFFFF"/><rect x="0" y="34" width="10" height="16" fill="#F1BF00"/><rect x="14" y="34" width="10" height="16" fill="#AA151B"/><circle cx="12" cy="32" r="3.5" fill="#3B82F6"/></g></svg>`
+      },
+      {
+        id: 'argentina',
+        name: 'Argentina',
+        svg: `<svg viewBox="0 0 300 200"><rect width="300" height="66.7" fill="#75AADB"/><rect y="66.7" width="300" height="66.7" fill="#FFFFFF"/><rect y="133.4" width="300" height="66.7" fill="#75AADB"/><g transform="translate(150, 100)"><circle r="16" fill="#F6B40E" stroke="#855B14" stroke-width="1"/><circle cx="-5" cy="-2" r="2" fill="#855B14"/><circle cx="5" cy="-2" r="2" fill="#855B14"/><path d="M-5,6 Q0,10 5,6" fill="none" stroke="#855B14" stroke-width="1.5" stroke-linecap="round"/><g stroke="#F6B40E" stroke-width="3" stroke-linecap="round"><line x1="0" y1="-19" x2="0" y2="-32"/><line x1="0" y1="19" x2="0" y2="32"/><line x1="-19" y1="0" x2="-32" y2="0"/><line x1="19" y1="0" x2="32" y2="0"/><line x1="-13" y1="-13" x2="-23" y2="-23"/><line x1="13" y1="-13" x2="23" y2="-23"/><line x1="-13" y1="13" x2="-23" y2="23"/><line x1="13" y1="13" x2="23" y2="23"/></g></g></svg>`
+      },
+      {
+        id: 'france',
+        name: 'France',
+        svg: `<svg viewBox="0 0 300 200"><rect width="100" height="200" fill="#002654"/><rect x="100" width="100" height="200" fill="#FFFFFF"/><rect x="200" width="100" height="200" fill="#CE1126"/></svg>`
+      },
+      {
+        id: 'england',
+        name: 'England',
+        svg: `<svg viewBox="0 0 300 200"><rect width="300" height="200" fill="#FFFFFF"/><rect x="130" width="40" height="200" fill="#CE1126"/><rect y="80" width="300" height="40" fill="#CE1126"/></svg>`
+      },
+      {
+        id: 'norway',
+        name: 'Norway',
+        svg: `<svg viewBox="0 0 300 200"><rect width="300" height="200" fill="#BA0C2F"/><rect x="75" width="50" height="200" fill="#FFFFFF"/><rect y="75" width="300" height="50" fill="#FFFFFF"/><rect x="87.5" width="25" height="200" fill="#00205B"/><rect y="87.5" width="300" height="25" fill="#00205B"/></svg>`
+      },
+      {
+        id: 'italy',
+        name: 'Italy',
+        svg: `<svg viewBox="0 0 300 200"><rect width="100" height="200" fill="#009246"/><rect x="100" width="100" height="200" fill="#FFFFFF"/><rect x="200" width="100" height="200" fill="#CE2B37"/></svg>`
+      },
+      {
+        id: 'mexico',
+        name: 'Mexico',
+        svg: `<svg viewBox="0 0 300 200"><rect width="100" height="200" fill="#006847"/><rect x="100" width="100" height="200" fill="#FFFFFF"/><rect x="200" width="100" height="200" fill="#CE1126"/><g transform="translate(150, 102) scale(0.65)"><ellipse cx="0" cy="24" rx="28" ry="12" fill="#6B7280"/><path d="M-18,22 Q-22,6 -12,2 Q-4,14 -4,22" fill="#15803D"/><path d="M-6,22 Q-8,-4 4,-6 Q12,12 10,22" fill="#15803D"/><path d="M6,22 Q12,4 20,4 Q24,14 18,22" fill="#15803D"/><path d="M-10,12 Q-6,-18 10,-24 Q18,-18 14,-2 Q10,12 4,16 Z" fill="#78350F"/><circle cx="12" cy="-20" r="7" fill="#78350F"/><path d="M17,-22 L26,-19 L17,-16 Z" fill="#F59E0B"/><path d="M22,-18 Q28,-14 26,-8 Q20,-2 24,6" fill="none" stroke="#16A34A" stroke-width="3" stroke-linecap="round"/><path d="M-2,-12 Q-26,-26 -22,-6 Q-12,-2 -4,-4" fill="#92400E"/><path d="M4,-10 Q-10,-28 20,-30 Q16,-16 6,-6" fill="#B45309"/><path d="M-30,12 Q0,36 30,12" fill="none" stroke="#15803D" stroke-width="4" stroke-linecap="round"/><circle cx="0" cy="28" r="4" fill="#DC2626"/></g></svg>`
+      },
+      {
+        id: 'colombia',
+        name: 'Colombia',
+        svg: `<svg viewBox="0 0 300 200"><rect width="300" height="100" fill="#FCD116"/><rect y="100" width="300" height="50" fill="#003893"/><rect y="150" width="300" height="50" fill="#CE1126"/></svg>`
+      },
+      {
+        id: 'venezuela',
+        name: 'Venezuela',
+        svg: `<svg viewBox="0 0 300 200"><rect width="300" height="66.7" fill="#FCD116"/><rect y="66.7" width="300" height="66.7" fill="#003893"/><rect y="133.4" width="300" height="66.7" fill="#CE1126"/><g fill="#FFFFFF"><circle cx="95" cy="115" r="4"/><circle cx="108" cy="103" r="4"/><circle cx="124" cy="94" r="4"/><circle cx="142" cy="90" r="4"/><circle cx="158" cy="90" r="4"/><circle cx="176" cy="94" r="4"/><circle cx="192" cy="103" r="4"/><circle cx="205" cy="115" r="4"/></g></svg>`
+      },
+      {
+        id: 'us',
+        name: 'United States',
+        svg: `<svg viewBox="0 0 300 200"><rect width="300" height="200" fill="#B22234"/><rect y="15.38" width="300" height="15.38" fill="#FFFFFF"/><rect y="46.15" width="300" height="15.38" fill="#FFFFFF"/><rect y="76.92" width="300" height="15.38" fill="#FFFFFF"/><rect y="107.69" width="300" height="15.38" fill="#FFFFFF"/><rect y="138.46" width="300" height="15.38" fill="#FFFFFF"/><rect y="169.23" width="300" height="15.38" fill="#FFFFFF"/><rect width="120" height="107.69" fill="#3C3B6E"/><g fill="#FFFFFF"><circle cx="18" cy="16" r="3.2"/><circle cx="42" cy="16" r="3.2"/><circle cx="66" cy="16" r="3.2"/><circle cx="90" cy="16" r="3.2"/><circle cx="30" cy="32" r="3.2"/><circle cx="54" cy="32" r="3.2"/><circle cx="78" cy="32" r="3.2"/><circle cx="102" cy="32" r="3.2"/><circle cx="18" cy="48" r="3.2"/><circle cx="42" cy="48" r="3.2"/><circle cx="66" cy="48" r="3.2"/><circle cx="90" cy="48" r="3.2"/><circle cx="30" cy="64" r="3.2"/><circle cx="54" cy="64" r="3.2"/><circle cx="78" cy="64" r="3.2"/><circle cx="102" cy="64" r="3.2"/><circle cx="18" cy="80" r="3.2"/><circle cx="42" cy="80" r="3.2"/><circle cx="66" cy="80" r="3.2"/><circle cx="90" cy="80" r="3.2"/><circle cx="30" cy="94" r="3.2"/><circle cx="54" cy="94" r="3.2"/><circle cx="78" cy="94" r="3.2"/><circle cx="102" cy="94" r="3.2"/></g></svg>`
+      },
+      {
+        id: 'canada',
+        name: 'Canada',
+        svg: `<svg viewBox="0 0 300 200"><rect width="75" height="200" fill="#FF0000"/><rect x="75" width="150" height="200" fill="#FFFFFF"/><rect x="225" width="75" height="200" fill="#FF0000"/><g transform="translate(150, 102) scale(1.15)"><path d="M 0,-56 L 6,-32 L 24,-38 L 18,-20 L 46,-12 L 32,4 L 38,20 L 16,14 L 4,38 L 2,62 L -2,62 L -4,38 L -16,14 L -38,20 L -32,4 L -46,-12 L -18,-20 L -24,-38 L -6,-32 Z" fill="#FF0000"/></g></svg>`
+      },
+      {
+        id: 'japan',
+        name: 'Japan',
+        svg: `<svg viewBox="0 0 300 200"><rect width="300" height="200" fill="#FFFFFF"/><circle cx="150" cy="100" r="60" fill="#BC002D"/></svg>`
+      },
+      {
+        id: 'south-korea',
+        name: 'South Korea',
+        svg: `<svg viewBox="0 0 300 200"><rect width="300" height="200" fill="#FFFFFF"/><g transform="translate(150, 100) rotate(-34)"><path d="M 0 -48 A 48 48 0 0 1 0 48 A 24 24 0 0 1 0 0 A 24 24 0 0 0 0 -48 Z" fill="#CD2E3A"/><path d="M 0 48 A 48 48 0 0 1 0 -48 A 24 24 0 0 1 0 0 A 24 24 0 0 0 0 48 Z" fill="#0047A0"/></g><g transform="translate(75, 52) rotate(34)" stroke="#000000" stroke-width="5"><line x1="-16" y1="-9" x2="16" y2="-9"/><line x1="-16" y1="0" x2="16" y2="0"/><line x1="-16" y1="9" x2="16" y2="9"/></g><g transform="translate(225, 148) rotate(34)" stroke="#000000" stroke-width="5"><line x1="-16" y1="-9" x2="-3" y2="-9"/><line x1="3" y1="-9" x2="16" y2="-9"/><line x1="-16" y1="0" x2="-3" y2="0"/><line x1="3" y1="0" x2="16" y2="0"/><line x1="-16" y1="9" x2="-3" y2="9"/><line x1="3" y1="9" x2="16" y2="9"/></g><g transform="translate(225, 52) rotate(-34)" stroke="#000000" stroke-width="5"><line x1="-16" y1="-9" x2="-3" y2="-9"/><line x1="3" y1="-9" x2="16" y2="-9"/><line x1="-16" y1="0" x2="16" y2="0"/><line x1="-16" y1="9" x2="-3" y2="9"/><line x1="3" y1="9" x2="16" y2="9"/></g><g transform="translate(75, 148) rotate(-34)" stroke="#000000" stroke-width="5"><line x1="-16" y1="-9" x2="16" y2="-9"/><line x1="-16" y1="0" x2="-3" y2="0"/><line x1="3" y1="0" x2="16" y2="0"/><line x1="-16" y1="9" x2="16" y2="9"/></g></svg>`
+      },
+      {
+        id: 'switzerland',
+        name: 'Switzerland',
+        svg: `<svg viewBox="0 0 300 200"><rect width="300" height="200" fill="#DA291C"/><rect x="130" y="45" width="40" height="110" fill="#FFFFFF" rx="4"/><rect x="95" y="80" width="110" height="40" fill="#FFFFFF" rx="4"/></svg>`
+      },
+      {
+        id: 'sweden',
+        name: 'Sweden',
+        svg: `<svg viewBox="0 0 300 200"><rect width="300" height="200" fill="#006AA7"/><rect x="90" width="36" height="200" fill="#FECC00"/><rect y="82" width="300" height="36" fill="#FECC00"/></svg>`
+      },
+      {
+        id: 'morocco',
+        name: 'Morocco',
+        svg: `<svg viewBox="0 0 300 200"><rect width="300" height="200" fill="#C1272D"/><polygon points="150,44 163,86 207,86 172,112 185,154 150,128 115,154 128,112 93,86 137,86" fill="none" stroke="#006233" stroke-width="8" stroke-linejoin="round"/></svg>`
+      },
+      {
+        id: 'brazil',
+        name: 'Brazil',
+        svg: `<svg viewBox="0 0 300 200"><rect width="300" height="200" fill="#009739"/><polygon points="150,22 280,100 150,178 20,100" fill="#FEDD00"/><circle cx="150" cy="100" r="48" fill="#012169"/><path d="M 103 108 Q 150 80 197 104" fill="none" stroke="#FFFFFF" stroke-width="7"/><g fill="#FFFFFF"><circle cx="150" cy="120" r="3"/><circle cx="136" cy="126" r="2.5"/><circle cx="164" cy="124" r="2.5"/><circle cx="144" cy="134" r="2.2"/><circle cx="156" cy="133" r="2"/></g></svg>`
+      },
+      {
+        id: 'portugal',
+        name: 'Portugal',
+        svg: `<svg viewBox="0 0 300 200"><rect width="120" height="200" fill="#046A38"/><rect x="120" width="180" height="200" fill="#DA291C"/><g transform="translate(120, 100)"><circle r="38" fill="#FEDD00" stroke="#B49800" stroke-width="3"/><ellipse rx="38" ry="18" fill="none" stroke="#B49800" stroke-width="2.5"/><ellipse rx="18" ry="38" fill="none" stroke="#B49800" stroke-width="2.5"/><path d="M-18,-20 L18,-20 L18,12 Q18,28 0,34 Q-18,28 -18,12 Z" fill="#FFFFFF" stroke="#DA291C" stroke-width="4"/><path d="M-10,-12 L10,-12 L10,8 Q10,18 0,22 Q-10,18 -10,8 Z" fill="#002B7F"/><circle cx="0" cy="0" r="3" fill="#FFFFFF"/><circle cx="-5" cy="-6" r="2" fill="#FFFFFF"/><circle cx="5" cy="-6" r="2" fill="#FFFFFF"/><circle cx="-5" cy="6" r="2" fill="#FFFFFF"/><circle cx="5" cy="6" r="2" fill="#FFFFFF"/></g></svg>`
+      },
+      /* --- 8 NEW REQUESTED FLAGS --- */
+      {
+        id: 'australia',
+        name: 'Australia',
+        svg: `<svg viewBox="0 0 300 200"><rect width="300" height="200" fill="#00247D"/><g clip-path="url(#aus-canton)"><clipPath id="aus-canton"><rect width="150" height="100"/></clipPath><path d="M0,0 L150,100 M150,0 L0,100" stroke="#FFFFFF" stroke-width="22"/><path d="M0,0 L150,100 M150,0 L0,100" stroke="#CC142B" stroke-width="8"/><path d="M75,0 L75,100 M0,50 L150,50" stroke="#FFFFFF" stroke-width="34"/><path d="M75,0 L75,100 M0,50 L150,50" stroke="#CC142B" stroke-width="20"/></g><polygon points="75,132 78.5,142.8 89.2,141.4 84.1,149.7 91.9,156.4 81.7,157.4 80.9,167.6 75,158.8 69.1,167.6 68.3,157.4 58.1,156.4 65.9,149.7 60.8,141.4 71.5,142.8" fill="#FFFFFF"/><polygon points="225,28 227,34 233,33.2 230,37.8 234.4,41.6 228.7,42.1 228.3,47.8 225,42.9 221.7,47.8 221.3,42.1 215.6,41.6 220,37.8 217,33.2 223,34" fill="#FFFFFF"/><polygon points="225,152 227,158 233,157.2 230,161.8 234.4,165.6 228.7,166.1 228.3,171.8 225,166.9 221.7,171.8 221.3,166.1 215.6,165.6 220,161.8 217,157.2 223,158" fill="#FFFFFF"/><polygon points="185,82 187,88 193,87.2 190,91.8 194.4,95.6 188.7,96.1 188.3,101.8 185,96.9 181.7,101.8 181.3,96.1 175.6,95.6 180,91.8 177,87.2 183,88" fill="#FFFFFF"/><polygon points="260,68 262,74 268,73.2 265,77.8 269.4,81.6 263.7,82.1 263.3,87.8 260,82.9 256.7,87.8 256.3,82.1 250.6,81.6 255,77.8 252,73.2 258,74" fill="#FFFFFF"/><polygon points="240,107 242.2,111.4 247,112.1 243.5,115.5 244.3,120.3 240,118 235.7,120.3 236.5,115.5 233,112.1 237.8,111.4" fill="#FFFFFF"/></svg>`
+      },
+      {
+        id: 'germany',
+        name: 'Germany',
+        svg: `<svg viewBox="0 0 300 200"><rect width="300" height="66.7" fill="#000000"/><rect y="66.7" width="300" height="66.7" fill="#DD0000"/><rect y="133.4" width="300" height="66.7" fill="#FFCE00"/></svg>`
+      },
+      {
+        id: 'greece',
+        name: 'Greece',
+        svg: `<svg viewBox="0 0 300 200"><rect width="300" height="200" fill="#FFFFFF"/><rect y="0" width="300" height="22.2" fill="#0D5EAF"/><rect y="44.4" width="300" height="22.2" fill="#0D5EAF"/><rect y="88.9" width="300" height="22.2" fill="#0D5EAF"/><rect y="133.3" width="300" height="22.2" fill="#0D5EAF"/><rect y="177.8" width="300" height="22.2" fill="#0D5EAF"/><rect width="111.1" height="111.1" fill="#0D5EAF"/><rect x="0" y="44.4" width="111.1" height="22.2" fill="#FFFFFF"/><rect x="44.4" y="0" width="22.2" height="111.1" fill="#FFFFFF"/></svg>`
+      },
+      {
+        id: 'ecuador',
+        name: 'Ecuador',
+        svg: `<svg viewBox="0 0 300 200"><rect width="300" height="100" fill="#FFD100"/><rect y="100" width="300" height="50" fill="#0072CE"/><rect y="150" width="300" height="50" fill="#ED1C24"/><g transform="translate(150, 100) scale(0.68)"><path d="M-28,-22 Q-14,-34 0,-20 Q14,-34 28,-22 Q18,-14 0,-16 Q-18,-14 -28,-22 Z" fill="#374151"/><circle cx="0" cy="-24" r="5" fill="#374151"/><path d="M0,-24 L4,-22 L0,-20 Z" fill="#F59E0B"/><ellipse cx="0" cy="4" rx="26" ry="32" fill="#F8FAFC" stroke="#D97706" stroke-width="2.5"/><path d="M-24,-2 A26,32 0 0,1 24,-2 Z" fill="#60A5FA"/><circle cx="0" cy="-10" r="7" fill="#F59E0B"/><polygon points="-22,18 0,-6 22,18" fill="#15803D"/><polygon points="-8,4 0,-6 8,4" fill="#FFFFFF"/><path d="M-22,18 Q0,10 22,18 L24,24 Q0,32 -24,24 Z" fill="#0284C7"/><rect x="-6" y="14" width="12" height="6" rx="2" fill="#475569"/><rect x="-2" y="10" width="4" height="4" fill="#EF4444"/><path d="M-28,26 Q-36,0 -26,-12" fill="none" stroke="#16A34A" stroke-width="3" stroke-linecap="round"/><path d="M28,26 Q36,0 26,-12" fill="none" stroke="#16A34A" stroke-width="3" stroke-linecap="round"/></g></svg>`
+      },
+      {
+        id: 'ireland',
+        name: 'Ireland',
+        svg: `<svg viewBox="0 0 300 200"><rect width="100" height="200" fill="#169B62"/><rect x="100" width="100" height="200" fill="#FFFFFF"/><rect x="200" width="100" height="200" fill="#FF883E"/></svg>`
+      },
+      {
+        id: 'uruguay',
+        name: 'Uruguay',
+        svg: `<svg viewBox="0 0 300 200"><rect width="300" height="200" fill="#FFFFFF"/><rect y="22.2" width="300" height="22.2" fill="#0038A8"/><rect y="66.7" width="300" height="22.2" fill="#0038A8"/><rect y="111.1" width="300" height="22.2" fill="#0038A8"/><rect y="155.6" width="300" height="22.2" fill="#0038A8"/><rect width="111.1" height="111.1" fill="#FFFFFF"/><g transform="translate(55.5, 55.5) scale(0.95)"><circle r="16" fill="#FDB813" stroke="#B45309" stroke-width="1.2"/><circle cx="-5" cy="-2" r="1.8" fill="#78350F"/><circle cx="5" cy="-2" r="1.8" fill="#78350F"/><path d="M-5,6 Q0,10 5,6" fill="none" stroke="#78350F" stroke-width="1.5" stroke-linecap="round"/><polygon points="0,-17 -3,-28 3,-28" fill="#FDB813" stroke="#B45309" stroke-width="0.8"/><polygon points="0,17 -3,28 3,28" fill="#FDB813" stroke="#B45309" stroke-width="0.8"/><polygon points="-17,0 -28,-3 -28,3" fill="#FDB813" stroke="#B45309" stroke-width="0.8"/><polygon points="17,0 28,-3 28,3" fill="#FDB813" stroke="#B45309" stroke-width="0.8"/><polygon points="-12,-12 -22,-20 -19,-23" fill="#FDB813" stroke="#B45309" stroke-width="0.8"/><polygon points="12,-12 22,-20 19,-23" fill="#FDB813" stroke="#B45309" stroke-width="0.8"/><polygon points="-12,12 -22,20 -19,23" fill="#FDB813" stroke="#B45309" stroke-width="0.8"/><polygon points="12,12 22,20 19,23" fill="#FDB813" stroke="#B45309" stroke-width="0.8"/></g></svg>`
+      },
+      {
+        id: 'ghana',
+        name: 'Ghana',
+        svg: `<svg viewBox="0 0 300 200"><rect width="300" height="66.7" fill="#CE1126"/><rect y="66.7" width="300" height="66.7" fill="#FCD116"/><rect y="133.4" width="300" height="66.7" fill="#006B3F"/><polygon points="150,72 157.5,93 180,93 162,106.5 169,128 150,114.5 131,128 138,106.5 120,93 142.5,93" fill="#000000"/></svg>`
+      },
+      {
+        id: 'croatia',
+        name: 'Croatia',
+        svg: `<svg viewBox="0 0 300 200"><rect width="300" height="66.7" fill="#FF0000"/><rect y="66.7" width="300" height="66.7" fill="#FFFFFF"/><rect y="133.4" width="300" height="66.7" fill="#171796"/><g transform="translate(150, 98) scale(0.92)"><path d="M-36,-26 L-24,-34 L-12,-26 L0,-34 L12,-26 L24,-34 L36,-26 L30,-18 L-30,-18 Z" fill="#0284C7" stroke="#1E293B" stroke-width="1.2"/><circle cx="-20" cy="-26" r="3" fill="#F59E0B"/><circle cx="0" cy="-26" r="3" fill="#EF4444"/><circle cx="20" cy="-26" r="3" fill="#F59E0B"/><path d="M-30,-16 L30,-16 L30,14 Q30,38 0,46 Q-30,38 -30,14 Z" fill="#FFFFFF" stroke="#0F172A" stroke-width="2.5"/><clipPath id="croatia-shield"><path d="M-30,-16 L30,-16 L30,14 Q30,38 0,46 Q-30,38 -30,14 Z"/></clipPath><g clip-path="url(#croatia-shield)"><rect x="-30" y="-16" width="12" height="12" fill="#FF0000"/><rect x="-6" y="-16" width="12" height="12" fill="#FF0000"/><rect x="18" y="-16" width="12" height="12" fill="#FF0000"/><rect x="-18" y="-4" width="12" height="12" fill="#FF0000"/><rect x="6" y="-4" width="12" height="12" fill="#FF0000"/><rect x="-30" y="8" width="12" height="12" fill="#FF0000"/><rect x="-6" y="8" width="12" height="12" fill="#FF0000"/><rect x="18" y="8" width="12" height="12" fill="#FF0000"/><rect x="-18" y="20" width="12" height="12" fill="#FF0000"/><rect x="6" y="20" width="12" height="12" fill="#FF0000"/><rect x="-30" y="32" width="12" height="12" fill="#FF0000"/><rect x="-6" y="32" width="12" height="12" fill="#FF0000"/><rect x="18" y="32" width="12" height="12" fill="#FF0000"/></g></g></svg>`
+      }
+    ];
+
+    /* ==========================================================================
+       B. WEB AUDIO SYNTHESIS (Zero External Files, 100% Reliable & Offline)
+       ========================================================================== */
+    let audioCtx = null;
+    let soundEnabled = true;
+
+    function getAudioCtx() {
+      if (!audioCtx) {
+        const AudioClass = window.AudioContext || window.webkitAudioContext;
+        if (AudioClass) {
+          audioCtx = new AudioClass();
+        }
+      }
+      if (audioCtx && audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      return audioCtx;
+    }
+
+    // Racing Engine Rev: VROOOOM! (+4 spots forward)
+    function playEngineRev() {
+      if (!soundEnabled) return;
+      const ctx = getAudioCtx();
+      if (!ctx) return;
+      const now = ctx.currentTime;
+
+      // Sawtooth + Triangle oscillators through dynamic lowpass filter
+      const osc1 = ctx.createOscillator();
+      const osc2 = ctx.createOscillator();
+      const filter = ctx.createBiquadFilter();
+      const gain = ctx.createGain();
+
+      osc1.type = 'sawtooth';
+      osc2.type = 'triangle';
+
+      // Pitch ramp: engine acceleration rev
+      osc1.frequency.setValueAtTime(100, now);
+      osc1.frequency.exponentialRampToValueAtTime(340, now + 0.3);
+      osc1.frequency.exponentialRampToValueAtTime(160, now + 0.65);
+
+      osc2.frequency.setValueAtTime(50, now);
+      osc2.frequency.exponentialRampToValueAtTime(170, now + 0.3);
+      osc2.frequency.exponentialRampToValueAtTime(80, now + 0.65);
+
+      filter.type = 'lowpass';
+      filter.frequency.setValueAtTime(500, now);
+      filter.frequency.linearRampToValueAtTime(3200, now + 0.28);
+      filter.frequency.exponentialRampToValueAtTime(400, now + 0.65);
+
+      gain.gain.setValueAtTime(0.01, now);
+      gain.gain.linearRampToValueAtTime(0.25, now + 0.06);
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.7);
+
+      osc1.connect(filter);
+      osc2.connect(filter);
+      filter.connect(gain);
+      gain.connect(ctx.destination);
+
+      osc1.start(now);
+      osc2.start(now);
+      osc1.stop(now + 0.72);
+      osc2.stop(now + 0.72);
+    }
+
+    // Comical Crash / Skid: Bonk & tire chirp (-1 spot backward)
+    function playCrashSound() {
+      if (!soundEnabled) return;
+      const ctx = getAudioCtx();
+      if (!ctx) return;
+      const now = ctx.currentTime;
+
+      // 1. Friction / Tire skid noise burst
+      try {
+        const bufLen = Math.floor(ctx.sampleRate * 0.14);
+        const buf = ctx.createBuffer(1, bufLen, ctx.sampleRate);
+        const data = buf.getChannelData(0);
+        for (let i = 0; i < bufLen; i++) {
+          data[i] = (Math.random() * 2 - 1) * Math.exp(-i / (ctx.sampleRate * 0.03));
+        }
+        const noiseSource = ctx.createBufferSource();
+        noiseSource.buffer = buf;
+        const noiseFilter = ctx.createBiquadFilter();
+        noiseFilter.type = 'bandpass';
+        noiseFilter.frequency.value = 1100;
+        const noiseGain = ctx.createGain();
+        noiseGain.gain.setValueAtTime(0.18, now);
+        noiseGain.gain.exponentialRampToValueAtTime(0.001, now + 0.14);
+
+        noiseSource.connect(noiseFilter);
+        noiseFilter.connect(noiseGain);
+        noiseGain.connect(ctx.destination);
+        noiseSource.start(now);
+      } catch (e) {
+        // Fallback if buffer creation fails
+      }
+
+      // 2. Playful cartoon bumper "bonk"
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(340, now);
+      osc.frequency.exponentialRampToValueAtTime(75, now + 0.22);
+
+      gain.gain.setValueAtTime(0.28, now);
+      gain.gain.exponentialRampToValueAtTime(0.001, now + 0.22);
+
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start(now);
+      osc.stop(now + 0.24);
+    }
+
+    // Grand Prix Victory Fanfare
+    function playWinFanfare() {
+      if (!soundEnabled) return;
+      const ctx = getAudioCtx();
+      if (!ctx) return;
+
+      const notes = [
+        { f: 523.25, d: 0.15, t: 0 },      // C5
+        { f: 659.25, d: 0.15, t: 0.15 },   // E5
+        { f: 783.99, d: 0.15, t: 0.30 },   // G5
+        { f: 1046.50, d: 0.45, t: 0.45 },  // C6
+        { f: 880.00, d: 0.15, t: 0.95 },   // A5
+        { f: 1046.50, d: 0.70, t: 1.10 }   // C6 long
+      ];
+
+      const now = ctx.currentTime;
+      notes.forEach((n) => {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(n.f, now + n.t);
+
+        gain.gain.setValueAtTime(0.001, now + n.t);
+        gain.gain.linearRampToValueAtTime(0.24, now + n.t + 0.02);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + n.t + n.d);
+
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(now + n.t);
+        osc.stop(now + n.t + n.d + 0.05);
+      });
+    }
+
+    // Pronounce country name using Web Speech API
+    function speakCountryName(text) {
+      if ('speechSynthesis' in window && soundEnabled) {
+        try {
+          window.speechSynthesis.cancel();
+          const utterance = new SpeechSynthesisUtterance(text);
+          utterance.rate = 0.88;
+          utterance.pitch = 1.15;
+          window.speechSynthesis.speak(utterance);
+        } catch (e) {}
+      }
+    }
+
+    /* ==========================================================================
+       C. RACETRACK PERIMETER GEOMETRY & SMOOTH CAR MOVEMENT
+       Surrounds the game:
+       Starts on lower-left corner -> moves RIGHT -> UP -> LEFT -> DOWN to finish
+       ========================================================================== */
+    const TOTAL_SPOTS = 40;
+    let currentSpot = 0;
+    let animFrameId = null;
+
+    const trackPath = document.getElementById('track-path');
+    const carContainer = document.getElementById('car-container');
+    const hudSpot = document.getElementById('hud-spot');
+    const hudProgressFill = document.getElementById('hud-progress-fill');
+
+    function updateTrackGeometry() {
+      const svg = document.getElementById('circuit-svg');
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+      svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
+
+      // Responsive track scale
+      const isCompact = Math.min(w, h) < 600;
+      const inset = isCompact ? 32 : 48;
+      const roadWidth = isCompact ? 42 : 56;
+      const radius = isCompact ? 46 : 64;
+
+      const xLeft = inset;
+      const xRight = w - inset;
+      const yTop = inset;
+      const yBottom = h - inset;
+
+      // Circle arc bezier constant: k = 4 * (sqrt(2) - 1) / 3
+      const k = 0.5522847498;
+
+      // Surrounds screen starting at lower-left, going RIGHT -> UP -> LEFT -> DOWN
+      const d = [
+        `M ${xLeft + radius} ${yBottom}`,
+        // 1. Bottom straight: Moving RIGHT
+        `L ${xRight - radius} ${yBottom}`,
+        // Corner 1: Bottom-Right curving UP
+        `C ${xRight - radius * (1 - k)} ${yBottom}, ${xRight} ${yBottom - radius * (1 - k)}, ${xRight} ${yBottom - radius}`,
+        // 2. Right straight: Moving UP
+        `L ${xRight} ${yTop + radius}`,
+        // Corner 2: Top-Right curving LEFT
+        `C ${xRight} ${yTop + radius * (1 - k)}, ${xRight - radius * (1 - k)} ${yTop}, ${xRight - radius} ${yTop}`,
+        // 3. Top straight: Moving LEFT
+        `L ${xLeft + radius} ${yTop}`,
+        // Corner 3: Top-Left curving DOWN
+        `C ${xLeft + radius * (1 - k)} ${yTop}, ${xLeft} ${yTop + radius * (1 - k)}, ${xLeft} ${yTop + radius}`,
+        // 4. Left straight: Moving DOWN to Finish line
+        `L ${xLeft} ${yBottom - radius}`,
+        // Corner 4: Lower-Left curving into start/finish line
+        `C ${xLeft} ${yBottom - radius * (1 - k)}, ${xLeft + radius * (1 - k)} ${yBottom}, ${xLeft + radius} ${yBottom}`,
+        `Z`
+      ].join(' ');
+
+      // Update all SVG track layers
+      document.getElementById('track-border-outer').setAttribute('d', d);
+      document.getElementById('track-border-outer').setAttribute('stroke-width', roadWidth + 14);
+
+      document.getElementById('track-kerb-red').setAttribute('d', d);
+      document.getElementById('track-kerb-red').setAttribute('stroke-width', roadWidth + 14);
+
+      document.getElementById('track-asphalt').setAttribute('d', d);
+      document.getElementById('track-asphalt').setAttribute('stroke-width', roadWidth);
+
+      document.getElementById('track-centerline').setAttribute('d', d);
+      trackPath.setAttribute('d', d);
+
+      // Dynamic arena padding ensures the center card never overlaps the track
+      const arenaPad = Math.round(inset + roadWidth / 2 + 12);
+      const centerArena = document.getElementById('center-arena');
+      if (centerArena) {
+        centerArena.style.padding = `${arenaPad}px`;
+      }
+
+      // Render Checkered Start/Finish Grid at (xLeft + radius, yBottom)
+      renderStartFinishLine(xLeft + radius, yBottom, roadWidth);
+
+      // Position car immediately at currentSpot
+      placeCarAtSpot(currentSpot);
+    }
+
+    function renderStartFinishLine(startX, startY, roadWidth) {
+      const g = document.getElementById('start-finish-group');
+      g.innerHTML = `
+        <!-- Checkered Starting Line Strip across road -->
+        <rect x="${startX - 10}" y="${startY - roadWidth / 2}" width="20" height="${roadWidth}" fill="url(#checkered-pattern)" rx="2" stroke="#0f172a" stroke-width="1.5" />
+        
+        <!-- White Starting Line Marker Box -->
+        <line x1="${startX + 10}" y1="${startY - roadWidth / 2}" x2="${startX + 10}" y2="${startY + roadWidth / 2}" stroke="#ffffff" stroke-width="3" stroke-linecap="round" />
+        
+        <!-- START / FINISH Gantry / Road Text -->
+        <g transform="translate(${startX + 18}, ${startY - roadWidth / 2 - 14})">
+          <rect x="-4" y="-12" width="110" height="20" rx="6" fill="#0f172a" stroke="#facc15" stroke-width="2" />
+          <text x="50" y="2" fill="#ffffff" font-size="10" font-weight="900" font-family="'Nunito', sans-serif" text-anchor="middle" letter-spacing="0.5">🏁 START / FINISH</text>
+        </g>
+      `;
+    }
+
+    // Given spot (0..40), smoothly calculate (x, y, angle) and transform carContainer
+    function placeCarAtSpot(spotValue) {
+      if (!trackPath || !trackPath.getTotalLength) return;
+      const totalLen = trackPath.getTotalLength();
+      if (totalLen <= 0) return;
+
+      const progress = Math.max(0, Math.min(1, spotValue / TOTAL_SPOTS));
+      const dist = progress * (totalLen - 2);
+
+      // Compute tangent points
+      const p1 = trackPath.getPointAtLength(Math.max(0, dist - 3));
+      const p2 = trackPath.getPointAtLength(Math.min(totalLen, dist + 3));
+
+      const pCenter = trackPath.getPointAtLength(dist);
+      const angleDeg = Math.atan2(p2.y - p1.y, p2.x - p1.x) * (180 / Math.PI);
+
+      carContainer.style.transform = `translate(${pCenter.x}px, ${pCenter.y}px) rotate(${angleDeg}deg) translate(-34px, -19px)`;
+      
+      // Update HUD text & bar
+      hudSpot.textContent = Math.round(spotValue);
+      const percent = Math.min(100, Math.round((spotValue / TOTAL_SPOTS) * 100));
+      hudProgressFill.style.width = `${percent}%`;
+    }
+
+    // Animate car from currentSpot to targetSpot with easing
+    function animateCarTo(targetSpot, durationMs = 650, isForward = true, onComplete) {
+      if (animFrameId) cancelAnimationFrame(animFrameId);
+
+      const startSpot = currentSpot;
+      const startTime = performance.now();
+
+      if (isForward) {
+        carContainer.classList.add('boost-active');
+        document.getElementById('skid-smoke').classList.add('hidden');
+      } else {
+        carContainer.classList.remove('boost-active');
+        carContainer.classList.add('car-skid-anim');
+        document.getElementById('skid-smoke').classList.remove('hidden');
+        setTimeout(() => {
+          carContainer.classList.remove('car-skid-anim');
+          document.getElementById('skid-smoke').classList.add('hidden');
+        }, 500);
+      }
+
+      function step(now) {
+        const elapsed = now - startTime;
+        const progress = Math.min(1, elapsed / durationMs);
+
+        // Ease Out Cubic
+        const ease = 1 - Math.pow(1 - progress, 3);
+        currentSpot = startSpot + (targetSpot - startSpot) * ease;
+        placeCarAtSpot(currentSpot);
+
+        if (progress < 1) {
+          animFrameId = requestAnimationFrame(step);
+        } else {
+          currentSpot = targetSpot;
+          placeCarAtSpot(currentSpot);
+          carContainer.classList.remove('boost-active');
+          if (onComplete) onComplete();
+        }
+      }
+
+      animFrameId = requestAnimationFrame(step);
+    }
+
+    /* ==========================================================================
+       D. QUESTION ENGINE & GAME STATE (Spaced Repetition)
+       ========================================================================== */
+    let countryQueue = [];
+    let currentQuestion = null;
+    let isFirstTryOnCurrent = true;
+    let isAnswerLocked = false;
+
+    function shuffle(arr) {
+      const copy = [...arr];
+      for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+      }
+      return copy;
+    }
+
+    function initGame() {
+      currentSpot = 0;
+      isAnswerLocked = false;
+      countryQueue = shuffle(COUNTRIES);
+      document.getElementById('win-modal').classList.add('hidden');
+      updateTrackGeometry();
+      loadNextQuestion();
+    }
+
+    function loadNextQuestion() {
+      if (currentSpot >= TOTAL_SPOTS) {
+        triggerWinCelebration();
+        return;
+      }
+
+      if (countryQueue.length === 0) {
+        countryQueue = shuffle(COUNTRIES);
+      }
+
+      const targetCountry = countryQueue.shift();
+      isFirstTryOnCurrent = true;
+      isAnswerLocked = false;
+
+      // Pick 2 random distractor countries
+      const others = COUNTRIES.filter(c => c.id !== targetCountry.id);
+      const shuffledOthers = shuffle(others);
+      const distractors = [shuffledOthers[0], shuffledOthers[1]];
+
+      // 50/50 Question Type:
+      // Type A: 1 Flag prompt, 3 Name options
+      // Type B: 1 Name prompt, 3 Flag options
+      const questionType = Math.random() < 0.5 ? 'typeA' : 'typeB';
+      const options = shuffle([targetCountry, ...distractors]);
+
+      currentQuestion = {
+        type: questionType,
+        target: targetCountry,
+        options: options
+      };
+
+      renderQuestion(currentQuestion);
+    }
+
+    /* ==========================================================================
+       E. UI RENDERING (Guaranteed Screen Fit)
+       ========================================================================== */
+    const promptLabel = document.getElementById('prompt-label');
+    const promptContent = document.getElementById('prompt-content');
+    const optionsContainer = document.getElementById('options-container');
+    const feedbackBar = document.getElementById('feedback-bar');
+
+    function renderQuestion(q) {
+      feedbackBar.style.opacity = '0';
+      feedbackBar.textContent = '';
+      optionsContainer.innerHTML = '';
+
+      if (q.type === 'typeA') {
+        // TYPE A: Flag prompt -> 3 Name Buttons
+        promptLabel.textContent = 'Which country has this flag?';
+        promptContent.innerHTML = `
+          <div class="w-40 h-24 sm:w-52 sm:h-32 bg-white rounded-2xl p-1.5 flag-card-shadow border-2 border-slate-300 transform hover:scale-105 transition-transform duration-200">
+            <div class="flag-svg-container">
+              ${q.target.svg}
+            </div>
+          </div>
+        `;
+
+        q.options.forEach((country) => {
+          const btn = document.createElement('button');
+          btn.className = `btn-option w-full sm:flex-1 py-3 px-2 bg-slate-100 hover:bg-slate-50 text-slate-800 font-extrabold text-lg sm:text-xl rounded-2xl border-4 border-slate-300 shadow-md flex items-center justify-center min-h-[58px] sm:min-h-[68px]`;
+          btn.innerHTML = `<span>${country.name}</span>`;
+          btn.onclick = () => handleChoice(country, btn);
+          optionsContainer.appendChild(btn);
+        });
+
+      } else {
+        // TYPE B: Name prompt -> 3 Flag Buttons
+        promptLabel.textContent = 'Find the flag for:';
+        promptContent.innerHTML = `
+          <div class="inline-flex items-center gap-2 bg-emerald-100 border-2 border-emerald-400 text-emerald-950 px-4 py-1.5 rounded-2xl shadow-sm">
+            <span class="text-xl sm:text-2xl font-black tracking-wide">${q.target.name}</span>
+            <button id="tts-btn" class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white text-emerald-800 flex items-center justify-center text-sm shadow hover:bg-emerald-50 active:scale-90" title="Sound out name">
+              🗣️
+            </button>
+          </div>
+        `;
+
+        document.getElementById('tts-btn')?.addEventListener('click', (e) => {
+          e.stopPropagation();
+          speakCountryName(q.target.name);
+        });
+
+        q.options.forEach((country) => {
+          const btn = document.createElement('button');
+          btn.className = `btn-option w-full sm:flex-1 p-1 bg-slate-100 hover:bg-slate-50 rounded-2xl border-4 border-slate-300 shadow-md flex items-center justify-center min-h-[76px] sm:min-h-[92px]`;
+          btn.innerHTML = `
+            <div class="w-full h-16 sm:h-20 flag-svg-container pointer-events-none">
+              ${country.svg}
+            </div>
+          `;
+          btn.onclick = () => handleChoice(country, btn);
+          optionsContainer.appendChild(btn);
+        });
+      }
+    }
+
+    /* ==========================================================================
+       F. USER INTERACTION & SCORING (+4 spots on correct, -1 on wrong)
+       ========================================================================== */
+    function handleChoice(selectedCountry, btnElement) {
+      if (isAnswerLocked) return;
+      getAudioCtx();
+
+      const isCorrect = selectedCountry.id === currentQuestion.target.id;
+
+      if (isCorrect) {
+        // --- CORRECT ANSWER ---
+        isAnswerLocked = true;
+        playEngineRev();
+
+        btnElement.classList.remove('bg-slate-100', 'border-slate-300', 'hover:bg-slate-50');
+        btnElement.classList.add('bg-emerald-100', 'border-emerald-500', 'text-emerald-950', 'ring-4', 'ring-emerald-300');
+
+        feedbackBar.textContent = '🏎️💨 VROOOOM! +4 Spots!';
+        feedbackBar.className = 'w-full h-8 sm:h-9 mt-1 flex items-center justify-center font-black text-base sm:text-xl text-emerald-600 transition-opacity duration-200 opacity-100';
+
+        // Animate racecar forward 4 spots
+        const targetSpot = Math.min(TOTAL_SPOTS, currentSpot + 4);
+        animateCarTo(targetSpot, 750, true, () => {
+          if (targetSpot >= TOTAL_SPOTS) {
+            setTimeout(() => {
+              triggerWinCelebration();
+            }, 400);
+          } else {
+            setTimeout(() => {
+              loadNextQuestion();
+            }, 800);
+          }
+        });
+
+      } else {
+        // --- INCORRECT ANSWER ---
+        playCrashSound();
+
+        btnElement.classList.remove('bg-slate-100', 'border-slate-300');
+        btnElement.classList.add('bg-rose-100', 'border-rose-400', 'text-rose-900', 'shake-anim');
+        btnElement.disabled = true;
+
+        setTimeout(() => {
+          btnElement.classList.remove('shake-anim');
+        }, 450);
+
+        feedbackBar.textContent = '💥 SKID! -1 Spot! Keep trying!';
+        feedbackBar.className = 'w-full h-8 sm:h-9 mt-1 flex items-center justify-center font-black text-sm sm:text-base text-rose-500 transition-opacity duration-200 opacity-100';
+
+        // Animate racecar backward 1 spot
+        const targetSpot = Math.max(0, currentSpot - 1);
+        animateCarTo(targetSpot, 380, false);
+
+        // Spaced repetition: re-insert target country 2 steps back
+        if (isFirstTryOnCurrent) {
+          isFirstTryOnCurrent = false;
+          const reinsertIdx = Math.min(2, countryQueue.length);
+          countryQueue.splice(reinsertIdx, 0, currentQuestion.target);
+        }
+      }
+    }
+
+    /* ==========================================================================
+       G. WIN SCREEN & CONFETTI
+       ========================================================================== */
+    function triggerWinCelebration() {
+      playWinFanfare();
+      document.getElementById('win-modal').classList.remove('hidden');
+      launchConfetti();
+    }
+
+    function launchConfetti() {
+      const colors = ['#ef4444', '#facc15', '#10b981', '#3b82f6', '#ec4899', '#ffffff'];
+      for (let i = 0; i < 60; i++) {
+        const piece = document.createElement('div');
+        piece.className = 'confetti-piece';
+        piece.style.left = `${Math.random() * 100}vw`;
+        piece.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        piece.style.animationDelay = `${Math.random() * 1.5}s`;
+        piece.style.animationDuration = `${2 + Math.random() * 2}s`;
+        document.body.appendChild(piece);
+
+        setTimeout(() => {
+          piece.remove();
+        }, 4500);
+      }
+    }
+
+    /* ==========================================================================
+       H. RESIZE OBSERVER & EVENT LISTENERS
+       ========================================================================== */
+    document.getElementById('play-again-btn').addEventListener('click', () => {
+      initGame();
+    });
+
+    const soundBtn = document.getElementById('sound-btn');
+    soundBtn.addEventListener('click', () => {
+      soundEnabled = !soundEnabled;
+      soundBtn.textContent = soundEnabled ? '🔊' : '🔇';
+    });
+
+    // Resize handling for flawless responsive racetrack layout
+    let resizeTimer = null;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        updateTrackGeometry();
+      }, 50);
+    });
+
+    window.addEventListener('orientationchange', () => {
+      setTimeout(updateTrackGeometry, 100);
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+      initGame();
+    });
+  </script>
+</body>
+</html>
