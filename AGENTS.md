@@ -77,20 +77,10 @@ When the user requests a new SPA:
 
 3. **Register the App in Root `index.html`**:
    - Open root `index.html`.
-   - Add the new app entry into the `APPS` registry array:
-     ```javascript
-     {
-       id: "your-app-id",
-       title: "Your App Title",
-       description: "Short, engaging summary of what the app does.",
-       path: "apps/your-app-id/",
-       githubPath: "https://github.com/ajmesa9891/collection/tree/main/apps/your-app-id",
-       icon: "🚀", // Emoji or icon
-       category: "Tools", // E.g., Games, Kids, Timers, Tools, Utilities
-       tags: ["React", "Tailwind", "Utility"]
-     }
+   - Add a list item link for the new app inside the `<ul>` list:
+     ```html
+     <li><a href="apps/your-app-id/">Your App Title</a></li>
      ```
-   - Update the pre-rendered HTML card in `index.html` so it renders even if JavaScript is delayed or disabled.
 
 4. **Test the New App Locally**:
    - Run `powershell -ExecutionPolicy Bypass -File .\serve.ps1` (or double-click `serve.bat`).
