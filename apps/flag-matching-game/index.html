@@ -2,9 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
   <title>Flag Match</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐍</text></svg>" />
+
+  <!-- PWA Web App Manifest -->
+  <link rel="manifest" href="./manifest.json" />
+  <meta name="theme-color" content="#F4F7F6" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Flag Match" />
+  <meta name="application-name" content="Flag Match" />
+
+  <!-- Icons -->
+  <link rel="icon" type="image/svg+xml" href="./icon.svg" />
+  <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="./icon-512.png" />
+  <link rel="apple-touch-icon" href="./icon-192.png" />
+
   <!-- Google Fonts: Nunito -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -131,10 +146,22 @@
 </head>
 <body class="flex flex-col min-h-screen">
 
-  <!-- Subtle Sound Toggle (No distracting banner or text) -->
-  <button id="sound-btn" class="fixed top-2.5 right-2.5 w-8 h-8 rounded-full bg-white/60 hover:bg-white text-slate-400 hover:text-slate-600 flex items-center justify-center text-sm shadow-xs border border-slate-200/60 z-20 transition-all opacity-40 hover:opacity-100" aria-label="Toggle Sound">
-    🔊
-  </button>
+  <!-- Discreet Corner Controls -->
+  <div class="fixed top-2.5 right-2.5 flex items-center gap-1.5 z-20">
+    <!-- PWA Install Button (shown when installable) -->
+    <button id="install-btn" class="hidden h-8 px-2.5 rounded-full bg-white/90 hover:bg-white text-emerald-800 font-extrabold text-xs shadow-xs border border-emerald-300/80 items-center gap-1 transition-all opacity-85 hover:opacity-100" aria-label="Install App" title="Install App">
+      <span>📲</span>
+      <span class="hidden sm:inline">Install</span>
+    </button>
+    <!-- Fullscreen Toggle Button -->
+    <button id="fullscreen-btn" class="w-8 h-8 rounded-full bg-white/60 hover:bg-white text-slate-500 hover:text-slate-700 flex items-center justify-center text-xs shadow-xs border border-slate-200/60 transition-all opacity-40 hover:opacity-100" aria-label="Toggle Fullscreen" title="Toggle Fullscreen">
+      ⛶
+    </button>
+    <!-- Sound Toggle -->
+    <button id="sound-btn" class="w-8 h-8 rounded-full bg-white/60 hover:bg-white text-slate-400 hover:text-slate-600 flex items-center justify-center text-sm shadow-xs border border-slate-200/60 transition-all opacity-40 hover:opacity-100" aria-label="Toggle Sound" title="Toggle Sound">
+      🔊
+    </button>
+  </div>
 
   <!-- Main Question Playground -->
   <main class="flex-1 w-full max-w-2xl mx-auto px-3 sm:px-4 py-3 flex flex-col justify-center">
@@ -777,6 +804,84 @@
     soundBtn.addEventListener('click', () => {
       soundEnabled = !soundEnabled;
       soundBtn.textContent = soundEnabled ? '🔊' : '🔇';
+    });
+
+    // Fullscreen toggle
+    const fullscreenBtn = document.getElementById('fullscreen-btn');
+    function isFullScreen() {
+      return !!(document.fullscreenElement || document.webkitFullscreenElement);
+    }
+
+    function toggleFullScreen() {
+      if (!isFullScreen()) {
+        const docEl = document.documentElement;
+        if (docEl.requestFullscreen) {
+          docEl.requestFullscreen().catch(() => {});
+        } else if (docEl.webkitRequestFullscreen) {
+          docEl.webkitRequestFullscreen();
+        }
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen().catch(() => {});
+        } else if (document.webkitExitFullscreen) {
+          document.webkitExitFullscreen();
+        }
+      }
+    }
+
+    if (fullscreenBtn) {
+      fullscreenBtn.addEventListener('click', toggleFullScreen);
+      document.addEventListener('fullscreenchange', () => {
+        fullscreenBtn.textContent = isFullScreen() ? '✕' : '⛶';
+      });
+      document.addEventListener('webkitfullscreenchange', () => {
+        fullscreenBtn.textContent = isFullScreen() ? '✕' : '⛶';
+      });
+    }
+
+    // PWA Service Worker Registration
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js').then((reg) => {
+          console.log('SW registered with scope:', reg.scope);
+        }).catch((err) => {
+          console.warn('SW registration failed:', err);
+        });
+      });
+    }
+
+    // PWA Install Prompt Handler (Android / Samsung Internet / Chrome)
+    let deferredInstallPrompt = null;
+    const installBtn = document.getElementById('install-btn');
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredInstallPrompt = e;
+      if (installBtn) {
+        installBtn.classList.remove('hidden');
+        installBtn.classList.add('flex');
+      }
+    });
+
+    if (installBtn) {
+      installBtn.addEventListener('click', async () => {
+        if (!deferredInstallPrompt) return;
+        deferredInstallPrompt.prompt();
+        const { outcome } = await deferredInstallPrompt.userChoice;
+        if (outcome === 'accepted') {
+          installBtn.classList.add('hidden');
+          installBtn.classList.remove('flex');
+        }
+        deferredInstallPrompt = null;
+      });
+    }
+
+    window.addEventListener('appinstalled', () => {
+      if (installBtn) {
+        installBtn.classList.add('hidden');
+        installBtn.classList.remove('flex');
+      }
+      deferredInstallPrompt = null;
     });
 
     // Start on load

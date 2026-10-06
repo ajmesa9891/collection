@@ -32,10 +32,12 @@ A stateless, minimalist, pastel-themed flag matching single-page application (SP
   - Responsive vector illustration that fits comfortably on any phone screen.
   - "Play Again" button cleanly resets state.
 
-- **Universal Vector SVG Flags**:
-  - 18 custom-crafted, scalable vector SVG flags embedded directly in code.
-  - Solves the Windows emoji limitation where country flags render as two-letter country codes instead of colored flags.
-  - No backend, no local storage, works 100% offline.
+- **Progressive Web App (PWA) & Fullscreen**:
+  - Installable on Samsung Internet, Chrome on Android, and other modern browsers as a standalone full-screen native-like app.
+  - Manifest configured with `"display": "fullscreen"`, adaptive maskable icons, and pastel theme colors.
+  - Service Worker (`sw.js`) provides 100% offline gameplay for travel and airplane mode.
+  - Fullscreen toggle button (`⛶`) allows full-screen play even before installation.
+  - 1-tap in-app install button (`📲`) appears automatically when eligible on mobile.
 
 ## Target Countries
 

@@ -9,12 +9,19 @@ A child-friendly, racecar-themed flag matching single-page application (SPA) des
   - Occupies the entire viewport without requiring any vertical scrolling (`h-screen overflow-hidden`).
   - Starts in the lower-left corner and travels clockwise around the perimeter: **Right** along the bottom &rarr; **Up** along the right side &rarr; **Left** along the top &rarr; **Down** along the left side &rarr; crosses the **Finish Line** at the lower-left!
   - **Pixel-Perfect Centering**: The car sprite is rendered directly inside the circuit SVG group, ensuring it remains exactly centered on the yellow dashed track centerline throughout all straightaways and corners.
-  
+
 - **Race Progression**:
   - **Scale**: 40 spots total from start to finish line.
-  - **Correct Answer**: Car animates moving forward **+4 spots**, triggers an accelerating Ferrari engine rev sound (`VROOOOM!`), with animated exhaust flames and speed streaks.
+  - **Correct Answer**: Car animates moving forward **+4 spots**, triggers an accelerating racing engine rev sound (`VROOOOM!`), with animated exhaust flames and speed streaks.
   - **Wrong Answer**: Car moves backward **-1 spot**, triggers a realistic tire screech & crash impact sound, with bumper wobble and tire smoke.
   - Reaching spot 40 triggers the Grand Prix victory celebration!
+
+- **Progressive Web App (PWA) & Android Fullscreen Support**:
+  - **Standalone & Fullscreen Experience**: Configured with Web App Manifest (`manifest.json`) specifying `"display": "fullscreen"` and `"orientation": "any"`. When installed or launched on Android (e.g. Samsung Galaxy phones), it launches borderless and edge-to-edge without browser URL bars or navigation clutter.
+  - **Install Prompt on Android**: Automatically listens for `beforeinstallprompt` on Android Chrome / Samsung Internet and displays a one-tap download/install button (`⬇️`) in the header HUD.
+  - **Manual Fullscreen Toggle**: A dedicated fullscreen button (`⛶` / `🗗`) in the HUD allows entering or exiting native fullscreen at any moment on devices that support the Fullscreen API.
+  - **Offline Caching (Service Worker)**: Registers `sw.js` with precaching for all HTML, styles, sounds, and icons, allowing uninterrupted play without an active internet connection.
+  - **Adaptive & Maskable Icons**: Features high-resolution 192x192 and 512x512 standard and maskable Android launcher icons conforming to Samsung One UI circular/squircle adaptive icon standards.
 
 - **Toddler-Friendly Design**:
   - Big touch targets, rounded Nunito typography, and high contrast.

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Circular Pastel Background -->
+  <circle cx="256" cy="256" r="235" fill="#E6F4EA" stroke="#A7F3D0" stroke-width="10"/>
+
+  <!-- Momma Snake Head (Emerald Green) -->
+  <circle cx="256" cy="256" r="164" fill="#10B981" stroke="#059669" stroke-width="12"/>
+
+  <!-- Yellow Forehead Scale Dot -->
+  <circle cx="256" cy="144" r="18" fill="#FEF08A"/>
+
+  <!-- Left Eye -->
+  <circle cx="190" cy="215" r="41" fill="#FFFFFF"/>
+  <circle cx="196" cy="215" r="23" fill="#0F172A"/>
+  <circle cx="204" cy="207" r="8" fill="#FFFFFF"/>
+
+  <!-- Right Eye -->
+  <circle cx="322" cy="215" r="41" fill="#FFFFFF"/>
+  <circle cx="328" cy="215" r="23" fill="#0F172A"/>
+  <circle cx="336" cy="207" r="8" fill="#FFFFFF"/>
+
+  <!-- Rosy Blush Cheeks -->
+  <ellipse cx="148" cy="276" rx="26" ry="18" fill="#FDA4AF"/>
+  <ellipse cx="364" cy="276" rx="26" ry="18" fill="#FDA4AF"/>
+
+  <!-- Smile & Tongue -->
+  <path d="M 215 287 Q 256 338 297 287" fill="none" stroke="#065F46" stroke-width="12" stroke-linecap="round"/>
+  <path d="M 242 318 C 242 360 270 360 270 318 Z" fill="#F472B6" stroke="#DB2777" stroke-width="5"/>
+</svg>

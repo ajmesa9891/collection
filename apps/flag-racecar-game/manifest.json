@@ -1,0 +1,40 @@
+{
+  "name": "Flag Racer - Grand Prix Track",
+  "short_name": "Flag Racer",
+  "description": "Child-friendly racecar flag matching game with Grand Prix circuit and realistic sounds",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "fullscreen",
+  "orientation": "any",
+  "theme_color": "#166534",
+  "background_color": "#15803d",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["games", "education", "kids"],
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icon-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "./icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

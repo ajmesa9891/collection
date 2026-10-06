@@ -5,6 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
   <title>Flag Racer - Grand Prix Track</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏎️</text></svg>" />
+  <!-- PWA & Mobile Optimization -->
+  <link rel="manifest" href="./manifest.json" />
+  <meta name="theme-color" content="#166534" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Flag Racer" />
+  <meta name="application-name" content="Flag Racer" />
+  <link rel="apple-touch-icon" href="./icon-192.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="./icon-512.png" />
+
   <!-- Google Fonts: Nunito -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -378,8 +390,18 @@
           <div id="hud-progress-fill" class="h-full bg-gradient-to-r from-amber-400 via-emerald-500 to-green-500 rounded-full transition-all duration-300 w-0"></div>
         </div>
 
-        <!-- Sound & Music Action Buttons -->
+        <!-- Sound, Music, Fullscreen & Install Action Buttons -->
         <div class="flex items-center gap-1.5">
+          <!-- Install App Button (Visible when beforeinstallprompt fires on Android) -->
+          <button id="install-btn" class="hidden w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-amber-400 hover:bg-amber-300 active:scale-90 text-slate-900 flex items-center justify-center text-sm sm:text-base border-2 border-slate-900 shadow-xs transition-all animate-bounce" aria-label="Install App" title="Install Flag Racer on your device">
+            ⬇️
+          </button>
+
+          <!-- Fullscreen Toggle Button -->
+          <button id="fullscreen-btn" class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-slate-100 hover:bg-slate-200 active:scale-90 text-slate-700 flex items-center justify-center text-sm sm:text-base border-2 border-slate-300 shadow-xs transition-all" aria-label="Toggle Fullscreen" title="Toggle Fullscreen">
+            ⛶
+          </button>
+
           <!-- Background Music Toggle Button -->
           <button id="music-btn" class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-slate-100 hover:bg-slate-200 active:scale-90 text-slate-700 flex items-center justify-center text-sm sm:text-base border-2 border-slate-300 shadow-xs transition-all" aria-label="Toggle Music" title="Background Music">
             🎵
@@ -1374,9 +1396,104 @@
       setTimeout(updateTrackGeometry, 100);
     });
 
+    /* ==========================================================================
+       I. FULLSCREEN & PWA INSTALL HANDLERS (Optimized for Android / Samsung)
+       ========================================================================== */
+    const fullscreenBtn = document.getElementById('fullscreen-btn');
+    const installBtn = document.getElementById('install-btn');
+    let deferredInstallPrompt = null;
+
+    function isFullscreenActive() {
+      return Boolean(
+        document.fullscreenElement ||
+        document.webkitFullscreenElement ||
+        document.mozFullScreenElement ||
+        document.msFullscreenElement
+      );
+    }
+
+    function updateFullscreenUi() {
+      if (fullscreenBtn) {
+        const active = isFullscreenActive();
+        fullscreenBtn.textContent = active ? '🗗' : '⛶';
+        fullscreenBtn.title = active ? 'Exit Fullscreen' : 'Enter Fullscreen';
+      }
+    }
+
+    async function toggleFullscreen() {
+      try {
+        if (!isFullscreenActive()) {
+          const docEl = document.documentElement;
+          if (docEl.requestFullscreen) {
+            await docEl.requestFullscreen();
+          } else if (docEl.webkitRequestFullscreen) {
+            await docEl.webkitRequestFullscreen();
+          } else if (docEl.msRequestFullscreen) {
+            await docEl.msRequestFullscreen();
+          }
+        } else {
+          if (document.exitFullscreen) {
+            await document.exitFullscreen();
+          } else if (document.webkitExitFullscreen) {
+            await document.webkitExitFullscreen();
+          } else if (document.msExitFullscreen) {
+            await document.msExitFullscreen();
+          }
+        }
+      } catch (err) {
+        console.warn('Fullscreen request failed:', err);
+      }
+      updateFullscreenUi();
+    }
+
+    fullscreenBtn?.addEventListener('click', toggleFullscreen);
+    document.addEventListener('fullscreenchange', updateFullscreenUi);
+    document.addEventListener('webkitfullscreenchange', updateFullscreenUi);
+
+    // Capture Android Chrome / Samsung Internet PWA install prompt
+    window.addEventListener('beforeinstallprompt', (e) => {
+      // Prevent automatic mini-infobar so user can install when desired
+      e.preventDefault();
+      deferredInstallPrompt = e;
+      if (installBtn) {
+        installBtn.classList.remove('hidden');
+      }
+    });
+
+    installBtn?.addEventListener('click', async () => {
+      if (!deferredInstallPrompt) return;
+      deferredInstallPrompt.prompt();
+      const choiceResult = await deferredInstallPrompt.userChoice;
+      if (choiceResult.outcome === 'accepted') {
+        console.log('User installed the Flag Racer PWA');
+      }
+      deferredInstallPrompt = null;
+      installBtn.classList.add('hidden');
+    });
+
+    window.addEventListener('appinstalled', () => {
+      console.log('Flag Racer PWA successfully installed');
+      deferredInstallPrompt = null;
+      if (installBtn) installBtn.classList.add('hidden');
+    });
+
+    // Register Progressive Web App Service Worker
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js')
+          .then((registration) => {
+            console.log('Flag Racer ServiceWorker registered with scope:', registration.scope);
+          })
+          .catch((error) => {
+            console.warn('Flag Racer ServiceWorker registration failed:', error);
+          });
+      });
+    }
+
     window.addEventListener('DOMContentLoaded', () => {
       updateSoundUi();
       updateMusicUi();
+      updateFullscreenUi();
       initGame();
     });
   </script>
