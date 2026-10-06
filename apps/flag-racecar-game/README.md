@@ -24,9 +24,9 @@ A child-friendly, racecar-themed flag matching single-page application (SPA) des
   - Non-punitive spaced repetition: Missed flags are automatically re-inserted 2 steps later in the queue to build confidence.
 
 - **Audio Engine (Authentic Racing Sounds & Background Music)**:
-  - **Forward Movement Sound**: Always plays authentic **Tire Spin & Drive-Off** (`./vroom_driveaway.mp3`) with engine rev, tire chirp, and peel-out acceleration!
+  - **Rotating Forward Movement Sounds**: Rotates across 5 distinct racing engine rev and peel-out sounds (`forward1.mp3` through `forward5.mp3`), all under 4 seconds each, whenever the car moves forward (+4 spots).
   - **Background Music (`./happy.mp3`)**: Cheerful, upbeat arcade soundtrack tuned to a gentle, kid-friendly lower volume (`0.20` vs `0.90` for SFX).
-  - **Realistic Crash / Skid (`./crash.mp3`)**: Tire screech and gentle bumper bump when answering incorrectly (-1 spot).
+  - **Rotating Realistic Crash / Skid Sounds**: Rotates across 5 distinct brake screech and crash impact sounds (`backward1.mp3` through `backward5.mp3`), all under 4 seconds each, when answering incorrectly (-1 spot).
   - **Grand Prix Victory Celebration**:
     - **Extended Finish Line Crossing Sprint**: Car blasts across the checkered line and down the straightaway in an extended, high-speed victory sprint with glowing exhaust flames and double speed streaks.
     - **Flashing Gantry & Waving Flags**: Checkered starting gantry lights up in gold.
@@ -36,8 +36,8 @@ A child-friendly, racecar-themed flag matching single-page application (SPA) des
   - Built-in Web Audio synthesis fallbacks to guarantee audio reliability in all environments.
   - Independent **Music (`🎵`)** and **SFX (`🔊` / `🔇`)** toggles. All preferences saved automatically in `localStorage`.
 
-- **Universal Vector Flags (26 Countries)**:
-  - Includes all 18 flags from the previous game plus 8 newly requested flags:
+- **Universal Vector Flags (31 Countries)**:
+  - Crisp, standalone vector SVGs for 31 countries:
     1. Spain
     2. Argentina
     3. France
@@ -64,3 +64,8 @@ A child-friendly, racecar-themed flag matching single-page application (SPA) des
     24. Uruguay
     25. Ghana
     26. Croatia
+    27. Nigeria
+    28. Turkey
+    29. Saudi Arabia
+    30. Cape Verde
+    31. Panama
