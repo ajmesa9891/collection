@@ -21,7 +21,7 @@ A curated monorepo of completely independent, frontend-only Single-Page Applicat
 - **Zero Backend**: All apps are pure clientside applications (HTML, CSS, JS/React) running entirely inside the browser.
 - **Total Independence**: Each SPA lives in its own directory under `apps/` with its own assets, stylesheets, and logic. No shared dependencies or coupled states.
 - **Strict Relative Pathing**: Every asset, script, and link uses relative paths (`./`) so that apps function seamlessly on GitHub Pages subpaths.
-- **Universal Launcher**: Root [`index.html`](index.html) serves as the catalog and launcher page featuring real-time search, category filters, and direct launch links.
+- **Universal Launcher & PWA**: Root [`index.html`](index.html) serves as a minimalist, fast launcher and an installable Progressive Web App (PWA) with full screen mobile support and offline caching.
 
 ---
 
