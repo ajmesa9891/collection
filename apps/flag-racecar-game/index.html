@@ -172,6 +172,32 @@
       animation: trophyBounce 1.5s ease-in-out infinite;
     }
 
+    /* Finish Line Gantry Celebration Glow */
+    @keyframes gantryGlow {
+      0%, 100% { filter: drop-shadow(0 0 6px #facc15); opacity: 0.95; }
+      50% { filter: drop-shadow(0 0 24px #f59e0b) drop-shadow(0 0 40px #ffffff); opacity: 1; }
+    }
+
+    .gantry-celebrate {
+      animation: gantryGlow 0.4s ease-in-out infinite;
+    }
+
+    /* Celebratory Fireworks */
+    .firework-spark {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      pointer-events: none;
+      box-shadow: 0 0 10px currentColor;
+      animation: fireworkSpark 0.9s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+    }
+
+    @keyframes fireworkSpark {
+      0% { transform: translate(0, 0) scale(1.5); opacity: 1; }
+      100% { transform: translate(var(--tx), var(--ty)) scale(0.2); opacity: 0; }
+    }
+
     /* Compact & Short Screen (Landscape) Adaptations to Guarantee Zero Scroll */
     @media (max-height: 540px) {
       #game-card {
@@ -322,6 +348,16 @@
   </svg>
 
   <!-- ==========================================================================
+       2. CELEBRATORY FINISH BANNER & FIREWORKS OVERLAY
+       ========================================================================== -->
+  <div id="fireworks-container" class="fixed inset-0 pointer-events-none z-40 overflow-hidden"></div>
+  <div id="finish-banner" class="fixed top-6 sm:top-10 left-1/2 -translate-x-1/2 bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 border-4 border-slate-900 rounded-3xl px-5 sm:px-8 py-2.5 sm:py-3.5 shadow-2xl flex items-center gap-2 sm:gap-3 scale-0 transition-transform duration-500 z-40 pointer-events-none">
+    <span class="text-2xl sm:text-4xl animate-bounce">🏁</span>
+    <span class="text-base sm:text-2xl font-black text-slate-900 uppercase tracking-wider">Finish Line Champion!</span>
+    <span class="text-2xl sm:text-4xl animate-bounce">🏁</span>
+  </div>
+
+  <!-- ==========================================================================
        3. CENTER ARENA (Guaranteed 100% Fullscreen Fit, No Scrolling)
        ========================================================================== -->
   <div id="center-arena" class="absolute inset-0 flex items-center justify-center pointer-events-none z-30 p-12 sm:p-14 md:p-16">
@@ -329,29 +365,43 @@
     <!-- Central Game Card -->
     <div id="game-card" class="pointer-events-auto w-full max-w-xl max-h-[88vh] sm:max-h-[82vh] bg-white/95 backdrop-blur-md rounded-3xl p-3.5 sm:p-5 shadow-2xl border-4 border-slate-900 flex flex-col justify-between items-center text-center transition-all overflow-hidden">
       
-      <!-- Top HUD: Progress Bar & Lap Counter & Sound Toggle -->
-      <div class="w-full flex items-center justify-between gap-2 border-b-2 border-slate-200 pb-2 mb-2">
+      <!-- Top HUD: Progress Bar, Engine Sound Picker, Music & SFX Controls -->
+      <div class="w-full flex items-center justify-between gap-1.5 sm:gap-2 border-b-2 border-slate-200 pb-2 mb-2">
         
         <!-- Lap & Spot Counter -->
-        <div class="flex items-center gap-1.5 sm:gap-2">
-          <span class="text-xl sm:text-2xl animate-pulse">🏎️</span>
+        <div class="flex items-center gap-1 sm:gap-2">
+          <span class="text-lg sm:text-2xl animate-pulse">🏎️</span>
           <div class="text-left leading-tight">
-            <div class="text-xs sm:text-sm font-black text-slate-500 uppercase tracking-wider">Race Progress</div>
-            <div class="text-base sm:text-xl font-black text-slate-800">
+            <div class="text-[10px] sm:text-xs font-black text-slate-500 uppercase tracking-wider">Progress</div>
+            <div class="text-sm sm:text-lg font-black text-slate-800">
               Spot <span id="hud-spot" class="text-emerald-600 font-black">0</span> <span class="text-slate-400 font-bold">/ 40</span>
             </div>
           </div>
         </div>
 
         <!-- Mini Progress Meter Bar -->
-        <div class="flex-1 max-w-[120px] sm:max-w-[180px] bg-slate-200 h-3.5 sm:h-4 rounded-full overflow-hidden border border-slate-300 relative mx-1">
+        <div class="flex-1 max-w-[85px] sm:max-w-[140px] md:max-w-[170px] bg-slate-200 h-3 sm:h-4 rounded-full overflow-hidden border border-slate-300 relative mx-1">
           <div id="hud-progress-fill" class="h-full bg-gradient-to-r from-amber-400 via-emerald-500 to-green-500 rounded-full transition-all duration-300 w-0"></div>
         </div>
 
-        <!-- Sound Toggle Button -->
-        <button id="sound-btn" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-slate-100 hover:bg-slate-200 active:scale-90 text-slate-700 flex items-center justify-center text-base sm:text-lg border-2 border-slate-300 shadow-xs transition-all" aria-label="Toggle Sound" title="Toggle Sound">
-          🔊
-        </button>
+        <!-- Sound & Music Action Buttons -->
+        <div class="flex items-center gap-1 sm:gap-1.5">
+          <!-- Engine Sound Selector Button -->
+          <button id="engine-select-btn" class="px-2 py-1 sm:px-2.5 sm:py-1.5 rounded-full bg-amber-100 hover:bg-amber-200 active:scale-95 text-amber-900 flex items-center gap-1 text-xs sm:text-sm font-black border-2 border-amber-300 shadow-xs transition-all" aria-label="Engine Sounds" title="Choose Engine Vroom">
+            <span>⚙️</span>
+            <span class="hidden sm:inline">Vroom</span>
+          </button>
+
+          <!-- Background Music Toggle Button -->
+          <button id="music-btn" class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-slate-100 hover:bg-slate-200 active:scale-90 text-slate-700 flex items-center justify-center text-sm sm:text-base border-2 border-slate-300 shadow-xs transition-all" aria-label="Toggle Music" title="Background Music">
+            🎵
+          </button>
+
+          <!-- SFX Sound Toggle Button -->
+          <button id="sound-btn" class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-slate-100 hover:bg-slate-200 active:scale-90 text-slate-700 flex items-center justify-center text-sm sm:text-base border-2 border-slate-300 shadow-xs transition-all" aria-label="Toggle Sound" title="Toggle Sound Effects">
+            🔊
+          </button>
+        </div>
       </div>
 
       <!-- Question Prompt Area -->
@@ -380,7 +430,41 @@
   </div>
 
   <!-- ==========================================================================
-       4. VICTORY GRAND PRIX MODAL
+       4. ENGINE SOUND SELECTOR MODAL (Audition & Choose Vroom Options)
+       ========================================================================== -->
+  <div id="engine-modal" class="fixed inset-0 z-50 bg-slate-900/80 backdrop-blur-md flex items-center justify-center p-3 sm:p-4 hidden">
+    <div class="w-full max-w-md bg-white rounded-3xl p-4 sm:p-5 shadow-2xl border-4 border-amber-400 text-left flex flex-col max-h-[92vh] overflow-hidden">
+      <!-- Modal Header -->
+      <div class="flex items-center justify-between border-b-2 border-slate-200 pb-2.5 mb-2.5">
+        <div class="flex items-center gap-2">
+          <span class="text-2xl sm:text-3xl">🏎️</span>
+          <div>
+            <h3 class="text-base sm:text-lg font-black text-slate-800 leading-tight">Pick Your Engine Vroom!</h3>
+            <p class="text-xs font-bold text-slate-500">Tap ▶️ Listen to test, and choose your favorite.</p>
+          </div>
+        </div>
+        <button id="close-engine-modal" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 active:scale-90 text-slate-600 font-black text-base flex items-center justify-center border border-slate-300">
+          ✕
+        </button>
+      </div>
+
+      <!-- Engine Sound Options List -->
+      <div id="engine-options-list" class="flex-1 overflow-y-auto space-y-2 pr-1 py-1">
+        <!-- Populated dynamically by JS -->
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="mt-2.5 pt-2.5 border-t-2 border-slate-100 flex items-center justify-between">
+        <span class="text-xs font-bold text-slate-400">✨ Saved automatically</span>
+        <button id="confirm-engine-btn" class="px-4 py-2 bg-emerald-500 hover:bg-emerald-600 active:scale-95 text-white font-extrabold text-xs sm:text-sm rounded-xl shadow-md border-2 border-emerald-400">
+          Ready to Race! 🏁
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       5. VICTORY GRAND PRIX MODAL
        ========================================================================== -->
   <div id="win-modal" class="fixed inset-0 z-50 bg-slate-900/80 backdrop-blur-md flex items-center justify-center p-4 hidden">
     <div class="w-full max-w-md bg-white rounded-3xl p-6 sm:p-8 shadow-2xl border-4 border-amber-400 text-center flex flex-col items-center">
@@ -570,10 +654,11 @@
     ];
 
     /* ==========================================================================
-       B. WEB AUDIO SYNTHESIS (Zero External Files, 100% Reliable & Offline)
+       B. AUDIO SYSTEM: ENGINE VROOMS, MUSIC, CRASH & VICTORY CHEER
        ========================================================================== */
     let audioCtx = null;
-    let soundEnabled = true;
+    let soundEnabled = localStorage.getItem('flag_racer_sfx_enabled') !== 'false';
+    let musicEnabled = localStorage.getItem('flag_racer_music_enabled') !== 'false';
 
     function getAudioCtx() {
       if (!audioCtx) {
@@ -588,11 +673,178 @@
       return audioCtx;
     }
 
-    // Realistic Audio Files (Ferrari Racing Engine + Car Screech Crash)
-    const engineAudio = new Audio('./engine.mp3');
+    // 5 Engine Sound Options with Arcade/Vroom Character
+    const ENGINE_OPTIONS = [
+      {
+        id: 'sports',
+        name: 'Sports Car Vroom',
+        subtitle: 'Classic arcade racing throttle rev (crisp & punchy)',
+        file: './vroom_sports.mp3',
+        emoji: '🏎️',
+        badge: 'Recommended'
+      },
+      {
+        id: 'muscle',
+        name: 'Muscle Car Roar',
+        subtitle: 'Deep, throaty V8 engine roar',
+        file: './vroom_muscle.mp3',
+        emoji: '🏎️💨'
+      },
+      {
+        id: 'driveaway',
+        name: 'Tire Spin & Drive-Off',
+        subtitle: 'Rev + tire chirp and accelerating peel-out',
+        file: './vroom_driveaway.mp3',
+        emoji: '💨'
+      },
+      {
+        id: 'accel',
+        name: 'Turbo Zoom',
+        subtitle: 'High-speed sustained racing acceleration sweep',
+        file: './vroom_accel.mp3',
+        emoji: '⚡'
+      },
+      {
+        id: 'f1',
+        name: 'Grand Prix Flyby',
+        subtitle: 'Formula 1 high-pitch track flyby roar',
+        file: './engine.mp3',
+        emoji: '🏁'
+      }
+    ];
+
+    let currentEngineId = localStorage.getItem('flag_racer_engine_id') || 'sports';
+    let activeEngineAudio = new Audio(ENGINE_OPTIONS.find(o => o.id === currentEngineId)?.file || './vroom_sports.mp3');
+    activeEngineAudio.preload = 'auto';
+
+    // Realistic Crash / Skid Audio
     const crashAudio = new Audio('./crash.mp3');
-    engineAudio.preload = 'auto';
     crashAudio.preload = 'auto';
+
+    // Cheering Kids Audio for Victory
+    const cheerAudio = new Audio('./cheer.mp3');
+    cheerAudio.preload = 'auto';
+
+    // Background Music (Upbeat & Cheerful, Played at Lower Volume)
+    const bgmAudio = new Audio('./happy.mp3');
+    bgmAudio.preload = 'auto';
+    bgmAudio.loop = true;
+    bgmAudio.volume = 0.20; // Lower volume than SFX (0.20 vs 0.90)
+
+    function startBgmIfNeeded() {
+      if (musicEnabled && soundEnabled && bgmAudio.paused) {
+        bgmAudio.play().catch(() => {});
+      }
+    }
+
+    // Engine Sound Switcher
+    function setEngineSound(id) {
+      const option = ENGINE_OPTIONS.find(o => o.id === id);
+      if (!option) return;
+      currentEngineId = id;
+      localStorage.setItem('flag_racer_engine_id', id);
+      activeEngineAudio.pause();
+      activeEngineAudio = new Audio(option.file);
+      activeEngineAudio.preload = 'auto';
+      renderEngineOptionsList();
+    }
+
+    // Audio Audition Preview Player
+    let auditionAudio = null;
+    let currentlyPlayingAuditionId = null;
+
+    function playAudition(option) {
+      if (auditionAudio) {
+        auditionAudio.pause();
+        auditionAudio.currentTime = 0;
+      }
+      currentlyPlayingAuditionId = option.id;
+      renderEngineOptionsList();
+
+      auditionAudio = new Audio(option.file);
+      auditionAudio.volume = 0.9;
+      auditionAudio.play().catch(() => {});
+      auditionAudio.onended = () => {
+        currentlyPlayingAuditionId = null;
+        renderEngineOptionsList();
+      };
+    }
+
+    function stopAudition() {
+      if (auditionAudio) {
+        auditionAudio.pause();
+        auditionAudio.currentTime = 0;
+      }
+      currentlyPlayingAuditionId = null;
+      renderEngineOptionsList();
+    }
+
+    // Render Engine Sound Choices inside Modal
+    function renderEngineOptionsList() {
+      const container = document.getElementById('engine-options-list');
+      if (!container) return;
+      container.innerHTML = '';
+
+      ENGINE_OPTIONS.forEach((opt) => {
+        const isSelected = opt.id === currentEngineId;
+        const isPlaying = opt.id === currentlyPlayingAuditionId;
+
+        const card = document.createElement('div');
+        card.className = `p-2.5 sm:p-3 rounded-2xl border-2 transition-all flex items-center justify-between gap-2 cursor-pointer ${
+          isSelected
+            ? 'border-emerald-500 bg-emerald-50/70 shadow-sm ring-2 ring-emerald-200'
+            : 'border-slate-200 bg-slate-50 hover:bg-slate-100'
+        }`;
+
+        card.innerHTML = `
+          <div class="flex items-center gap-2 sm:gap-2.5 min-w-0 flex-1">
+            <span class="text-xl sm:text-2xl flex-shrink-0">${opt.emoji}</span>
+            <div class="min-w-0 flex-1">
+              <div class="flex items-center gap-1.5 flex-wrap">
+                <span class="font-extrabold text-sm sm:text-base text-slate-800 leading-tight">${opt.name}</span>
+                ${opt.badge ? `<span class="px-1.5 py-0.5 rounded text-[10px] font-black bg-amber-200 text-amber-900 uppercase tracking-wider">${opt.badge}</span>` : ''}
+                ${isSelected ? `<span class="px-1.5 py-0.5 rounded text-[10px] font-black bg-emerald-500 text-white uppercase tracking-wider">Active</span>` : ''}
+              </div>
+              <p class="text-xs text-slate-500 font-bold truncate">${opt.subtitle}</p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-1.5 flex-shrink-0">
+            <button class="audition-btn px-2.5 py-1.5 rounded-xl ${isPlaying ? 'bg-amber-500 text-white animate-pulse' : 'bg-slate-200 hover:bg-slate-300 text-slate-700'} font-bold text-xs flex items-center gap-1 active:scale-95 transition-all" title="Listen to sound">
+              <span>${isPlaying ? '⏹️' : '▶️'}</span>
+              <span>${isPlaying ? 'Playing' : 'Listen'}</span>
+            </button>
+            <button class="select-btn px-2.5 py-1.5 rounded-xl ${isSelected ? 'bg-emerald-600 text-white font-black cursor-default' : 'bg-slate-800 hover:bg-slate-900 active:scale-95 text-white font-bold'} text-xs flex items-center gap-1 transition-all">
+              ${isSelected ? '✓ Chosen' : 'Select'}
+            </button>
+          </div>
+        `;
+
+        const auditionBtn = card.querySelector('.audition-btn');
+        auditionBtn.onclick = (e) => {
+          e.stopPropagation();
+          if (isPlaying) {
+            stopAudition();
+          } else {
+            playAudition(opt);
+          }
+        };
+
+        const selectBtn = card.querySelector('.select-btn');
+        selectBtn.onclick = (e) => {
+          e.stopPropagation();
+          setEngineSound(opt.id);
+          playAudition(opt);
+        };
+
+        card.onclick = () => {
+          setEngineSound(opt.id);
+          playAudition(opt);
+        };
+
+        container.appendChild(card);
+      });
+    }
 
     // Racing Engine Rev: VROOOOM! (+4 spots forward)
     function playEngineRev() {
@@ -600,9 +852,9 @@
       try {
         crashAudio.pause();
         crashAudio.currentTime = 0;
-        engineAudio.currentTime = 0;
-        engineAudio.volume = 0.9;
-        const p = engineAudio.play();
+        activeEngineAudio.currentTime = 0;
+        activeEngineAudio.volume = 0.92;
+        const p = activeEngineAudio.play();
         if (p && p.catch) {
           p.catch(() => playEngineSynthFallback());
         }
@@ -653,8 +905,7 @@
     function playCrashSound() {
       if (!soundEnabled) return;
       try {
-        engineAudio.pause();
-        engineAudio.currentTime = 0;
+        if (activeEngineAudio) activeEngineAudio.pause();
         crashAudio.currentTime = 0;
         crashAudio.volume = 0.9;
         const p = crashAudio.play();
@@ -822,26 +1073,27 @@
       const g = document.getElementById('start-finish-group');
       g.innerHTML = `
         <!-- Checkered Starting Line Strip across road -->
-        <rect x="${startX - 10}" y="${startY - roadWidth / 2}" width="20" height="${roadWidth}" fill="url(#checkered-pattern)" rx="2" stroke="#0f172a" stroke-width="1.5" />
+        <rect x="${startX - 12}" y="${startY - roadWidth / 2}" width="24" height="${roadWidth}" fill="url(#checkered-pattern)" rx="2" stroke="#0f172a" stroke-width="1.5" />
         
         <!-- White Starting Line Marker Box -->
-        <line x1="${startX + 10}" y1="${startY - roadWidth / 2}" x2="${startX + 10}" y2="${startY + roadWidth / 2}" stroke="#ffffff" stroke-width="3" stroke-linecap="round" />
+        <line x1="${startX + 12}" y1="${startY - roadWidth / 2}" x2="${startX + 12}" y2="${startY + roadWidth / 2}" stroke="#ffffff" stroke-width="3" stroke-linecap="round" />
         
         <!-- START / FINISH Gantry / Road Text -->
-        <g transform="translate(${startX + 18}, ${startY - roadWidth / 2 - 14})">
-          <rect x="-4" y="-12" width="110" height="20" rx="6" fill="#0f172a" stroke="#facc15" stroke-width="2" />
-          <text x="50" y="2" fill="#ffffff" font-size="10" font-weight="900" font-family="'Nunito', sans-serif" text-anchor="middle" letter-spacing="0.5">🏁 START / FINISH</text>
+        <g id="gantry-sign" transform="translate(${startX + 18}, ${startY - roadWidth / 2 - 16})">
+          <rect x="-6" y="-12" width="122" height="22" rx="7" fill="#0f172a" stroke="#facc15" stroke-width="2.5" />
+          <text x="55" y="3" fill="#ffffff" font-size="11" font-weight="900" font-family="'Nunito', sans-serif" text-anchor="middle" letter-spacing="0.5">🏁 START / FINISH</text>
         </g>
       `;
     }
 
-    // Given spot (0..40), smoothly calculate (x, y, angle) and transform raceCarGroup
+    // Given spot (0..40+), smoothly calculate (x, y, angle) and transform raceCarGroup
     function placeCarAtSpot(spotValue) {
       if (!trackPath || !trackPath.getTotalLength) return;
       const totalLen = trackPath.getTotalLength();
       if (totalLen <= 0) return;
 
-      const progress = Math.max(0, Math.min(1, spotValue / TOTAL_SPOTS));
+      // Wrapping using modulo allows smooth celebration sprints past the finish line!
+      const progress = (spotValue % TOTAL_SPOTS) / TOTAL_SPOTS;
       const dist = progress * (totalLen - 2);
 
       // Compute tangent points directly along the SVG path
@@ -855,7 +1107,7 @@
       raceCarGroup.setAttribute('transform', `translate(${pCenter.x}, ${pCenter.y}) rotate(${angleDeg})`);
       
       // Update HUD text & bar
-      hudSpot.textContent = Math.round(spotValue);
+      hudSpot.textContent = Math.min(TOTAL_SPOTS, Math.round(spotValue));
       const percent = Math.min(100, Math.round((spotValue / TOTAL_SPOTS) * 100));
       hudProgressFill.style.width = `${percent}%`;
     }
@@ -927,13 +1179,28 @@
       isAnswerLocked = false;
       countryQueue = shuffle(COUNTRIES);
       document.getElementById('win-modal').classList.add('hidden');
+      
+      const banner = document.getElementById('finish-banner');
+      if (banner) {
+        banner.classList.remove('scale-100');
+        banner.classList.add('scale-0');
+      }
+      const gantry = document.getElementById('start-finish-group');
+      if (gantry) gantry.classList.remove('gantry-celebrate');
+
+      // Restore background music volume if active
+      if (musicEnabled && soundEnabled && bgmAudio) {
+        bgmAudio.volume = 0.20;
+        if (bgmAudio.paused) bgmAudio.play().catch(() => {});
+      }
+
       updateTrackGeometry();
       loadNextQuestion();
     }
 
     function loadNextQuestion() {
       if (currentSpot >= TOTAL_SPOTS) {
-        triggerWinCelebration();
+        runFinishLineCelebration();
         return;
       }
 
@@ -1033,6 +1300,7 @@
        ========================================================================== */
     function handleChoice(selectedCountry, btnElement) {
       if (isAnswerLocked) return;
+      startBgmIfNeeded();
       getAudioCtx();
 
       const isCorrect = selectedCountry.id === currentQuestion.target.id;
@@ -1045,22 +1313,28 @@
         btnElement.classList.remove('bg-slate-100', 'border-slate-300', 'hover:bg-slate-50');
         btnElement.classList.add('bg-emerald-100', 'border-emerald-500', 'text-emerald-950', 'ring-4', 'ring-emerald-300');
 
-        feedbackBar.textContent = '🏎️💨 VROOOOM! +4 Spots!';
-        feedbackBar.className = 'w-full h-8 sm:h-9 mt-1 flex items-center justify-center font-black text-base sm:text-xl text-emerald-600 transition-opacity duration-200 opacity-100';
+        const targetSpot = currentSpot + 4;
 
-        // Animate racecar forward 4 spots
-        const targetSpot = Math.min(TOTAL_SPOTS, currentSpot + 4);
-        animateCarTo(targetSpot, 750, true, () => {
-          if (targetSpot >= TOTAL_SPOTS) {
-            setTimeout(() => {
-              triggerWinCelebration();
-            }, 400);
-          } else {
+        if (targetSpot >= TOTAL_SPOTS) {
+          // Reaching the finish line!
+          feedbackBar.textContent = '🏁 SPRINT TO THE FINISH LINE!';
+          feedbackBar.className = 'w-full h-8 sm:h-9 mt-1 flex items-center justify-center font-black text-base sm:text-xl text-amber-500 transition-opacity duration-200 opacity-100';
+
+          // Animate straight to the checkered line first
+          animateCarTo(TOTAL_SPOTS, 750, true, () => {
+            runFinishLineCelebration();
+          });
+        } else {
+          feedbackBar.textContent = '🏎️💨 VROOOOM! +4 Spots!';
+          feedbackBar.className = 'w-full h-8 sm:h-9 mt-1 flex items-center justify-center font-black text-base sm:text-xl text-emerald-600 transition-opacity duration-200 opacity-100';
+
+          // Animate racecar forward 4 spots
+          animateCarTo(targetSpot, 750, true, () => {
             setTimeout(() => {
               loadNextQuestion();
             }, 800);
-          }
-        });
+          });
+        }
 
       } else {
         // --- INCORRECT ANSWER ---
@@ -1091,23 +1365,100 @@
     }
 
     /* ==========================================================================
-       G. WIN SCREEN & CONFETTI
+       G. CELEBRATORY FINISH LINE CROSSING & FIREWORKS SEQUENCE
        ========================================================================== */
-    function triggerWinCelebration() {
-      playWinFanfare();
+    function runFinishLineCelebration() {
+      // 1. Lower BGM so victory cheer & fanfare take center stage
+      if (bgmAudio && !bgmAudio.paused) {
+        bgmAudio.volume = 0.05;
+      }
+
+      // 2. Play Kids Cheer & Grand Prix Trumpet Fanfare
+      if (soundEnabled) {
+        try {
+          cheerAudio.currentTime = 0;
+          cheerAudio.volume = 0.95;
+          cheerAudio.play().catch(() => {});
+        } catch (e) {}
+        playWinFanfare();
+      }
+
+      // 3. Highlight Start/Finish Gantry with flashing celebration glow
+      const gantry = document.getElementById('start-finish-group');
+      if (gantry) gantry.classList.add('gantry-celebrate');
+
+      // 4. Pop up celebratory Finish Banner
+      const finishBanner = document.getElementById('finish-banner');
+      if (finishBanner) {
+        finishBanner.classList.remove('scale-0');
+        finishBanner.classList.add('scale-100');
+      }
+
+      // 5. Sequence of colorful fireworks around the circuit
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+      createFireworkBurst(w * 0.16, h * 0.82); // near finish line
+      setTimeout(() => createFireworkBurst(w * 0.35, h * 0.22), 250);
+      setTimeout(() => createFireworkBurst(w * 0.82, h * 0.28), 500);
+      setTimeout(() => createFireworkBurst(w * 0.80, h * 0.72), 750);
+      setTimeout(() => createFireworkBurst(w * 0.50, h * 0.40), 1000);
+
+      // 6. Victory Lap Sprint: Car blasts across checkered finish line and past start!
+      animateCarTo(44, 1350, true, () => {
+        setTimeout(() => {
+          if (finishBanner) {
+            finishBanner.classList.remove('scale-100');
+            finishBanner.classList.add('scale-0');
+          }
+          if (gantry) gantry.classList.remove('gantry-celebrate');
+          
+          triggerWinModal();
+        }, 350);
+      });
+    }
+
+    // Spawn expanding particle fireworks
+    function createFireworkBurst(x, y) {
+      const container = document.getElementById('fireworks-container');
+      if (!container) return;
+
+      const colors = ['#ef4444', '#f59e0b', '#10b981', '#3b82f6', '#ec4899', '#ffffff', '#a855f7'];
+      const burstColor = colors[Math.floor(Math.random() * colors.length)];
+      const sparkCount = 18;
+
+      for (let i = 0; i < sparkCount; i++) {
+        const spark = document.createElement('div');
+        spark.className = 'firework-spark';
+        const angle = (i / sparkCount) * 2 * Math.PI;
+        const dist = 35 + Math.random() * 55;
+        const tx = Math.cos(angle) * dist;
+        const ty = Math.sin(angle) * dist;
+
+        spark.style.left = `${x}px`;
+        spark.style.top = `${y}px`;
+        spark.style.backgroundColor = Math.random() > 0.4 ? burstColor : '#ffffff';
+        spark.style.setProperty('--tx', `${tx}px`);
+        spark.style.setProperty('--ty', `${ty}px`);
+
+        container.appendChild(spark);
+        setTimeout(() => spark.remove(), 920);
+      }
+    }
+
+    function triggerWinModal() {
       document.getElementById('win-modal').classList.remove('hidden');
       launchConfetti();
     }
 
     function launchConfetti() {
       const colors = ['#ef4444', '#facc15', '#10b981', '#3b82f6', '#ec4899', '#ffffff'];
-      for (let i = 0; i < 60; i++) {
+      for (let i = 0; i < 75; i++) {
         const piece = document.createElement('div');
         piece.className = 'confetti-piece';
         piece.style.left = `${Math.random() * 100}vw`;
         piece.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
         piece.style.animationDelay = `${Math.random() * 1.5}s`;
-        piece.style.animationDuration = `${2 + Math.random() * 2}s`;
+        piece.style.animationDuration = `${2.2 + Math.random() * 2}s`;
         document.body.appendChild(piece);
 
         setTimeout(() => {
@@ -1117,23 +1468,79 @@
     }
 
     /* ==========================================================================
-       H. RESIZE OBSERVER & EVENT LISTENERS
+       H. RESIZE OBSERVER & MODAL / AUDIO CONTROLS
        ========================================================================== */
+    const soundBtn = document.getElementById('sound-btn');
+    const musicBtn = document.getElementById('music-btn');
+    const engineSelectBtn = document.getElementById('engine-select-btn');
+    const engineModal = document.getElementById('engine-modal');
+    const closeEngineModalBtn = document.getElementById('close-engine-modal');
+    const confirmEngineBtn = document.getElementById('confirm-engine-btn');
+
+    function updateSoundUi() {
+      if (soundBtn) {
+        soundBtn.textContent = soundEnabled ? '🔊' : '🔇';
+        soundBtn.title = soundEnabled ? 'Sound Effects: On' : 'Sound Effects: Muted';
+      }
+    }
+
+    function updateMusicUi() {
+      if (musicBtn) {
+        musicBtn.textContent = musicEnabled ? '🎵' : '🔇';
+        musicBtn.title = musicEnabled ? 'Background Music: On' : 'Background Music: Muted';
+      }
+    }
+
+    soundBtn?.addEventListener('click', () => {
+      soundEnabled = !soundEnabled;
+      localStorage.setItem('flag_racer_sfx_enabled', soundEnabled ? 'true' : 'false');
+      updateSoundUi();
+      if (!soundEnabled) {
+        if (activeEngineAudio) activeEngineAudio.pause();
+        if (crashAudio) crashAudio.pause();
+        if (cheerAudio) cheerAudio.pause();
+        if (auditionAudio) auditionAudio.pause();
+        bgmAudio.pause();
+      } else {
+        if (musicEnabled) bgmAudio.play().catch(() => {});
+      }
+    });
+
+    musicBtn?.addEventListener('click', () => {
+      musicEnabled = !musicEnabled;
+      localStorage.setItem('flag_racer_music_enabled', musicEnabled ? 'true' : 'false');
+      updateMusicUi();
+      if (musicEnabled && soundEnabled) {
+        bgmAudio.play().catch(() => {});
+      } else {
+        bgmAudio.pause();
+      }
+    });
+
+    engineSelectBtn?.addEventListener('click', () => {
+      stopAudition();
+      renderEngineOptionsList();
+      engineModal.classList.remove('hidden');
+    });
+
+    function closeEngineModal() {
+      stopAudition();
+      engineModal.classList.add('hidden');
+    }
+
+    closeEngineModalBtn?.addEventListener('click', closeEngineModal);
+    confirmEngineBtn?.addEventListener('click', closeEngineModal);
+
     document.getElementById('play-again-btn').addEventListener('click', () => {
       initGame();
     });
 
-    const soundBtn = document.getElementById('sound-btn');
-    soundBtn.addEventListener('click', () => {
-      soundEnabled = !soundEnabled;
-      soundBtn.textContent = soundEnabled ? '🔊' : '🔇';
-      if (!soundEnabled) {
-        engineAudio.pause();
-        crashAudio.pause();
-      }
-    });
+    // Start BGM on first interaction
+    document.addEventListener('pointerdown', () => {
+      startBgmIfNeeded();
+    }, { once: true });
 
-    // Resize handling for flawless responsive racetrack layout
+    // Resize handling for responsive racetrack
     let resizeTimer = null;
     window.addEventListener('resize', () => {
       clearTimeout(resizeTimer);
@@ -1147,6 +1554,8 @@
     });
 
     window.addEventListener('DOMContentLoaded', () => {
+      updateSoundUi();
+      updateMusicUi();
       initGame();
     });
   </script>

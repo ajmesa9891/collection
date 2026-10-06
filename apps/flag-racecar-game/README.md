@@ -23,12 +23,23 @@ A child-friendly, racecar-themed flag matching single-page application (SPA) des
     - **Type B**: Country name badge with sound-out (`🗣️`) button &rarr; 3 flag choices.
   - Non-punitive spaced repetition: Missed flags are automatically re-inserted 2 steps later in the queue to build confidence.
 
-- **Audio Engine (Realistic MP3s with Web Audio Fallback)**:
-  - Realistic Ferrari racing car engine roar (`./engine.mp3`) for forward acceleration.
-  - Realistic tire screech & crash impact (`./crash.mp3`) for backward movement.
-  - Grand Prix Trumpet Fanfare + confetti when crossing the finish line.
+- **Audio Engine (Authentic Racing Sounds & Background Music)**:
+  - **Engine "Vroom" Picker**: Players and parents can tap `⚙️ Vroom` in the HUD to audition and choose from 5 authentic engine sounds:
+    1. 🏎️ **Sports Car Vroom** (`./vroom_sports.mp3`) — Classic arcade racing throttle rev (default).
+    2. 🏎️💨 **Muscle Car Roar** (`./vroom_muscle.mp3`) — Deep, heavy American V8 engine roar.
+    3. 💨 **Tire Spin & Drive-Off** (`./vroom_driveaway.mp3`) — Engine throttle with tire chirp and peel-out acceleration.
+    4. ⚡ **Turbo Zoom** (`./vroom_accel.mp3`) — High-speed sustained acceleration sweep.
+    5. 🏁 **Grand Prix Flyby** (`./engine.mp3`) — Formula 1 high-pitch track flyby.
+  - **Background Music (`./happy.mp3`)**: Cheerful, upbeat arcade soundtrack tuned to a gentle, kid-friendly lower volume (`0.20` vs `0.90` for SFX).
+  - **Realistic Crash / Skid (`./crash.mp3`)**: Tire screech and gentle bumper bump when answering incorrectly (-1 spot).
+  - **Grand Prix Victory Celebration**:
+    - **Finish Line Crossing Sprint**: Car blasts across the checkered line and down the straightaway with glowing exhaust flames and double speed streaks.
+    - **Flashing Gantry & Waving Flags**: Checkered starting gantry lights up in gold.
+    - **Kids Cheering Audio (`./cheer.mp3`)**: Cheering kids & applause accompanied by celebratory Grand Prix trumpet fanfare!
+    - **Multi-Staged Fireworks**: Vibrant fireworks bursts sparkle across the racetrack and sky.
+    - **Podium Modal & Confetti Shower**: Golden bouncing trophy and 75+ fluttering ribbons of colorful confetti.
   - Built-in Web Audio synthesis fallbacks to guarantee audio reliability in all environments.
-  - Optional sound toggle (`🔊` / `🔇`).
+  - Independent **Music (`🎵`)** and **SFX (`🔊` / `🔇`)** toggles. All preferences saved automatically in `localStorage`.
 
 - **Universal Vector Flags (26 Countries)**:
   - Includes all 18 flags from the previous game plus 8 newly requested flags:
