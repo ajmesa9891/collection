@@ -8,11 +8,12 @@ A child-friendly, racecar-themed flag matching single-page application (SPA) des
   - The racetrack surrounds the entire screen with asphalt, red-and-white rumble strip kerbs, yellow dashed centerlines, and a checkered start/finish gantry.
   - Occupies the entire viewport without requiring any vertical scrolling (`h-screen overflow-hidden`).
   - Starts in the lower-left corner and travels clockwise around the perimeter: **Right** along the bottom &rarr; **Up** along the right side &rarr; **Left** along the top &rarr; **Down** along the left side &rarr; crosses the **Finish Line** at the lower-left!
+  - **Pixel-Perfect Centering**: The car sprite is rendered directly inside the circuit SVG group, ensuring it remains exactly centered on the yellow dashed track centerline throughout all straightaways and corners.
   
 - **Race Progression**:
   - **Scale**: 40 spots total from start to finish line.
-  - **Correct Answer**: Car animates moving forward **+4 spots**, triggers an accelerating engine rev sound (`VROOOOM!`), with animated exhaust flames and speed streaks.
-  - **Wrong Answer**: Car moves backward **-1 spot**, triggers a playful cartoon skid/bonk sound, with bumper wobble and tire smoke.
+  - **Correct Answer**: Car animates moving forward **+4 spots**, triggers an accelerating Ferrari engine rev sound (`VROOOOM!`), with animated exhaust flames and speed streaks.
+  - **Wrong Answer**: Car moves backward **-1 spot**, triggers a realistic tire screech & crash impact sound, with bumper wobble and tire smoke.
   - Reaching spot 40 triggers the Grand Prix victory celebration!
 
 - **Toddler-Friendly Design**:
@@ -22,11 +23,11 @@ A child-friendly, racecar-themed flag matching single-page application (SPA) des
     - **Type B**: Country name badge with sound-out (`🗣️`) button &rarr; 3 flag choices.
   - Non-punitive spaced repetition: Missed flags are automatically re-inserted 2 steps later in the queue to build confidence.
 
-- **Audio Engine (Web Audio API)**:
-  - 100% synthesized in-browser, zero external audio asset dependencies, works offline.
-  - Realistic accelerating racecar engine rev for forward movement.
-  - Comical bumper "bonk" + tire skid for backward movement.
+- **Audio Engine (Realistic MP3s with Web Audio Fallback)**:
+  - Realistic Ferrari racing car engine roar (`./engine.mp3`) for forward acceleration.
+  - Realistic tire screech & crash impact (`./crash.mp3`) for backward movement.
   - Grand Prix Trumpet Fanfare + confetti when crossing the finish line.
+  - Built-in Web Audio synthesis fallbacks to guarantee audio reliability in all environments.
   - Optional sound toggle (`🔊` / `🔇`).
 
 - **Universal Vector Flags (26 Countries)**:
