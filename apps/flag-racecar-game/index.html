@@ -365,33 +365,21 @@
     <!-- Central Game Card -->
     <div id="game-card" class="pointer-events-auto w-full max-w-xl max-h-[88vh] sm:max-h-[82vh] bg-white/95 backdrop-blur-md rounded-3xl p-3.5 sm:p-5 shadow-2xl border-4 border-slate-900 flex flex-col justify-between items-center text-center transition-all overflow-hidden">
       
-      <!-- Top HUD: Progress Bar, Engine Sound Picker, Music & SFX Controls -->
-      <div class="w-full flex items-center justify-between gap-1.5 sm:gap-2 border-b-2 border-slate-200 pb-2 mb-2">
+      <!-- Top HUD: Flag Icon, Progress Meter Bar, Music & SFX Controls -->
+      <div class="w-full flex items-center justify-between gap-2 border-b-2 border-slate-200 pb-2 mb-2">
         
-        <!-- Lap & Spot Counter -->
-        <div class="flex items-center gap-1 sm:gap-2">
-          <span class="text-lg sm:text-2xl animate-pulse">🏎️</span>
-          <div class="text-left leading-tight">
-            <div class="text-[10px] sm:text-xs font-black text-slate-500 uppercase tracking-wider">Progress</div>
-            <div class="text-sm sm:text-lg font-black text-slate-800">
-              Spot <span id="hud-spot" class="text-emerald-600 font-black">0</span> <span class="text-slate-400 font-bold">/ 40</span>
-            </div>
-          </div>
+        <!-- Race Car Icon -->
+        <div class="flex items-center gap-1.5">
+          <span class="text-xl sm:text-2xl animate-pulse">🏎️</span>
         </div>
 
-        <!-- Mini Progress Meter Bar -->
-        <div class="flex-1 max-w-[85px] sm:max-w-[140px] md:max-w-[170px] bg-slate-200 h-3 sm:h-4 rounded-full overflow-hidden border border-slate-300 relative mx-1">
+        <!-- Progress Meter Bar (Occupies center cleanly) -->
+        <div class="flex-1 max-w-xs sm:max-w-sm bg-slate-200 h-3.5 sm:h-4 rounded-full overflow-hidden border border-slate-300 relative mx-2">
           <div id="hud-progress-fill" class="h-full bg-gradient-to-r from-amber-400 via-emerald-500 to-green-500 rounded-full transition-all duration-300 w-0"></div>
         </div>
 
         <!-- Sound & Music Action Buttons -->
-        <div class="flex items-center gap-1 sm:gap-1.5">
-          <!-- Engine Sound Selector Button -->
-          <button id="engine-select-btn" class="px-2 py-1 sm:px-2.5 sm:py-1.5 rounded-full bg-amber-100 hover:bg-amber-200 active:scale-95 text-amber-900 flex items-center gap-1 text-xs sm:text-sm font-black border-2 border-amber-300 shadow-xs transition-all" aria-label="Engine Sounds" title="Choose Engine Vroom">
-            <span>⚙️</span>
-            <span class="hidden sm:inline">Vroom</span>
-          </button>
-
+        <div class="flex items-center gap-1.5">
           <!-- Background Music Toggle Button -->
           <button id="music-btn" class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-slate-100 hover:bg-slate-200 active:scale-90 text-slate-700 flex items-center justify-center text-sm sm:text-base border-2 border-slate-300 shadow-xs transition-all" aria-label="Toggle Music" title="Background Music">
             🎵
@@ -429,39 +417,6 @@
     </div>
   </div>
 
-  <!-- ==========================================================================
-       4. ENGINE SOUND SELECTOR MODAL (Audition & Choose Vroom Options)
-       ========================================================================== -->
-  <div id="engine-modal" class="fixed inset-0 z-50 bg-slate-900/80 backdrop-blur-md flex items-center justify-center p-3 sm:p-4 hidden">
-    <div class="w-full max-w-md bg-white rounded-3xl p-4 sm:p-5 shadow-2xl border-4 border-amber-400 text-left flex flex-col max-h-[92vh] overflow-hidden">
-      <!-- Modal Header -->
-      <div class="flex items-center justify-between border-b-2 border-slate-200 pb-2.5 mb-2.5">
-        <div class="flex items-center gap-2">
-          <span class="text-2xl sm:text-3xl">🏎️</span>
-          <div>
-            <h3 class="text-base sm:text-lg font-black text-slate-800 leading-tight">Pick Your Engine Vroom!</h3>
-            <p class="text-xs font-bold text-slate-500">Tap ▶️ Listen to test, and choose your favorite.</p>
-          </div>
-        </div>
-        <button id="close-engine-modal" class="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 active:scale-90 text-slate-600 font-black text-base flex items-center justify-center border border-slate-300">
-          ✕
-        </button>
-      </div>
-
-      <!-- Engine Sound Options List -->
-      <div id="engine-options-list" class="flex-1 overflow-y-auto space-y-2 pr-1 py-1">
-        <!-- Populated dynamically by JS -->
-      </div>
-
-      <!-- Modal Footer -->
-      <div class="mt-2.5 pt-2.5 border-t-2 border-slate-100 flex items-center justify-between">
-        <span class="text-xs font-bold text-slate-400">✨ Saved automatically</span>
-        <button id="confirm-engine-btn" class="px-4 py-2 bg-emerald-500 hover:bg-emerald-600 active:scale-95 text-white font-extrabold text-xs sm:text-sm rounded-xl shadow-md border-2 border-emerald-400">
-          Ready to Race! 🏁
-        </button>
-      </div>
-    </div>
-  </div>
 
   <!-- ==========================================================================
        5. VICTORY GRAND PRIX MODAL
@@ -673,49 +628,9 @@
       return audioCtx;
     }
 
-    // 5 Engine Sound Options with Arcade/Vroom Character
-    const ENGINE_OPTIONS = [
-      {
-        id: 'sports',
-        name: 'Sports Car Vroom',
-        subtitle: 'Classic arcade racing throttle rev (crisp & punchy)',
-        file: './vroom_sports.mp3',
-        emoji: '🏎️',
-        badge: 'Recommended'
-      },
-      {
-        id: 'muscle',
-        name: 'Muscle Car Roar',
-        subtitle: 'Deep, throaty V8 engine roar',
-        file: './vroom_muscle.mp3',
-        emoji: '🏎️💨'
-      },
-      {
-        id: 'driveaway',
-        name: 'Tire Spin & Drive-Off',
-        subtitle: 'Rev + tire chirp and accelerating peel-out',
-        file: './vroom_driveaway.mp3',
-        emoji: '💨'
-      },
-      {
-        id: 'accel',
-        name: 'Turbo Zoom',
-        subtitle: 'High-speed sustained racing acceleration sweep',
-        file: './vroom_accel.mp3',
-        emoji: '⚡'
-      },
-      {
-        id: 'f1',
-        name: 'Grand Prix Flyby',
-        subtitle: 'Formula 1 high-pitch track flyby roar',
-        file: './engine.mp3',
-        emoji: '🏁'
-      }
-    ];
-
-    let currentEngineId = localStorage.getItem('flag_racer_engine_id') || 'sports';
-    let activeEngineAudio = new Audio(ENGINE_OPTIONS.find(o => o.id === currentEngineId)?.file || './vroom_sports.mp3');
-    activeEngineAudio.preload = 'auto';
+    // Forward Movement Audio: Tire Spin & Drive-Off
+    const engineAudio = new Audio('./vroom_driveaway.mp3');
+    engineAudio.preload = 'auto';
 
     // Realistic Crash / Skid Audio
     const crashAudio = new Audio('./crash.mp3');
@@ -737,124 +652,15 @@
       }
     }
 
-    // Engine Sound Switcher
-    function setEngineSound(id) {
-      const option = ENGINE_OPTIONS.find(o => o.id === id);
-      if (!option) return;
-      currentEngineId = id;
-      localStorage.setItem('flag_racer_engine_id', id);
-      activeEngineAudio.pause();
-      activeEngineAudio = new Audio(option.file);
-      activeEngineAudio.preload = 'auto';
-      renderEngineOptionsList();
-    }
-
-    // Audio Audition Preview Player
-    let auditionAudio = null;
-    let currentlyPlayingAuditionId = null;
-
-    function playAudition(option) {
-      if (auditionAudio) {
-        auditionAudio.pause();
-        auditionAudio.currentTime = 0;
-      }
-      currentlyPlayingAuditionId = option.id;
-      renderEngineOptionsList();
-
-      auditionAudio = new Audio(option.file);
-      auditionAudio.volume = 0.9;
-      auditionAudio.play().catch(() => {});
-      auditionAudio.onended = () => {
-        currentlyPlayingAuditionId = null;
-        renderEngineOptionsList();
-      };
-    }
-
-    function stopAudition() {
-      if (auditionAudio) {
-        auditionAudio.pause();
-        auditionAudio.currentTime = 0;
-      }
-      currentlyPlayingAuditionId = null;
-      renderEngineOptionsList();
-    }
-
-    // Render Engine Sound Choices inside Modal
-    function renderEngineOptionsList() {
-      const container = document.getElementById('engine-options-list');
-      if (!container) return;
-      container.innerHTML = '';
-
-      ENGINE_OPTIONS.forEach((opt) => {
-        const isSelected = opt.id === currentEngineId;
-        const isPlaying = opt.id === currentlyPlayingAuditionId;
-
-        const card = document.createElement('div');
-        card.className = `p-2.5 sm:p-3 rounded-2xl border-2 transition-all flex items-center justify-between gap-2 cursor-pointer ${
-          isSelected
-            ? 'border-emerald-500 bg-emerald-50/70 shadow-sm ring-2 ring-emerald-200'
-            : 'border-slate-200 bg-slate-50 hover:bg-slate-100'
-        }`;
-
-        card.innerHTML = `
-          <div class="flex items-center gap-2 sm:gap-2.5 min-w-0 flex-1">
-            <span class="text-xl sm:text-2xl flex-shrink-0">${opt.emoji}</span>
-            <div class="min-w-0 flex-1">
-              <div class="flex items-center gap-1.5 flex-wrap">
-                <span class="font-extrabold text-sm sm:text-base text-slate-800 leading-tight">${opt.name}</span>
-                ${opt.badge ? `<span class="px-1.5 py-0.5 rounded text-[10px] font-black bg-amber-200 text-amber-900 uppercase tracking-wider">${opt.badge}</span>` : ''}
-                ${isSelected ? `<span class="px-1.5 py-0.5 rounded text-[10px] font-black bg-emerald-500 text-white uppercase tracking-wider">Active</span>` : ''}
-              </div>
-              <p class="text-xs text-slate-500 font-bold truncate">${opt.subtitle}</p>
-            </div>
-          </div>
-
-          <div class="flex items-center gap-1.5 flex-shrink-0">
-            <button class="audition-btn px-2.5 py-1.5 rounded-xl ${isPlaying ? 'bg-amber-500 text-white animate-pulse' : 'bg-slate-200 hover:bg-slate-300 text-slate-700'} font-bold text-xs flex items-center gap-1 active:scale-95 transition-all" title="Listen to sound">
-              <span>${isPlaying ? '⏹️' : '▶️'}</span>
-              <span>${isPlaying ? 'Playing' : 'Listen'}</span>
-            </button>
-            <button class="select-btn px-2.5 py-1.5 rounded-xl ${isSelected ? 'bg-emerald-600 text-white font-black cursor-default' : 'bg-slate-800 hover:bg-slate-900 active:scale-95 text-white font-bold'} text-xs flex items-center gap-1 transition-all">
-              ${isSelected ? '✓ Chosen' : 'Select'}
-            </button>
-          </div>
-        `;
-
-        const auditionBtn = card.querySelector('.audition-btn');
-        auditionBtn.onclick = (e) => {
-          e.stopPropagation();
-          if (isPlaying) {
-            stopAudition();
-          } else {
-            playAudition(opt);
-          }
-        };
-
-        const selectBtn = card.querySelector('.select-btn');
-        selectBtn.onclick = (e) => {
-          e.stopPropagation();
-          setEngineSound(opt.id);
-          playAudition(opt);
-        };
-
-        card.onclick = () => {
-          setEngineSound(opt.id);
-          playAudition(opt);
-        };
-
-        container.appendChild(card);
-      });
-    }
-
-    // Racing Engine Rev: VROOOOM! (+4 spots forward)
+    // Racing Engine Rev: Tire Spin & Drive-Off! (+4 spots forward)
     function playEngineRev() {
       if (!soundEnabled) return;
       try {
         crashAudio.pause();
         crashAudio.currentTime = 0;
-        activeEngineAudio.currentTime = 0;
-        activeEngineAudio.volume = 0.92;
-        const p = activeEngineAudio.play();
+        engineAudio.currentTime = 0;
+        engineAudio.volume = 0.92;
+        const p = engineAudio.play();
         if (p && p.catch) {
           p.catch(() => playEngineSynthFallback());
         }
@@ -905,7 +711,7 @@
     function playCrashSound() {
       if (!soundEnabled) return;
       try {
-        if (activeEngineAudio) activeEngineAudio.pause();
+        if (engineAudio) engineAudio.pause();
         crashAudio.currentTime = 0;
         crashAudio.volume = 0.9;
         const p = crashAudio.play();
@@ -997,7 +803,6 @@
     const carFlames = document.getElementById('car-flames');
     const carSpeedStreak = document.getElementById('car-speed-streak');
     const carSkidSmoke = document.getElementById('car-skid-smoke');
-    const hudSpot = document.getElementById('hud-spot');
     const hudProgressFill = document.getElementById('hud-progress-fill');
 
     function updateTrackGeometry() {
@@ -1106,8 +911,7 @@
       // Shared SVG coordinate space guarantees 100% pixel-perfect centering on centerline
       raceCarGroup.setAttribute('transform', `translate(${pCenter.x}, ${pCenter.y}) rotate(${angleDeg})`);
       
-      // Update HUD text & bar
-      hudSpot.textContent = Math.min(TOTAL_SPOTS, Math.round(spotValue));
+      // Update HUD bar
       const percent = Math.min(100, Math.round((spotValue / TOTAL_SPOTS) * 100));
       hudProgressFill.style.width = `${percent}%`;
     }
@@ -1266,7 +1070,7 @@
 
       } else {
         // TYPE B: Name prompt -> 3 Flag Buttons
-        promptLabel.textContent = 'Find the flag for:';
+        promptLabel.textContent = '';
         promptContent.innerHTML = `
           <div class="inline-flex items-center gap-2 bg-emerald-100 border-2 border-emerald-400 text-emerald-950 px-4 py-1.5 rounded-2xl shadow-sm">
             <span class="text-xl sm:text-2xl font-black tracking-wide">${q.target.name}</span>
@@ -1398,13 +1202,13 @@
       const w = window.innerWidth;
       const h = window.innerHeight;
       createFireworkBurst(w * 0.16, h * 0.82); // near finish line
-      setTimeout(() => createFireworkBurst(w * 0.35, h * 0.22), 250);
-      setTimeout(() => createFireworkBurst(w * 0.82, h * 0.28), 500);
-      setTimeout(() => createFireworkBurst(w * 0.80, h * 0.72), 750);
-      setTimeout(() => createFireworkBurst(w * 0.50, h * 0.40), 1000);
+      setTimeout(() => createFireworkBurst(w * 0.35, h * 0.22), 500);
+      setTimeout(() => createFireworkBurst(w * 0.82, h * 0.28), 1000);
+      setTimeout(() => createFireworkBurst(w * 0.80, h * 0.72), 1500);
+      setTimeout(() => createFireworkBurst(w * 0.50, h * 0.40), 2000);
 
-      // 6. Victory Lap Sprint: Car blasts across checkered finish line and past start!
-      animateCarTo(44, 1350, true, () => {
+      // 6. Victory Lap Sprint: Car blasts across checkered finish line and past start (doubled duration)
+      animateCarTo(46, 2700, true, () => {
         setTimeout(() => {
           if (finishBanner) {
             finishBanner.classList.remove('scale-100');
@@ -1413,7 +1217,7 @@
           if (gantry) gantry.classList.remove('gantry-celebrate');
           
           triggerWinModal();
-        }, 350);
+        }, 400);
       });
     }
 
@@ -1468,14 +1272,10 @@
     }
 
     /* ==========================================================================
-       H. RESIZE OBSERVER & MODAL / AUDIO CONTROLS
+       H. RESIZE OBSERVER & AUDIO CONTROLS
        ========================================================================== */
     const soundBtn = document.getElementById('sound-btn');
     const musicBtn = document.getElementById('music-btn');
-    const engineSelectBtn = document.getElementById('engine-select-btn');
-    const engineModal = document.getElementById('engine-modal');
-    const closeEngineModalBtn = document.getElementById('close-engine-modal');
-    const confirmEngineBtn = document.getElementById('confirm-engine-btn');
 
     function updateSoundUi() {
       if (soundBtn) {
@@ -1496,10 +1296,9 @@
       localStorage.setItem('flag_racer_sfx_enabled', soundEnabled ? 'true' : 'false');
       updateSoundUi();
       if (!soundEnabled) {
-        if (activeEngineAudio) activeEngineAudio.pause();
+        if (engineAudio) engineAudio.pause();
         if (crashAudio) crashAudio.pause();
         if (cheerAudio) cheerAudio.pause();
-        if (auditionAudio) auditionAudio.pause();
         bgmAudio.pause();
       } else {
         if (musicEnabled) bgmAudio.play().catch(() => {});
@@ -1516,20 +1315,6 @@
         bgmAudio.pause();
       }
     });
-
-    engineSelectBtn?.addEventListener('click', () => {
-      stopAudition();
-      renderEngineOptionsList();
-      engineModal.classList.remove('hidden');
-    });
-
-    function closeEngineModal() {
-      stopAudition();
-      engineModal.classList.add('hidden');
-    }
-
-    closeEngineModalBtn?.addEventListener('click', closeEngineModal);
-    confirmEngineBtn?.addEventListener('click', closeEngineModal);
 
     document.getElementById('play-again-btn').addEventListener('click', () => {
       initGame();
