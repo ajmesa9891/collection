@@ -6390,162 +6390,6 @@
         "sourceUrl":  "https://www.youtube.com/@JalalSamFit"
     },
     {
-        "id":  "culinary-backlog-todo",
-        "title":  "Culinary Backlog \u0026 Wishlist (TODO)",
-        "category":  "Staples",
-        "status":  "want-to-try",
-        "rating":  "unrated",
-        "yield":  "30+ Ideas to Test \u0026 Refine",
-        "prepTime":  "Ongoing",
-        "cookTime":  "Ongoing",
-        "temp":  "Various",
-        "tags":  [
-                     "Backlog",
-                     "Ideas",
-                     "Want to Try",
-                     "TODO"
-                 ],
-        "macros":  null,
-        "ingredients":  [
-                            {
-                                "item":  "--- 🥩 MEATS, SKILLETS \u0026 SLOW COOKER ---",
-                                "amount":  ""
-                            },
-                            {
-                                "item":  "Carnitas (slow cooked pork shoulder with citrus, Mexican oregano \u0026 lard/broth)",
-                                "amount":  "Backlog"
-                            },
-                            {
-                                "item":  "Velvetted Steak Stir Fry (baking soda tenderizing technique)",
-                                "amount":  "Backlog"
-                            },
-                            {
-                                "item":  "Loaded Potatoes + Chicken + High-Protein Sauce",
-                                "amount":  "Backlog"
-                            },
-                            {
-                                "item":  "Round Steak Pressure Cooker with Tomato Paste",
-                                "amount":  "Backlog"
-                            },
-                            {
-                                "item":  "Ropa Vieja (shredded flank steak with bell peppers, olives \u0026 tomato cumin broth)",
-                                "amount":  "Backlog"
-                            },
-                            {
-                                "item":  "--- 🍲 STEWS, SOUPS \u0026 CALDOS ---",
-                                "amount":  ""
-                            },
-                            {
-                                "item":  "Caldos Latinos with Meats (hearty Latin beef or chicken caldo with corn \u0026 yucca)",
-                                "amount":  "Backlog"
-                            },
-                            {
-                                "item":  "Quick Bean Curry (coconut milk, garbanzo, spinach \u0026 curry spices)",
-                                "amount":  "Backlog"
-                            },
-                            {
-                                "item":  "Classic Chili (ground beef, black/kidney beans, smoked chiles)",
-                                "amount":  "Backlog"
-                            },
-                            {
-                                "item":  "Classic Minestrone (cannellini beans, pasta, zucchini, rich tomato broth)",
-                                "amount":  "Backlog"
-                            },
-                            {
-                                "item":  "Roasted Tomato Soup (blended oven-roasted plum tomatoes \u0026 basil)",
-                                "amount":  "Backlog"
-                            },
-                            {
-                                "item":  "Blended Broccoli Soup (blended steamed broccoli, potato \u0026 nutritional yeast)",
-                                "amount":  "Backlog"
-                            },
-                            {
-                                "item":  "--- 🥘 BAKES \u0026 CASSEROLES ---",
-                                "amount":  ""
-                            },
-                            {
-                                "item":  "Baked Feta Pasta (cherry tomatoes, block of feta, garlic \u0026 olive oil)",
-                                "amount":  "Backlog"
-                            },
-                            {
-                                "item":  "Asian Glazed Salmon + Green Beans + Onions Bake",
-                                "amount":  "Backlog"
-                            },
-                            {
-                                "item":  "Asian Meatballs + Green Beans + Onions",
-                                "amount":  "Backlog"
-                            },
-                            {
-                                "item":  "Ratatouille (eggplant, zucchini, tomato layers + add chicken or chickpeas for protein)",
-                                "amount":  "Backlog"
-                            },
-                            {
-                                "item":  "--- 🥞 BREAKFAST \u0026 SANDWICHES ---",
-                                "amount":  ""
-                            },
-                            {
-                                "item":  "Savory Veggie Pancakes (Korean pajeon / zucchini fritter style)",
-                                "amount":  "Backlog"
-                            },
-                            {
-                                "item":  "High-Protein Fluffy Pancakes (cottage cheese or Greek yogurt batter)",
-                                "amount":  "Backlog"
-                            },
-                            {
-                                "item":  "Tuna Salad / Chickpea Salad Sandwich (mashed chickpeas, mustard, celery)",
-                                "amount":  "Backlog"
-                            },
-                            {
-                                "item":  "Lentil Burgers (cooked brown lentils, flax, walnuts \u0026 spices)",
-                                "amount":  "Backlog"
-                            },
-                            {
-                                "item":  "High-Protein PB\u0026J (peanut powder or protein boost)",
-                                "amount":  "Backlog"
-                            },
-                            {
-                                "item":  "--- 🥢 TOFU \u0026 PLANT-BASED IDEAS ---",
-                                "amount":  ""
-                            },
-                            {
-                                "item":  "Silken Tofu Ranch Dressing",
-                                "amount":  "Backlog"
-                            },
-                            {
-                                "item":  "Crispy Tofu Crumbles (baked seasoned crumbles for salads \u0026 tacos)",
-                                "amount":  "Backlog"
-                            },
-                            {
-                                "item":  "Thai Curry Paste Stir Fry Dish",
-                                "amount":  "Backlog"
-                            },
-                            {
-                                "item":  "--- 🫙 SAUCES \u0026 DRESSINGS ---",
-                                "amount":  ""
-                            },
-                            {
-                                "item":  "Pomegranate Molasses Master Marinade",
-                                "amount":  "Backlog"
-                            },
-                            {
-                                "item":  "Healthy Peanut Stir Fry Sauce",
-                                "amount":  "Backlog"
-                            },
-                            {
-                                "item":  "Dr. Fuhrman Oil-Free Dressings Collection",
-                                "amount":  "Backlog"
-                            }
-                        ],
-        "conciseInstructions":  [
-                                    "1. Active Family Backlog: This single card contains all the placeholder titles and recipe notes collected over the years that haven\u0027t been tested with exact measurements yet.",
-                                    "2. When you want to cook or flesh out one of these: Just ask me in chat (e.g. \u0027Let\u0027s write up the Carnitas\u0027 or \u0027Let\u0027s make the Savory Veggie Pancakes recipe\u0027).",
-                                    "3. I will generate the concise ingredient weights, temperatures, baker\u0027s percentages, and bulleted technique steps, and graduate it from this TODO list into its own dedicated card!",
-                                    "4. You can search any keyword above (e.g., \u0027Carnitas\u0027, \u0027Velvetted\u0027, \u0027Ratatouille\u0027) in the search bar and this card will appear immediately."
-                                ],
-        "notes":  "Consolidates all ~30 placeholder titles from your Google Doc into a single organized wishlist so your app remains clean and clutter-free.",
-        "sourceUrl":  null
-    },
-    {
         "id":  "elsies-chocolate-chip-cookies",
         "title":  "Elsie\u0027s Brown Butter Chocolate Chip Cookies",
         "category":  "Baking \u0026 Doughs",
@@ -8334,6 +8178,1895 @@
                                     "Emulsify \u0026 Flavor: Add vanilla extract. Whip on medium until smooth, velvety, and fluffy (if soupy, chill 15 min and re-whip; if curdled, keep whipping until emulsion breaks through)."
                                 ],
         "notes":  "Unlike American buttercream, Swiss Meringue is not cloying, never crusts, and pipes with a mirror-smooth finish. Can be refrigerated 2 weeks or frozen 3 months.",
+        "sourceUrl":  null
+    },
+    {
+        "id":  "crispy-pork-carnitas",
+        "title":  "Authentic Crispy Mexican Pork Carnitas",
+        "category":  "Slow Cooker \u0026 Meats",
+        "status":  "want-to-try",
+        "rating":  "unrated",
+        "yield":  "6–8 servings",
+        "prepTime":  "15m",
+        "cookTime":  "4h high / 8h low (or 45m Instant Pot)",
+        "temp":  "450°F (230°C) Oven Broil",
+        "tags":  [
+                     "Slow Cooker",
+                     "Mexican",
+                     "Pork",
+                     "High-Protein",
+                     "Meal Prep"
+                 ],
+        "macros":  null,
+        "ingredients":  [
+                            {
+                                "item":  "Boneless pork shoulder / pork butt (cut into 2-inch chunks)",
+                                "amount":  "4 lbs (1.8kg)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Kosher salt",
+                                "amount":  "1 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Black pepper",
+                                "amount":  "1 tsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Dried Mexican oregano",
+                                "amount":  "1 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Ground cumin",
+                                "amount":  "1 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Yellow onion (quartered)",
+                                "amount":  "1 medium",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Garlic cloves (smashed)",
+                                "amount":  "6 cloves",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Juicy orange (juiced, spent halves included in pot)",
+                                "amount":  "1 large",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Fresh lime juice",
+                                "amount":  "2 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Bay leaves",
+                                "amount":  "3 leaves",
+                                "ratio":  null
+                            }
+                        ],
+        "conciseInstructions":  [
+                                    "Season: Toss pork chunks with kosher salt, pepper, oregano, and cumin directly in slow cooker or Instant Pot.",
+                                    "Aromatics: Add quartered onion, garlic cloves, bay leaves, lime juice, orange juice, and both spent orange halves.",
+                                    "Slow Cook: Cover and cook on LOW for 8 hours or HIGH for 4–5 hours (or Instant Pot High Pressure 45 min + 15 min natural release) until fork-shreddable.",
+                                    "Shred: Remove pork chunks with slotted spoon onto rimmed baking sheet. Discard orange peels and bay leaves. Shred meat into bite-sized pieces with two forks.",
+                                    "Crisp (Crucial Step): Ladle 1/2 cup of reserved pot juices over shredded meat. Broil on top rack at 450°F (230°C) for 5–7 min until edges are deep golden and crackly-crisp.",
+                                    "Serve: Toss with a splash more warm cooking juice; serve in warm tortillas with cilantro, lime, and diced onion."
+                                ],
+        "notes":  "Broiling shredded pork with its own citrus-lard cooking juices delivers authentic taqueria crackly edges and juicy centers.",
+        "sourceUrl":  null
+    },
+    {
+        "id":  "velvetted-beef-broccoli",
+        "title":  "15-Minute Velvetted Beef and Broccoli Stir-Fry",
+        "category":  "Grill \u0026 Meats",
+        "status":  "want-to-try",
+        "rating":  "unrated",
+        "yield":  "4 servings",
+        "prepTime":  "15m",
+        "cookTime":  "8m",
+        "temp":  "High-Heat Wok / Skillet",
+        "tags":  [
+                     "Quick Dinners",
+                     "Beef",
+                     "High-Protein",
+                     "Stir-Fry",
+                     "Chinese Technique"
+                 ],
+        "macros":  null,
+        "ingredients":  [
+                            {
+                                "item":  "Flank steak or sirloin (thinly sliced across the grain)",
+                                "amount":  "1 lb (450g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Baking soda (velvet tenderizer)",
+                                "amount":  "3/4 tsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Soy sauce (for marinade)",
+                                "amount":  "1 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Cornstarch",
+                                "amount":  "1 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Shaoxing wine or dry sherry",
+                                "amount":  "1 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Fresh broccoli florets",
+                                "amount":  "4 cups",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Garlic (minced)",
+                                "amount":  "3 cloves",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Fresh ginger (grated)",
+                                "amount":  "1 tsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Neutral cooking oil (avocado or peanut)",
+                                "amount":  "2 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "--- SAVORY STIR-FRY SAUCE ---",
+                                "amount":  "",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Low-sodium soy sauce",
+                                "amount":  "1/4 cup",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Oyster sauce",
+                                "amount":  "2 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Brown sugar or honey",
+                                "amount":  "1 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Low-sodium beef or chicken broth",
+                                "amount":  "1/2 cup",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Toasted sesame oil",
+                                "amount":  "1 tsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Cornstarch",
+                                "amount":  "1 tbsp",
+                                "ratio":  null
+                            }
+                        ],
+        "conciseInstructions":  [
+                                    "Velvet Beef: Toss sliced steak with 3/4 tsp baking soda and 1 tbsp water. Rest 15 min at room temp, then thoroughly rinse under cold water in colander and pat dry.",
+                                    "Marinate: Toss velvetted steak with 1 tbsp soy sauce, 1 tbsp cornstarch, and 1 tbsp wine.",
+                                    "Sauce: Whisk soy sauce, oyster sauce, brown sugar, broth, sesame oil, and 1 tbsp cornstarch in small bowl.",
+                                    "Blanch Broccoli: Boil broccoli in salted water 60 seconds until bright green; drain.",
+                                    "Sear Beef: Heat 2 tbsp oil in wok over high heat until smoking. Spread beef in single layer; sear undisturbed 90 sec until browned, flip and cook 60 sec more. Transfer to plate.",
+                                    "Sauce \u0026 Combine: Add garlic and ginger to hot wok for 20 sec. Pour in sauce; simmer 1 min until glossy and thick. Toss in seared beef and broccoli to coat. Serve immediately over rice."
+                                ],
+        "notes":  "The 15-minute baking soda velveting step breaks down surface meat fibers, creating takeout-tender beef from affordable cuts.",
+        "sourceUrl":  null
+    },
+    {
+        "id":  "loaded-chicken-potatoes-protein-sauce",
+        "title":  "Loaded Crispy Potatoes \u0026 Chicken with High-Protein Cheddar Sauce",
+        "category":  "Bakes \u0026 Sheet Pan",
+        "status":  "want-to-try",
+        "rating":  "unrated",
+        "yield":  "4 meal prep bowls",
+        "prepTime":  "15m",
+        "cookTime":  "25m",
+        "temp":  "400°F (200°C) Oven / Air Fryer",
+        "tags":  [
+                     "High-Protein",
+                     "Meal Prep",
+                     "Macros Tracked",
+                     "Chicken",
+                     "Potatoes"
+                 ],
+        "macros":  {
+                       "perServing":  "490 kcal | 52g Protein | 44g Carbs | 11g Fat (per bowl)"
+                   },
+        "ingredients":  [
+                            {
+                                "item":  "Boneless skinless chicken breasts (diced bite-sized)",
+                                "amount":  "1.5 lbs (680g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Yukon gold potatoes (diced 1/2-inch cubes)",
+                                "amount":  "1.5 lbs (680g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Olive oil",
+                                "amount":  "1 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Seasoning: Smoked paprika, garlic powder, onion powder, salt, pepper",
+                                "amount":  "1 tsp each",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "--- HIGH-PROTEIN CHEDDAR SAUCE ---",
+                                "amount":  "",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Low-fat 2% cottage cheese (or plain Greek yogurt)",
+                                "amount":  "1 cup (225g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Sharp cheddar cheese (finely shredded)",
+                                "amount":  "1/2 cup (60g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Nutritional yeast",
+                                "amount":  "2 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Unsweetened almond milk or skim milk",
+                                "amount":  "1/4 cup",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Garlic powder \u0026 pinch of salt",
+                                "amount":  "1/2 tsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "--- TOPPINGS ---",
+                                "amount":  "",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Cooked turkey bacon (crumbled)",
+                                "amount":  "4 slices",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Scallions (thinly sliced)",
+                                "amount":  "3 green onions",
+                                "ratio":  null
+                            }
+                        ],
+        "conciseInstructions":  [
+                                    "Roast Potatoes: Toss diced potatoes with 2 tsp olive oil and seasonings. Roast at 400°F (200°C) on parchment sheet for 22–25 min until crisp and golden.",
+                                    "Sear Chicken: Toss diced chicken with remaining seasonings and 1 tsp oil. Sear in skillet over medium-high heat 6–8 min until golden brown and cooked to 165°F.",
+                                    "Blender Cheese Sauce: Blend cottage cheese, shredded cheddar, nutritional yeast, milk, garlic powder, and salt in high-speed blender 60 sec until completely smooth. Microwave 30–45 sec to warm gently.",
+                                    "Assemble: Divide crispy potatoes and seared chicken into 4 bowls. Drizzle with warm high-protein cheese sauce and garnish with bacon and scallions."
+                                ],
+        "notes":  "Blending cottage cheese produces a smooth, decadent cheese sauce with 52g protein per bowl and zero roux.",
+        "sourceUrl":  null
+    },
+    {
+        "id":  "instant-pot-round-steak-creole",
+        "title":  "Instant Pot Tender Round Steak with Tomato Creole Gravy",
+        "category":  "Slow Cooker \u0026 Meats",
+        "status":  "want-to-try",
+        "rating":  "unrated",
+        "yield":  "5–6 servings",
+        "prepTime":  "15m",
+        "cookTime":  "35m Pressure Cook",
+        "temp":  "High Pressure (Instant Pot)",
+        "tags":  [
+                     "Instant Pot",
+                     "Beef",
+                     "High-Protein",
+                     "Comfort Food"
+                 ],
+        "macros":  null,
+        "ingredients":  [
+                            {
+                                "item":  "Top round or bottom round steak (cut into 3-inch portions)",
+                                "amount":  "2 lbs (900g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "All-purpose flour (for dusting)",
+                                "amount":  "1/4 cup",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Kosher salt \u0026 black pepper",
+                                "amount":  "1 tsp salt, 1/2 tsp pepper",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Olive oil",
+                                "amount":  "2 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Yellow onion (sliced)",
+                                "amount":  "1 large",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Green bell pepper (sliced)",
+                                "amount":  "1 pepper",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Garlic (minced)",
+                                "amount":  "4 cloves",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Tomato paste",
+                                "amount":  "3 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Fire-roasted diced tomatoes",
+                                "amount":  "1 can (14.5 oz / 400g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Low-sodium beef broth",
+                                "amount":  "1 cup",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Worcestershire sauce",
+                                "amount":  "1 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Dried oregano \u0026 thyme",
+                                "amount":  "1 tsp each",
+                                "ratio":  null
+                            }
+                        ],
+        "conciseInstructions":  [
+                                    "Dredge \u0026 Sear: Season steak portions with salt and pepper, dust lightly with flour. In Instant Pot on SAUTE high, sear in olive oil 2–3 min per side until browned. Transfer to plate.",
+                                    "Sauté Aromatics: Sauté sliced onions and bell peppers 3 min. Add garlic and tomato paste; cook 1 min until tomato paste turns deep rust color.",
+                                    "Deglaze: Pour in beef broth, scraping all browned fond off pot bottom. Stir in diced tomatoes, Worcestershire, oregano, and thyme.",
+                                    "Pressure Cook: Nest steaks into tomato gravy. Seal lid; cook on HIGH PRESSURE for 35 min + 15 min natural release.",
+                                    "Serve: Steaks will be fork-tender. Taste gravy and adjust salt. Serve over creamy mashed potatoes, rice, or buttered noodles."
+                                ],
+        "notes":  "Lean round steak transforms into succulent, tender beef when braised under pressure with caramelized tomato paste and peppers.",
+        "sourceUrl":  null
+    },
+    {
+        "id":  "classic-cuban-ropa-vieja",
+        "title":  "Classic Cuban Ropa Vieja (Shredded Flank Steak Stew)",
+        "category":  "Stews \u0026 Skillets",
+        "status":  "want-to-try",
+        "rating":  "unrated",
+        "yield":  "6 servings",
+        "prepTime":  "20m",
+        "cookTime":  "50m Pressure Cook (or 3h Stovetop)",
+        "temp":  "High Pressure / Stovetop Simmer",
+        "tags":  [
+                     "Cuban Classic",
+                     "Beef",
+                     "Latin",
+                     "Meal Prep",
+                     "High-Protein"
+                 ],
+        "macros":  null,
+        "ingredients":  [
+                            {
+                                "item":  "Beef flank steak or chuck roast (cut with grain into large pieces)",
+                                "amount":  "2.5 lbs (1.1kg)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Ground cumin \u0026 dried oregano",
+                                "amount":  "1 tbsp each",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Smoked paprika, salt, pepper",
+                                "amount":  "1 tsp each",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Olive oil",
+                                "amount":  "2 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Yellow onion (thinly sliced)",
+                                "amount":  "1 large",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Red and green bell peppers (thinly sliced)",
+                                "amount":  "1 of each",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Garlic (minced)",
+                                "amount":  "5 cloves",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Dry white wine or dry sherry",
+                                "amount":  "1/2 cup",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Crushed tomatoes",
+                                "amount":  "1 can (14 oz / 400g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Tomato paste",
+                                "amount":  "1/4 cup",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Low-sodium beef broth",
+                                "amount":  "1 cup",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Spanish manzanilla olives with pimentos (halved)",
+                                "amount":  "1/3 cup",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Capers (drained) \u0026 bay leaves",
+                                "amount":  "1 tbsp capers, 2 bay leaves",
+                                "ratio":  null
+                            }
+                        ],
+        "conciseInstructions":  [
+                                    "Sear Meat: Rub beef with salt, pepper, cumin, and oregano. Sear in oil on high in Instant Pot or Dutch oven until browned (3 min/side). Remove.",
+                                    "Sofrito: Sauté sliced onions and peppers 5 min. Add garlic and cook 1 min. Deglaze with white wine, simmering 2 min.",
+                                    "Combine: Stir in crushed tomatoes, tomato paste, beef broth, smoked paprika, and bay leaves. Submerge beef.",
+                                    "Cook: Instant Pot: HIGH PRESSURE 50 min + 15 min natural release. (Or Dutch oven: Simmer covered on low 2.5–3 hours).",
+                                    "Shred: Transfer beef to board, shred with two forks along grain into long threads. Return beef to sauce, add halved olives and capers.",
+                                    "Reduce: Simmer uncovered 10–12 min until sauce is thick and coats the beef threads. Serve with white rice and black beans."
+                                ],
+        "notes":  "Cutting the flank steak with the grain before braising produces the authentic long, tender shreds that define Cuban Ropa Vieja.",
+        "sourceUrl":  null
+    },
+    {
+        "id":  "caldo-de-pollo-latino",
+        "title":  "Hearty Caldo de Pollo Latino (Chicken, Corn \u0026 Veggie Soup)",
+        "category":  "Soups \u0026 Ramen",
+        "status":  "want-to-try",
+        "rating":  "unrated",
+        "yield":  "6–8 generous bowls",
+        "prepTime":  "20m",
+        "cookTime":  "40m",
+        "temp":  "Medium Stovetop Simmer",
+        "tags":  [
+                     "Latin",
+                     "Soup",
+                     "Chicken",
+                     "Comfort Food",
+                     "Whole Foods"
+                 ],
+        "macros":  null,
+        "ingredients":  [
+                            {
+                                "item":  "Bone-in, skinless chicken thighs or breasts",
+                                "amount":  "2 lbs (900g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Water or low-sodium chicken broth",
+                                "amount":  "8 cups",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Yellow onion (quartered) \u0026 smashed garlic",
+                                "amount":  "1 onion, 4 garlic cloves",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Fresh sweet corn (cut into 2-inch rounds)",
+                                "amount":  "2 ears",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Carrots (cut into 1-inch chunks)",
+                                "amount":  "2 large",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Potatoes or yuca (diced 1.5-inch cubes)",
+                                "amount":  "2 medium",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Zucchini or calabacitas (sliced half-moons)",
+                                "amount":  "2 medium",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Fresh cilantro (tied bundle)",
+                                "amount":  "1 large bunch",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Kosher salt \u0026 ground cumin",
+                                "amount":  "1 tbsp salt, 1 tsp cumin",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Lime wedges \u0026 diced avocado",
+                                "amount":  "For serving",
+                                "ratio":  null
+                            }
+                        ],
+        "conciseInstructions":  [
+                                    "Base Broth: In soup pot, combine chicken, water/broth, quartered onion, garlic, cumin, and salt. Bring to boil, skim foam, simmer gently 20 min.",
+                                    "Root Veggies \u0026 Corn: Add corn rounds, carrots, potatoes/yuca, and cilantro bundle. Simmer covered 15 min until potatoes are tender.",
+                                    "Zucchini: Add zucchini; simmer 5 min until tender-crisp.",
+                                    "Shred Chicken: Remove chicken, shred meat off bones into hearty pieces, return to pot. Discard cilantro bundle and onion quarters.",
+                                    "Serve: Ladle steaming broth with a piece of corn, potato, carrots, and chicken into large bowls. Top with fresh lime juice and avocado."
+                                ],
+        "notes":  "Simmering bone-in chicken thighs with sweet corn on the cob gives this Latin caldo a naturally golden, savory-sweet broth.",
+        "sourceUrl":  null
+    },
+    {
+        "id":  "quick-chickpea-coconut-curry",
+        "title":  "20-Minute Creamy Chickpea \u0026 Spinach Coconut Curry",
+        "category":  "Tofu \u0026 Plant-Based",
+        "status":  "want-to-try",
+        "rating":  "unrated",
+        "yield":  "4 servings",
+        "prepTime":  "5m",
+        "cookTime":  "15m",
+        "temp":  "Medium Skillet Heat",
+        "tags":  [
+                     "Quick Dinners",
+                     "Plant-Based",
+                     "Curry",
+                     "One-Pot",
+                     "Vegan"
+                 ],
+        "macros":  null,
+        "ingredients":  [
+                            {
+                                "item":  "Chickpeas (rinsed and drained)",
+                                "amount":  "2 cans (15 oz / 425g each)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Full-fat canned coconut milk",
+                                "amount":  "1 can (13.5 oz / 400ml)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Fire-roasted diced tomatoes",
+                                "amount":  "1 can (14.5 oz / 400g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Yellow onion (diced)",
+                                "amount":  "1 medium",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Garlic (minced) \u0026 fresh ginger (grated)",
+                                "amount":  "3 cloves garlic, 1 tbsp ginger",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Coconut oil or olive oil",
+                                "amount":  "1 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Yellow curry powder",
+                                "amount":  "1.5 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Ground cumin, turmeric, salt",
+                                "amount":  "1 tsp cumin, 1/2 tsp turmeric, 1 tsp salt",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Fresh baby spinach",
+                                "amount":  "3 cups",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Fresh lime juice \u0026 cilantro",
+                                "amount":  "1 tbsp lime, 1/4 cup cilantro",
+                                "ratio":  null
+                            }
+                        ],
+        "conciseInstructions":  [
+                                    "Sauté Aromatics: Heat oil in deep skillet over medium heat. Sauté onion 4 min. Add garlic and ginger; cook 60 sec.",
+                                    "Toast Spices: Stir in curry powder, cumin, turmeric, and salt for 30 sec until aromatic.",
+                                    "Simmer: Add diced tomatoes with juice, coconut milk, and drained chickpeas. Bring to gentle simmer; cook 10 min until sauce thickens.",
+                                    "Spinach \u0026 Lime: Stir in fresh baby spinach in batches until wilted (2 min). Stir in lime juice and remove from heat.",
+                                    "Serve: Spoon over warm basmati rice or serve with garlic naan."
+                                ],
+        "notes":  "Full-fat coconut milk paired with toasted curry spices creates rich, velvety curry sauce in under 20 minutes.",
+        "sourceUrl":  null
+    },
+    {
+        "id":  "classic-beef-three-bean-chili",
+        "title":  "Classic Weeknight Beef \u0026 Black Bean Chili",
+        "category":  "Stews \u0026 Skillets",
+        "status":  "want-to-try",
+        "rating":  "unrated",
+        "yield":  "6–8 servings",
+        "prepTime":  "15m",
+        "cookTime":  "30m",
+        "temp":  "Medium Stovetop Simmer",
+        "tags":  [
+                     "Beef",
+                     "High-Protein",
+                     "Chili",
+                     "One-Pot",
+                     "Family Staple"
+                 ],
+        "macros":  null,
+        "ingredients":  [
+                            {
+                                "item":  "Lean ground beef (90/10)",
+                                "amount":  "1.5 lbs (680g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Yellow onion (diced) \u0026 red bell pepper (diced)",
+                                "amount":  "1 onion, 1 bell pepper",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Garlic (minced)",
+                                "amount":  "4 cloves",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Black beans (rinsed and drained)",
+                                "amount":  "1 can (15 oz / 425g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Dark red kidney beans (rinsed and drained)",
+                                "amount":  "1 can (15 oz / 425g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Crushed tomatoes",
+                                "amount":  "1 can (28 oz / 800g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Tomato paste",
+                                "amount":  "2 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Low-sodium beef broth",
+                                "amount":  "1 cup",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Chili powder, cumin, smoked paprika",
+                                "amount":  "2.5 tbsp chili, 1 tbsp cumin, 1 tsp paprika",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Dried oregano, salt, pepper, brown sugar",
+                                "amount":  "1 tsp each",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Apple cider vinegar (finishing acid)",
+                                "amount":  "1 tbsp",
+                                "ratio":  null
+                            }
+                        ],
+        "conciseInstructions":  [
+                                    "Brown Meat: In large pot over medium-high heat, brown ground beef 6 min, breaking into crumbles. Drain excess grease.",
+                                    "Aromatics: Add onion and red bell pepper; cook 4 min until tender. Stir in garlic and tomato paste; cook 1 min.",
+                                    "Spices \u0026 Simmer: Stir in chili powder, cumin, paprika, oregano, salt, pepper, and brown sugar. Add crushed tomatoes, beef broth, black beans, and kidney beans.",
+                                    "Simmer: Bring to gentle bubble, cover partially, and simmer on low for 20–25 min until thick and rich.",
+                                    "Finish: Stir in 1 tbsp apple cider vinegar to brighten flavor. Serve with shredded cheddar, sour cream, and jalapeños."
+                                ],
+        "notes":  "A splash of apple cider vinegar right at the end cuts through the rich spices and lifts the whole pot.",
+        "sourceUrl":  null
+    },
+    {
+        "id":  "classic-tuscan-minestrone",
+        "title":  "Classic Tuscan Vegetable \u0026 White Bean Minestrone",
+        "category":  "Soups \u0026 Ramen",
+        "status":  "want-to-try",
+        "rating":  "unrated",
+        "yield":  "6–8 servings",
+        "prepTime":  "15m",
+        "cookTime":  "25m",
+        "temp":  "Medium Stovetop Simmer",
+        "tags":  [
+                     "Italian Classic",
+                     "Soup",
+                     "Plant-Based Option",
+                     "One-Pot"
+                 ],
+        "macros":  null,
+        "ingredients":  [
+                            {
+                                "item":  "Olive oil",
+                                "amount":  "2 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Soffritto: Sweet onion, carrots, celery (diced)",
+                                "amount":  "1 onion, 2 carrots, 2 celery ribs",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Garlic (minced)",
+                                "amount":  "3 cloves",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Zucchini (diced)",
+                                "amount":  "1 medium",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Cannellini or Great Northern beans (drained)",
+                                "amount":  "1 can (15 oz / 425g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Canned crushed Italian tomatoes",
+                                "amount":  "1 can (28 oz / 800g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Low-sodium vegetable or chicken broth",
+                                "amount":  "6 cups",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Parmesan cheese rind (optional umami booster)",
+                                "amount":  "1 piece",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Ditalini or small shell pasta",
+                                "amount":  "1 cup",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Chopped fresh kale or baby spinach",
+                                "amount":  "2 cups",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Dried oregano, dried basil, salt, pepper",
+                                "amount":  "1 tsp each",
+                                "ratio":  null
+                            }
+                        ],
+        "conciseInstructions":  [
+                                    "Soffritto: Sauté onion, carrots, and celery in olive oil over medium heat 6 min until tender. Add garlic; cook 1 min.",
+                                    "Broth \u0026 Simmer: Add crushed tomatoes, broth, cannellini beans, oregano, basil, salt, pepper, and Parmesan rind. Bring to boil, simmer 15 min.",
+                                    "Pasta \u0026 Zucchini: Add diced zucchini and dry ditalini pasta; simmer uncovered 8–10 min until pasta is al dente.",
+                                    "Greens: Discard Parmesan rind. Stir in chopped kale or spinach for 2 min until bright green and tender.",
+                                    "Serve: Ladle into bowls with a drizzle of extra virgin olive oil and freshly grated Parmesan cheese."
+                                ],
+        "notes":  "Simmering an authentic Parmesan cheese rind into the vegetable broth yields deep savory complexity without heavy cream.",
+        "sourceUrl":  null
+    },
+    {
+        "id":  "creamy-roasted-tomato-basil-soup",
+        "title":  "Sheet Pan Roasted Tomato \u0026 Garlic Basil Soup",
+        "category":  "Soups \u0026 Ramen",
+        "status":  "want-to-try",
+        "rating":  "unrated",
+        "yield":  "4–6 servings",
+        "prepTime":  "10m",
+        "cookTime":  "35m",
+        "temp":  "400°F (200°C) Oven Roast",
+        "tags":  [
+                     "Soup",
+                     "Vegetarian",
+                     "Sheet Pan",
+                     "Comfort Food"
+                 ],
+        "macros":  null,
+        "ingredients":  [
+                            {
+                                "item":  "Ripe Roma or plum tomatoes (halved lengthwise)",
+                                "amount":  "3 lbs (1.4kg)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Whole head of garlic (top 1/4 inch sliced off)",
+                                "amount":  "1 head",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Yellow onion (cut into wedges)",
+                                "amount":  "1 large",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Extra virgin olive oil",
+                                "amount":  "3 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Kosher salt, black pepper, dried oregano",
+                                "amount":  "1 tsp salt, 1/2 tsp each pepper \u0026 oregano",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Low-sodium vegetable or chicken broth",
+                                "amount":  "2 cups",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Fresh basil leaves",
+                                "amount":  "1/2 cup packed",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Heavy cream (or full-fat coconut milk)",
+                                "amount":  "1/3 cup",
+                                "ratio":  null
+                            }
+                        ],
+        "conciseInstructions":  [
+                                    "Roast Sheet: Preheat oven to 400°F (200°C). Arrange tomato halves and onion wedges cut-side up on parchment sheet. Wrap garlic head loosely in foil with a drizzle of oil. Drizzle vegetables with olive oil, salt, pepper, and oregano.",
+                                    "Bake: Roast 35–40 min until tomatoes are charred at edges and collapsed, and garlic is caramelized and soft.",
+                                    "Squeeze Garlic: Squeeze roasted garlic cloves out of papery skins into blender.",
+                                    "Blend: Add roasted tomatoes, onions, sheet pan juices, 2 cups broth, and 1/2 cup fresh basil to blender. Blend on high 90 sec until silky and smooth.",
+                                    "Finish: Pour into pot on low heat. Stir in heavy cream (or coconut milk). Warm through and serve with grilled cheese."
+                                ],
+        "notes":  "Roasting the tomatoes and a whole head of garlic caramelizes their natural sugars, completely removing bitterness without refined sugar.",
+        "sourceUrl":  null
+    },
+    {
+        "id":  "creamy-blended-broccoli-cheddar-soup",
+        "title":  "15-Minute Velvety Blended Broccoli \u0026 Cheddar Soup",
+        "category":  "Soups \u0026 Ramen",
+        "status":  "want-to-try",
+        "rating":  "unrated",
+        "yield":  "4 servings",
+        "prepTime":  "10m",
+        "cookTime":  "15m",
+        "temp":  "Medium Stovetop Simmer",
+        "tags":  [
+                     "Soup",
+                     "Quick Dinners",
+                     "Vegetarian",
+                     "High-Fiber"
+                 ],
+        "macros":  null,
+        "ingredients":  [
+                            {
+                                "item":  "Fresh broccoli heads and tender stems (chopped)",
+                                "amount":  "1.5 lbs (700g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Russet potato (peeled and diced 1/2-inch — natural thickener)",
+                                "amount":  "1 medium",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Sweet onion (chopped) \u0026 garlic (minced)",
+                                "amount":  "1 onion, 3 garlic cloves",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Butter or olive oil",
+                                "amount":  "2 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Low-sodium vegetable or chicken broth",
+                                "amount":  "4 cups",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Sharp white cheddar cheese (freshly grated)",
+                                "amount":  "1.5 cups (150g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Heavy cream or whole milk",
+                                "amount":  "1/4 cup",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Nutmeg, salt, white pepper",
+                                "amount":  "1/4 tsp nutmeg, 1 tsp salt, 1/4 tsp pepper",
+                                "ratio":  null
+                            }
+                        ],
+        "conciseInstructions":  [
+                                    "Sauté: Melt butter in pot over medium heat. Sauté onion and garlic 3 min until soft.",
+                                    "Simmer Veggies: Add diced potato, broccoli florets \u0026 stems, broth, salt, pepper, and nutmeg. Bring to boil; cover and simmer 10–12 min until potatoes are fork-tender.",
+                                    "Blend: Puree with immersion blender directly in pot until velvety smooth and vibrant green.",
+                                    "Melt Cheese: Turn heat to low. Stir in cream. Gradually whisk in shredded cheddar until completely melted and glossy (do not boil after cheese is added).",
+                                    "Serve: Ladle hot into bowls with a sprinkle of extra cheddar and cracked black pepper."
+                                ],
+        "notes":  "Diced potato cooked alongside the broccoli provides natural body and silkiness without needing a flour roux.",
+        "sourceUrl":  null
+    },
+    {
+        "id":  "viral-baked-feta-pasta",
+        "title":  "Viral Oven-Baked Feta \u0026 Cherry Tomato Pasta",
+        "category":  "Pastas",
+        "status":  "want-to-try",
+        "rating":  "unrated",
+        "yield":  "4 servings",
+        "prepTime":  "5m",
+        "cookTime":  "35m",
+        "temp":  "400°F (200°C) Oven Bake",
+        "tags":  [
+                     "Pastas",
+                     "Quick Dinners",
+                     "Vegetarian",
+                     "One-Pan",
+                     "Viral Classic"
+                 ],
+        "macros":  null,
+        "ingredients":  [
+                            {
+                                "item":  "Greek feta cheese (in brine, drained block)",
+                                "amount":  "1 block (8 oz / 225g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Cherry or grape tomatoes",
+                                "amount":  "2 pints (600g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Extra virgin olive oil",
+                                "amount":  "1/2 cup",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Garlic (thinly sliced)",
+                                "amount":  "4 cloves",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Crushed red pepper flakes, salt, pepper",
+                                "amount":  "1/2 tsp flakes, 1/2 tsp salt, 1/4 tsp pepper",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Rigatoni, cavatappi, or penne pasta",
+                                "amount":  "8 oz (225g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Fresh basil leaves (chopped)",
+                                "amount":  "1 cup",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Reserved starchy pasta cooking water",
+                                "amount":  "1/2 cup",
+                                "ratio":  null
+                            }
+                        ],
+        "conciseInstructions":  [
+                                    "Baking Dish: Place cherry tomatoes in 9x13 baking dish. Toss with olive oil, sliced garlic, chili flakes, salt, and pepper. Place block of feta in center; turn once to coat in oil.",
+                                    "Bake: Bake at 400°F (200°C) for 35 min until tomatoes have burst and feta is soft, bubbling, and golden on top.",
+                                    "Boil Pasta: Cook pasta in salted water until al dente; reserve 1/2 cup cooking water before draining.",
+                                    "Emulsify: Mash hot feta and burst tomatoes together with fork in the baking dish; stir vigorously into a creamy, luscious sauce.",
+                                    "Toss: Add hot drained pasta, splash of pasta water, and chopped fresh basil. Toss until glossy and coated. Serve warm."
+                                ],
+        "notes":  "Baking whole feta surrounded by cherry tomatoes melts it into a self-emulsifying cream sauce directly in the oven dish.",
+        "sourceUrl":  null
+    },
+    {
+        "id":  "sheet-pan-asian-glazed-meatballs",
+        "title":  "Sheet Pan Asian Glazed Meatballs with Green Beans \u0026 Red Onion",
+        "category":  "Bakes \u0026 Sheet Pan",
+        "status":  "want-to-try",
+        "rating":  "unrated",
+        "yield":  "4 servings",
+        "prepTime":  "15m",
+        "cookTime":  "18m",
+        "temp":  "425°F (220°C) Oven Bake",
+        "tags":  [
+                     "Sheet Pan",
+                     "Meal Prep",
+                     "High-Protein",
+                     "Asian Inspired",
+                     "Quick Dinners"
+                 ],
+        "macros":  null,
+        "ingredients":  [
+                            {
+                                "item":  "--- MEATBALLS ---",
+                                "amount":  "",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Lean ground beef, turkey, or pork",
+                                "amount":  "1 lb (450g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Panko breadcrumbs \u0026 beaten egg",
+                                "amount":  "1/2 cup panko, 1 egg",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Scallions (sliced), garlic (minced), ginger (grated)",
+                                "amount":  "2 scallions, 2 garlic cloves, 1 tbsp ginger",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Soy sauce \u0026 sesame oil",
+                                "amount":  "1 tbsp soy, 1 tsp sesame",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "--- SHEET PAN VEGGIES ---",
+                                "amount":  "",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Fresh green beans (trimmed)",
+                                "amount":  "1 lb (450g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Red onion (cut into 1/2-inch wedges)",
+                                "amount":  "1 large",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Olive oil \u0026 pinch of salt",
+                                "amount":  "1 tbsp oil",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "--- STICKY ASIAN GLAZE ---",
+                                "amount":  "",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Soy sauce, hoisin sauce, honey, rice vinegar, sriracha",
+                                "amount":  "1/4 cup soy, 2 tbsp hoisin, 2 tbsp honey, 1 tbsp vinegar, 1 tsp sriracha",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Sesame seeds for garnish",
+                                "amount":  "1 tsp",
+                                "ratio":  null
+                            }
+                        ],
+        "conciseInstructions":  [
+                                    "Meatballs: Mix ground meat, panko, egg, scallions, garlic, ginger, soy sauce, and sesame oil. Shape into 16 golf-ball-sized meatballs.",
+                                    "Sheet Pan: Line baking sheet with parchment. Toss green beans and red onion wedges with 1 tbsp oil and pinch of salt on edges of pan; arrange meatballs in center rows.",
+                                    "Bake: Bake at 425°F (220°C) for 15 min until meatballs are firm and green beans are blistered.",
+                                    "Glaze: Simmer soy sauce, hoisin, honey, rice vinegar, and sriracha in small pan for 3 min until bubbly and glossy.",
+                                    "Broil: Brush meatballs generously with glaze. Broil 2–3 min until sticky and caramelized. Garnish with sesame seeds; serve with rice."
+                                ],
+        "notes":  "Cooking seasoned meatballs and green beans on a single sheet pan makes cleanup effortless and keeps vegetables crisp-tender.",
+        "sourceUrl":  null
+    },
+    {
+        "id":  "classic-french-ratatouille",
+        "title":  "Classic Provence Stovetop Ratatouille with Chickpeas",
+        "category":  "Stews \u0026 Skillets",
+        "status":  "want-to-try",
+        "rating":  "unrated",
+        "yield":  "4–6 servings",
+        "prepTime":  "20m",
+        "cookTime":  "30m",
+        "temp":  "Medium Stovetop Simmer",
+        "tags":  [
+                     "French Classic",
+                     "Plant-Based",
+                     "One-Pot",
+                     "Whole Foods"
+                 ],
+        "macros":  null,
+        "ingredients":  [
+                            {
+                                "item":  "Eggplant (cut into 1/2-inch cubes)",
+                                "amount":  "1 medium",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Zucchini (cut into 1/2-inch half-moons)",
+                                "amount":  "2 medium",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Red and yellow bell peppers (diced)",
+                                "amount":  "1 of each",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Yellow onion (diced) \u0026 garlic (minced)",
+                                "amount":  "1 onion, 4 garlic cloves",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Chickpeas (rinsed and drained — protein boost)",
+                                "amount":  "1 can (15 oz / 425g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Fire-roasted crushed or diced tomatoes",
+                                "amount":  "1 can (14.5 oz / 400g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Extra virgin olive oil",
+                                "amount":  "1/4 cup",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Tomato paste",
+                                "amount":  "1 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Herbes de Provence (thyme, oregano, rosemary, marjoram)",
+                                "amount":  "1 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Kosher salt, black pepper, fresh basil",
+                                "amount":  "1 tsp salt, 1/2 tsp pepper, 1/4 cup torn basil",
+                                "ratio":  null
+                            }
+                        ],
+        "conciseInstructions":  [
+                                    "Brown Veggies: Heat 2 tbsp olive oil in Dutch oven over medium-high. Sauté eggplant and zucchini cubes 6–7 min until golden and tender. Transfer to plate.",
+                                    "Aromatics: Add remaining 2 tbsp oil. Sauté onions and bell peppers 5 min. Add garlic and tomato paste; cook 1 min.",
+                                    "Simmer Base: Add crushed tomatoes, drained chickpeas, Herbes de Provence, salt, and pepper. Simmer 5 min.",
+                                    "Combine \u0026 Braise: Return eggplant and zucchini to pot. Cover partially and simmer on low for 18–20 min until all vegetables are meltingly tender.",
+                                    "Finish: Remove heat, stir in fresh torn basil and extra drizzle of olive oil. Serve warm with crusty sourdough or over polenta."
+                                ],
+        "notes":  "Sautéing the eggplant and zucchini separately before stewing prevents them from absorbing excess moisture and turning soggy.",
+        "sourceUrl":  null
+    },
+    {
+        "id":  "korean-savory-veggie-pancakes-pajeon",
+        "title":  "Crispy Korean Vegetable Pancakes (Yachaejeon / Pajeon)",
+        "category":  "Breakfast \u0026 Sweets",
+        "status":  "want-to-try",
+        "rating":  "unrated",
+        "yield":  "3 large crispy pancakes",
+        "prepTime":  "15m",
+        "cookTime":  "10m",
+        "temp":  "Medium-High Skillet Heat",
+        "tags":  [
+                     "Korean Classic",
+                     "Snack",
+                     "Vegetarian",
+                     "Quick Dinners"
+                 ],
+        "macros":  null,
+        "ingredients":  [
+                            {
+                                "item":  "All-purpose flour \u0026 cornstarch",
+                                "amount":  "1 cup flour, 1/4 cup cornstarch",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Baking powder \u0026 kosher salt",
+                                "amount":  "1/2 tsp each",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Ice-cold water (crucial for crispiness)",
+                                "amount":  "1 cup",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Scallions (cut into 2-inch matchsticks)",
+                                "amount":  "1 bunch",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Zucchini, carrots, onion (cut into thin matchsticks)",
+                                "amount":  "1 zucchini, 1 carrot, 1/2 onion",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Neutral cooking oil for frying",
+                                "amount":  "3 tbsp per pancake",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "--- SAVORY DIPPING SAUCE ---",
+                                "amount":  "",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Soy sauce, rice vinegar, sesame oil, sugar, sesame seeds",
+                                "amount":  "2 tbsp soy, 1 tbsp vinegar, 1 tsp sesame oil, 1/2 tsp sugar",
+                                "ratio":  null
+                            }
+                        ],
+        "conciseInstructions":  [
+                                    "Batter: Whisk flour, cornstarch, baking powder, and salt. Whisk in ice-cold water just until combined (do not overmix).",
+                                    "Fold Veggies: Fold in matchstick scallions, zucchini, carrots, and onions so vegetables are lightly coated in thin batter.",
+                                    "Heat: Heat 3 tbsp oil in 10-inch skillet over medium-high until shimmering hot.",
+                                    "Fry: Spread 1/3 of vegetable mixture into skillet, pressing into an even, thin circle. Fry 4–5 min until bottom is deeply golden brown and audibly crispy.",
+                                    "Flip: Flip firmly (add an extra splash of oil around pan edges). Press lightly; cook 3–4 min until crispy on both sides.",
+                                    "Serve: Slice into squares and serve hot with tangy soy-vinegar dipping sauce."
+                                ],
+        "notes":  "Ice-cold water and cornstarch create a shatteringly crispy exterior that stays crunchy.",
+        "sourceUrl":  null
+    },
+    {
+        "id":  "high-protein-cottage-cheese-pancakes",
+        "title":  "High-Protein Blender Cottage Cheese Pancakes",
+        "category":  "Breakfast \u0026 Sweets",
+        "status":  "want-to-try",
+        "rating":  "unrated",
+        "yield":  "6–8 fluffy pancakes",
+        "prepTime":  "5m",
+        "cookTime":  "8m",
+        "temp":  "Medium-Low Skillet Heat",
+        "tags":  [
+                     "Breakfast",
+                     "High-Protein",
+                     "Blender Recipe",
+                     "Meal Prep"
+                 ],
+        "macros":  {
+                       "perServing":  "360 kcal | 34g Protein | 38g Carbs | 7g Fat (per serving)"
+                   },
+        "ingredients":  [
+                            {
+                                "item":  "Low-fat cottage cheese",
+                                "amount":  "1 cup (225g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Eggs",
+                                "amount":  "2 large",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Rolled oats (or oat flour)",
+                                "amount":  "1 cup (90g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Baking powder",
+                                "amount":  "1 tsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Vanilla extract \u0026 ground cinnamon",
+                                "amount":  "1 tsp vanilla, 1/4 tsp cinnamon",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Maple syrup or honey \u0026 pinch of salt",
+                                "amount":  "1 tbsp syrup, pinch salt",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Butter or coconut oil for pan",
+                                "amount":  "1 tsp",
+                                "ratio":  null
+                            }
+                        ],
+        "conciseInstructions":  [
+                                    "Blend: Combine cottage cheese, eggs, rolled oats, baking powder, vanilla, cinnamon, maple syrup, and salt in blender. Blend on high 45 sec until silky smooth.",
+                                    "Rest: Let batter rest 3 min to thicken slightly.",
+                                    "Cook: Heat skillet over medium-low; grease lightly. Pour 1/4 cup batter per pancake. Cook 2.5–3 min until bubbles form and edges look set.",
+                                    "Flip: Flip gently; cook 1.5–2 min on second side until golden and fluffy.",
+                                    "Serve: Serve warm with fresh berries, banana slices, and pure maple syrup."
+                                ],
+        "notes":  "Blending cottage cheese completely breaks down curds, delivering 34g natural protein per serving with a light, fluffy pancake texture.",
+        "sourceUrl":  null
+    },
+    {
+        "id":  "smashed-chickpea-salad-sandwich",
+        "title":  "Smashed Chickpea \u0027Tuna\u0027 Salad Sandwich",
+        "category":  "Sandwiches \u0026 Toast",
+        "status":  "want-to-try",
+        "rating":  "unrated",
+        "yield":  "3–4 sandwiches",
+        "prepTime":  "10m",
+        "cookTime":  "0m (No-Cook)",
+        "temp":  "No Heat",
+        "tags":  [
+                     "Plant-Based",
+                     "Sandwich",
+                     "Lunch",
+                     "High-Fiber",
+                     "Quick"
+                 ],
+        "macros":  null,
+        "ingredients":  [
+                            {
+                                "item":  "Chickpeas (rinsed and well-drained)",
+                                "amount":  "1 can (15 oz / 425g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Mayonnaise or plain Greek yogurt (or tahini)",
+                                "amount":  "1/4 cup",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Dijon mustard \u0026 fresh lemon juice",
+                                "amount":  "1 tbsp each",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Celery \u0026 red onion (finely diced)",
+                                "amount":  "2 celery ribs, 1/4 cup onion",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Fresh dill or parsley (chopped)",
+                                "amount":  "2 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Capers or chopped dill pickles",
+                                "amount":  "1 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Garlic powder, salt, black pepper",
+                                "amount":  "1/2 tsp garlic powder, salt \u0026 pepper to taste",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Whole grain bread, avocado \u0026 crisp lettuce",
+                                "amount":  "For serving",
+                                "ratio":  null
+                            }
+                        ],
+        "conciseInstructions":  [
+                                    "Smash: Place drained chickpeas in bowl; smash ~70% with fork or potato masher, leaving remaining whole for texture.",
+                                    "Dressing: Add mayo (or Greek yogurt), Dijon mustard, lemon juice, garlic powder, salt, and pepper.",
+                                    "Fold: Stir in diced celery, red onion, capers/pickles, and fresh dill. Mix until thoroughly combined.",
+                                    "Assemble: Toast hearty whole grain bread. Layer with crisp lettuce, avocado slices, and generous scoops of chickpea salad."
+                                ],
+        "notes":  "Capers and fresh dill mimic the briny flavor of classic deli tuna salad with clean plant protein and fiber.",
+        "sourceUrl":  null
+    },
+    {
+        "id":  "crispy-brown-lentil-walnut-burgers",
+        "title":  "Crispy Brown Lentil \u0026 Walnut Veggie Burgers",
+        "category":  "Sandwiches \u0026 Toast",
+        "status":  "want-to-try",
+        "rating":  "unrated",
+        "yield":  "6 burger patties",
+        "prepTime":  "15m",
+        "cookTime":  "15m",
+        "temp":  "Medium Skillet / 375°F (190°C) Oven",
+        "tags":  [
+                     "Plant-Based",
+                     "Burgers",
+                     "High-Protein",
+                     "Meal Prep"
+                 ],
+        "macros":  null,
+        "ingredients":  [
+                            {
+                                "item":  "Cooked brown lentils (drained and dry)",
+                                "amount":  "2 cups",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Raw walnuts (toasted and chopped)",
+                                "amount":  "1/2 cup",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Rolled oats (ground coarse)",
+                                "amount":  "1/2 cup",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Yellow onion (finely diced) \u0026 garlic (minced)",
+                                "amount":  "1 onion, 2 garlic cloves",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Flax egg: Ground flaxseed + warm water",
+                                "amount":  "2 tbsp flax + 4 tbsp water",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Tomato paste \u0026 soy sauce",
+                                "amount":  "1 tbsp each",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Smoked paprika, cumin, salt, pepper",
+                                "amount":  "1 tsp paprika, 1 tsp cumin, 1/2 tsp salt",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Olive oil for pan searing",
+                                "amount":  "2 tbsp",
+                                "ratio":  null
+                            }
+                        ],
+        "conciseInstructions":  [
+                                    "Flax Binder: Whisk ground flaxseed and warm water in small bowl; rest 5 min to thicken.",
+                                    "Sauté: Sauté onion and garlic in 1 tsp olive oil 4 min until soft.",
+                                    "Pulse: In food processor, pulse walnuts and oats into coarse meal. Add half the lentils, tomato paste, soy sauce, spices, and flax egg; pulse into bound paste.",
+                                    "Fold: Transfer to bowl, fold in cooked onions and remaining whole lentils for chew.",
+                                    "Shape \u0026 Sear: Form into 6 patties (1/2-inch thick). Heat 2 tbsp oil in skillet over medium heat. Sear patties 4–5 min per side until deep brown and crunchy on exterior. Serve on toasted buns."
+                                ],
+        "notes":  "Toasted walnuts provide healthy fats and hearty chew, while oats and flax bind the patties firmly so they don\u0027t crumble.",
+        "sourceUrl":  null
+    },
+    {
+        "id":  "high-protein-pbj-power-toast",
+        "title":  "High-Protein Whipped Peanut Butter \u0026 Chia Jam Toast",
+        "category":  "Breakfast \u0026 Sweets",
+        "status":  "want-to-try",
+        "rating":  "unrated",
+        "yield":  "2 hearty toasts",
+        "prepTime":  "5m",
+        "cookTime":  "5m",
+        "temp":  "Toasted Bread",
+        "tags":  [
+                     "Breakfast",
+                     "High-Protein",
+                     "Snack",
+                     "Quick"
+                 ],
+        "macros":  null,
+        "ingredients":  [
+                            {
+                                "item":  "Sourdough or sprouted grain bread (Ezekiel)",
+                                "amount":  "2 thick slices",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "--- WHIPPED PROTEIN PB SPREAD ---",
+                                "amount":  "",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Creamy natural peanut butter",
+                                "amount":  "3 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Plain nonfat Greek yogurt",
+                                "amount":  "1/3 cup (80g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Vanilla or unflavored protein powder (optional)",
+                                "amount":  "1 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Pure maple syrup or honey",
+                                "amount":  "1 tsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "--- QUICK CHIA FRUIT JAM ---",
+                                "amount":  "",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Fresh or frozen raspberries/strawberries",
+                                "amount":  "1 cup",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Chia seeds",
+                                "amount":  "1 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Fresh lemon juice \u0026 honey",
+                                "amount":  "1 tsp each",
+                                "ratio":  null
+                            }
+                        ],
+        "conciseInstructions":  [
+                                    "Chia Jam: Microwave berries 60 sec until soft; mash with fork. Stir in chia seeds, lemon juice, and honey. Rest 5 min to thicken into jam.",
+                                    "Whipped PB: In bowl, vigorously whisk peanut butter, Greek yogurt, protein powder, and maple syrup until thick, smooth, and whipped.",
+                                    "Toast: Toast bread until golden and crisp.",
+                                    "Assemble: Spread generous layer of whipped peanut butter over warm toast; spoon warm chia jam across top. Garnish with banana slices or hemp seeds."
+                                ],
+        "notes":  "Whisking Greek yogurt into natural peanut butter doubles the volume and protein while cutting heavy fats in half.",
+        "sourceUrl":  null
+    },
+    {
+        "id":  "creamy-silken-tofu-herb-ranch",
+        "title":  "Creamy Silken Tofu Fresh Herb Ranch Dressing",
+        "category":  "Sauces \u0026 Dressings",
+        "status":  "want-to-try",
+        "rating":  "unrated",
+        "yield":  "1.5 cups dressing",
+        "prepTime":  "5m",
+        "cookTime":  "0m (No-Cook)",
+        "temp":  "Blender / Chilled",
+        "tags":  [
+                     "Sauces",
+                     "Plant-Based",
+                     "High-Protein",
+                     "Dips",
+                     "Vegan"
+                 ],
+        "macros":  null,
+        "ingredients":  [
+                            {
+                                "item":  "Silken tofu (drained)",
+                                "amount":  "1 block (12 oz / 340g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Extra virgin olive oil",
+                                "amount":  "2 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Fresh lemon juice \u0026 apple cider vinegar",
+                                "amount":  "2 tbsp lemon, 1 tbsp vinegar",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Dijon mustard \u0026 fresh garlic",
+                                "amount":  "1 tbsp Dijon, 1 clove garlic",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Onion powder, salt, black pepper",
+                                "amount":  "1/2 tsp onion powder, 1 tsp salt, 1/4 tsp pepper",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Fresh chives, fresh dill, fresh parsley (minced)",
+                                "amount":  "2 tbsp each",
+                                "ratio":  null
+                            }
+                        ],
+        "conciseInstructions":  [
+                                    "Blend Base: Combine silken tofu, olive oil, lemon juice, apple cider vinegar, Dijon mustard, garlic, onion powder, salt, and pepper in blender. Blend on high 45 sec until silky smooth.",
+                                    "Stir Herbs: Pour into jar and stir in minced chives, dill, and parsley.",
+                                    "Chill: Refrigerate 30 min before serving so flavors develop. Keeps 7 days in fridge."
+                                ],
+        "notes":  "Silken tofu creates the exact creamy body of buttermilk ranch with zero saturated fats and clean plant protein.",
+        "sourceUrl":  null
+    },
+    {
+        "id":  "crispy-seasoned-baked-tofu-crumbles",
+        "title":  "Crispy Seasoned Baked Tofu Crumbles (Taco \u0026 Salad Topper)",
+        "category":  "Tofu \u0026 Plant-Based",
+        "status":  "want-to-try",
+        "rating":  "unrated",
+        "yield":  "4 servings",
+        "prepTime":  "10m",
+        "cookTime":  "25m",
+        "temp":  "400°F (200°C) Oven / Air Fryer",
+        "tags":  [
+                     "Tofu",
+                     "Plant-Based",
+                     "Meal Prep",
+                     "High-Protein",
+                     "Sheet Pan"
+                 ],
+        "macros":  null,
+        "ingredients":  [
+                            {
+                                "item":  "Extra firm or super firm tofu (pressed and drained)",
+                                "amount":  "1 block (14–16 oz / 450g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Olive oil or avocado oil",
+                                "amount":  "1.5 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Low-sodium soy sauce or tamari",
+                                "amount":  "2 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Nutritional yeast \u0026 cornstarch",
+                                "amount":  "2 tbsp nutritional yeast, 1 tbsp cornstarch",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Smoked paprika, garlic powder, ground cumin, chili powder",
+                                "amount":  "1 tsp each (1/2 tsp chili)",
+                                "ratio":  null
+                            }
+                        ],
+        "conciseInstructions":  [
+                                    "Crumble: Press tofu with clean towel. Use hands to tear and crumble tofu into bite-sized pebble crumbles in bowl.",
+                                    "Season: Drizzle with oil and soy sauce; toss to coat evenly.",
+                                    "Coat: Sprinkle nutritional yeast, cornstarch, paprika, garlic powder, cumin, and chili powder over crumbles; toss until dusted.",
+                                    "Bake: Spread in single layer on parchment sheet. Bake at 400°F (200°C) for 22–25 min (shaking pan halfway) until browned, chewy, and crunchy at edges.",
+                                    "Use: Ideal taco filling, grain bowl topper, or salad crunch. Keeps 5 days in fridge."
+                                ],
+        "notes":  "Tearing into irregular crumbles instead of cubes creates textured edges that catch seasoning and crisp up like ground meat.",
+        "sourceUrl":  null
+    },
+    {
+        "id":  "thai-red-curry-stir-fry-prik-khing",
+        "title":  "20-Minute Thai Red Curry Green Bean \u0026 Chicken Stir-Fry",
+        "category":  "Grill \u0026 Meats",
+        "status":  "want-to-try",
+        "rating":  "unrated",
+        "yield":  "4 servings",
+        "prepTime":  "10m",
+        "cookTime":  "10m",
+        "temp":  "High-Heat Wok / Skillet",
+        "tags":  [
+                     "Thai Classic",
+                     "Quick Dinners",
+                     "Stir-Fry",
+                     "High-Protein"
+                 ],
+        "macros":  null,
+        "ingredients":  [
+                            {
+                                "item":  "Chicken breast or pork tenderloin (thinly sliced)",
+                                "amount":  "1 lb (450g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Fresh green beans (cut into 2-inch pieces)",
+                                "amount":  "1 lb (450g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Thai red curry paste (Mae Ploy or Thai Kitchen)",
+                                "amount":  "2.5 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Fish sauce \u0026 brown sugar (or palm sugar)",
+                                "amount":  "2 tbsp fish sauce, 1 tbsp sugar",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Neutral cooking oil",
+                                "amount":  "2 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Kaffir lime leaves (thinly sliced, or lime zest)",
+                                "amount":  "3 leaves",
+                                "ratio":  null
+                            }
+                        ],
+        "conciseInstructions":  [
+                                    "Blanch: Parboil green beans in boiling water 2 min until crisp-tender; drain in ice water.",
+                                    "Fry Paste: Heat 2 tbsp oil in wok over medium heat. Fry red curry paste 90 sec until aromatic and oil turns red.",
+                                    "Cook Meat: Turn heat to high. Add sliced chicken; stir-fry 4–5 min until cooked through and coated in curry paste.",
+                                    "Season: Add fish sauce, sugar, and 2 tbsp water; toss until sauce glazes the meat.",
+                                    "Combine: Add blanched green beans and kaffir lime leaf ribbons. Toss vigorously 60 sec until blistered and hot. Serve with jasmine rice."
+                                ],
+        "notes":  "A classic dry-curry stir fry (Pad Prik Khing) where concentrated curry paste caramelizes directly onto the green beans and meat without coconut milk soup.",
+        "sourceUrl":  null
+    },
+    {
+        "id":  "pomegranate-molasses-master-marinade",
+        "title":  "Middle Eastern Pomegranate Molasses Master Marinade \u0026 Glaze",
+        "category":  "Sauces \u0026 Dressings",
+        "status":  "want-to-try",
+        "rating":  "unrated",
+        "yield":  "1 cup marinade",
+        "prepTime":  "5m",
+        "cookTime":  "0m",
+        "temp":  "No Heat",
+        "tags":  [
+                     "Sauces",
+                     "Middle Eastern",
+                     "Marinade",
+                     "Glaze"
+                 ],
+        "macros":  null,
+        "ingredients":  [
+                            {
+                                "item":  "Pomegranate molasses",
+                                "amount":  "1/3 cup",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Extra virgin olive oil",
+                                "amount":  "1/3 cup",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Fresh lemon juice",
+                                "amount":  "2 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Garlic (grated or minced)",
+                                "amount":  "4 cloves",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Ground sumac, cumin, coriander",
+                                "amount":  "1 tbsp sumac, 1 tsp cumin, 1 tsp coriander",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Aleppo pepper or smoked paprika, salt, pepper",
+                                "amount":  "1 tsp each",
+                                "ratio":  null
+                            }
+                        ],
+        "conciseInstructions":  [
+                                    "Whisk: In bowl, whisk pomegranate molasses, olive oil, lemon juice, grated garlic, sumac, cumin, coriander, Aleppo pepper, salt, and pepper until emulsified.",
+                                    "Marinade: Perfect for chicken thighs, flank steak, lamb chops, salmon, or roasted cauliflower/eggplant. Marinate 2–8 hours.",
+                                    "Glaze: Brush reserved portion over proteins during the last 3–4 minutes of grilling or roasting until bubbling and caramelized.",
+                                    "Store: Keeps in sealed glass jar in fridge for up to 3 weeks."
+                                ],
+        "notes":  "Pomegranate molasses provides an irresistible sweet-tart tang and deep ruby glaze that caramelizes under high oven or grill heat.",
+        "sourceUrl":  null
+    },
+    {
+        "id":  "healthy-5-minute-peanut-sauce",
+        "title":  "Quick 5-Minute Creamy Peanut Lime Stir-Fry \u0026 Dipping Sauce",
+        "category":  "Sauces \u0026 Dressings",
+        "status":  "want-to-try",
+        "rating":  "unrated",
+        "yield":  "1 cup sauce",
+        "prepTime":  "5m",
+        "cookTime":  "0m",
+        "temp":  "Whisk in Bowl",
+        "tags":  [
+                     "Sauces",
+                     "5-Minute",
+                     "Plant-Based",
+                     "Dips",
+                     "Stir-Fry"
+                 ],
+        "macros":  null,
+        "ingredients":  [
+                            {
+                                "item":  "Creamy natural peanut butter",
+                                "amount":  "1/2 cup",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Low-sodium soy sauce or tamari",
+                                "amount":  "3 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Fresh lime juice",
+                                "amount":  "2 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Maple syrup or honey",
+                                "amount":  "1.5 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Toasted sesame oil \u0026 sriracha",
+                                "amount":  "1 tbsp sesame, 1 tsp sriracha",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Garlic (grated) \u0026 fresh ginger (grated)",
+                                "amount":  "2 cloves garlic, 1 tsp ginger",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Warm water (to thin to desired consistency)",
+                                "amount":  "3–4 tbsp",
+                                "ratio":  null
+                            }
+                        ],
+        "conciseInstructions":  [
+                                    "Combine: In bowl, whisk peanut butter, soy sauce, lime juice, maple syrup, sesame oil, sriracha, grated garlic, and ginger.",
+                                    "Emulsify: Whisk vigorously. It will seize up and look thick initially—that is completely normal.",
+                                    "Stream Warm Water: Slowly whisk in warm water 1 tablespoon at a time until silky, glossy, and pourable.",
+                                    "Use: Ideal for noodle bowls, spring roll dip, chicken satay skewers, or drizzled over steamed broccoli. Stores 10 days in fridge."
+                                ],
+        "notes":  "Using warm water breaks the peanut oil emulsion cleanly into a glossy satin sauce.",
+        "sourceUrl":  null
+    },
+    {
+        "id":  "fuhrman-oil-free-orange-fig-dressing",
+        "title":  "Dr. Fuhrman Creamy Oil-Free Cashew \u0026 Fig Orange Salad Dressing",
+        "category":  "Sauces \u0026 Dressings",
+        "status":  "want-to-try",
+        "rating":  "unrated",
+        "yield":  "1.5 cups dressing",
+        "prepTime":  "5m",
+        "cookTime":  "0m",
+        "temp":  "High-Speed Blender",
+        "tags":  [
+                     "Sauces",
+                     "Nutritarian",
+                     "Oil-Free",
+                     "Whole Foods",
+                     "Plant-Based"
+                 ],
+        "macros":  null,
+        "ingredients":  [
+                            {
+                                "item":  "Raw cashews (soaked in hot water 15 min if needed)",
+                                "amount":  "1/2 cup",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Dried mission or Turkish figs (stems removed)",
+                                "amount":  "4 figs",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Fresh orange juice",
+                                "amount":  "1/2 cup",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Water",
+                                "amount":  "1/4 cup",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Apple cider vinegar or white balsamic vinegar",
+                                "amount":  "3 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Dijon mustard \u0026 small garlic clove",
+                                "amount":  "1 tbsp Dijon, 1 clove garlic",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Toasted sesame seeds (added after blending)",
+                                "amount":  "1 tbsp",
+                                "ratio":  null
+                            }
+                        ],
+        "conciseInstructions":  [
+                                    "Blender: Combine raw cashews, dried figs, orange juice, water, vinegar, Dijon mustard, and garlic in blender.",
+                                    "Blend: Blend on high speed for 60–90 seconds until completely velvety, creamy, and smooth.",
+                                    "Garnish: Stir in toasted sesame seeds for subtle crunch.",
+                                    "Serve: Coat hearty chopped kale, romaine, or shredded cabbage salads. Thickens slightly as it chills. Stores 7 days in fridge."
+                                ],
+        "notes":  "Whole cashews and dried figs provide rich creaminess and gentle fruit sweetness with zero extracted oils and zero refined sugars.",
         "sourceUrl":  null
     }
 ]
