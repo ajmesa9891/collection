@@ -6,22 +6,14 @@
   let recipes = [];
   let state = {
     search: '',
-    category: 'all',
-    status: 'all',
-    rating: 'all',
-    tag: 'all',
+    selectedTags: new Set(),
     scale: 1,
     selectedRecipe: null,
     expandedCategories: new Set()
   };
 
   // Temp state while filter modal is open
-  let tempFilterState = {
-    category: 'all',
-    status: 'all',
-    rating: 'all',
-    tag: 'all'
-  };
+  let tempSelectedTags = new Set();
 
   // DOM Elements
   const searchInput = document.getElementById('search-input');
@@ -38,7 +30,7 @@
   const modalContainer = document.getElementById('modal-container');
   const filterModalBackdrop = document.getElementById('filter-modal-backdrop');
   const filterModalCloseBtn = document.getElementById('filter-modal-close-btn');
-  const modalCategoriesGrid = document.getElementById('modal-categories-grid');
+  const modalTagsGrid = document.getElementById('modal-tags-grid');
   const btnModalResetAll = document.getElementById('btn-modal-reset-all');
   const btnModalApply = document.getElementById('btn-modal-apply');
   const toastContainer = document.getElementById('toast-container');
@@ -97,19 +89,14 @@
   // Finish Initialization
   function finishInit() {
     setupEventListeners();
-    buildFilterModalCategories();
+    buildFilterModalTags();
     handleHashChange();
     render();
   }
 
   // Calculate active filter count
   function getActiveFilterCount() {
-    let count = 0;
-    if (state.category !== 'all') count++;
-    if (state.status !== 'all') count++;
-    if (state.rating !== 'all') count++;
-    if (state.tag !== 'all') count++;
-    return count;
+    return state.selectedTags.size;
   }
 
   // Update Filter Button Badge
@@ -130,24 +117,26 @@
     }
   }
 
-  // Build Categories in Filter Modal
-  function buildFilterModalCategories() {
-    if (!modalCategoriesGrid) return;
-    const catCounts = {};
+  // Build Tags in Filter Modal
+  function buildFilterModalTags() {
+    if (!modalTagsGrid) return;
+    const tagCounts = {};
     recipes.forEach(r => {
-      const cat = r.category || 'Other';
-      catCounts[cat] = (catCounts[cat] || 0) + 1;
+      (r.tags || []).forEach(t => {
+        tagCounts[t] = (tagCounts[t] || 0) + 1;
+      });
     });
 
-    const cats = Object.keys(catCounts).sort();
-    let html = `<button class="filter-choice-btn ${state.category === 'all' ? 'active' : ''}" data-filter-type="category" data-filter-value="all">All Categories (${recipes.length})</button>`;
+    const tags = Object.keys(tagCounts).sort((a, b) => a.localeCompare(b));
+    const isAll = tempSelectedTags.size === 0;
+    let html = `<button class="filter-choice-btn ${isAll ? 'active' : ''}" data-filter-tag="all">All Tags (${recipes.length})</button>`;
     
-    cats.forEach(cat => {
-      const isSelected = state.category === cat;
-      html += `<button class="filter-choice-btn ${isSelected ? 'active' : ''}" data-filter-type="category" data-filter-value="${escapeHtml(cat)}">${escapeHtml(cat)} (${catCounts[cat]})</button>`;
+    tags.forEach(t => {
+      const isSelected = tempSelectedTags.has(t);
+      html += `<button class="filter-choice-btn ${isSelected ? 'active' : ''}" data-filter-tag="${escapeHtml(t)}">${escapeHtml(t)} (${tagCounts[t]})</button>`;
     });
 
-    modalCategoriesGrid.innerHTML = html;
+    modalTagsGrid.innerHTML = html;
   }
 
   // Filter recipes based on current state
@@ -155,25 +144,11 @@
     const q = state.search.trim().toLowerCase();
 
     return recipes.filter(r => {
-      // Category filter
-      if (state.category !== 'all' && r.category !== state.category) {
-        return false;
-      }
-
-      // Status filter
-      if (state.status !== 'all' && r.status !== state.status) {
-        return false;
-      }
-
-      // Rating filter
-      if (state.rating === 'loved') {
-        const isLoved = r.rating === 'family-favorite' || r.rating === 'loved' || r.rating === 'they-liked' || r.rating === 'worked-well';
-        if (!isLoved) return false;
-      }
-
-      // Tag filter
-      if (state.tag !== 'all') {
-        if (!r.tags || !r.tags.includes(state.tag)) return false;
+      // Tags filter
+      if (state.selectedTags.size > 0) {
+        const recipeTags = r.tags || [];
+        const hasMatch = recipeTags.some(t => state.selectedTags.has(t));
+        if (!hasMatch) return false;
       }
 
       // Full-text Search
@@ -192,23 +167,29 @@
     });
   }
 
-  // Group recipes by category
-  function groupByCategory(recipeList) {
+  // Group recipes by Tag (allows recipes with multiple tags to appear under each)
+  function groupByTag(recipeList) {
     const groups = new Map();
     recipeList.forEach(r => {
-      const cat = r.category || 'Other';
-      if (!groups.has(cat)) {
-        groups.set(cat, []);
-      }
-      groups.get(cat).push(r);
+      const tags = (r.tags && r.tags.length > 0) ? r.tags : ['General'];
+      tags.forEach(tag => {
+        // If specific tag filter is active, only group under active tags
+        if (state.selectedTags.size > 0 && !state.selectedTags.has(tag)) {
+          return;
+        }
+        if (!groups.has(tag)) {
+          groups.set(tag, []);
+        }
+        groups.get(tag).push(r);
+      });
     });
 
-    // Sort categories alphabetically
+    // Sort tags alphabetically
     const sortedMap = new Map([...groups.entries()].sort((a, b) => a[0].localeCompare(b[0])));
     return sortedMap;
   }
 
-  // Render the Collapsible Category Accordion Tree
+  // Render the Collapsible Tag Accordion Tree
   function render() {
     const filtered = getFilteredRecipes();
     const hasSearch = state.search.trim() !== '';
@@ -242,25 +223,25 @@
       return;
     }
 
-    const grouped = groupByCategory(filtered);
+    const grouped = groupByTag(filtered);
     let html = '';
 
-    grouped.forEach((categoryRecipes, catName) => {
+    grouped.forEach((tagRecipes, tagName) => {
       // Auto-expand if search query is active, otherwise use expandedCategories state
-      const isExpanded = hasSearch ? true : state.expandedCategories.has(catName);
+      const isExpanded = hasSearch ? true : state.expandedCategories.has(tagName);
 
       html += `
-        <div class="tree-category ${isExpanded ? 'expanded' : ''}" data-category-name="${escapeHtml(catName)}">
+        <div class="tree-category ${isExpanded ? 'expanded' : ''}" data-category-name="${escapeHtml(tagName)}">
           <div class="tree-category-header" role="button" tabindex="0" aria-expanded="${isExpanded}">
             <div class="tree-category-left">
               <span class="tree-chevron">▶</span>
-              <span class="tree-category-title">${escapeHtml(catName)}</span>
+              <span class="tree-category-title">${escapeHtml(tagName)}</span>
             </div>
-            <span class="tree-category-count">${categoryRecipes.length}</span>
+            <span class="tree-category-count">${tagRecipes.length}</span>
           </div>
           <div class="tree-category-content">
             <ul class="tree-recipes-list">
-              ${categoryRecipes.map(r => createTreeRowHtml(r)).join('')}
+              ${tagRecipes.map(r => createTreeRowHtml(r)).join('')}
             </ul>
           </div>
         </div>
@@ -269,7 +250,7 @@
 
     categoryTree.innerHTML = html;
 
-    // Attach Category Header click events to toggle expand/collapse
+    // Attach Tag Header click events to toggle expand/collapse
     categoryTree.querySelectorAll('.tree-category-header').forEach(header => {
       header.addEventListener('click', () => {
         const catContainer = header.closest('.tree-category');
@@ -301,16 +282,6 @@
 
   // Create single recipe row in tree
   function createTreeRowHtml(r) {
-    let badges = [];
-    if (r.rating === 'family-favorite' || r.rating === 'loved') {
-      badges.push('<span class="meta-badge badge-loved" title="Family Favorite">♥</span>');
-    }
-    if (r.status === 'staple') {
-      badges.push('<span class="meta-badge badge-staple" title="Core Staple">★</span>');
-    } else if (r.status === 'tried') {
-      badges.push('<span class="meta-badge badge-tried" title="Tested in Kitchen">✓</span>');
-    }
-
     let specs = [];
     if (r.temp) {
       specs.push(`<span class="meta-temp">${escapeHtml(r.temp.split(' ')[0])}</span>`);
@@ -323,7 +294,6 @@
         <span class="tree-recipe-title">${escapeHtml(r.title)}</span>
         <div class="tree-recipe-meta">
           ${specs.join('')}
-          ${badges.join('')}
         </div>
       </li>
     `;
@@ -346,14 +316,11 @@
   // Reset all filters
   function resetAllFilters() {
     state.search = '';
-    state.category = 'all';
-    state.status = 'all';
-    state.rating = 'all';
-    state.tag = 'all';
+    state.selectedTags.clear();
     state.expandedCategories.clear();
     if (searchInput) searchInput.value = '';
     if (searchClearBtn) searchClearBtn.style.display = 'none';
-    buildFilterModalCategories();
+    buildFilterModalTags();
     syncModalChoices();
     render();
   }
@@ -388,12 +355,7 @@
     const r = state.selectedRecipe;
     if (!r) return;
 
-    let statusLabel = '';
-    if (r.status === 'tried') statusLabel = `<span class="badge badge-status-tried">✓ Tested in Kitchen</span>`;
-    if (r.status === 'staple') statusLabel = `<span class="badge badge-status-staple">★ Family Staple</span>`;
-    if (r.status === 'want-to-try') statusLabel = `<span class="badge badge-status-want-to-try">⏳ Want to Try</span>`;
-    if (r.rating === 'family-favorite' || r.rating === 'loved') statusLabel += ` <span class="badge badge-rating-loved">♥ Family Favorite</span>`;
-    if (r.rating === 'they-liked' || r.rating === 'worked-well') statusLabel += ` <span class="badge badge-rating-liked">👍 Family Approved</span>`;
+    const tagsHtml = (r.tags || []).map(t => `<span class="badge badge-tag">${escapeHtml(t)}</span>`).join(' ');
 
     // Specs bar
     const specsItems = [];
@@ -464,7 +426,7 @@
     modalContainer.innerHTML = `
       <div class="modal-header">
         <div class="modal-title-area">
-          <div class="card-badges">${statusLabel}</div>
+          <div class="card-badges">${tagsHtml}</div>
           <h2 class="modal-title">${escapeHtml(r.title)}</h2>
         </div>
         <button class="modal-close-btn" id="modal-close-btn" title="Close (Esc)" aria-label="Close modal">✕</button>
@@ -502,8 +464,8 @@
       </div>
 
       <div class="modal-footer">
-        <div style="font-size: 0.8rem; color: var(--text-subtle);">
-          Category: <strong>${escapeHtml(r.category || 'General')}</strong>
+        <div style="font-size: 0.85rem; color: var(--text-subtle);">
+          Tags: <strong>${escapeHtml((r.tags || []).join(', '))}</strong>
         </div>
         <div style="display: flex; gap: 8px;">
           <button class="btn btn-secondary btn-sm" id="btn-copy-link">🔗 Share Link</button>
@@ -546,12 +508,8 @@
 
   // Open Filter Dialog
   function openFilterModal() {
-    tempFilterState = {
-      category: state.category,
-      status: state.status,
-      rating: state.rating,
-      tag: state.tag
-    };
+    tempSelectedTags = new Set(state.selectedTags);
+    buildFilterModalTags();
     syncModalChoices();
     filterModalBackdrop.classList.add('open');
     filterModalBackdrop.setAttribute('aria-hidden', 'false');
@@ -565,12 +523,17 @@
     document.body.style.overflow = '';
   }
 
-  // Sync active classes inside Filter Modal based on tempFilterState
+  // Sync active classes inside Filter Modal based on tempSelectedTags
   function syncModalChoices() {
-    filterModalBackdrop.querySelectorAll('.filter-choice-btn').forEach(btn => {
-      const type = btn.dataset.filterType;
-      const val = btn.dataset.filterValue;
-      btn.classList.toggle('active', tempFilterState[type] === val);
+    if (!modalTagsGrid) return;
+    const isAll = tempSelectedTags.size === 0;
+    modalTagsGrid.querySelectorAll('.filter-choice-btn').forEach(btn => {
+      const tagVal = btn.dataset.filterTag;
+      if (tagVal === 'all') {
+        btn.classList.toggle('active', isAll);
+      } else {
+        btn.classList.toggle('active', tempSelectedTags.has(tagVal));
+      }
     });
   }
 
@@ -669,9 +632,16 @@
       filterModalBackdrop.addEventListener('click', e => {
         const btn = e.target.closest('.filter-choice-btn');
         if (btn) {
-          const type = btn.dataset.filterType;
-          const val = btn.dataset.filterValue;
-          tempFilterState[type] = val;
+          const tagVal = btn.dataset.filterTag;
+          if (tagVal === 'all') {
+            tempSelectedTags.clear();
+          } else {
+            if (tempSelectedTags.has(tagVal)) {
+              tempSelectedTags.delete(tagVal);
+            } else {
+              tempSelectedTags.add(tagVal);
+            }
+          }
           syncModalChoices();
         }
       });
@@ -680,10 +650,7 @@
     // Modal: Apply filters
     if (btnModalApply) {
       btnModalApply.addEventListener('click', () => {
-        state.category = tempFilterState.category;
-        state.status = tempFilterState.status;
-        state.rating = tempFilterState.rating;
-        state.tag = tempFilterState.tag;
+        state.selectedTags = new Set(tempSelectedTags);
         closeFilterModal();
         render();
       });
@@ -692,12 +659,7 @@
     // Modal: Reset all
     if (btnModalResetAll) {
       btnModalResetAll.addEventListener('click', () => {
-        tempFilterState = {
-          category: 'all',
-          status: 'all',
-          rating: 'all',
-          tag: 'all'
-        };
+        tempSelectedTags.clear();
         syncModalChoices();
       });
     }

@@ -421,6 +421,16 @@ body {
   color: #991b1b;
 }
 
+.badge-tag {
+  background: #fef3c7;
+  color: #92400e;
+  font-weight: 600;
+  font-size: 0.78rem;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  border: 1px solid #fde68a;
+}
+
 /* Empty State */
 .empty-state {
   text-align: center;

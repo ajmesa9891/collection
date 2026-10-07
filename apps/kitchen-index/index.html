@@ -39,7 +39,7 @@
         <button id="search-clear-btn" class="search-clear-btn" aria-label="Clear search" style="display: none;">✕</button>
       </div>
 
-      <button id="btn-open-filters" class="btn-filter" aria-label="Open recipe filters" title="Filter by category, status, rating & tags">
+      <button id="btn-open-filters" class="btn-filter" aria-label="Open recipe filters" title="Filter by tags">
         <span class="filter-icon" aria-hidden="true">⚙️</span>
         <span class="filter-label">Filters</span>
         <span id="filter-badge" class="filter-badge" style="display: none;">0</span>
@@ -76,47 +76,16 @@
   <div class="modal-backdrop" id="filter-modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
     <div class="filter-dialog" id="filter-dialog-container">
       <div class="filter-dialog-header">
-        <h2>Filters &amp; Options</h2>
+        <h2>Filter by Tags</h2>
         <button class="modal-close-btn" id="filter-modal-close-btn" title="Close" aria-label="Close filters">✕</button>
       </div>
 
       <div class="filter-dialog-body">
-        <!-- Category Filter -->
-        <div class="filter-section">
-          <div class="filter-section-title">Category</div>
-          <div class="filter-options-grid" id="modal-categories-grid">
-            <!-- Populated dynamically via app.js -->
-          </div>
-        </div>
-
-        <!-- Status Filter -->
-        <div class="filter-section">
-          <div class="filter-section-title">Kitchen Status</div>
-          <div class="filter-options-grid">
-            <button class="filter-choice-btn active" data-filter-type="status" data-filter-value="all">All</button>
-            <button class="filter-choice-btn" data-filter-type="status" data-filter-value="tried">✓ Tried in Kitchen</button>
-            <button class="filter-choice-btn" data-filter-type="status" data-filter-value="staple">★ Family Staples</button>
-            <button class="filter-choice-btn" data-filter-type="status" data-filter-value="want-to-try">⏳ Want to Try</button>
-          </div>
-        </div>
-
-        <!-- Rating Filter -->
-        <div class="filter-section">
-          <div class="filter-section-title">Family Rating</div>
-          <div class="filter-options-grid">
-            <button class="filter-choice-btn active" data-filter-type="rating" data-filter-value="all">All</button>
-            <button class="filter-choice-btn" data-filter-type="rating" data-filter-value="loved">♥ Family Approved / Favorites</button>
-          </div>
-        </div>
-
         <!-- Tags Filter -->
         <div class="filter-section">
-          <div class="filter-section-title">Special Tags</div>
-          <div class="filter-options-grid">
-            <button class="filter-choice-btn active" data-filter-type="tag" data-filter-value="all">All</button>
-            <button class="filter-choice-btn" data-filter-type="tag" data-filter-value="High-Protein">⚡ High-Protein</button>
-            <button class="filter-choice-btn" data-filter-type="tag" data-filter-value="Baker's Percentages">🍞 Baker's Ratios</button>
-            <button class="filter-choice-btn" data-filter-type="tag" data-filter-value="Gluten-Free">🌾 Gluten-Free</button>
+          <div class="filter-section-title">Tags</div>
+          <div class="filter-options-grid" id="modal-tags-grid">
+            <!-- Populated dynamically via app.js -->
           </div>
         </div>
       </div>

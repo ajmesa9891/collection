@@ -11,10 +11,7 @@ const RECIPES_DATA = [
         "cookTime":  "12–15m",
         "temp":  "375°F (190°C)",
         "tags":  [
-                     "Baking",
-                     "Whole Wheat",
-                     "Baker\u0027s Percentages",
-                     "Staple"
+                     "Baking \u0026 Doughs"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -72,10 +69,8 @@ const RECIPES_DATA = [
         "cookTime":  "15m",
         "temp":  "Preheated waffle iron",
         "tags":  [
-                     "Breakfast",
-                     "High-Protein",
-                     "Meal Prep",
-                     "Family Approved"
+                     "Breakfast \u0026 Sweets",
+                     "Baking \u0026 Doughs"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -123,10 +118,8 @@ const RECIPES_DATA = [
         "cookTime":  "12m",
         "temp":  "Preheated waffle iron",
         "tags":  [
-                     "Breakfast",
-                     "High-Protein",
-                     "Quick",
-                     "Family Approved"
+                     "Breakfast \u0026 Sweets",
+                     "Baking \u0026 Doughs"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -182,10 +175,8 @@ const RECIPES_DATA = [
         "cookTime":  "None",
         "temp":  "Room temp / Warm",
         "tags":  [
-                     "Sauces",
-                     "Vegan",
-                     "High-Fiber",
-                     "Quick"
+                     "Sauces \u0026 Dressings",
+                     "Tofu \u0026 Plant-Based"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -245,10 +236,8 @@ const RECIPES_DATA = [
         "cookTime":  "15m",
         "temp":  "Stovetop simmer",
         "tags":  [
-                     "Dips",
-                     "Vegan",
-                     "High-Fiber",
-                     "High-Protein"
+                     "Sauces \u0026 Dressings",
+                     "Tofu \u0026 Plant-Based"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -332,10 +321,7 @@ const RECIPES_DATA = [
         "cookTime":  "None (Raw or Pan-seared)",
         "temp":  "Chilled / Pan-sear",
         "tags":  [
-                     "Tofu",
-                     "High-Protein",
-                     "Meal Prep",
-                     "Staple"
+                     "Tofu \u0026 Plant-Based"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -395,11 +381,8 @@ const RECIPES_DATA = [
         "cookTime":  "6–8h on low",
         "temp":  "Slow Cooker Low",
         "tags":  [
-                     "Slow Cooker",
-                     "High-Protein",
-                     "Beef",
-                     "Pork",
-                     "Meal Prep"
+                     "Slow Cooker \u0026 Meats",
+                     "Grill \u0026 Meats"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -488,10 +471,8 @@ const RECIPES_DATA = [
         "cookTime":  "6–8h on low",
         "temp":  "Slow Cooker Low",
         "tags":  [
-                     "Slow Cooker",
-                     "Mexican",
-                     "Beef",
-                     "Tacos"
+                     "Slow Cooker \u0026 Meats",
+                     "Stews \u0026 Skillets"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -585,10 +566,7 @@ const RECIPES_DATA = [
         "cookTime":  "2h on low",
         "temp":  "Stovetop low or Slow Cooker",
         "tags":  [
-                     "Stews",
-                     "Lamb",
-                     "High-Protein",
-                     "Comfort Food"
+                     "Stews \u0026 Skillets"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -657,11 +635,7 @@ const RECIPES_DATA = [
         "cookTime":  "20m",
         "temp":  "Medium-High Skillet",
         "tags":  [
-                     "Stews",
-                     "Beef",
-                     "Low-Carb",
-                     "Quick",
-                     "Staple"
+                     "Stews \u0026 Skillets"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -725,10 +699,7 @@ const RECIPES_DATA = [
         "cookTime":  "2.5h",
         "temp":  "500°F sear / 325°F braise",
         "tags":  [
-                     "Stews",
-                     "Beef",
-                     "Comfort Food",
-                     "Technique-Driven"
+                     "Stews \u0026 Skillets"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -803,10 +774,8 @@ const RECIPES_DATA = [
         "cookTime":  "1.5h",
         "temp":  "375°F (190°C)",
         "tags":  [
-                     "Stews",
-                     "Turkish",
-                     "Oven Stew",
-                     "Sheet Pan / Casserole"
+                     "Stews \u0026 Skillets",
+                     "Bakes \u0026 Sheet Pan"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -859,11 +828,8 @@ const RECIPES_DATA = [
         "cookTime":  "25m",
         "temp":  "Stovetop simmer",
         "tags":  [
-                     "Stews",
-                     "Tunisian",
-                     "Vegan",
-                     "High-Fiber",
-                     "Comfort Food"
+                     "Stews \u0026 Skillets",
+                     "Tofu \u0026 Plant-Based"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -925,11 +891,8 @@ const RECIPES_DATA = [
         "cookTime":  "2.5h bake",
         "temp":  "350°F (175°C)",
         "tags":  [
-                     "Stews",
-                     "Greek",
-                     "Vegetarian",
-                     "High-Fiber",
-                     "Slow-Bake"
+                     "Stews \u0026 Skillets",
+                     "Tofu \u0026 Plant-Based"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -1016,10 +979,8 @@ const RECIPES_DATA = [
         "cookTime":  "25m",
         "temp":  "Stovetop simmer",
         "tags":  [
-                     "Soups",
-                     "One-Pot",
-                     "Vegetarian",
-                     "Quick Dinners"
+                     "Soups \u0026 Ramen",
+                     "Pastas"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -1105,10 +1066,7 @@ const RECIPES_DATA = [
         "cookTime":  "10m",
         "temp":  "Boiling broth",
         "tags":  [
-                     "Soups",
-                     "Ramen",
-                     "High-Protein",
-                     "Asian"
+                     "Soups \u0026 Ramen"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -1197,10 +1155,7 @@ const RECIPES_DATA = [
         "cookTime":  "Rice cooker cycle (~40m)",
         "temp":  "Rice Cooker Normal",
         "tags":  [
-                     "Rice Cooker",
-                     "Japanese",
-                     "Chicken",
-                     "Comfort Food"
+                     "Rice \u0026 Grains"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -1290,11 +1245,8 @@ const RECIPES_DATA = [
         "cookTime":  "30m",
         "temp":  "Medium-Low Simmer",
         "tags":  [
-                     "Meal Prep",
-                     "High-Protein",
-                     "Chicken",
-                     "Rice",
-                     "Macros Tracked"
+                     "Rice \u0026 Grains",
+                     "Stews \u0026 Skillets"
                  ],
         "macros":  {
                        "total":  "3,376 kcal | 316C | 106F | 215P",
@@ -1364,11 +1316,7 @@ const RECIPES_DATA = [
         "cookTime":  "50m",
         "temp":  "400°F (204°C) / 450°F finish",
         "tags":  [
-                     "Pasta",
-                     "High-Protein",
-                     "Beef",
-                     "Meal Prep",
-                     "Macros Tracked"
+                     "Pastas"
                  ],
         "macros":  {
                        "total":  "6,256 kcal | 571P | 467C | 229F",
@@ -1436,10 +1384,7 @@ const RECIPES_DATA = [
         "cookTime":  "10m",
         "temp":  "High Heat Grill / Broiler",
         "tags":  [
-                     "Grill",
-                     "High-Protein",
-                     "Beef",
-                     "Mediterranean"
+                     "Grill \u0026 Meats"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -1508,10 +1453,7 @@ const RECIPES_DATA = [
         "cookTime":  "None",
         "temp":  "Chilled",
         "tags":  [
-                     "Sauces",
-                     "High-Protein",
-                     "Quick",
-                     "Staple"
+                     "Sauces \u0026 Dressings"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -1559,10 +1501,7 @@ const RECIPES_DATA = [
         "cookTime":  "None",
         "temp":  "Room Temp",
         "tags":  [
-                     "Sauces",
-                     "Vegan",
-                     "Staple",
-                     "Quick"
+                     "Sauces \u0026 Dressings"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -1614,10 +1553,7 @@ const RECIPES_DATA = [
         "cookTime":  "45m",
         "temp":  "375°F (190°C)",
         "tags":  [
-                     "Bakes",
-                     "Beef",
-                     "Quick",
-                     "Staple"
+                     "Bakes \u0026 Sheet Pan"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -1658,10 +1594,7 @@ const RECIPES_DATA = [
         "cookTime":  "45m",
         "temp":  "375°F (190°C)",
         "tags":  [
-                     "Bakes",
-                     "Low-Carb",
-                     "Vegetables",
-                     "Gluten-Free"
+                     "Bakes \u0026 Sheet Pan"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -1730,10 +1663,7 @@ const RECIPES_DATA = [
         "cookTime":  "30m",
         "temp":  "425°F (220°C)",
         "tags":  [
-                     "Sheet Pan",
-                     "Chicken",
-                     "Quick Dinners",
-                     "Staple"
+                     "Bakes \u0026 Sheet Pan"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -1787,10 +1717,7 @@ const RECIPES_DATA = [
         "cookTime":  "20m",
         "temp":  "425°F (220°C)",
         "tags":  [
-                     "Sheet Pan",
-                     "Mexican",
-                     "Chicken",
-                     "High-Protein"
+                     "Bakes \u0026 Sheet Pan"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -1859,10 +1786,7 @@ const RECIPES_DATA = [
         "cookTime":  "25m",
         "temp":  "425°F (220°C)",
         "tags":  [
-                     "Sheet Pan",
-                     "Seafood",
-                     "Healthy Fats",
-                     "Quick Dinners"
+                     "Bakes \u0026 Sheet Pan"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -1923,10 +1847,7 @@ const RECIPES_DATA = [
         "cookTime":  "12m",
         "temp":  "425°F (220°C)",
         "tags":  [
-                     "Sheet Pan",
-                     "Seafood",
-                     "Quick",
-                     "Mediterranean"
+                     "Bakes \u0026 Sheet Pan"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -1987,10 +1908,7 @@ const RECIPES_DATA = [
         "cookTime":  "None",
         "temp":  "Room Temp",
         "tags":  [
-                     "Breakfast",
-                     "High-Protein",
-                     "Plant-Based",
-                     "Sandwiches"
+                     "Breakfast \u0026 Sweets"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -2063,9 +1981,7 @@ const RECIPES_DATA = [
         "cookTime":  "15m",
         "temp":  "Simmer",
         "tags":  [
-                     "Sauces",
-                     "BBQ",
-                     "Staple"
+                     "Sauces \u0026 Dressings"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -2124,9 +2040,7 @@ const RECIPES_DATA = [
         "cookTime":  "None",
         "temp":  "Room Temp",
         "tags":  [
-                     "Sauces",
-                     "Reference Template",
-                     "Staple"
+                     "Sauces \u0026 Dressings"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -2174,9 +2088,7 @@ const RECIPES_DATA = [
         "cookTime":  "None",
         "temp":  "Room Temp",
         "tags":  [
-                     "Sauces",
-                     "Salad Dressing",
-                     "Quick"
+                     "Sauces \u0026 Dressings"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -2240,11 +2152,7 @@ const RECIPES_DATA = [
         "cookTime":  "None",
         "temp":  "Room Temp / Warm",
         "tags":  [
-                     "Sauces",
-                     "Tofu",
-                     "Vegan",
-                     "High-Protein",
-                     "Staple"
+                     "Sauces \u0026 Dressings"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -2293,9 +2201,7 @@ const RECIPES_DATA = [
         "cookTime":  "None",
         "temp":  "Room Temp",
         "tags":  [
-                     "Sauces",
-                     "Thai",
-                     "Salad Dressing"
+                     "Sauces \u0026 Dressings"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -2355,9 +2261,7 @@ const RECIPES_DATA = [
         "cookTime":  "None",
         "temp":  "Room Temp",
         "tags":  [
-                     "Sauces",
-                     "Vegan",
-                     "Salad Dressing"
+                     "Sauces \u0026 Dressings"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -2409,9 +2313,8 @@ const RECIPES_DATA = [
         "cookTime":  "None",
         "temp":  "Chilled",
         "tags":  [
-                     "Sauces",
-                     "Japanese",
-                     "Salad Dressing"
+                     "Sauces \u0026 Dressings",
+                     "Salads"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -2471,9 +2374,7 @@ const RECIPES_DATA = [
         "cookTime":  "None",
         "temp":  "Chilled",
         "tags":  [
-                     "Sauces",
-                     "Vegan",
-                     "Herbs"
+                     "Sauces \u0026 Dressings"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -2533,9 +2434,8 @@ const RECIPES_DATA = [
         "cookTime":  "None",
         "temp":  "Chilled",
         "tags":  [
-                     "Sauces",
-                     "Nut-Free",
-                     "Vegan"
+                     "Sauces \u0026 Dressings",
+                     "Salads"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -2586,9 +2486,7 @@ const RECIPES_DATA = [
         "cookTime":  "None",
         "temp":  "Room Temp",
         "tags":  [
-                     "Sauces",
-                     "Middle Eastern",
-                     "Staple"
+                     "Sauces \u0026 Dressings"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -2636,9 +2534,8 @@ const RECIPES_DATA = [
         "cookTime":  "None",
         "temp":  "Room Temp",
         "tags":  [
-                     "Sauces",
-                     "Nut-Free",
-                     "Pesto"
+                     "Sauces \u0026 Dressings",
+                     "Pastas"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -2694,9 +2591,7 @@ const RECIPES_DATA = [
         "cookTime":  "None",
         "temp":  "Room Temp",
         "tags":  [
-                     "Sauces",
-                     "Mexican",
-                     "Spicy"
+                     "Sauces \u0026 Dressings"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -2760,9 +2655,7 @@ const RECIPES_DATA = [
         "cookTime":  "None",
         "temp":  "Chilled",
         "tags":  [
-                     "Sauces",
-                     "Oil-Free",
-                     "Herbs"
+                     "Sauces \u0026 Dressings"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -2820,9 +2713,7 @@ const RECIPES_DATA = [
         "cookTime":  "None",
         "temp":  "Chilled",
         "tags":  [
-                     "Sauces",
-                     "High-Protein",
-                     "Herbs"
+                     "Sauces \u0026 Dressings"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -2872,9 +2763,7 @@ const RECIPES_DATA = [
         "cookTime":  "None",
         "temp":  "Room Temp",
         "tags":  [
-                     "Sauces",
-                     "Asian",
-                     "Salad Dressing"
+                     "Sauces \u0026 Dressings"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -2924,9 +2813,7 @@ const RECIPES_DATA = [
         "cookTime":  "None",
         "temp":  "Chilled",
         "tags":  [
-                     "Sauces",
-                     "Oil-Free",
-                     "Dill"
+                     "Sauces \u0026 Dressings"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -2988,9 +2875,7 @@ const RECIPES_DATA = [
         "cookTime":  "None",
         "temp":  "Chilled",
         "tags":  [
-                     "Sauces",
-                     "Asian",
-                     "Salad Dressing"
+                     "Sauces \u0026 Dressings"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -3044,9 +2929,7 @@ const RECIPES_DATA = [
         "cookTime":  "None",
         "temp":  "Room Temp",
         "tags":  [
-                     "Sauces",
-                     "Noodles",
-                     "Peanut"
+                     "Sauces \u0026 Dressings"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -3101,10 +2984,7 @@ const RECIPES_DATA = [
         "cookTime":  "None",
         "temp":  "Room Temp",
         "tags":  [
-                     "Sauces",
-                     "Korean",
-                     "Quick",
-                     "Staple"
+                     "Sauces \u0026 Dressings"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -3154,9 +3034,7 @@ const RECIPES_DATA = [
         "cookTime":  "None",
         "temp":  "Chilled",
         "tags":  [
-                     "Sauces",
-                     "Japanese",
-                     "Salad Dressing"
+                     "Sauces \u0026 Dressings"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -3251,9 +3129,7 @@ const RECIPES_DATA = [
         "cookTime":  "None",
         "temp":  "Chilled",
         "tags":  [
-                     "Sauces",
-                     "Citrus",
-                     "Salad Dressing"
+                     "Sauces \u0026 Dressings"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -3299,10 +3175,7 @@ const RECIPES_DATA = [
         "cookTime":  "10m",
         "temp":  "High Heat Grill / Skillet",
         "tags":  [
-                     "Grill",
-                     "Greek",
-                     "Chicken",
-                     "High-Protein"
+                     "Grill \u0026 Meats"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -3350,10 +3223,7 @@ const RECIPES_DATA = [
         "cookTime":  "None",
         "temp":  "Chilled",
         "tags":  [
-                     "Salads",
-                     "Raw",
-                     "Vegan",
-                     "High-Fiber"
+                     "Salads"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -3425,10 +3295,7 @@ const RECIPES_DATA = [
         "cookTime":  "None",
         "temp":  "Chilled",
         "tags":  [
-                     "Salads",
-                     "Mediterranean",
-                     "High-Fiber",
-                     "Quick"
+                     "Salads"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -3492,10 +3359,7 @@ const RECIPES_DATA = [
         "cookTime":  "None",
         "temp":  "Chilled",
         "tags":  [
-                     "Salads",
-                     "High-Fiber",
-                     "Plant-Based",
-                     "Sandwiches"
+                     "Salads"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -3555,10 +3419,7 @@ const RECIPES_DATA = [
         "cookTime":  "None",
         "temp":  "Chilled",
         "tags":  [
-                     "Salads",
-                     "Mexican",
-                     "Vegan",
-                     "High-Fiber"
+                     "Salads"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -3626,10 +3487,7 @@ const RECIPES_DATA = [
         "cookTime":  "5m",
         "temp":  "Chilled",
         "tags":  [
-                     "Salads",
-                     "Seafood",
-                     "High-Protein",
-                     "Low-Carb"
+                     "Salads"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -3698,10 +3556,7 @@ const RECIPES_DATA = [
         "cookTime":  "None",
         "temp":  "Chilled",
         "tags":  [
-                     "Salads",
-                     "Mediterranean",
-                     "High-Fiber",
-                     "Staple"
+                     "Salads"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -3757,10 +3612,7 @@ const RECIPES_DATA = [
         "cookTime":  "12m",
         "temp":  "Chilled",
         "tags":  [
-                     "Salads",
-                     "Chicken",
-                     "High-Protein",
-                     "Meal Prep"
+                     "Salads"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -3824,10 +3676,7 @@ const RECIPES_DATA = [
         "cookTime":  "None",
         "temp":  "Chilled",
         "tags":  [
-                     "Tofu",
-                     "Vegan",
-                     "Italian",
-                     "Staple"
+                     "Tofu \u0026 Plant-Based"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -3883,10 +3732,7 @@ const RECIPES_DATA = [
         "cookTime":  "None",
         "temp":  "Chilled",
         "tags":  [
-                     "Tofu",
-                     "Vegan",
-                     "Greek",
-                     "Meal Prep"
+                     "Tofu \u0026 Plant-Based"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -3950,10 +3796,7 @@ const RECIPES_DATA = [
         "cookTime":  "25m",
         "temp":  "350°F (175°C)",
         "tags":  [
-                     "Tofu",
-                     "Crispy",
-                     "Asian",
-                     "High-Protein"
+                     "Tofu \u0026 Plant-Based"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -4011,10 +3854,7 @@ const RECIPES_DATA = [
         "cookTime":  "25m",
         "temp":  "400°F (204°C)",
         "tags":  [
-                     "Tofu",
-                     "BBQ",
-                     "Quick",
-                     "Staple"
+                     "Tofu \u0026 Plant-Based"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -4060,10 +3900,7 @@ const RECIPES_DATA = [
         "cookTime":  "30m",
         "temp":  "350°F (175°C)",
         "tags":  [
-                     "Tofu",
-                     "Mexican",
-                     "Tacos",
-                     "High-Protein"
+                     "Tofu \u0026 Plant-Based"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -4140,9 +3977,7 @@ const RECIPES_DATA = [
         "cookTime":  "15m",
         "temp":  "375°F (190°C) Bake or Skillet",
         "tags":  [
-                     "Tofu",
-                     "Korean",
-                     "Marinade"
+                     "Tofu \u0026 Plant-Based"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -4198,9 +4033,7 @@ const RECIPES_DATA = [
         "cookTime":  "15m",
         "temp":  "375°F (190°C) Bake or Skillet",
         "tags":  [
-                     "Tofu",
-                     "Mexican",
-                     "Marinade"
+                     "Tofu \u0026 Plant-Based"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -4264,10 +4097,7 @@ const RECIPES_DATA = [
         "cookTime":  "20m",
         "temp":  "375°F (190°C)",
         "tags":  [
-                     "Tofu",
-                     "Caribbean",
-                     "Spicy",
-                     "Marinade"
+                     "Tofu \u0026 Plant-Based"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -4331,9 +4161,7 @@ const RECIPES_DATA = [
         "cookTime":  "20m",
         "temp":  "375°F (190°C)",
         "tags":  [
-                     "Tofu",
-                     "Quick",
-                     "Marinade"
+                     "Tofu \u0026 Plant-Based"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -4385,9 +4213,7 @@ const RECIPES_DATA = [
         "cookTime":  "20m",
         "temp":  "375°F (190°C)",
         "tags":  [
-                     "Tofu",
-                     "Mediterranean",
-                     "Marinade"
+                     "Tofu \u0026 Plant-Based"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -4443,9 +4269,7 @@ const RECIPES_DATA = [
         "cookTime":  "20m (Off-Stove)",
         "temp":  "Boil then burner OFF",
         "tags":  [
-                     "Grains",
-                     "Staple",
-                     "Technique-Driven"
+                     "Rice \u0026 Grains"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -4483,9 +4307,7 @@ const RECIPES_DATA = [
         "cookTime":  "None",
         "temp":  "Room Temp",
         "tags":  [
-                     "Vegan",
-                     "Staple",
-                     "Quick"
+                     "Sauces \u0026 Dressings"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -4525,10 +4347,7 @@ const RECIPES_DATA = [
         "cookTime":  "18–20m",
         "temp":  "400°F (204°C)",
         "tags":  [
-                     "Baking",
-                     "Whole Wheat",
-                     "Breakfast",
-                     "High-Fiber"
+                     "Baking \u0026 Doughs"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -4598,10 +4417,7 @@ const RECIPES_DATA = [
         "cookTime":  "15–20m",
         "temp":  "420°F (220°C)",
         "tags":  [
-                     "Pizza",
-                     "High-Protein",
-                     "Quick Dinners",
-                     "Macros Tracked"
+                     "Pizza"
                  ],
         "macros":  {
                        "total":  "685 kcal | 69C | 27F | 41P"
@@ -4661,11 +4477,7 @@ const RECIPES_DATA = [
         "cookTime":  "8–10m bake",
         "temp":  "500°F–550°F (max oven)",
         "tags":  [
-                     "Pizza",
-                     "Baking",
-                     "Einkorn",
-                     "Fermentation",
-                     "Family Approved"
+                     "Pizza"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -4723,10 +4535,7 @@ const RECIPES_DATA = [
         "cookTime":  "25m total",
         "temp":  "525°F (275°C) par-bake / 480°F finish",
         "tags":  [
-                     "Pizza",
-                     "Detroit Style",
-                     "High Hydration",
-                     "Baker\u0027s Percentages"
+                     "Pizza"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -4776,10 +4585,7 @@ const RECIPES_DATA = [
         "cookTime":  "10–12m",
         "temp":  "500°F (260°C)",
         "tags":  [
-                     "Pizza",
-                     "Chicago Thin",
-                     "Baker\u0027s Percentages",
-                     "Staple"
+                     "Pizza"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -4824,9 +4630,7 @@ const RECIPES_DATA = [
         "cookTime":  "None",
         "temp":  "Room Temp",
         "tags":  [
-                     "Pizza",
-                     "Sauces",
-                     "Staple"
+                     "Pizza"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -4886,9 +4690,7 @@ const RECIPES_DATA = [
         "cookTime":  "2–3m bake",
         "temp":  "Max oven / Ooni",
         "tags":  [
-                     "Pizza",
-                     "Neapolitan",
-                     "Baker\u0027s Percentages"
+                     "Pizza"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -4931,10 +4733,7 @@ const RECIPES_DATA = [
         "cookTime":  "25m",
         "temp":  "Medium-Low Simmer",
         "tags":  [
-                     "Japanese",
-                     "Chicken",
-                     "High-Protein",
-                     "Meal Prep"
+                     "Stews \u0026 Skillets"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -5019,9 +4818,7 @@ const RECIPES_DATA = [
         "cookTime":  "None",
         "temp":  "Chilled",
         "tags":  [
-                     "Breakfast",
-                     "High-Protein",
-                     "Staple"
+                     "Breakfast \u0026 Sweets"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -5073,10 +4870,7 @@ const RECIPES_DATA = [
         "cookTime":  "30m",
         "temp":  "400°F (204°C)",
         "tags":  [
-                     "Soups",
-                     "High-Protein",
-                     "Meal Prep",
-                     "Staple"
+                     "Soups \u0026 Ramen"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -5117,10 +4911,7 @@ const RECIPES_DATA = [
         "cookTime":  "12–15m",
         "temp":  "400°F (200°C) Air Fryer",
         "tags":  [
-                     "Air Fryer",
-                     "Chicken",
-                     "High-Protein",
-                     "Quick Dinners"
+                     "Grill \u0026 Meats"
                  ],
         "macros":  {
                        "perServing":  "239 kcal | 12C | 11F | 21P (per serving)"
@@ -5175,11 +4966,7 @@ const RECIPES_DATA = [
         "cookTime":  "4h slow cook + 10m bake",
         "temp":  "300°F (150°C) slow / 400°F finish",
         "tags":  [
-                     "Pasta",
-                     "Beef",
-                     "High-Protein",
-                     "Meal Prep",
-                     "Slow Cooker"
+                     "Pastas"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -5253,11 +5040,7 @@ const RECIPES_DATA = [
         "cookTime":  "55m",
         "temp":  "400°F (200°C)",
         "tags":  [
-                     "Rice",
-                     "Chicken",
-                     "Thai",
-                     "One-Pan",
-                     "High-Protein"
+                     "Rice \u0026 Grains"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -5328,10 +5111,7 @@ const RECIPES_DATA = [
         "cookTime":  "3h simmer",
         "temp":  "Stovetop low simmer",
         "tags":  [
-                     "Stews",
-                     "Spanish",
-                     "High-Fiber",
-                     "Comfort Food"
+                     "Stews \u0026 Skillets"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -5404,10 +5184,7 @@ const RECIPES_DATA = [
         "cookTime":  "10m",
         "temp":  "Chilled",
         "tags":  [
-                     "Pasta",
-                     "High-Protein",
-                     "Meal Prep",
-                     "Quick"
+                     "Salads"
                  ],
         "macros":  {
                        "perServing":  "Approx 580 kcal | 50g Protein"
@@ -5483,10 +5260,7 @@ const RECIPES_DATA = [
         "cookTime":  "35–40m",
         "temp":  "350°F (175°C)",
         "tags":  [
-                     "Pasta",
-                     "High-Protein",
-                     "Bakes",
-                     "Comfort Food"
+                     "Pastas"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -5548,9 +5322,7 @@ const RECIPES_DATA = [
         "temp":  "500°F (260°C)",
         "tags":  [
                      "Pizza",
-                     "High-Protein",
-                     "Meal Prep",
-                     "Macros Tracked"
+                     "Bakes \u0026 Sheet Pan"
                  ],
         "macros":  {
                        "perServing":  "Approx 450 kcal | 40g Protein per pizza"
@@ -5622,10 +5394,7 @@ const RECIPES_DATA = [
         "cookTime":  "15m",
         "temp":  "550°F (285°C) Max Oven",
         "tags":  [
-                     "Pizza",
-                     "Pan Pizza",
-                     "Baker\u0027s Percentages",
-                     "Cast Iron"
+                     "Pizza"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -5675,9 +5444,7 @@ const RECIPES_DATA = [
         "cookTime":  "10m",
         "temp":  "500°F (260°C) Pizza Steel",
         "tags":  [
-                     "Pizza",
-                     "High-Protein",
-                     "Baker\u0027s Percentages"
+                     "Pizza"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -5743,10 +5510,7 @@ const RECIPES_DATA = [
         "cookTime":  "5m",
         "temp":  "450°F (230°C) Preheated Sheet Pan",
         "tags":  [
-                     "Pizza",
-                     "Quick",
-                     "High-Protein",
-                     "Chicken"
+                     "Pizza"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -5792,9 +5556,7 @@ const RECIPES_DATA = [
         "cookTime":  "18–20m",
         "temp":  "475°F (245°C)",
         "tags":  [
-                     "Pizza",
-                     "Sheet Pan",
-                     "Baker\u0027s Percentages"
+                     "Pizza"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -5840,9 +5602,7 @@ const RECIPES_DATA = [
         "cookTime":  "8–10m",
         "temp":  "500°F–550°F (Max Oven)",
         "tags":  [
-                     "Pizza",
-                     "Quick",
-                     "Baker\u0027s Percentages"
+                     "Pizza"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -5889,9 +5649,7 @@ const RECIPES_DATA = [
         "cookTime":  "6–8m",
         "temp":  "550°F (285°C) Pizza Steel",
         "tags":  [
-                     "Pizza",
-                     "NY Style",
-                     "Baker\u0027s Percentages"
+                     "Pizza"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -5946,9 +5704,7 @@ const RECIPES_DATA = [
         "cookTime":  "8m",
         "temp":  "550°F (285°C)",
         "tags":  [
-                     "Pizza",
-                     "NY Style",
-                     "Baker\u0027s Percentages"
+                     "Pizza"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -5994,11 +5750,7 @@ const RECIPES_DATA = [
         "cookTime":  "20m",
         "temp":  "High Heat Skillet",
         "tags":  [
-                     "Rice",
-                     "Beef",
-                     "High-Protein",
-                     "Meal Prep",
-                     "Macros Tracked"
+                     "Rice \u0026 Grains"
                  ],
         "macros":  {
                        "perServing":  "Approx 520 kcal | 54g Protein | 48g Carbs | 12g Fat"
@@ -6066,10 +5818,7 @@ const RECIPES_DATA = [
         "cookTime":  "11–13m",
         "temp":  "350°F (175°C)",
         "tags":  [
-                     "Baking",
-                     "Cookies",
-                     "Brown Butter",
-                     "Family Favorite"
+                     "Baking \u0026 Doughs"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -6148,10 +5897,7 @@ const RECIPES_DATA = [
         "cookTime":  "12m",
         "temp":  "350°F (175°C)",
         "tags":  [
-                     "Gluten-Free",
-                     "Almond Flour",
-                     "Naturally Sweetened",
-                     "Muffins"
+                     "Baking \u0026 Doughs"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -6229,11 +5975,7 @@ const RECIPES_DATA = [
         "cookTime":  "0m (No-Bake)",
         "temp":  "No Bake / Refrigerator",
         "tags":  [
-                     "No-Bake",
-                     "Snack",
-                     "High-Protein",
-                     "Naturally Sweetened",
-                     "Vegan Option"
+                     "Breakfast \u0026 Sweets"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -6288,10 +6030,7 @@ const RECIPES_DATA = [
         "cookTime":  "8m",
         "temp":  "Low to Medium Skillet Heat",
         "tags":  [
-                     "Breakfast",
-                     "High-Protein",
-                     "Quick Dinners",
-                     "Pancakes"
+                     "Breakfast \u0026 Sweets"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -6339,7 +6078,7 @@ const RECIPES_DATA = [
     {
         "id":  "nanas-carrot-cake",
         "title":  "Nana\u0027s Pineapple Carrot Cake with Cream Cheese Frosting",
-        "category":  "Baking \u0026 Doughs",
+        "category":  "Breakfast \u0026 Sweets",
         "status":  "tried",
         "rating":  "family-favorite",
         "yield":  "12–16 servings (9x13 or two 9-inch layers)",
@@ -6347,10 +6086,8 @@ const RECIPES_DATA = [
         "cookTime":  "35–40m",
         "temp":  "350°F (175°C)",
         "tags":  [
-                     "Baking",
-                     "Cakes",
-                     "Family Recipe",
-                     "Cream Cheese Frosting"
+                     "Breakfast \u0026 Sweets",
+                     "Baking \u0026 Doughs"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -6474,7 +6211,7 @@ const RECIPES_DATA = [
     {
         "id":  "sandwich-cookie-cake",
         "title":  "Williams-Sonoma Giant Sandwich Cookie Cake",
-        "category":  "Baking \u0026 Doughs",
+        "category":  "Breakfast \u0026 Sweets",
         "status":  "want-to-try",
         "rating":  "unrated",
         "yield":  "12–16 servings (2 molded cakes)",
@@ -6482,10 +6219,8 @@ const RECIPES_DATA = [
         "cookTime":  "35m",
         "temp":  "350°F (175°C)",
         "tags":  [
-                     "Baking",
-                     "Cakes",
-                     "Chocolate",
-                     "Specialty Mold"
+                     "Breakfast \u0026 Sweets",
+                     "Baking \u0026 Doughs"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -6588,10 +6323,7 @@ const RECIPES_DATA = [
         "cookTime":  "40m",
         "temp":  "170°C (340°F) / Fan 150°C",
         "tags":  [
-                     "Gluten-Free",
-                     "Spanish Classic",
-                     "Almond Flour",
-                     "Dairy-Free"
+                     "Baking \u0026 Doughs"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -6659,10 +6391,7 @@ const RECIPES_DATA = [
         "cookTime":  "10m",
         "temp":  "330°F (165°C)",
         "tags":  [
-                     "Baking",
-                     "Cakes",
-                     "Sablé",
-                     "Celebration Cake"
+                     "Baking \u0026 Doughs"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -6765,10 +6494,7 @@ const RECIPES_DATA = [
         "cookTime":  "30m",
         "temp":  "350°F (175°C) Convection",
         "tags":  [
-                     "Baking",
-                     "Cakes",
-                     "Jam Cake",
-                     "Botanical"
+                     "Baking \u0026 Doughs"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -6866,10 +6592,7 @@ const RECIPES_DATA = [
         "cookTime":  "18–22m",
         "temp":  "350°F (175°C)",
         "tags":  [
-                     "Baking",
-                     "Cakes",
-                     "Blueberry",
-                     "Layer Cake"
+                     "Baking \u0026 Doughs"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -7014,10 +6737,7 @@ const RECIPES_DATA = [
         "cookTime":  "40m",
         "temp":  "350°F (180°C)",
         "tags":  [
-                     "Dairy-Free",
-                     "Citrus",
-                     "Tube Cake",
-                     "Moroccan Classic"
+                     "Baking \u0026 Doughs"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -7091,11 +6811,7 @@ const RECIPES_DATA = [
         "cookTime":  "45–60m",
         "temp":  "350°F (175°C)",
         "tags":  [
-                     "Baking",
-                     "Cakes",
-                     "Citrus",
-                     "Ina Garten",
-                     "Loaf Cake"
+                     "Baking \u0026 Doughs"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -7213,10 +6929,7 @@ const RECIPES_DATA = [
         "cookTime":  "20–25m",
         "temp":  "325°F (160°C)",
         "tags":  [
-                     "Gluten-Free",
-                     "French Classic",
-                     "Almond Flour",
-                     "Macarons"
+                     "Baking \u0026 Doughs"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -7314,10 +7027,7 @@ const RECIPES_DATA = [
         "cookTime":  "12–15m",
         "temp":  "425°F (220°C) down to 350°F (170°C)",
         "tags":  [
-                     "French Classic",
-                     "Brown Butter",
-                     "Almond Flour",
-                     "Small Cakes"
+                     "Baking \u0026 Doughs"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -7399,10 +7109,7 @@ const RECIPES_DATA = [
         "cookTime":  "30–40m",
         "temp":  "325°F (165°C)",
         "tags":  [
-                     "Gluten-Free",
-                     "Flourless",
-                     "Chocolate",
-                     "Caramel"
+                     "Baking \u0026 Doughs"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -7519,11 +7226,7 @@ const RECIPES_DATA = [
         "cookTime":  "35–40m",
         "temp":  "350°F (175°C)",
         "tags":  [
-                     "Baking",
-                     "Cakes",
-                     "Citrus",
-                     "Olive Oil",
-                     "Yogurt Cake"
+                     "Baking \u0026 Doughs"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -7616,10 +7319,7 @@ const RECIPES_DATA = [
         "cookTime":  "35–45m",
         "temp":  "400°F (200°C)",
         "tags":  [
-                     "French Classic",
-                     "Puff Pastry",
-                     "Almond Frangipane",
-                     "Holiday"
+                     "Baking \u0026 Doughs"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -7717,10 +7417,7 @@ const RECIPES_DATA = [
         "cookTime":  "30–40m",
         "temp":  "350°F (180°C)",
         "tags":  [
-                     "Gluten-Free",
-                     "Almond Flour",
-                     "Naturally Sweetened",
-                     "Chocolate"
+                     "Baking \u0026 Doughs"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -7802,10 +7499,7 @@ const RECIPES_DATA = [
         "cookTime":  "10m",
         "temp":  "160°F (71°C) Double Boiler",
         "tags":  [
-                     "Frosting",
-                     "Bakery Technique",
-                     "Buttercream",
-                     "Swiss Meringue"
+                     "Baking \u0026 Doughs"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -7857,11 +7551,8 @@ const RECIPES_DATA = [
         "cookTime":  "4h high / 8h low (or 45m Instant Pot)",
         "temp":  "450°F (230°C) Oven Broil",
         "tags":  [
-                     "Slow Cooker",
-                     "Mexican",
-                     "Pork",
-                     "High-Protein",
-                     "Meal Prep"
+                     "Slow Cooker \u0026 Meats",
+                     "Grill \u0026 Meats"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -7930,7 +7621,7 @@ const RECIPES_DATA = [
     {
         "id":  "velvetted-beef-broccoli",
         "title":  "15-Minute Velvetted Beef and Broccoli Stir-Fry",
-        "category":  "Grill \u0026 Meats",
+        "category":  "Stews \u0026 Skillets",
         "status":  "want-to-try",
         "rating":  "unrated",
         "yield":  "4 servings",
@@ -7938,11 +7629,8 @@ const RECIPES_DATA = [
         "cookTime":  "8m",
         "temp":  "High-Heat Wok / Skillet",
         "tags":  [
-                     "Quick Dinners",
-                     "Beef",
-                     "High-Protein",
-                     "Stir-Fry",
-                     "Chinese Technique"
+                     "Stews \u0026 Skillets",
+                     "Grill \u0026 Meats"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -8049,11 +7737,8 @@ const RECIPES_DATA = [
         "cookTime":  "25m",
         "temp":  "400°F (200°C) Oven / Air Fryer",
         "tags":  [
-                     "High-Protein",
-                     "Meal Prep",
-                     "Macros Tracked",
-                     "Chicken",
-                     "Potatoes"
+                     "Bakes \u0026 Sheet Pan",
+                     "Grill \u0026 Meats"
                  ],
         "macros":  {
                        "perServing":  "490 kcal | 52g Protein | 44g Carbs | 11g Fat (per bowl)"
@@ -8145,10 +7830,8 @@ const RECIPES_DATA = [
         "cookTime":  "35m Pressure Cook",
         "temp":  "High Pressure (Instant Pot)",
         "tags":  [
-                     "Instant Pot",
-                     "Beef",
-                     "High-Protein",
-                     "Comfort Food"
+                     "Slow Cooker \u0026 Meats",
+                     "Stews \u0026 Skillets"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -8226,7 +7909,7 @@ const RECIPES_DATA = [
     {
         "id":  "classic-cuban-ropa-vieja",
         "title":  "Classic Cuban Ropa Vieja (Shredded Flank Steak Stew)",
-        "category":  "Stews \u0026 Skillets",
+        "category":  "Slow Cooker \u0026 Meats",
         "status":  "want-to-try",
         "rating":  "unrated",
         "yield":  "6 servings",
@@ -8234,11 +7917,8 @@ const RECIPES_DATA = [
         "cookTime":  "50m Pressure Cook (or 3h Stovetop)",
         "temp":  "High Pressure / Stovetop Simmer",
         "tags":  [
-                     "Cuban Classic",
-                     "Beef",
-                     "Latin",
-                     "Meal Prep",
-                     "High-Protein"
+                     "Slow Cooker \u0026 Meats",
+                     "Stews \u0026 Skillets"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -8330,11 +8010,8 @@ const RECIPES_DATA = [
         "cookTime":  "40m",
         "temp":  "Medium Stovetop Simmer",
         "tags":  [
-                     "Latin",
-                     "Soup",
-                     "Chicken",
-                     "Comfort Food",
-                     "Whole Foods"
+                     "Soups \u0026 Ramen",
+                     "Slow Cooker \u0026 Meats"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -8402,7 +8079,7 @@ const RECIPES_DATA = [
     {
         "id":  "quick-chickpea-coconut-curry",
         "title":  "20-Minute Creamy Chickpea \u0026 Spinach Coconut Curry",
-        "category":  "Tofu \u0026 Plant-Based",
+        "category":  "Stews \u0026 Skillets",
         "status":  "want-to-try",
         "rating":  "unrated",
         "yield":  "4 servings",
@@ -8410,11 +8087,8 @@ const RECIPES_DATA = [
         "cookTime":  "15m",
         "temp":  "Medium Skillet Heat",
         "tags":  [
-                     "Quick Dinners",
-                     "Plant-Based",
-                     "Curry",
-                     "One-Pot",
-                     "Vegan"
+                     "Stews \u0026 Skillets",
+                     "Tofu \u0026 Plant-Based"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -8490,11 +8164,8 @@ const RECIPES_DATA = [
         "cookTime":  "30m",
         "temp":  "Medium Stovetop Simmer",
         "tags":  [
-                     "Beef",
-                     "High-Protein",
-                     "Chili",
-                     "One-Pot",
-                     "Family Staple"
+                     "Stews \u0026 Skillets",
+                     "Slow Cooker \u0026 Meats"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -8575,10 +8246,8 @@ const RECIPES_DATA = [
         "cookTime":  "25m",
         "temp":  "Medium Stovetop Simmer",
         "tags":  [
-                     "Italian Classic",
-                     "Soup",
-                     "Plant-Based Option",
-                     "One-Pot"
+                     "Soups \u0026 Ramen",
+                     "Stews \u0026 Skillets"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -8659,10 +8328,8 @@ const RECIPES_DATA = [
         "cookTime":  "35m",
         "temp":  "400°F (200°C) Oven Roast",
         "tags":  [
-                     "Soup",
-                     "Vegetarian",
-                     "Sheet Pan",
-                     "Comfort Food"
+                     "Soups \u0026 Ramen",
+                     "Bakes \u0026 Sheet Pan"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -8728,10 +8395,8 @@ const RECIPES_DATA = [
         "cookTime":  "15m",
         "temp":  "Medium Stovetop Simmer",
         "tags":  [
-                     "Soup",
-                     "Quick Dinners",
-                     "Vegetarian",
-                     "High-Fiber"
+                     "Soups \u0026 Ramen",
+                     "Stews \u0026 Skillets"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -8798,10 +8463,7 @@ const RECIPES_DATA = [
         "temp":  "400°F (200°C) Oven Bake",
         "tags":  [
                      "Pastas",
-                     "Quick Dinners",
-                     "Vegetarian",
-                     "One-Pan",
-                     "Viral Classic"
+                     "Bakes \u0026 Sheet Pan"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -8867,11 +8529,8 @@ const RECIPES_DATA = [
         "cookTime":  "18m",
         "temp":  "425°F (220°C) Oven Bake",
         "tags":  [
-                     "Sheet Pan",
-                     "Meal Prep",
-                     "High-Protein",
-                     "Asian Inspired",
-                     "Quick Dinners"
+                     "Bakes \u0026 Sheet Pan",
+                     "Grill \u0026 Meats"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -8957,10 +8616,8 @@ const RECIPES_DATA = [
         "cookTime":  "30m",
         "temp":  "Medium Stovetop Simmer",
         "tags":  [
-                     "French Classic",
-                     "Plant-Based",
-                     "One-Pot",
-                     "Whole Foods"
+                     "Stews \u0026 Skillets",
+                     "Tofu \u0026 Plant-Based"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -9036,10 +8693,9 @@ const RECIPES_DATA = [
         "cookTime":  "10m",
         "temp":  "Medium-High Skillet Heat",
         "tags":  [
-                     "Korean Classic",
-                     "Snack",
-                     "Vegetarian",
-                     "Quick Dinners"
+                     "Breakfast \u0026 Sweets",
+                     "Tofu \u0026 Plant-Based",
+                     "Stews \u0026 Skillets"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -9106,10 +8762,8 @@ const RECIPES_DATA = [
         "cookTime":  "8m",
         "temp":  "Medium-Low Skillet Heat",
         "tags":  [
-                     "Breakfast",
-                     "High-Protein",
-                     "Blender Recipe",
-                     "Meal Prep"
+                     "Breakfast \u0026 Sweets",
+                     "Baking \u0026 Doughs"
                  ],
         "macros":  {
                        "perServing":  "360 kcal | 34g Protein | 38g Carbs | 7g Fat (per serving)"
@@ -9172,11 +8826,8 @@ const RECIPES_DATA = [
         "cookTime":  "0m (No-Cook)",
         "temp":  "No Heat",
         "tags":  [
-                     "Plant-Based",
-                     "Sandwich",
-                     "Lunch",
-                     "High-Fiber",
-                     "Quick"
+                     "Sandwiches \u0026 Toast",
+                     "Tofu \u0026 Plant-Based"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -9233,7 +8884,7 @@ const RECIPES_DATA = [
     {
         "id":  "crispy-brown-lentil-walnut-burgers",
         "title":  "Crispy Brown Lentil \u0026 Walnut Veggie Burgers",
-        "category":  "Sandwiches \u0026 Toast",
+        "category":  "Tofu \u0026 Plant-Based",
         "status":  "want-to-try",
         "rating":  "unrated",
         "yield":  "6 burger patties",
@@ -9241,10 +8892,9 @@ const RECIPES_DATA = [
         "cookTime":  "15m",
         "temp":  "Medium Skillet / 375°F (190°C) Oven",
         "tags":  [
-                     "Plant-Based",
-                     "Burgers",
-                     "High-Protein",
-                     "Meal Prep"
+                     "Tofu \u0026 Plant-Based",
+                     "Grill \u0026 Meats",
+                     "Sandwiches \u0026 Toast"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -9310,10 +8960,8 @@ const RECIPES_DATA = [
         "cookTime":  "5m",
         "temp":  "Toasted Bread",
         "tags":  [
-                     "Breakfast",
-                     "High-Protein",
-                     "Snack",
-                     "Quick"
+                     "Breakfast \u0026 Sweets",
+                     "Sandwiches \u0026 Toast"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -9388,11 +9036,9 @@ const RECIPES_DATA = [
         "cookTime":  "0m (No-Cook)",
         "temp":  "Blender / Chilled",
         "tags":  [
-                     "Sauces",
-                     "Plant-Based",
-                     "High-Protein",
-                     "Dips",
-                     "Vegan"
+                     "Sauces \u0026 Dressings",
+                     "Tofu \u0026 Plant-Based",
+                     "Salads"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -9446,11 +9092,8 @@ const RECIPES_DATA = [
         "cookTime":  "25m",
         "temp":  "400°F (200°C) Oven / Air Fryer",
         "tags":  [
-                     "Tofu",
-                     "Plant-Based",
-                     "Meal Prep",
-                     "High-Protein",
-                     "Sheet Pan"
+                     "Tofu \u0026 Plant-Based",
+                     "Bakes \u0026 Sheet Pan"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -9493,7 +9136,7 @@ const RECIPES_DATA = [
     {
         "id":  "thai-red-curry-stir-fry-prik-khing",
         "title":  "20-Minute Thai Red Curry Green Bean \u0026 Chicken Stir-Fry",
-        "category":  "Grill \u0026 Meats",
+        "category":  "Stews \u0026 Skillets",
         "status":  "want-to-try",
         "rating":  "unrated",
         "yield":  "4 servings",
@@ -9501,10 +9144,8 @@ const RECIPES_DATA = [
         "cookTime":  "10m",
         "temp":  "High-Heat Wok / Skillet",
         "tags":  [
-                     "Thai Classic",
-                     "Quick Dinners",
-                     "Stir-Fry",
-                     "High-Protein"
+                     "Stews \u0026 Skillets",
+                     "Grill \u0026 Meats"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -9560,10 +9201,8 @@ const RECIPES_DATA = [
         "cookTime":  "0m",
         "temp":  "No Heat",
         "tags":  [
-                     "Sauces",
-                     "Middle Eastern",
-                     "Marinade",
-                     "Glaze"
+                     "Sauces \u0026 Dressings",
+                     "Grill \u0026 Meats"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -9618,11 +9257,8 @@ const RECIPES_DATA = [
         "cookTime":  "0m",
         "temp":  "Whisk in Bowl",
         "tags":  [
-                     "Sauces",
-                     "5-Minute",
-                     "Plant-Based",
-                     "Dips",
-                     "Stir-Fry"
+                     "Sauces \u0026 Dressings",
+                     "Tofu \u0026 Plant-Based"
                  ],
         "macros":  null,
         "ingredients":  [
@@ -9682,11 +9318,8 @@ const RECIPES_DATA = [
         "cookTime":  "0m",
         "temp":  "High-Speed Blender",
         "tags":  [
-                     "Sauces",
-                     "Nutritarian",
-                     "Oil-Free",
-                     "Whole Foods",
-                     "Plant-Based"
+                     "Sauces \u0026 Dressings",
+                     "Salads"
                  ],
         "macros":  null,
         "ingredients":  [
