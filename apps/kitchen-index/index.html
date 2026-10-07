@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>The Kitchen Index — Family Recipe Archive</title>
+  <meta name="description" content="Tested ingredient ratios, baker's percentages, temperatures, and concise kitchen techniques." />
+
+  <!-- PWA & Mobile Web Capabilities -->
+  <link rel="manifest" href="./manifest.json" />
+  <meta name="theme-color" content="#d97706" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Kitchen Index" />
+
+  <!-- Icons -->
+  <link rel="icon" type="image/svg+xml" href="./icon.svg" />
+  <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png" />
+  <link rel="apple-touch-icon" href="./icon-192.png" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="header-nav">
+        <a href="../../" class="nav-back-link" title="Back to Collection Portal">← All Apps</a>
+        <div class="header-actions">
+          <button class="btn btn-install" id="btn-pwa-install" aria-label="Install App" style="display: none;">
+            📲 Install App
+          </button>
+          <button class="btn btn-secondary" id="btn-random" title="Pick a random tested recipe">
+            🎲 Random Idea
+          </button>
+          <button class="btn btn-secondary" id="btn-favorites" title="Show family favorites">
+            ♥ Favorites
+          </button>
+          <button class="btn btn-secondary" id="btn-staples" title="Show family staples">
+            ★ Staples
+          </button>
+        </div>
+      </div>
+
+      <div class="brand">
+        <img src="./icon.svg" alt="Kitchen Index Logo" class="brand-logo" width="48" height="48" />
+        <div class="brand-text">
+          <h1>The Kitchen Index</h1>
+          <p>Tested ratios, temperatures &amp; concise techniques</p>
+        </div>
+      </div>
+
+      <!-- Quick Metrics Banner -->
+      <div class="stats-banner" id="stats-summary" role="region" aria-label="Archive Statistics">
+        <!-- Rendered dynamically via app.js -->
+      </div>
+    </header>
+
+    <!-- Controls & Filters Section -->
+    <section class="control-bar" aria-label="Recipe Filters">
+      <!-- Search Input -->
+      <div class="search-box">
+        <span class="search-icon" aria-hidden="true">🔍</span>
+        <input 
+          type="text" 
+          id="search-input" 
+          class="search-input" 
+          placeholder="Search recipes, ingredients, techniques, macros (e.g. 'einkorn', 'birria', 'air fryer')..." 
+          autocomplete="off"
+          aria-label="Search recipes"
+        />
+        <button id="search-clear-btn" class="search-clear-btn" aria-label="Clear search" style="display: none;">✕</button>
+      </div>
+
+      <!-- Category Filter Chips -->
+      <nav class="category-chips-wrapper" aria-label="Categories">
+        <div class="category-chips" id="category-chips" role="tablist">
+          <!-- Populated dynamically via app.js -->
+        </div>
+      </nav>
+
+      <!-- Quick Sub-Filters -->
+      <div class="filter-toggles" role="group" aria-label="Quick Filters">
+        <span class="filter-group-label">Status:</span>
+        <button class="toggle-pill" data-filter-type="status" data-filter-value="tried">✓ Tried in Kitchen</button>
+        <button class="toggle-pill" data-filter-type="status" data-filter-value="staple">★ Staples</button>
+        <button class="toggle-pill" data-filter-type="status" data-filter-value="want-to-try">⏳ Want to Try</button>
+
+        <span class="filter-group-label">Rating:</span>
+        <button class="toggle-pill" data-filter-type="rating" data-filter-value="loved">♥ Family Approved</button>
+
+        <span class="filter-group-label">Tags:</span>
+        <button class="toggle-pill" data-filter-type="tag" data-filter-value="High-Protein">⚡ High-Protein</button>
+        <button class="toggle-pill" data-filter-type="tag" data-filter-value="Baker's Percentages">🍞 Baker's Ratios</button>
+      </div>
+    </section>
+
+    <!-- Results Header -->
+    <div class="results-header">
+      <div class="results-count" id="results-count">Loading recipe collection…</div>
+      <button class="btn-text-reset" id="btn-reset-filters" style="display: none;">Reset All Filters</button>
+    </div>
+
+    <!-- Recipe Cards Grid -->
+    <main class="recipes-grid" id="recipes-grid" aria-live="polite">
+      <!-- Cards rendered dynamically -->
+    </main>
+  </div>
+
+  <!-- Detailed Recipe Modal View -->
+  <div class="modal-backdrop" id="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="recipe-modal" id="modal-container">
+      <!-- Modal contents rendered dynamically via app.js -->
+    </div>
+  </div>
+
+  <!-- In-App Toast Notification -->
+  <div class="toast-container" id="toast-container" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Recipe Data & Application Logic -->
+  <script src="./recipes.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
