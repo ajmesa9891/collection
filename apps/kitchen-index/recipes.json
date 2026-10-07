@@ -13,8 +13,8 @@
                      "Baking \u0026 Doughs"
                  ],
         "macros":  {
-                       "total":  "1,234 kcal | 39P | 233C | 24.5F",
-                       "perServing":  "8 buns: 154 kcal (4.9P / 29.1C / 3.1F) | 10 buns: 123 kcal (3.9P / 23.3C / 2.5F)"
+                       "total":  "1,234 kcal | 39P | 233C | 32Fib | 24.5F | 3.7SatF",
+                       "perServing":  "8 buns: 154 kcal (4.9P / 29.1C / 4Fib / 3.1F / 0.5SatF) | 10 buns: 123 kcal (3.9P / 23.3C / 3.2Fib / 2.5F / 0.4SatF)"
                    },
         "ingredients":  [
                             {
@@ -75,8 +75,8 @@
                      "Baking \u0026 Doughs"
                  ],
         "macros":  {
-                       "total":  "818 kcal | 57P | 81C | 29F",
-                       "perServing":  "2 servings (4 waffles each): 409 kcal (28.5P / 40.5C / 14.5F) | 8 waffles: 102 kcal (7.1P / 10.1C / 3.6F) per waffle"
+                       "total":  "818 kcal | 57P | 81C | 8.5Fib | 29F | 10.2SatF",
+                       "perServing":  "2 servings (4 waffles each): 409 kcal (28.5P / 40.5C / 4.3Fib / 14.5F / 5.1SatF) | 8 waffles: 102 kcal (7.1P / 10.1C / 1.1Fib / 3.6F / 1.3SatF) per waffle"
                    },
         "ingredients":  [
                             {
@@ -127,8 +127,8 @@
                      "Baking \u0026 Doughs"
                  ],
         "macros":  {
-                       "total":  "1,083 kcal | 41P | 143C | 44F",
-                       "perServing":  "2 servings: 542 kcal (20.5P / 71.5C / 22F) | 4 waffles: 271 kcal (10.3P / 35.8C / 11F) per waffle"
+                       "total":  "1,083 kcal | 41P | 143C | 18.5Fib | 44F | 14.4SatF",
+                       "perServing":  "2 servings: 542 kcal (20.5P / 71.5C / 9.3Fib / 22F / 7.2SatF) | 4 waffles: 271 kcal (10.3P / 35.8C / 4.6Fib / 11F / 3.6SatF) per waffle"
                    },
         "ingredients":  [
                             {
@@ -187,8 +187,8 @@
                      "Tofu \u0026 Plant-Based"
                  ],
         "macros":  {
-                       "total":  "390 kcal | 30P | 64C | 4F",
-                       "perServing":  "6 servings (1/4 cup): 65 kcal (5P / 10.7C / 0.7F)"
+                       "total":  "390 kcal | 30P | 64C | 19.5Fib | 4F | 0.7SatF",
+                       "perServing":  "6 servings (1/4 cup): 65 kcal (5P / 10.7C / 3.3Fib / 0.7F / 0.1SatF)"
                    },
         "ingredients":  [
                             {
@@ -251,8 +251,8 @@
                      "Tofu \u0026 Plant-Based"
                  ],
         "macros":  {
-                       "total":  "1,630 kcal | 95P | 148C | 82F",
-                       "perServing":  "8 servings: 204 kcal (11.9P / 18.5C / 10.3F) | 10 servings: 163 kcal (9.5P / 14.8C / 8.2F)"
+                       "total":  "1,630 kcal | 95P | 148C | 35.5Fib | 82F | 8.8SatF",
+                       "perServing":  "8 servings: 204 kcal (11.9P / 18.5C / 4.4Fib / 10.3F / 1.1SatF) | 10 servings: 163 kcal (9.5P / 14.8C / 3.6Fib / 8.2F / 0.9SatF)"
                    },
         "ingredients":  [
                             {
@@ -338,8 +338,8 @@
                      "Tofu \u0026 Plant-Based"
                  ],
         "macros":  {
-                       "total":  "520 kcal | 45P | 32C | 24F",
-                       "perServing":  "2 servings: 260 kcal (22.5P / 16C / 12F) | 3 servings: 173 kcal (15P / 10.7C / 8F)"
+                       "total":  "520 kcal | 45P | 32C | 5.5Fib | 24F | 3.2SatF",
+                       "perServing":  "2 servings: 260 kcal (22.5P / 16C / 2.8Fib / 12F / 1.6SatF) | 3 servings: 173 kcal (15P / 10.7C / 1.8Fib / 8F / 1.1SatF)"
                    },
         "ingredients":  [
                             {
@@ -402,8 +402,8 @@
                      "Grill \u0026 Meats"
                  ],
         "macros":  {
-                       "total":  "3,950 kcal | 357P | 108C | 229F",
-                       "perServing":  "4 servings: 988 kcal (89P / 27C / 57F) | 6 servings: 658 kcal (59.5P / 18C / 38.2F)"
+                       "total":  "3,950 kcal | 357P | 108C | 6Fib | 229F | 84SatF",
+                       "perServing":  "4 servings: 988 kcal (89P / 27C / 1.5Fib / 57F / 21SatF) | 6 servings: 658 kcal (59.5P / 18C / 1Fib / 38.2F / 14SatF)"
                    },
         "ingredients":  [
                             {
@@ -495,8 +495,8 @@
                      "Stews \u0026 Skillets"
                  ],
         "macros":  {
-                       "total":  "3,750 kcal | 372P | 45C | 234F",
-                       "perServing":  "8 servings: 469 kcal (46.5P / 5.6C / 29.3F) | 10 servings: 375 kcal (37.2P / 4.5C / 23.4F)"
+                       "total":  "3,750 kcal | 372P | 45C | 20Fib | 234F | 89SatF",
+                       "perServing":  "8 servings: 469 kcal (46.5P / 5.6C / 2.5Fib / 29.3F / 11.1SatF) | 10 servings: 375 kcal (37.2P / 4.5C / 2Fib / 23.4F / 8.9SatF)"
                    },
         "ingredients":  [
                             {
@@ -592,8 +592,8 @@
                      "Stews \u0026 Skillets"
                  ],
         "macros":  {
-                       "total":  "1,075 kcal | 71P | 84C | 46F",
-                       "perServing":  "2 servings: 538 kcal (35.5P / 42C / 23F) | 3 servings: 358 kcal (23.7P / 28C / 15.3F)"
+                       "total":  "1,075 kcal | 71P | 84C | 13.5Fib | 46F | 20SatF",
+                       "perServing":  "2 servings: 538 kcal (35.5P / 42C / 6.8Fib / 23F / 10SatF) | 3 servings: 358 kcal (23.7P / 28C / 4.5Fib / 15.3F / 6.7SatF)"
                    },
         "ingredients":  [
                             {
@@ -664,8 +664,8 @@
                      "Stews \u0026 Skillets"
                  ],
         "macros":  {
-                       "total":  "1,480 kcal | 148P | 58C | 69F",
-                       "perServing":  "4 servings: 370 kcal (37P / 14.5C / 17.3F)"
+                       "total":  "1,480 kcal | 148P | 58C | 27Fib | 69F | 27SatF",
+                       "perServing":  "4 servings: 370 kcal (37P / 14.5C / 6.8Fib / 17.3F / 6.8SatF)"
                    },
         "ingredients":  [
                             {
@@ -731,8 +731,8 @@
                      "Stews \u0026 Skillets"
                  ],
         "macros":  {
-                       "total":  "6,750 kcal | 520P | 265C | 390F",
-                       "perServing":  "6 servings: 1,125 kcal (86.7P / 44.2C / 65F) | 8 servings: 844 kcal (65P / 33.1C / 48.8F)"
+                       "total":  "6,750 kcal | 520P | 265C | 42Fib | 390F | 171SatF",
+                       "perServing":  "6 servings: 1,125 kcal (86.7P / 44.2C / 7Fib / 65F / 28.5SatF) | 8 servings: 844 kcal (65P / 33.1C / 5.3Fib / 48.8F / 21.4SatF)"
                    },
         "ingredients":  [
                             {
@@ -810,8 +810,8 @@
                      "Bakes \u0026 Sheet Pan"
                  ],
         "macros":  {
-                       "total":  "2,240 kcal | 188P | 103C | 118F",
-                       "perServing":  "4 servings: 560 kcal (47P / 25.8C / 29.5F)"
+                       "total":  "2,240 kcal | 188P | 103C | 22Fib | 118F | 34SatF",
+                       "perServing":  "4 servings: 560 kcal (47P / 25.8C / 5.5Fib / 29.5F / 8.5SatF)"
                    },
         "ingredients":  [
                             {
@@ -867,8 +867,8 @@
                      "Tofu \u0026 Plant-Based"
                  ],
         "macros":  {
-                       "total":  "1,410 kcal | 50P | 186C | 55F",
-                       "perServing":  "3 servings: 470 kcal (16.7P / 62C / 18.3F) | 4 servings: 353 kcal (12.5P / 46.5C / 13.8F)"
+                       "total":  "1,410 kcal | 50P | 186C | 25Fib | 55F | 7SatF",
+                       "perServing":  "3 servings: 470 kcal (16.7P / 62C / 8.3Fib / 18.3F / 2.3SatF) | 4 servings: 353 kcal (12.5P / 46.5C / 6.3Fib / 13.8F / 1.8SatF)"
                    },
         "ingredients":  [
                             {
@@ -933,8 +933,8 @@
                      "Tofu \u0026 Plant-Based"
                  ],
         "macros":  {
-                       "total":  "3,120 kcal | 98P | 392C | 138F",
-                       "perServing":  "6 servings: 520 kcal (16.3P / 65.3C / 23F)"
+                       "total":  "3,120 kcal | 98P | 392C | 100Fib | 138F | 18SatF",
+                       "perServing":  "6 servings: 520 kcal (16.3P / 65.3C / 16.7Fib / 23F / 3SatF)"
                    },
         "ingredients":  [
                             {
@@ -1024,8 +1024,8 @@
                      "Pastas"
                  ],
         "macros":  {
-                       "total":  "3,265 kcal | 115P | 325C | 163F",
-                       "perServing":  "6 servings: 544 kcal (19.2P / 54.2C / 27.2F)"
+                       "total":  "3,265 kcal | 115P | 325C | 28Fib | 163F | 58SatF",
+                       "perServing":  "6 servings: 544 kcal (19.2P / 54.2C / 4.7Fib / 27.2F / 9.7SatF)"
                    },
         "ingredients":  [
                             {
@@ -1113,8 +1113,8 @@
                      "Soups \u0026 Ramen"
                  ],
         "macros":  {
-                       "total":  "1,720 kcal | 46P | 196C | 84F",
-                       "perServing":  "3 bowls: 573 kcal (15.3P / 65.3C / 28F) | 4 bowls: 430 kcal (11.5P / 49C / 21F)"
+                       "total":  "1,720 kcal | 46P | 196C | 16Fib | 84F | 9SatF",
+                       "perServing":  "3 bowls: 573 kcal (15.3P / 65.3C / 5.3Fib / 28F / 3SatF) | 4 bowls: 430 kcal (11.5P / 49C / 4Fib / 21F / 2.3SatF)"
                    },
         "ingredients":  [
                             {
@@ -1205,8 +1205,8 @@
                      "Rice \u0026 Grains"
                  ],
         "macros":  {
-                       "total":  "1,440 kcal | 118P | 98C | 67F",
-                       "perServing":  "3 servings: 480 kcal (39.3P / 32.7C / 22.3F) | 4 servings: 360 kcal (29.5P / 24.5C / 16.8F)"
+                       "total":  "1,440 kcal | 118P | 98C | 15Fib | 67F | 30SatF",
+                       "perServing":  "3 servings: 480 kcal (39.3P / 32.7C / 5Fib / 22.3F / 10SatF) | 4 servings: 360 kcal (29.5P / 24.5C / 3.8Fib / 16.8F / 7.5SatF)"
                    },
         "ingredients":  [
                             {
@@ -1299,8 +1299,8 @@
                      "Stews \u0026 Skillets"
                  ],
         "macros":  {
-                       "total":  "3,376 kcal | 215P | 316C | 106F",
-                       "perServing":  "5 servings: 675 kcal (43P / 63C / 21F)"
+                       "total":  "3,376 kcal | 215P | 316C | 23Fib | 106F | 38SatF",
+                       "perServing":  "5 servings: 675 kcal (43P / 63C / 4.6Fib / 21F / 7.6SatF)"
                    },
         "ingredients":  [
                             {
@@ -1369,8 +1369,8 @@
                      "Pastas"
                  ],
         "macros":  {
-                       "total":  "6,256 kcal | 571P | 467C | 229F",
-                       "perServing":  "8 servings: 782 kcal (71P / 58C / 28.6F) | 10 servings: 626 kcal (57P / 46.7C / 23F)"
+                       "total":  "6,256 kcal | 571P | 467C | 42Fib | 229F | 109.5SatF",
+                       "perServing":  "8 servings: 782 kcal (71P / 58C / 5.3Fib / 28.6F / 13.7SatF) | 10 servings: 626 kcal (57P / 46.7C / 4.2Fib / 23F / 11SatF)"
                    },
         "ingredients":  [
                             {
@@ -1437,8 +1437,8 @@
                      "Grill \u0026 Meats"
                  ],
         "macros":  {
-                       "total":  "2,480 kcal | 275P | 16C | 137F",
-                       "perServing":  "6 skewers (4 servings): 620 kcal (68.8P / 4C / 34.3F) | 8 skewers (6 servings): 413 kcal (45.8P / 2.7C / 22.8F)"
+                       "total":  "2,480 kcal | 275P | 16C | 4Fib | 137F | 54SatF",
+                       "perServing":  "6 skewers (4 servings): 620 kcal (68.8P / 4C / 1Fib / 34.3F / 13.5SatF) | 8 skewers (6 servings): 413 kcal (45.8P / 2.7C / 0.7Fib / 22.8F / 9SatF)"
                    },
         "ingredients":  [
                             {
@@ -1509,8 +1509,8 @@
                      "Sauces \u0026 Dressings"
                  ],
         "macros":  {
-                       "total":  "345 kcal | 20P | 10C | 25F",
-                       "perServing":  "8 servings (2 tbsp): 43 kcal (2.5P / 1.3C / 3.1F)"
+                       "total":  "345 kcal | 20P | 10C | 0Fib | 25F | 6.9SatF",
+                       "perServing":  "8 servings (2 tbsp): 43 kcal (2.5P / 1.3C / 0Fib / 3.1F / 0.9SatF)"
                    },
         "ingredients":  [
                             {
@@ -1560,8 +1560,8 @@
                      "Sauces \u0026 Dressings"
                  ],
         "macros":  {
-                       "total":  "805 kcal | 21P | 27C | 74F",
-                       "perServing":  "8 servings (2 tbsp): 101 kcal (2.6P / 3.4C / 9.3F)"
+                       "total":  "805 kcal | 21P | 27C | 6.5Fib | 74F | 8.1SatF",
+                       "perServing":  "8 servings (2 tbsp): 101 kcal (2.6P / 3.4C / 0.8Fib / 9.3F / 1SatF)"
                    },
         "ingredients":  [
                             {
@@ -1615,8 +1615,8 @@
                      "Bakes \u0026 Sheet Pan"
                  ],
         "macros":  {
-                       "total":  "937 kcal | 98P | 15C | 50F",
-                       "perServing":  "3 servings: 312 kcal (32.7P / 5C / 16.7F) | 4 servings: 234 kcal (24.5P / 3.8C / 12.5F)"
+                       "total":  "937 kcal | 98P | 15C | 3Fib | 50F | 20SatF",
+                       "perServing":  "3 servings: 312 kcal (32.7P / 5C / 1Fib / 16.7F / 6.7SatF) | 4 servings: 234 kcal (24.5P / 3.8C / 0.8Fib / 12.5F / 5SatF)"
                    },
         "ingredients":  [
                             {
@@ -1659,8 +1659,8 @@
                      "Bakes \u0026 Sheet Pan"
                  ],
         "macros":  {
-                       "total":  "1,779 kcal | 75P | 59C | 141F",
-                       "perServing":  "4 servings: 445 kcal (18.8P / 14.8C / 35.3F) | 6 servings: 297 kcal (12.5P / 9.8C / 23.5F)"
+                       "total":  "1,779 kcal | 75P | 59C | 18Fib | 141F | 30SatF",
+                       "perServing":  "4 servings: 445 kcal (18.8P / 14.8C / 4.5Fib / 35.3F / 7.5SatF) | 6 servings: 297 kcal (12.5P / 9.8C / 3Fib / 23.5F / 5SatF)"
                    },
         "ingredients":  [
                             {
@@ -1731,8 +1731,8 @@
                      "Bakes \u0026 Sheet Pan"
                  ],
         "macros":  {
-                       "total":  "1,955 kcal | 158P | 98C | 107F",
-                       "perServing":  "4 servings: 489 kcal (39.5P / 24.5C / 26.8F)"
+                       "total":  "1,955 kcal | 158P | 98C | 16Fib | 107F | 25SatF",
+                       "perServing":  "4 servings: 489 kcal (39.5P / 24.5C / 4Fib / 26.8F / 6.3SatF)"
                    },
         "ingredients":  [
                             {
@@ -1788,8 +1788,8 @@
                      "Bakes \u0026 Sheet Pan"
                  ],
         "macros":  {
-                       "total":  "1,660 kcal | 160P | 40C | 91F",
-                       "perServing":  "4 servings: 415 kcal (40P / 10C / 22.8F)"
+                       "total":  "1,660 kcal | 160P | 40C | 12Fib | 91F | 15SatF",
+                       "perServing":  "4 servings: 415 kcal (40P / 10C / 3Fib / 22.8F / 3.8SatF)"
                    },
         "ingredients":  [
                             {
@@ -1860,8 +1860,8 @@
                      "Bakes \u0026 Sheet Pan"
                  ],
         "macros":  {
-                       "total":  "1,945 kcal | 156P | 68C | 112F",
-                       "perServing":  "3 servings: 648 kcal (52P / 22.7C / 37.3F) | 4 servings: 486 kcal (39P / 17C / 28F)"
+                       "total":  "1,945 kcal | 156P | 68C | 17Fib | 112F | 20SatF",
+                       "perServing":  "3 servings: 648 kcal (52P / 22.7C / 5.7Fib / 37.3F / 6.7SatF) | 4 servings: 486 kcal (39P / 17C / 4.3Fib / 28F / 5SatF)"
                    },
         "ingredients":  [
                             {
@@ -1924,8 +1924,8 @@
                      "Bakes \u0026 Sheet Pan"
                  ],
         "macros":  {
-                       "total":  "1,050 kcal | 81P | 97C | 38F",
-                       "perServing":  "3 servings: 350 kcal (27P / 32.3C / 12.7F) | 4 servings: 263 kcal (20.3P / 24.3C / 9.5F)"
+                       "total":  "1,050 kcal | 81P | 97C | 13.5Fib | 38F | 8.8SatF",
+                       "perServing":  "3 servings: 350 kcal (27P / 32.3C / 4.5Fib / 12.7F / 2.9SatF) | 4 servings: 263 kcal (20.3P / 24.3C / 3.4Fib / 9.5F / 2.2SatF)"
                    },
         "ingredients":  [
                             {
@@ -1988,8 +1988,8 @@
                      "Breakfast \u0026 Sweets"
                  ],
         "macros":  {
-                       "total":  "1,876 kcal | 111P | 174C | 98F",
-                       "perServing":  "8 toasts: 235 kcal (13.9P / 21.8C / 12.3F) per toast | 4 servings (2 toasts): 469 kcal (27.8P / 43.5C / 24.5F)"
+                       "total":  "1,876 kcal | 111P | 174C | 53Fib | 98F | 12.5SatF",
+                       "perServing":  "8 toasts: 235 kcal (13.9P / 21.8C / 6.6Fib / 12.3F / 1.6SatF) per toast | 4 servings (2 toasts): 469 kcal (27.8P / 43.5C / 13.3Fib / 24.5F / 3.1SatF)"
                    },
         "ingredients":  [
                             {
@@ -2064,8 +2064,8 @@
                      "Sauces \u0026 Dressings"
                  ],
         "macros":  {
-                       "total":  "505 kcal | 11P | 118C | 1.5F",
-                       "perServing":  "12 servings (2 tbsp): 42 kcal (0.9P / 9.8C / 0.1F)"
+                       "total":  "505 kcal | 11P | 118C | 10Fib | 1.5F | 0.2SatF",
+                       "perServing":  "12 servings (2 tbsp): 42 kcal (0.9P / 9.8C / 0.8Fib / 0.1F / 0SatF)"
                    },
         "ingredients":  [
                             {
@@ -2126,8 +2126,8 @@
                      "Sauces \u0026 Dressings"
                  ],
         "macros":  {
-                       "total":  "560 kcal | 12P | 24C | 48F (base estimate)",
-                       "perServing":  "8 servings (2 tbsp): ~70 kcal (1.5P / 3C / 6F) [varies with base ingredients]"
+                       "total":  "560 kcal | 12P | 24C | 4.8Fib | 48F | 6.4SatF (base estimate)",
+                       "perServing":  "8 servings (2 tbsp): ~70 kcal (1.5P / 3C / 0.6Fib / 6F / 0.8SatF) [varies with base ingredients]"
                    },
         "ingredients":  [
                             {
@@ -2177,8 +2177,8 @@
                      "Sauces \u0026 Dressings"
                  ],
         "macros":  {
-                       "total":  "578 kcal | 16P | 54C | 37F",
-                       "perServing":  "8 servings (2 tbsp): 72 kcal (2P / 6.8C / 4.6F)"
+                       "total":  "578 kcal | 16P | 54C | 4Fib | 37F | 6.7SatF",
+                       "perServing":  "8 servings (2 tbsp): 72 kcal (2P / 6.8C / 0.5Fib / 4.6F / 0.8SatF)"
                    },
         "ingredients":  [
                             {
@@ -2244,8 +2244,8 @@
                      "Sauces \u0026 Dressings"
                  ],
         "macros":  {
-                       "total":  "395 kcal | 47P | 24C | 15F",
-                       "perServing":  "8 servings (1/4 cup): 49 kcal (5.9P / 3C / 1.9F)"
+                       "total":  "395 kcal | 47P | 24C | 11Fib | 15F | 2SatF",
+                       "perServing":  "8 servings (1/4 cup): 49 kcal (5.9P / 3C / 1.4Fib / 1.9F / 0.3SatF)"
                    },
         "ingredients":  [
                             {
@@ -2296,8 +2296,8 @@
                      "Sauces \u0026 Dressings"
                  ],
         "macros":  {
-                       "total":  "1,110 kcal | 31P | 122C | 65F",
-                       "perServing":  "8 servings (2 tbsp): 139 kcal (3.9P / 15.3C / 8.1F)"
+                       "total":  "1,110 kcal | 31P | 122C | 17Fib | 65F | 12SatF",
+                       "perServing":  "8 servings (2 tbsp): 139 kcal (3.9P / 15.3C / 2.1Fib / 8.1F / 1.5SatF)"
                    },
         "ingredients":  [
                             {
@@ -2359,8 +2359,8 @@
                      "Sauces \u0026 Dressings"
                  ],
         "macros":  {
-                       "total":  "400 kcal | 12P | 40C | 25F",
-                       "perServing":  "6 servings (2 tbsp): 67 kcal (2P / 6.7C / 4.2F)"
+                       "total":  "400 kcal | 12P | 40C | 3.8Fib | 25F | 2.9SatF",
+                       "perServing":  "6 servings (2 tbsp): 67 kcal (2P / 6.7C / 0.6Fib / 4.2F / 0.5SatF)"
                    },
         "ingredients":  [
                             {
@@ -2415,8 +2415,8 @@
                      "Salads"
                  ],
         "macros":  {
-                       "total":  "915 kcal | 5P | 50C | 80F",
-                       "perServing":  "10 servings: 92 kcal (0.5P / 5C / 8F) | 12 servings: 76 kcal (0.4P / 4.2C / 6.7F)"
+                       "total":  "915 kcal | 5P | 50C | 5Fib | 80F | 11SatF",
+                       "perServing":  "10 servings: 92 kcal (0.5P / 5C / 0.5Fib / 8F / 1.1SatF) | 12 servings: 76 kcal (0.4P / 4.2C / 0.4Fib / 6.7F / 0.9SatF)"
                    },
         "ingredients":  [
                             {
@@ -2478,8 +2478,8 @@
                      "Sauces \u0026 Dressings"
                  ],
         "macros":  {
-                       "total":  "385 kcal | 13P | 21C | 29F",
-                       "perServing":  "8 servings (2 tbsp): 48 kcal (1.6P / 2.6C / 3.6F)"
+                       "total":  "385 kcal | 13P | 21C | 3.3Fib | 29F | 5.5SatF",
+                       "perServing":  "8 servings (2 tbsp): 48 kcal (1.6P / 2.6C / 0.4Fib / 3.6F / 0.7SatF)"
                    },
         "ingredients":  [
                             {
@@ -2542,8 +2542,8 @@
                      "Salads"
                  ],
         "macros":  {
-                       "total":  "460 kcal | 18P | 24C | 37F",
-                       "perServing":  "8 servings (2 tbsp): 58 kcal (2.3P / 3C / 4.6F)"
+                       "total":  "460 kcal | 18P | 24C | 7Fib | 37F | 4.3SatF",
+                       "perServing":  "8 servings (2 tbsp): 58 kcal (2.3P / 3C / 0.9Fib / 4.6F / 0.5SatF)"
                    },
         "ingredients":  [
                             {
@@ -2596,8 +2596,8 @@
                      "Sauces \u0026 Dressings"
                  ],
         "macros":  {
-                       "total":  "685 kcal | 21P | 27C | 60F",
-                       "perServing":  "8 servings (2 tbsp): 86 kcal (2.6P / 3.4C / 7.5F)"
+                       "total":  "685 kcal | 21P | 27C | 6.5Fib | 60F | 6.2SatF",
+                       "perServing":  "8 servings (2 tbsp): 86 kcal (2.6P / 3.4C / 0.8Fib / 7.5F / 0.8SatF)"
                    },
         "ingredients":  [
                             {
@@ -2648,8 +2648,8 @@
                      "Pastas"
                  ],
         "macros":  {
-                       "total":  "810 kcal | 40P | 28C | 67F",
-                       "perServing":  "12 servings (2 tbsp): 68 kcal (3.3P / 2.3C / 5.6F)"
+                       "total":  "810 kcal | 40P | 28C | 12Fib | 67F | 11.4SatF",
+                       "perServing":  "12 servings (2 tbsp): 68 kcal (3.3P / 2.3C / 1Fib / 5.6F / 1SatF)"
                    },
         "ingredients":  [
                             {
@@ -2707,8 +2707,8 @@
                      "Sauces \u0026 Dressings"
                  ],
         "macros":  {
-                       "total":  "805 kcal | 22P | 54C | 62F",
-                       "perServing":  "8 servings (2 tbsp): 101 kcal (2.8P / 6.8C / 7.8F)"
+                       "total":  "805 kcal | 22P | 54C | 9Fib | 62F | 6.6SatF",
+                       "perServing":  "8 servings (2 tbsp): 101 kcal (2.8P / 6.8C / 1.1Fib / 7.8F / 0.8SatF)"
                    },
         "ingredients":  [
                             {
@@ -2774,8 +2774,8 @@
                      "Sauces \u0026 Dressings"
                  ],
         "macros":  {
-                       "total":  "85 kcal | 3P | 15C | 1.5F",
-                       "perServing":  "8 servings (2 tbsp): 11 kcal (0.4P / 1.9C / 0.2F)"
+                       "total":  "85 kcal | 3P | 15C | 3Fib | 1.5F | 0.3SatF",
+                       "perServing":  "8 servings (2 tbsp): 11 kcal (0.4P / 1.9C / 0.4Fib / 0.2F / 0SatF)"
                    },
         "ingredients":  [
                             {
@@ -2835,8 +2835,8 @@
                      "Sauces \u0026 Dressings"
                  ],
         "macros":  {
-                       "total":  "145 kcal | 20P | 9C | 3F",
-                       "perServing":  "8 servings (2 tbsp): 18 kcal (2.5P / 1.1C / 0.4F)"
+                       "total":  "145 kcal | 20P | 9C | 0.5Fib | 3F | 1.4SatF",
+                       "perServing":  "8 servings (2 tbsp): 18 kcal (2.5P / 1.1C / 0.1Fib / 0.4F / 0.2SatF)"
                    },
         "ingredients":  [
                             {
@@ -2888,8 +2888,8 @@
                      "Sauces \u0026 Dressings"
                  ],
         "macros":  {
-                       "total":  "550 kcal | 16P | 40C | 41F",
-                       "perServing":  "6 servings (2 tbsp): 92 kcal (2.7P / 6.7C / 6.8F)"
+                       "total":  "550 kcal | 16P | 40C | 4.3Fib | 41F | 4.1SatF",
+                       "perServing":  "6 servings (2 tbsp): 92 kcal (2.7P / 6.7C / 0.7Fib / 6.8F / 0.7SatF)"
                    },
         "ingredients":  [
                             {
@@ -2941,8 +2941,8 @@
                      "Sauces \u0026 Dressings"
                  ],
         "macros":  {
-                       "total":  "260 kcal | 10P | 44C | 9F",
-                       "perServing":  "8 servings (2 tbsp): 33 kcal (1.3P / 5.5C / 1.1F)"
+                       "total":  "260 kcal | 10P | 44C | 6.5Fib | 9F | 1.8SatF",
+                       "perServing":  "8 servings (2 tbsp): 33 kcal (1.3P / 5.5C / 0.8Fib / 1.1F / 0.2SatF)"
                    },
         "ingredients":  [
                             {
@@ -3006,8 +3006,8 @@
                      "Sauces \u0026 Dressings"
                  ],
         "macros":  {
-                       "total":  "158 kcal | 4P | 28C | 4.5F",
-                       "perServing":  "6 servings (2 tbsp): 26 kcal (0.7P / 4.7C / 0.8F)"
+                       "total":  "158 kcal | 4P | 28C | 2Fib | 4.5F | 0.8SatF",
+                       "perServing":  "6 servings (2 tbsp): 26 kcal (0.7P / 4.7C / 0.3Fib / 0.8F / 0.1SatF)"
                    },
         "ingredients":  [
                             {
@@ -3063,8 +3063,8 @@
                      "Sauces \u0026 Dressings"
                  ],
         "macros":  {
-                       "total":  "985 kcal | 31P | 86C | 65F",
-                       "perServing":  "8 servings (2 tbsp): 123 kcal (3.9P / 10.8C / 8.1F)"
+                       "total":  "985 kcal | 31P | 86C | 12.8Fib | 65F | 12SatF",
+                       "perServing":  "8 servings (2 tbsp): 123 kcal (3.9P / 10.8C / 1.6Fib / 8.1F / 1.5SatF)"
                    },
         "ingredients":  [
                             {
@@ -3121,8 +3121,8 @@
                      "Sauces \u0026 Dressings"
                  ],
         "macros":  {
-                       "total":  "350 kcal | 5P | 52C | 15F",
-                       "perServing":  "8 servings (1 tbsp): 44 kcal (0.6P / 6.5C / 1.9F)"
+                       "total":  "350 kcal | 5P | 52C | 3Fib | 15F | 2.2SatF",
+                       "perServing":  "8 servings (1 tbsp): 44 kcal (0.6P / 6.5C / 0.4Fib / 1.9F / 0.3SatF)"
                    },
         "ingredients":  [
                             {
@@ -3174,8 +3174,8 @@
                      "Sauces \u0026 Dressings"
                  ],
         "macros":  {
-                       "total":  "1,735 kcal | 11P | 66C | 163F",
-                       "perServing":  "10 servings: 174 kcal (1.1P / 6.6C / 16.3F) | 12 servings: 145 kcal (0.9P / 5.5C / 13.6F)"
+                       "total":  "1,735 kcal | 11P | 66C | 1.5Fib | 163F | 23SatF",
+                       "perServing":  "10 servings: 174 kcal (1.1P / 6.6C / 0.2Fib / 16.3F / 2.3SatF) | 12 servings: 145 kcal (0.9P / 5.5C / 0.1Fib / 13.6F / 1.9SatF)"
                    },
         "ingredients":  [
                             {
@@ -3272,8 +3272,8 @@
                      "Sauces \u0026 Dressings"
                  ],
         "macros":  {
-                       "total":  "450 kcal | 2P | 18C | 42F",
-                       "perServing":  "8 servings (2 tbsp): 56 kcal (0.3P / 2.3C / 5.3F)"
+                       "total":  "450 kcal | 2P | 18C | 3Fib | 42F | 5SatF",
+                       "perServing":  "8 servings (2 tbsp): 56 kcal (0.3P / 2.3C / 0.4Fib / 5.3F / 0.6SatF)"
                    },
         "ingredients":  [
                             {
@@ -3321,8 +3321,8 @@
                      "Grill \u0026 Meats"
                  ],
         "macros":  {
-                       "total":  "1,310 kcal | 154P | 4C | 72F",
-                       "perServing":  "4 servings: 328 kcal (38.5P / 1C / 18F)"
+                       "total":  "1,310 kcal | 154P | 4C | 0.8Fib | 72F | 12.5SatF",
+                       "perServing":  "4 servings: 328 kcal (38.5P / 1C / 0.2Fib / 18F / 3.1SatF)"
                    },
         "ingredients":  [
                             {
@@ -3372,8 +3372,8 @@
                      "Salads"
                  ],
         "macros":  {
-                       "total":  "1,235 kcal | 38P | 160C | 62.5F",
-                       "perServing":  "4 servings: 309 kcal (9.5P / 40C / 15.6F) | 6 servings: 206 kcal (6.3P / 26.7C / 10.4F)"
+                       "total":  "1,235 kcal | 38P | 160C | 26Fib | 62.5F | 8.5SatF",
+                       "perServing":  "4 servings: 309 kcal (9.5P / 40C / 6.5Fib / 15.6F / 2.1SatF) | 6 servings: 206 kcal (6.3P / 26.7C / 4.3Fib / 10.4F / 1.4SatF)"
                    },
         "ingredients":  [
                             {
@@ -3447,8 +3447,8 @@
                      "Salads"
                  ],
         "macros":  {
-                       "total":  "640 kcal | 32P | 130C | 5F",
-                       "perServing":  "4 servings: 160 kcal (8P / 32.5C / 1.3F)"
+                       "total":  "640 kcal | 32P | 130C | 30Fib | 5F | 1SatF",
+                       "perServing":  "4 servings: 160 kcal (8P / 32.5C / 7.5Fib / 1.3F / 0.3SatF)"
                    },
         "ingredients":  [
                             {
@@ -3514,8 +3514,8 @@
                      "Salads"
                  ],
         "macros":  {
-                       "total":  "1,130 kcal | 62P | 132C | 46F",
-                       "perServing":  "3 servings: 377 kcal (20.7P / 44C / 15.3F) | 4 servings: 283 kcal (15.5P / 33C / 11.5F)"
+                       "total":  "1,130 kcal | 62P | 132C | 33Fib | 46F | 5SatF",
+                       "perServing":  "3 servings: 377 kcal (20.7P / 44C / 11Fib / 15.3F / 1.7SatF) | 4 servings: 283 kcal (15.5P / 33C / 8.3Fib / 11.5F / 1.3SatF)"
                    },
         "ingredients":  [
                             {
@@ -3577,8 +3577,8 @@
                      "Salads"
                  ],
         "macros":  {
-                       "total":  "630 kcal | 26P | 120C | 10F",
-                       "perServing":  "4 servings: 158 kcal (6.5P / 30C / 2.5F)"
+                       "total":  "630 kcal | 26P | 120C | 21Fib | 10F | 1.3SatF",
+                       "perServing":  "4 servings: 158 kcal (6.5P / 30C / 5.3Fib / 2.5F / 0.3SatF)"
                    },
         "ingredients":  [
                             {
@@ -3648,8 +3648,8 @@
                      "Salads"
                  ],
         "macros":  {
-                       "total":  "1,610 kcal | 186P | 18C | 87F",
-                       "perServing":  "4 servings: 403 kcal (46.5P / 4.5C / 21.8F)"
+                       "total":  "1,610 kcal | 186P | 18C | 2Fib | 87F | 26SatF",
+                       "perServing":  "4 servings: 403 kcal (46.5P / 4.5C / 0.5Fib / 21.8F / 6.5SatF)"
                    },
         "ingredients":  [
                             {
@@ -3720,8 +3720,8 @@
                      "Salads"
                  ],
         "macros":  {
-                       "total":  "1,430 kcal | 57P | 142C | 75F",
-                       "perServing":  "4 servings: 358 kcal (14.3P / 35.5C / 18.8F) | 6 servings: 238 kcal (9.5P / 23.7C / 12.5F)"
+                       "total":  "1,430 kcal | 57P | 142C | 38Fib | 75F | 23.5SatF",
+                       "perServing":  "4 servings: 358 kcal (14.3P / 35.5C / 9.5Fib / 18.8F / 5.9SatF) | 6 servings: 238 kcal (9.5P / 23.7C / 6.3Fib / 12.5F / 3.9SatF)"
                    },
         "ingredients":  [
                             {
@@ -3779,8 +3779,8 @@
                      "Salads"
                  ],
         "macros":  {
-                       "total":  "2,330 kcal | 177P | 80C | 144F",
-                       "perServing":  "4 servings: 583 kcal (44.3P / 20C / 36F)"
+                       "total":  "2,330 kcal | 177P | 80C | 9Fib | 144F | 32.5SatF",
+                       "perServing":  "4 servings: 583 kcal (44.3P / 20C / 2.3Fib / 36F / 8.1SatF)"
                    },
         "ingredients":  [
                             {
@@ -3846,8 +3846,8 @@
                      "Tofu \u0026 Plant-Based"
                  ],
         "macros":  {
-                       "total":  "605 kcal | 40P | 16C | 45F",
-                       "perServing":  "4 servings (1/2 cup): 151 kcal (10P / 4C / 11.3F)"
+                       "total":  "605 kcal | 40P | 16C | 7.5Fib | 45F | 6.5SatF",
+                       "perServing":  "4 servings (1/2 cup): 151 kcal (10P / 4C / 1.9Fib / 11.3F / 1.6SatF)"
                    },
         "ingredients":  [
                             {
@@ -3905,8 +3905,8 @@
                      "Tofu \u0026 Plant-Based"
                  ],
         "macros":  {
-                       "total":  "725 kcal | 26P | 14C | 64F",
-                       "perServing":  "4 servings: 181 kcal (6.5P / 3.5C / 16F)"
+                       "total":  "725 kcal | 26P | 14C | 5.5Fib | 64F | 9.1SatF",
+                       "perServing":  "4 servings: 181 kcal (6.5P / 3.5C / 1.4Fib / 16F / 2.3SatF)"
                    },
         "ingredients":  [
                             {
@@ -3972,8 +3972,8 @@
                      "Tofu \u0026 Plant-Based"
                  ],
         "macros":  {
-                       "total":  "925 kcal | 42P | 92C | 44F",
-                       "perServing":  "3 servings: 308 kcal (14P / 30.7C / 14.7F)"
+                       "total":  "925 kcal | 42P | 92C | 4Fib | 44F | 6SatF",
+                       "perServing":  "3 servings: 308 kcal (14P / 30.7C / 1.3Fib / 14.7F / 2SatF)"
                    },
         "ingredients":  [
                             {
@@ -4033,8 +4033,8 @@
                      "Tofu \u0026 Plant-Based"
                  ],
         "macros":  {
-                       "total":  "615 kcal | 38P | 48C | 32F",
-                       "perServing":  "2 servings: 308 kcal (19P / 24C / 16F) | 3 servings: 205 kcal (12.7P / 16C / 10.7F)"
+                       "total":  "615 kcal | 38P | 48C | 5.5Fib | 32F | 4.4SatF",
+                       "perServing":  "2 servings: 308 kcal (19P / 24C / 2.8Fib / 16F / 2.2SatF) | 3 servings: 205 kcal (12.7P / 16C / 1.8Fib / 10.7F / 1.5SatF)"
                    },
         "ingredients":  [
                             {
@@ -4082,8 +4082,8 @@
                      "Tofu \u0026 Plant-Based"
                  ],
         "macros":  {
-                       "total":  "1,020 kcal | 46P | 32C | 79F",
-                       "perServing":  "4 servings: 255 kcal (11.5P / 8C / 19.8F)"
+                       "total":  "1,020 kcal | 46P | 32C | 6.5Fib | 79F | 9.5SatF",
+                       "perServing":  "4 servings: 255 kcal (11.5P / 8C / 1.6Fib / 19.8F / 2.4SatF)"
                    },
         "ingredients":  [
                             {
@@ -4162,8 +4162,8 @@
                      "Tofu \u0026 Plant-Based"
                  ],
         "macros":  {
-                       "total":  "810 kcal | 45P | 68C | 42F",
-                       "perServing":  "3 servings: 270 kcal (15P / 22.7C / 14F) | 4 servings: 203 kcal (11.3P / 17C / 10.5F)"
+                       "total":  "810 kcal | 45P | 68C | 7.5Fib | 42F | 6.1SatF",
+                       "perServing":  "3 servings: 270 kcal (15P / 22.7C / 2.5Fib / 14F / 2SatF) | 4 servings: 203 kcal (11.3P / 17C / 1.9Fib / 10.5F / 1.5SatF)"
                    },
         "ingredients":  [
                             {
@@ -4221,8 +4221,8 @@
                      "Tofu \u0026 Plant-Based"
                  ],
         "macros":  {
-                       "total":  "855 kcal | 34P | 25C | 71F",
-                       "perServing":  "3 servings: 285 kcal (11.3P / 8.3C / 23.7F) | 4 servings: 214 kcal (8.5P / 6.3C / 17.8F)"
+                       "total":  "855 kcal | 34P | 25C | 5.5Fib | 71F | 10.1SatF",
+                       "perServing":  "3 servings: 285 kcal (11.3P / 8.3C / 1.8Fib / 23.7F / 3.4SatF) | 4 servings: 214 kcal (8.5P / 6.3C / 1.4Fib / 17.8F / 2.5SatF)"
                    },
         "ingredients":  [
                             {
@@ -4288,8 +4288,8 @@
                      "Tofu \u0026 Plant-Based"
                  ],
         "macros":  {
-                       "total":  "385 kcal | 35P | 18C | 18F",
-                       "perServing":  "3 servings: 128 kcal (11.7P / 6C / 6F) | 4 servings: 96 kcal (8.8P / 4.5C / 4.5F)"
+                       "total":  "385 kcal | 35P | 18C | 6.5Fib | 18F | 2.5SatF",
+                       "perServing":  "3 servings: 128 kcal (11.7P / 6C / 2.2Fib / 6F / 0.8SatF) | 4 servings: 96 kcal (8.8P / 4.5C / 1.6Fib / 4.5F / 0.6SatF)"
                    },
         "ingredients":  [
                             {
@@ -4355,8 +4355,8 @@
                      "Tofu \u0026 Plant-Based"
                  ],
         "macros":  {
-                       "total":  "475 kcal | 38P | 41C | 20F",
-                       "perServing":  "3 servings: 158 kcal (12.7P / 13.7C / 6.7F) | 4 servings: 119 kcal (9.5P / 10.3C / 5F)"
+                       "total":  "475 kcal | 38P | 41C | 5.5Fib | 20F | 2.7SatF",
+                       "perServing":  "3 servings: 158 kcal (12.7P / 13.7C / 1.8Fib / 6.7F / 0.9SatF) | 4 servings: 119 kcal (9.5P / 10.3C / 1.4Fib / 5F / 0.7SatF)"
                    },
         "ingredients":  [
                             {
@@ -4410,8 +4410,8 @@
                      "Tofu \u0026 Plant-Based"
                  ],
         "macros":  {
-                       "total":  "830 kcal | 34P | 14C | 71F",
-                       "perServing":  "3 servings: 277 kcal (11.3P / 4.7C / 23.7F) | 4 servings: 208 kcal (8.5P / 3.5C / 17.8F)"
+                       "total":  "830 kcal | 34P | 14C | 5.5Fib | 71F | 10.1SatF",
+                       "perServing":  "3 servings: 277 kcal (11.3P / 4.7C / 1.8Fib / 23.7F / 3.4SatF) | 4 servings: 208 kcal (8.5P / 3.5C / 1.4Fib / 17.8F / 2.5SatF)"
                    },
         "ingredients":  [
                             {
@@ -4469,8 +4469,8 @@
                      "Rice \u0026 Grains"
                  ],
         "macros":  {
-                       "total":  "660 kcal | 24P | 118C | 10F",
-                       "perServing":  "4 servings: 165 kcal (6P / 29.5C / 2.5F) | 6 servings: 110 kcal (4P / 19.7C / 1.7F)"
+                       "total":  "660 kcal | 24P | 118C | 12Fib | 10F | 1.2SatF",
+                       "perServing":  "4 servings: 165 kcal (6P / 29.5C / 3Fib / 2.5F / 0.3SatF) | 6 servings: 110 kcal (4P / 19.7C / 2Fib / 1.7F / 0.2SatF)"
                    },
         "ingredients":  [
                             {
@@ -4510,8 +4510,8 @@
                      "Sauces \u0026 Dressings"
                  ],
         "macros":  {
-                       "total":  "625 kcal | 30P | 36C | 45F",
-                       "perServing":  "16 servings (1 tbsp): 39 kcal (1.9P / 2.3C / 2.8F)"
+                       "total":  "625 kcal | 30P | 36C | 9.5Fib | 45F | 8.5SatF",
+                       "perServing":  "16 servings (1 tbsp): 39 kcal (1.9P / 2.3C / 0.6Fib / 2.8F / 0.5SatF)"
                    },
         "ingredients":  [
                             {
@@ -4553,8 +4553,8 @@
                      "Baking \u0026 Doughs"
                  ],
         "macros":  {
-                       "total":  "2,218 kcal | 50P | 358C | 77F",
-                       "perServing":  "12 muffins: 185 kcal (4.2P / 29.8C / 6.4F) per muffin"
+                       "total":  "2,218 kcal | 50P | 358C | 32Fib | 77F | 13.2SatF",
+                       "perServing":  "12 muffins: 185 kcal (4.2P / 29.8C / 2.7Fib / 6.4F / 1.1SatF) per muffin"
                    },
         "ingredients":  [
                             {
@@ -4626,8 +4626,8 @@
                      "Pizza"
                  ],
         "macros":  {
-                       "total":  "685 kcal | 41P | 69C | 27F",
-                       "perServing":  "1 pizza: 685 kcal (41P / 69C / 27F)"
+                       "total":  "685 kcal | 41P | 69C | 4Fib | 27F | 11SatF",
+                       "perServing":  "1 pizza: 685 kcal (41P / 69C / 4Fib / 27F / 11SatF)"
                    },
         "ingredients":  [
                             {
@@ -4687,8 +4687,8 @@
                      "Pizza"
                  ],
         "macros":  {
-                       "total":  "1,598 kcal | 51P | 294C | 24F (dough total)",
-                       "perServing":  "1 pizza crust (of 4): 400 kcal (12.8P / 73.5C / 6F) | 8 servings: 200 kcal (6.4P / 36.8C / 3F)"
+                       "total":  "1,598 kcal | 51P | 294C | 22.4Fib | 24F | 4.8SatF (dough total)",
+                       "perServing":  "1 pizza crust (of 4): 400 kcal (12.8P / 73.5C / 5.6Fib / 6F / 1.2SatF) | 8 servings: 200 kcal (6.4P / 36.8C / 2.8Fib / 3F / 0.6SatF)"
                    },
         "ingredients":  [
                             {
@@ -4748,8 +4748,8 @@
                      "Pizza"
                  ],
         "macros":  {
-                       "total":  "2,550 kcal | 140P | 260C | 104F",
-                       "perServing":  "8 servings: 319 kcal (17.5P / 32.5C / 13F) | 10 servings: 255 kcal (14P / 26C / 10.4F)"
+                       "total":  "2,550 kcal | 140P | 260C | 12Fib | 104F | 54SatF",
+                       "perServing":  "8 servings: 319 kcal (17.5P / 32.5C / 1.5Fib / 13F / 6.8SatF) | 10 servings: 255 kcal (14P / 26C / 1.2Fib / 10.4F / 5.4SatF)"
                    },
         "ingredients":  [
                             {
@@ -4801,8 +4801,8 @@
                      "Pizza"
                  ],
         "macros":  {
-                       "total":  "1,519 kcal | 80P | 170C | 52F (single 14-inch pie)",
-                       "perServing":  "4 servings (1/4 of 14-inch pie): 380 kcal (20P / 42.5C / 13F) | 6 servings (1/6 pie): 253 kcal (13.3P / 28.3C / 8.7F)"
+                       "total":  "1,519 kcal | 80P | 170C | 8Fib | 52F | 21.5SatF (single 14-inch pie)",
+                       "perServing":  "4 servings (1/4 of 14-inch pie): 380 kcal (20P / 42.5C / 2Fib / 13F / 5.4SatF) | 6 servings (1/6 pie): 253 kcal (13.3P / 28.3C / 1.3Fib / 8.7F / 3.6SatF)"
                    },
         "ingredients":  [
                             {
@@ -4849,8 +4849,8 @@
                      "Pizza"
                  ],
         "macros":  {
-                       "total":  "685 kcal | 28P | 154C | 3F",
-                       "perServing":  "1/4 cup (28 servings): 24 kcal (1P / 5.5C / 0.1F) | 1/2 cup per pizza (14 servings): 49 kcal (2P / 11C / 0.2F)"
+                       "total":  "685 kcal | 28P | 154C | 28Fib | 3F | 0.5SatF",
+                       "perServing":  "1/4 cup (28 servings): 24 kcal (1P / 5.5C / 1Fib / 0.1F / 0SatF) | 1/2 cup per pizza (14 servings): 49 kcal (2P / 11C / 2Fib / 0.2F / 0SatF)"
                    },
         "ingredients":  [
                             {
@@ -4912,8 +4912,8 @@
                      "Pizza"
                  ],
         "macros":  {
-                       "total":  "1,700 kcal | 56P | 348C | 5F (dough total)",
-                       "perServing":  "1 pizza crust (of 3): 567 kcal (18.7P / 116C / 1.7F) | 6 servings: 283 kcal (9.3P / 58C / 0.8F)"
+                       "total":  "1,700 kcal | 56P | 348C | 13Fib | 5F | 1.4SatF (dough total)",
+                       "perServing":  "1 pizza crust (of 3): 567 kcal (18.7P / 116C / 4.3Fib / 1.7F / 0.5SatF) | 6 servings: 283 kcal (9.3P / 58C / 2.2Fib / 0.8F / 0.2SatF)"
                    },
         "ingredients":  [
                             {
@@ -4958,8 +4958,8 @@
                      "Stews \u0026 Skillets"
                  ],
         "macros":  {
-                       "total":  "1,412 kcal | 192P | 41C | 46F",
-                       "perServing":  "3 servings: 471 kcal (64P / 13.7C / 15.3F) | 4 servings: 353 kcal (48P / 10.3C / 11.5F)"
+                       "total":  "1,412 kcal | 192P | 41C | 1.5Fib | 46F | 14.3SatF",
+                       "perServing":  "3 servings: 471 kcal (64P / 13.7C / 0.5Fib / 15.3F / 4.8SatF) | 4 servings: 353 kcal (48P / 10.3C / 0.4Fib / 11.5F / 3.6SatF)"
                    },
         "ingredients":  [
                             {
@@ -5046,8 +5046,8 @@
                      "Breakfast \u0026 Sweets"
                  ],
         "macros":  {
-                       "total":  "512 kcal | 40P | 49C | 16F",
-                       "perServing":  "1 jar: 512 kcal (40P / 49C / 16F)"
+                       "total":  "512 kcal | 40P | 49C | 14.3Fib | 16F | 2.5SatF",
+                       "perServing":  "1 jar: 512 kcal (40P / 49C / 14.3Fib / 16F / 2.5SatF)"
                    },
         "ingredients":  [
                             {
@@ -5101,8 +5101,8 @@
                      "Soups \u0026 Ramen"
                  ],
         "macros":  {
-                       "total":  "730 kcal | 35P | 81C | 29F",
-                       "perServing":  "4 servings: 183 kcal (8.8P / 20.3C / 7.3F)"
+                       "total":  "730 kcal | 35P | 81C | 22Fib | 29F | 4SatF",
+                       "perServing":  "4 servings: 183 kcal (8.8P / 20.3C / 5.5Fib / 7.3F / 1SatF)"
                    },
         "ingredients":  [
                             {
@@ -5145,8 +5145,8 @@
                      "Grill \u0026 Meats"
                  ],
         "macros":  {
-                       "total":  "956 kcal | 84P | 48C | 44F",
-                       "perServing":  "4 servings: 239 kcal (21P / 12C / 11F)"
+                       "total":  "956 kcal | 84P | 48C | 3.5Fib | 44F | 16.5SatF",
+                       "perServing":  "4 servings: 239 kcal (21P / 12C / 0.9Fib / 11F / 4.1SatF)"
                    },
         "ingredients":  [
                             {
@@ -5201,8 +5201,8 @@
                      "Pastas"
                  ],
         "macros":  {
-                       "total":  "2,390 kcal | 160P | 227C | 94F",
-                       "perServing":  "4 servings: 598 kcal (40P / 56.8C / 23.5F)"
+                       "total":  "2,390 kcal | 160P | 227C | 50Fib | 94F | 41SatF",
+                       "perServing":  "4 servings: 598 kcal (40P / 56.8C / 12.5Fib / 23.5F / 10.3SatF)"
                    },
         "ingredients":  [
                             {
@@ -5278,8 +5278,8 @@
                      "Rice \u0026 Grains"
                  ],
         "macros":  {
-                       "total":  "2,042 kcal | 137P | 215C | 70F",
-                       "perServing":  "4 servings: 511 kcal (34.3P / 53.8C / 17.5F)"
+                       "total":  "2,042 kcal | 137P | 215C | 14Fib | 70F | 27.5SatF",
+                       "perServing":  "4 servings: 511 kcal (34.3P / 53.8C / 3.5Fib / 17.5F / 6.9SatF)"
                    },
         "ingredients":  [
                             {
@@ -5352,8 +5352,8 @@
                      "Stews \u0026 Skillets"
                  ],
         "macros":  {
-                       "total":  "3,150 kcal | 128P | 353C | 147F",
-                       "perServing":  "6 servings: 525 kcal (21.3P / 58.8C / 24.5F)"
+                       "total":  "3,150 kcal | 128P | 353C | 100Fib | 147F | 37SatF",
+                       "perServing":  "6 servings: 525 kcal (21.3P / 58.8C / 16.7Fib / 24.5F / 6.2SatF)"
                    },
         "ingredients":  [
                             {
@@ -5428,8 +5428,8 @@
                      "Salads"
                  ],
         "macros":  {
-                       "total":  "580 kcal | 50P | 68C | 12F",
-                       "perServing":  "1 bowl: 580 kcal (50P / 68C / 12F)"
+                       "total":  "580 kcal | 50P | 68C | 13Fib | 12F | 2.8SatF",
+                       "perServing":  "1 bowl: 580 kcal (50P / 68C / 13Fib / 12F / 2.8SatF)"
                    },
         "ingredients":  [
                             {
@@ -5505,8 +5505,8 @@
                      "Pastas"
                  ],
         "macros":  {
-                       "total":  "1,832 kcal | 133P | 172C | 67F",
-                       "perServing":  "4 servings: 458 kcal (33.3P / 43C / 16.8F)"
+                       "total":  "1,832 kcal | 133P | 172C | 20Fib | 67F | 30SatF",
+                       "perServing":  "4 servings: 458 kcal (33.3P / 43C / 5Fib / 16.8F / 7.5SatF)"
                    },
         "ingredients":  [
                             {
@@ -5570,8 +5570,8 @@
                      "Bakes \u0026 Sheet Pan"
                  ],
         "macros":  {
-                       "total":  "2,250 kcal | 200P | 215C | 65F",
-                       "perServing":  "5 personal pizzas: 450 kcal (40P / 43C / 13F) per pizza"
+                       "total":  "2,250 kcal | 200P | 215C | 27Fib | 65F | 26SatF",
+                       "perServing":  "5 personal pizzas: 450 kcal (40P / 43C / 5.4Fib / 13F / 5.2SatF) per pizza"
                    },
         "ingredients":  [
                             {
@@ -5643,8 +5643,8 @@
                      "Pizza"
                  ],
         "macros":  {
-                       "total":  "2,851 kcal | 110P | 310C | 120F",
-                       "perServing":  "1 pizza (of 2): 1,425 kcal (55P / 155C / 60F) | 4 servings: 713 kcal (27.5P / 77.5C / 30F) | 6 servings: 475 kcal (18.3P / 51.7C / 20F)"
+                       "total":  "2,851 kcal | 110P | 310C | 14Fib | 120F | 34SatF",
+                       "perServing":  "1 pizza (of 2): 1,425 kcal (55P / 155C / 7Fib / 60F / 17SatF) | 4 servings: 713 kcal (27.5P / 77.5C / 3.5Fib / 30F / 8.5SatF) | 6 servings: 475 kcal (18.3P / 51.7C / 2.3Fib / 20F / 5.7SatF)"
                    },
         "ingredients":  [
                             {
@@ -5696,8 +5696,8 @@
                      "Pizza"
                  ],
         "macros":  {
-                       "total":  "1,760 kcal | 154P | 140C | 46F",
-                       "perServing":  "2 personal pizzas: 880 kcal (77P / 70C / 23F) per pizza"
+                       "total":  "1,760 kcal | 154P | 140C | 8Fib | 46F | 21SatF",
+                       "perServing":  "2 personal pizzas: 880 kcal (77P / 70C / 4Fib / 23F / 10.5SatF) per pizza"
                    },
         "ingredients":  [
                             {
@@ -5765,8 +5765,8 @@
                      "Pizza"
                  ],
         "macros":  {
-                       "total":  "665 kcal | 51P | 47C | 32F",
-                       "perServing":  "1 personal pizza: 665 kcal (51P / 47C / 32F)"
+                       "total":  "665 kcal | 51P | 47C | 6.5Fib | 32F | 11SatF",
+                       "perServing":  "1 personal pizza: 665 kcal (51P / 47C / 6.5Fib / 32F / 11SatF)"
                    },
         "ingredients":  [
                             {
@@ -5814,8 +5814,8 @@
                      "Pizza"
                  ],
         "macros":  {
-                       "total":  "2,371 kcal | 106P | 310C | 66F",
-                       "perServing":  "4 servings: 593 kcal (26.5P / 77.5C / 16.5F) | 6 servings: 395 kcal (17.7P / 51.7C / 11F)"
+                       "total":  "2,371 kcal | 106P | 310C | 14Fib | 66F | 29SatF",
+                       "perServing":  "4 servings: 593 kcal (26.5P / 77.5C / 3.5Fib / 16.5F / 7.3SatF) | 6 servings: 395 kcal (17.7P / 51.7C / 2.3Fib / 11F / 4.8SatF)"
                    },
         "ingredients":  [
                             {
@@ -5863,8 +5863,8 @@
                      "Pizza"
                  ],
         "macros":  {
-                       "total":  "2,421 kcal | 106P | 310C | 72F",
-                       "perServing":  "1 pizza (of 2): 1,210 kcal (53P / 155C / 36F) | 4 servings: 605 kcal (26.5P / 77.5C / 18F) | 6 servings: 403 kcal (17.7P / 51.7C / 12F)"
+                       "total":  "2,421 kcal | 106P | 310C | 14Fib | 72F | 30SatF",
+                       "perServing":  "1 pizza (of 2): 1,210 kcal (53P / 155C / 7Fib / 36F / 15SatF) | 4 servings: 605 kcal (26.5P / 77.5C / 3.5Fib / 18F / 7.5SatF) | 6 servings: 403 kcal (17.7P / 51.7C / 2.3Fib / 12F / 5SatF)"
                    },
         "ingredients":  [
                             {
@@ -5913,8 +5913,8 @@
                      "Pizza"
                  ],
         "macros":  {
-                       "total":  "2,720 kcal | 135P | 335C | 75F",
-                       "perServing":  "1 pizza (of 2): 1,360 kcal (67.5P / 167.5C / 37.5F) | 6 servings: 453 kcal (22.5P / 55.8C / 12.5F) | 8 servings: 340 kcal (16.9P / 41.9C / 9.4F)"
+                       "total":  "2,720 kcal | 135P | 335C | 19Fib | 75F | 35SatF",
+                       "perServing":  "1 pizza (of 2): 1,360 kcal (67.5P / 167.5C / 9.5Fib / 37.5F / 17.5SatF) | 6 servings: 453 kcal (22.5P / 55.8C / 3.2Fib / 12.5F / 5.8SatF) | 8 servings: 340 kcal (16.9P / 41.9C / 2.4Fib / 9.4F / 4.4SatF)"
                    },
         "ingredients":  [
                             {
@@ -5971,8 +5971,8 @@
                      "Pizza"
                  ],
         "macros":  {
-                       "total":  "4,320 kcal | 212P | 565C | 102F",
-                       "perServing":  "1 pizza (of 3): 1,440 kcal (70.7P / 188.3C / 34F) | 6 servings: 720 kcal (35.3P / 94.2C / 17F) | 8 servings: 540 kcal (26.5P / 70.6C / 12.8F)"
+                       "total":  "4,320 kcal | 212P | 565C | 30Fib | 102F | 49SatF",
+                       "perServing":  "1 pizza (of 3): 1,440 kcal (70.7P / 188.3C / 10Fib / 34F / 16.3SatF) | 6 servings: 720 kcal (35.3P / 94.2C / 5Fib / 17F / 8.2SatF) | 8 servings: 540 kcal (26.5P / 70.6C / 3.8Fib / 12.8F / 6.1SatF)"
                    },
         "ingredients":  [
                             {
@@ -6020,8 +6020,8 @@
                      "Rice \u0026 Grains"
                  ],
         "macros":  {
-                       "total":  "2,080 kcal | 216P | 192C | 48F",
-                       "perServing":  "4 bowls: 520 kcal (54P / 48C / 12F)"
+                       "total":  "2,080 kcal | 216P | 192C | 4Fib | 48F | 19.5SatF",
+                       "perServing":  "4 bowls: 520 kcal (54P / 48C / 1Fib / 12F / 4.9SatF)"
                    },
         "ingredients":  [
                             {
@@ -6089,8 +6089,8 @@
                      "Baking \u0026 Doughs"
                  ],
         "macros":  {
-                       "total":  "5,531 kcal | 66P | 660C | 297F",
-                       "perServing":  "16 cookies: 346 kcal (4.1P / 41.3C / 18.6F) | 20 cookies: 277 kcal (3.3P / 33C / 14.9F)"
+                       "total":  "5,531 kcal | 66P | 660C | 17.5Fib | 297F | 183SatF",
+                       "perServing":  "16 cookies: 346 kcal (4.1P / 41.3C / 1.1Fib / 18.6F / 11.4SatF) | 20 cookies: 277 kcal (3.3P / 33C / 0.9Fib / 14.9F / 9.2SatF)"
                    },
         "ingredients":  [
                             {
@@ -6171,8 +6171,8 @@
                      "Baking \u0026 Doughs"
                  ],
         "macros":  {
-                       "total":  "4,895 kcal | 92P | 503C | 347F",
-                       "perServing":  "12 muffins: 408 kcal (7.7P / 41.9C / 28.9F) per muffin"
+                       "total":  "4,895 kcal | 92P | 503C | 90Fib | 347F | 110SatF",
+                       "perServing":  "12 muffins: 408 kcal (7.7P / 41.9C / 7.5Fib / 28.9F / 9.2SatF) per muffin"
                    },
         "ingredients":  [
                             {
@@ -6252,8 +6252,8 @@
                      "Breakfast \u0026 Sweets"
                  ],
         "macros":  {
-                       "total":  "1,273 kcal | 32P | 172C | 64F",
-                       "perServing":  "10 bites: 127 kcal (3.2P / 17.2C / 6.4F) | 12 bites: 106 kcal (2.7P / 14.3C / 5.3F) per bite"
+                       "total":  "1,273 kcal | 32P | 172C | 22.8Fib | 64F | 11.5SatF",
+                       "perServing":  "10 bites: 127 kcal (3.2P / 17.2C / 2.3Fib / 6.4F / 1.2SatF) | 12 bites: 106 kcal (2.7P / 14.3C / 1.9Fib / 5.3F / 1SatF) per bite"
                    },
         "ingredients":  [
                             {
@@ -6310,8 +6310,8 @@
                      "Breakfast \u0026 Sweets"
                  ],
         "macros":  {
-                       "total":  "937 kcal | 53P | 55C | 57F",
-                       "perServing":  "3 servings: 312 kcal (17.7P / 18.3C / 19F) | 9 pancakes: 104 kcal (5.9P / 6.1C / 6.3F) per pancake"
+                       "total":  "937 kcal | 53P | 55C | 1.6Fib | 57F | 25.2SatF",
+                       "perServing":  "3 servings: 312 kcal (17.7P / 18.3C / 0.5Fib / 19F / 8.4SatF) | 9 pancakes: 104 kcal (5.9P / 6.1C / 0.2Fib / 6.3F / 2.8SatF) per pancake"
                    },
         "ingredients":  [
                             {
@@ -6370,8 +6370,8 @@
                      "Baking \u0026 Doughs"
                  ],
         "macros":  {
-                       "total":  "8,273 kcal | 78P | 1,137C | 405F",
-                       "perServing":  "12 servings: 689 kcal (6.5P / 94.8C / 33.8F) | 16 servings: 517 kcal (4.9P / 71.1C / 25.3F)"
+                       "total":  "8,273 kcal | 78P | 1,137C | 28.5Fib | 405F | 147SatF",
+                       "perServing":  "12 servings: 689 kcal (6.5P / 94.8C / 2.4Fib / 33.8F / 12.3SatF) | 16 servings: 517 kcal (4.9P / 71.1C / 1.8Fib / 25.3F / 9.2SatF)"
                    },
         "ingredients":  [
                             {
@@ -6506,8 +6506,8 @@
                      "Baking \u0026 Doughs"
                  ],
         "macros":  {
-                       "total":  "7,922 kcal | 64P | 1,074C | 399F",
-                       "perServing":  "12 servings: 660 kcal (5.3P / 89.5C / 33.3F) | 16 servings: 495 kcal (4P / 67.1C / 24.9F)"
+                       "total":  "7,922 kcal | 64P | 1,074C | 42Fib | 399F | 250SatF",
+                       "perServing":  "12 servings: 660 kcal (5.3P / 89.5C / 3.5Fib / 33.3F / 20.8SatF) | 16 servings: 495 kcal (4P / 67.1C / 2.6Fib / 24.9F / 15.6SatF)"
                    },
         "ingredients":  [
                             {
@@ -6612,8 +6612,8 @@
                      "Baking \u0026 Doughs"
                  ],
         "macros":  {
-                       "total":  "3,013 kcal | 93P | 327C | 159F",
-                       "perServing":  "10 servings: 301 kcal (9.3P / 32.7C / 15.9F) | 12 servings: 251 kcal (7.8P / 27.3C / 13.3F)"
+                       "total":  "3,013 kcal | 93P | 327C | 31Fib | 159F | 19.6SatF",
+                       "perServing":  "10 servings: 301 kcal (9.3P / 32.7C / 3.1Fib / 15.9F / 2SatF) | 12 servings: 251 kcal (7.8P / 27.3C / 2.6Fib / 13.3F / 1.6SatF)"
                    },
         "ingredients":  [
                             {
@@ -6683,8 +6683,8 @@
                      "Baking \u0026 Doughs"
                  ],
         "macros":  {
-                       "total":  "6,977 kcal | 81P | 496C | 520F",
-                       "perServing":  "12 servings: 581 kcal (6.8P / 41.3C / 43.3F) | 14 servings: 498 kcal (5.8P / 35.4C / 37.1F)"
+                       "total":  "6,977 kcal | 81P | 496C | 20Fib | 520F | 317SatF",
+                       "perServing":  "12 servings: 581 kcal (6.8P / 41.3C / 1.7Fib / 43.3F / 26.4SatF) | 14 servings: 498 kcal (5.8P / 35.4C / 1.4Fib / 37.1F / 22.6SatF)"
                    },
         "ingredients":  [
                             {
@@ -6789,8 +6789,8 @@
                      "Baking \u0026 Doughs"
                  ],
         "macros":  {
-                       "total":  "4,351 kcal | 30P | 628C | 201F",
-                       "perServing":  "8 servings: 544 kcal (3.8P / 78.5C / 25.1F) | 10 servings: 435 kcal (3P / 62.8C / 20.1F)"
+                       "total":  "4,351 kcal | 30P | 628C | 4.8Fib | 201F | 123SatF",
+                       "perServing":  "8 servings: 544 kcal (3.8P / 78.5C / 0.6Fib / 25.1F / 15.4SatF) | 10 servings: 435 kcal (3P / 62.8C / 0.5Fib / 20.1F / 12.3SatF)"
                    },
         "ingredients":  [
                             {
@@ -6890,8 +6890,8 @@
                      "Baking \u0026 Doughs"
                  ],
         "macros":  {
-                       "total":  "14,898 kcal | 90P | 1,813C | 817F",
-                       "perServing":  "14 servings: 1,064 kcal (6.4P / 129.5C / 58.4F) | 16 servings: 931 kcal (5.6P / 113.3C / 51.1F)"
+                       "total":  "14,898 kcal | 90P | 1,813C | 20Fib | 817F | 464SatF",
+                       "perServing":  "14 servings: 1,064 kcal (6.4P / 129.5C / 1.4Fib / 58.4F / 33.1SatF) | 16 servings: 931 kcal (5.6P / 113.3C / 1.3Fib / 51.1F / 29SatF)"
                    },
         "ingredients":  [
                             {
@@ -7038,8 +7038,8 @@
                      "Baking \u0026 Doughs"
                  ],
         "macros":  {
-                       "total":  "3,437 kcal | 50P | 497C | 141F",
-                       "perServing":  "10 servings: 344 kcal (5P / 49.7C / 14.1F) | 12 servings: 286 kcal (4.2P / 41.4C / 11.8F)"
+                       "total":  "3,437 kcal | 50P | 497C | 7.5Fib | 141F | 21.1SatF",
+                       "perServing":  "10 servings: 344 kcal (5P / 49.7C / 0.8Fib / 14.1F / 2.1SatF) | 12 servings: 286 kcal (4.2P / 41.4C / 0.6Fib / 11.8F / 1.8SatF)"
                    },
         "ingredients":  [
                             {
@@ -7115,8 +7115,8 @@
                      "Baking \u0026 Doughs"
                  ],
         "macros":  {
-                       "total":  "6,239 kcal | 71P | 785C | 211F",
-                       "perServing":  "16 servings (1 slice): 390 kcal (4.4P / 49.1C / 13.2F)"
+                       "total":  "6,239 kcal | 71P | 785C | 10Fib | 211F | 125SatF",
+                       "perServing":  "16 servings (1 slice): 390 kcal (4.4P / 49.1C / 0.6Fib / 13.2F / 7.8SatF)"
                    },
         "ingredients":  [
                             {
@@ -7236,8 +7236,8 @@
                      "Baking \u0026 Doughs"
                  ],
         "macros":  {
-                       "total":  "4,326 kcal | 60P | 329C | 303F",
-                       "perServing":  "10 servings: 433 kcal (6P / 32.9C / 30.3F) | 12 servings: 361 kcal (5P / 27.4C / 25.3F)"
+                       "total":  "4,326 kcal | 60P | 329C | 20Fib | 303F | 161SatF",
+                       "perServing":  "10 servings: 433 kcal (6P / 32.9C / 2Fib / 30.3F / 16.1SatF) | 12 servings: 361 kcal (5P / 27.4C / 1.7Fib / 25.3F / 13.4SatF)"
                    },
         "ingredients":  [
                             {
@@ -7337,8 +7337,8 @@
                      "Baking \u0026 Doughs"
                  ],
         "macros":  {
-                       "total":  "2,172 kcal | 33P | 190C | 146F",
-                       "perServing":  "12 financiers: 181 kcal (2.8P / 15.8C / 12.2F) | 16 financiers: 136 kcal (2.1P / 11.9C / 9.1F)"
+                       "total":  "2,172 kcal | 33P | 190C | 14Fib | 146F | 77SatF",
+                       "perServing":  "12 financiers: 181 kcal (2.8P / 15.8C / 1.2Fib / 12.2F / 6.4SatF) | 16 financiers: 136 kcal (2.1P / 11.9C / 0.9Fib / 9.1F / 4.8SatF)"
                    },
         "ingredients":  [
                             {
@@ -7422,8 +7422,8 @@
                      "Baking \u0026 Doughs"
                  ],
         "macros":  {
-                       "total":  "3,492 kcal | 58P | 237C | 258F",
-                       "perServing":  "10 servings: 349 kcal (5.8P / 23.7C / 25.8F) | 12 servings: 291 kcal (4.8P / 19.8C / 21.5F)"
+                       "total":  "3,492 kcal | 58P | 237C | 34Fib | 258F | 152SatF",
+                       "perServing":  "10 servings: 349 kcal (5.8P / 23.7C / 3.4Fib / 25.8F / 15.2SatF) | 12 servings: 291 kcal (4.8P / 19.8C / 2.8Fib / 21.5F / 12.7SatF)"
                    },
         "ingredients":  [
                             {
@@ -7542,8 +7542,8 @@
                      "Baking \u0026 Doughs"
                  ],
         "macros":  {
-                       "total":  "2,975 kcal | 53P | 341C | 165F",
-                       "perServing":  "8 servings: 372 kcal (6.6P / 42.6C / 20.6F) | 10 servings: 298 kcal (5.3P / 34.1C / 16.5F)"
+                       "total":  "2,975 kcal | 53P | 341C | 9.5Fib | 165F | 26.8SatF",
+                       "perServing":  "8 servings: 372 kcal (6.6P / 42.6C / 1.2Fib / 20.6F / 3.4SatF) | 10 servings: 298 kcal (5.3P / 34.1C / 1Fib / 16.5F / 2.7SatF)"
                    },
         "ingredients":  [
                             {
@@ -7638,8 +7638,8 @@
                      "Baking \u0026 Doughs"
                  ],
         "macros":  {
-                       "total":  "4,543 kcal | 61P | 311C | 347F",
-                       "perServing":  "8 servings: 568 kcal (7.6P / 38.9C / 43.4F) per slice"
+                       "total":  "4,543 kcal | 61P | 311C | 19Fib | 347F | 188SatF",
+                       "perServing":  "8 servings: 568 kcal (7.6P / 38.9C / 2.4Fib / 43.4F / 23.5SatF) per slice"
                    },
         "ingredients":  [
                             {
@@ -7739,8 +7739,8 @@
                      "Baking \u0026 Doughs"
                  ],
         "macros":  {
-                       "total":  "3,135 kcal | 86P | 297C | 197F",
-                       "perServing":  "8 servings: 392 kcal (10.8P / 37.1C / 24.6F) | 10 servings: 314 kcal (8.6P / 29.7C / 19.7F)"
+                       "total":  "3,135 kcal | 86P | 297C | 52Fib | 197F | 65.5SatF",
+                       "perServing":  "8 servings: 392 kcal (10.8P / 37.1C / 6.5Fib / 24.6F / 8.2SatF) | 10 servings: 314 kcal (8.6P / 29.7C / 5.2Fib / 19.7F / 6.6SatF)"
                    },
         "ingredients":  [
                             {
@@ -7824,8 +7824,8 @@
                      "Baking \u0026 Doughs"
                  ],
         "macros":  {
-                       "total":  "4,479 kcal | 20P | 301C | 366F",
-                       "perServing":  "16 servings (~1/3 cup): 280 kcal (1.3P / 18.8C / 22.9F) | 20 servings (~1/4 cup): 224 kcal (1P / 15.1C / 18.3F)"
+                       "total":  "4,479 kcal | 20P | 301C | 0Fib | 366F | 232SatF",
+                       "perServing":  "16 servings (~1/3 cup): 280 kcal (1.3P / 18.8C / 0Fib / 22.9F / 14.5SatF) | 20 servings (~1/4 cup): 224 kcal (1P / 15.1C / 0Fib / 18.3F / 11.6SatF)"
                    },
         "ingredients":  [
                             {
@@ -7880,8 +7880,8 @@
                      "Grill \u0026 Meats"
                  ],
         "macros":  {
-                       "total":  "3,420 kcal | 383P | 28C | 200F",
-                       "perServing":  "6 servings: 570 kcal (63.8P / 4.7C / 33.3F) | 8 servings: 428 kcal (47.9P / 3.5C / 25F)"
+                       "total":  "3,420 kcal | 383P | 28C | 3Fib | 200F | 72SatF",
+                       "perServing":  "6 servings: 570 kcal (63.8P / 4.7C / 0.5Fib / 33.3F / 12SatF) | 8 servings: 428 kcal (47.9P / 3.5C / 0.4Fib / 25F / 9SatF)"
                    },
         "ingredients":  [
                             {
@@ -7961,8 +7961,8 @@
                      "Grill \u0026 Meats"
                  ],
         "macros":  {
-                       "total":  "1,245 kcal | 116P | 56C | 65F",
-                       "perServing":  "4 servings: 311 kcal (29P / 14C / 16.3F)"
+                       "total":  "1,245 kcal | 116P | 56C | 11Fib | 65F | 15SatF",
+                       "perServing":  "4 servings: 311 kcal (29P / 14C / 2.8Fib / 16.3F / 3.8SatF)"
                    },
         "ingredients":  [
                             {
@@ -8072,8 +8072,8 @@
                      "Grill \u0026 Meats"
                  ],
         "macros":  {
-                       "total":  "1,960 kcal | 208P | 176C | 44F",
-                       "perServing":  "4 bowls: 490 kcal (52P / 44C / 11F)"
+                       "total":  "1,960 kcal | 208P | 176C | 15Fib | 44F | 24.5SatF",
+                       "perServing":  "4 bowls: 490 kcal (52P / 44C / 3.8Fib / 11F / 6.1SatF)"
                    },
         "ingredients":  [
                             {
@@ -8166,8 +8166,8 @@
                      "Stews \u0026 Skillets"
                  ],
         "macros":  {
-                       "total":  "1,930 kcal | 210P | 60C | 93F",
-                       "perServing":  "5 servings: 386 kcal (42P / 12C / 18.6F) | 6 servings: 322 kcal (35P / 10C / 15.5F)"
+                       "total":  "1,930 kcal | 210P | 60C | 12Fib | 93F | 28SatF",
+                       "perServing":  "5 servings: 386 kcal (42P / 12C / 2.4Fib / 18.6F / 5.6SatF) | 6 servings: 322 kcal (35P / 10C / 2Fib / 15.5F / 4.7SatF)"
                    },
         "ingredients":  [
                             {
@@ -8256,8 +8256,8 @@
                      "Stews \u0026 Skillets"
                  ],
         "macros":  {
-                       "total":  "2,470 kcal | 261P | 62C | 117F",
-                       "perServing":  "6 servings: 412 kcal (43.5P / 10.3C / 19.5F)"
+                       "total":  "2,470 kcal | 261P | 62C | 16Fib | 117F | 35SatF",
+                       "perServing":  "6 servings: 412 kcal (43.5P / 10.3C / 2.7Fib / 19.5F / 5.8SatF)"
                    },
         "ingredients":  [
                             {
@@ -8352,8 +8352,8 @@
                      "Slow Cooker \u0026 Meats"
                  ],
         "macros":  {
-                       "total":  "1,890 kcal | 200P | 146C | 54F",
-                       "perServing":  "6 bowls: 315 kcal (33.3P / 24.3C / 9F) | 8 bowls: 236 kcal (25P / 18.3C / 6.8F)"
+                       "total":  "1,890 kcal | 200P | 146C | 25Fib | 54F | 15SatF",
+                       "perServing":  "6 bowls: 315 kcal (33.3P / 24.3C / 4.2Fib / 9F / 2.5SatF) | 8 bowls: 236 kcal (25P / 18.3C / 3.1Fib / 6.8F / 1.9SatF)"
                    },
         "ingredients":  [
                             {
@@ -8432,8 +8432,8 @@
                      "Tofu \u0026 Plant-Based"
                  ],
         "macros":  {
-                       "total":  "1,615 kcal | 48P | 153C | 96F",
-                       "perServing":  "4 servings: 404 kcal (12P / 38.3C / 24F)"
+                       "total":  "1,615 kcal | 48P | 153C | 42Fib | 96F | 77SatF",
+                       "perServing":  "4 servings: 404 kcal (12P / 38.3C / 10.5Fib / 24F / 19.3SatF)"
                    },
         "ingredients":  [
                             {
@@ -8512,8 +8512,8 @@
                      "Slow Cooker \u0026 Meats"
                  ],
         "macros":  {
-                       "total":  "2,120 kcal | 189P | 172C | 73F",
-                       "perServing":  "6 servings: 353 kcal (31.5P / 28.7C / 12.2F) | 8 servings: 265 kcal (23.6P / 21.5C / 9.1F)"
+                       "total":  "2,120 kcal | 189P | 172C | 48Fib | 73F | 28SatF",
+                       "perServing":  "6 servings: 353 kcal (31.5P / 28.7C / 8Fib / 12.2F / 4.7SatF) | 8 servings: 265 kcal (23.6P / 21.5C / 6Fib / 9.1F / 3.5SatF)"
                    },
         "ingredients":  [
                             {
@@ -8597,8 +8597,8 @@
                      "Stews \u0026 Skillets"
                  ],
         "macros":  {
-                       "total":  "1,335 kcal | 58P | 205C | 35F",
-                       "perServing":  "6 servings: 223 kcal (9.7P / 34.2C / 5.8F) | 8 servings: 167 kcal (7.3P / 25.6C / 4.4F)"
+                       "total":  "1,335 kcal | 58P | 205C | 43Fib | 35F | 6SatF",
+                       "perServing":  "6 servings: 223 kcal (9.7P / 34.2C / 7.2Fib / 5.8F / 1SatF) | 8 servings: 167 kcal (7.3P / 25.6C / 5.4Fib / 4.4F / 0.8SatF)"
                    },
         "ingredients":  [
                             {
@@ -8682,8 +8682,8 @@
                      "Bakes \u0026 Sheet Pan"
                  ],
         "macros":  {
-                       "total":  "1,015 kcal | 20P | 78C | 73F",
-                       "perServing":  "4 servings: 254 kcal (5P / 19.5C / 18.3F) | 6 servings: 169 kcal (3.3P / 13C / 12.2F)"
+                       "total":  "1,015 kcal | 20P | 78C | 20Fib | 73F | 24SatF",
+                       "perServing":  "4 servings: 254 kcal (5P / 19.5C / 5Fib / 18.3F / 6SatF) | 6 servings: 169 kcal (3.3P / 13C / 3.3Fib / 12.2F / 4SatF)"
                    },
         "ingredients":  [
                             {
@@ -8752,8 +8752,8 @@
                      "Stews \u0026 Skillets"
                  ],
         "macros":  {
-                       "total":  "1,514 kcal | 66P | 90C | 99F",
-                       "perServing":  "4 servings: 379 kcal (16.5P / 22.5C / 24.8F)"
+                       "total":  "1,514 kcal | 66P | 90C | 23Fib | 99F | 58SatF",
+                       "perServing":  "4 servings: 379 kcal (16.5P / 22.5C / 5.8Fib / 24.8F / 14.5SatF)"
                    },
         "ingredients":  [
                             {
@@ -8822,8 +8822,8 @@
                      "Bakes \u0026 Sheet Pan"
                  ],
         "macros":  {
-                       "total":  "2,480 kcal | 64P | 197C | 160F",
-                       "perServing":  "4 servings: 620 kcal (16P / 49.3C / 40F)"
+                       "total":  "2,480 kcal | 64P | 197C | 16Fib | 160F | 50SatF",
+                       "perServing":  "4 servings: 620 kcal (16P / 49.3C / 4Fib / 40F / 12.5SatF)"
                    },
         "ingredients":  [
                             {
@@ -8892,8 +8892,8 @@
                      "Grill \u0026 Meats"
                  ],
         "macros":  {
-                       "total":  "1,582 kcal | 115P | 113C | 72F",
-                       "perServing":  "4 servings: 396 kcal (28.8P / 28.3C / 18F)"
+                       "total":  "1,582 kcal | 115P | 113C | 17Fib | 72F | 22SatF",
+                       "perServing":  "4 servings: 396 kcal (28.8P / 28.3C / 4.3Fib / 18F / 5.5SatF)"
                    },
         "ingredients":  [
                             {
@@ -8982,8 +8982,8 @@
                      "Tofu \u0026 Plant-Based"
                  ],
         "macros":  {
-                       "total":  "1,075 kcal | 31P | 114C | 59F",
-                       "perServing":  "4 servings: 269 kcal (7.8P / 28.5C / 14.8F) | 6 servings: 179 kcal (5.2P / 19C / 9.8F)"
+                       "total":  "1,075 kcal | 31P | 114C | 40Fib | 59F | 8.2SatF",
+                       "perServing":  "4 servings: 269 kcal (7.8P / 28.5C / 10Fib / 14.8F / 2.1SatF) | 6 servings: 179 kcal (5.2P / 19C / 6.7Fib / 9.8F / 1.4SatF)"
                    },
         "ingredients":  [
                             {
@@ -9063,8 +9063,8 @@
                      "Stews \u0026 Skillets"
                  ],
         "macros":  {
-                       "total":  "1,302 kcal | 19P | 158C | 67F",
-                       "perServing":  "3 pancakes: 434 kcal (6.3P / 52.7C / 22.3F) per pancake"
+                       "total":  "1,302 kcal | 19P | 158C | 10Fib | 67F | 9.2SatF",
+                       "perServing":  "3 pancakes: 434 kcal (6.3P / 52.7C / 3.3Fib / 22.3F / 3.1SatF) per pancake"
                    },
         "ingredients":  [
                             {
@@ -9134,8 +9134,8 @@
                      "Baking \u0026 Doughs"
                  ],
         "macros":  {
-                       "total":  "720 kcal | 68P | 76C | 14F",
-                       "perServing":  "2 servings (3-4 pancakes each): 360 kcal (34P / 38C / 7F) | 6 pancakes: 120 kcal (11.3P / 12.7C / 2.3F) per pancake"
+                       "total":  "720 kcal | 68P | 76C | 9.5Fib | 14F | 7.4SatF",
+                       "perServing":  "2 servings (3-4 pancakes each): 360 kcal (34P / 38C / 4.8Fib / 7F / 3.7SatF) | 6 pancakes: 120 kcal (11.3P / 12.7C / 1.6Fib / 2.3F / 1.2SatF) per pancake"
                    },
         "ingredients":  [
                             {
@@ -9199,8 +9199,8 @@
                      "Tofu \u0026 Plant-Based"
                  ],
         "macros":  {
-                       "total":  "1,150 kcal | 49P | 172C | 30F",
-                       "perServing":  "3 sandwiches: 383 kcal (16.3P / 57.3C / 10F) | 4 sandwiches: 288 kcal (12.3P / 43C / 7.5F) per sandwich"
+                       "total":  "1,150 kcal | 49P | 172C | 28.5Fib | 30F | 4SatF",
+                       "perServing":  "3 sandwiches: 383 kcal (16.3P / 57.3C / 9.5Fib / 10F / 1.3SatF) | 4 sandwiches: 288 kcal (12.3P / 43C / 7.1Fib / 7.5F / 1SatF) per sandwich"
                    },
         "ingredients":  [
                             {
@@ -9269,8 +9269,8 @@
                      "Sandwiches \u0026 Toast"
                  ],
         "macros":  {
-                       "total":  "1,385 kcal | 56P | 125C | 78F",
-                       "perServing":  "6 patties: 231 kcal (9.3P / 20.8C / 13F) per patty"
+                       "total":  "1,385 kcal | 56P | 125C | 30Fib | 78F | 8.4SatF",
+                       "perServing":  "6 patties: 231 kcal (9.3P / 20.8C / 5Fib / 13F / 1.4SatF) per patty"
                    },
         "ingredients":  [
                             {
@@ -9339,8 +9339,8 @@
                      "Sandwiches \u0026 Toast"
                  ],
         "macros":  {
-                       "total":  "725 kcal | 39P | 82C | 32F",
-                       "perServing":  "2 toasts: 363 kcal (19.5P / 41C / 16F) per toast"
+                       "total":  "725 kcal | 39P | 82C | 21.1Fib | 32F | 5.2SatF",
+                       "perServing":  "2 toasts: 363 kcal (19.5P / 41C / 10.6Fib / 16F / 2.6SatF) per toast"
                    },
         "ingredients":  [
                             {
@@ -9419,8 +9419,8 @@
                      "Salads"
                  ],
         "macros":  {
-                       "total":  "460 kcal | 22P | 12C | 38F",
-                       "perServing":  "12 servings (2 tbsp): 38 kcal (1.8P / 1C / 3.2F)"
+                       "total":  "460 kcal | 22P | 12C | 2.5Fib | 38F | 5SatF",
+                       "perServing":  "12 servings (2 tbsp): 38 kcal (1.8P / 1C / 0.2Fib / 3.2F / 0.4SatF)"
                    },
         "ingredients":  [
                             {
@@ -9477,8 +9477,8 @@
                      "Bakes \u0026 Sheet Pan"
                  ],
         "macros":  {
-                       "total":  "600 kcal | 44P | 22C | 39F",
-                       "perServing":  "4 servings: 150 kcal (11P / 5.5C / 9.8F)"
+                       "total":  "600 kcal | 44P | 22C | 7.5Fib | 39F | 5.5SatF",
+                       "perServing":  "4 servings: 150 kcal (11P / 5.5C / 1.9Fib / 9.8F / 1.4SatF)"
                    },
         "ingredients":  [
                             {
@@ -9532,8 +9532,8 @@
                      "Grill \u0026 Meats"
                  ],
         "macros":  {
-                       "total":  "1,040 kcal | 114P | 50C | 42F",
-                       "perServing":  "4 servings: 260 kcal (28.5P / 12.5C / 10.5F)"
+                       "total":  "1,040 kcal | 114P | 50C | 13Fib | 42F | 6.2SatF",
+                       "perServing":  "4 servings: 260 kcal (28.5P / 12.5C / 3.3Fib / 10.5F / 1.6SatF)"
                    },
         "ingredients":  [
                             {
@@ -9592,8 +9592,8 @@
                      "Grill \u0026 Meats"
                  ],
         "macros":  {
-                       "total":  "915 kcal | 3P | 68C | 73F",
-                       "perServing":  "4 servings: 229 kcal (0.8P / 17C / 18.3F) | 6 servings: 153 kcal (0.5P / 11.3C / 12.2F)"
+                       "total":  "915 kcal | 3P | 68C | 1.5Fib | 73F | 10.2SatF",
+                       "perServing":  "4 servings: 229 kcal (0.8P / 17C / 0.4Fib / 18.3F / 2.6SatF) | 6 servings: 153 kcal (0.5P / 11.3C / 0.3Fib / 12.2F / 1.7SatF)"
                    },
         "ingredients":  [
                             {
@@ -9651,8 +9651,8 @@
                      "Tofu \u0026 Plant-Based"
                  ],
         "macros":  {
-                       "total":  "1,005 kcal | 32P | 54C | 79F",
-                       "perServing":  "8 servings (2 tbsp): 126 kcal (4P / 6.8C / 9.9F)"
+                       "total":  "1,005 kcal | 32P | 54C | 8.2Fib | 79F | 14SatF",
+                       "perServing":  "8 servings (2 tbsp): 126 kcal (4P / 6.8C / 1Fib / 9.9F / 1.8SatF)"
                    },
         "ingredients":  [
                             {
@@ -9715,8 +9715,8 @@
                      "Salads"
                  ],
         "macros":  {
-                       "total":  "642 kcal | 17P | 74C | 35F",
-                       "perServing":  "10 servings: 64 kcal (1.7P / 7.4C / 3.5F) | 12 servings: 54 kcal (1.4P / 6.2C / 2.9F)"
+                       "total":  "642 kcal | 17P | 74C | 9Fib | 35F | 6.3SatF",
+                       "perServing":  "10 servings: 64 kcal (1.7P / 7.4C / 0.9Fib / 3.5F / 0.6SatF) | 12 servings: 54 kcal (1.4P / 6.2C / 0.8Fib / 2.9F / 0.5SatF)"
                    },
         "ingredients":  [
                             {
