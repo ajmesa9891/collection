@@ -5229,7 +5229,7 @@ const RECIPES_DATA = [
     {
         "id":  "staples-overnight-oats-master",
         "title":  "Master High-Protein Overnight Oats Formula",
-        "category":  "Staples",
+        "category":  "Breakfast \u0026 Sweets",
         "status":  "staple",
         "rating":  "family-favorite",
         "yield":  "1 jar",
@@ -5283,7 +5283,7 @@ const RECIPES_DATA = [
     {
         "id":  "staples-high-fiber-egg-wrap",
         "title":  "High-Fiber Protein Egg Wrap",
-        "category":  "Staples",
+        "category":  "Breakfast \u0026 Sweets",
         "status":  "staple",
         "rating":  "staple",
         "yield":  "1 wrap",
