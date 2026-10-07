@@ -6,14 +6,17 @@ const RECIPES_DATA = [
         "category":  "Baking \u0026 Doughs",
         "status":  "tried",
         "rating":  "family-favorite",
-        "yield":  "8–10 buns (~55g each)",
+        "yield":  "8-10 buns (~55g each)",
         "prepTime":  "25m (+ 2h rise)",
         "cookTime":  "12–15m",
         "temp":  "375°F (190°C)",
         "tags":  [
                      "Baking \u0026 Doughs"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "1,234 kcal | 39P | 233C | 24.5F",
+                       "perServing":  "8 buns: 154 kcal (4.9P / 29.1C / 3.1F) | 10 buns: 123 kcal (3.9P / 23.3C / 2.5F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Whole Wheat Flour",
@@ -72,7 +75,10 @@ const RECIPES_DATA = [
                      "Breakfast \u0026 Sweets",
                      "Baking \u0026 Doughs"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "818 kcal | 57P | 81C | 29F",
+                       "perServing":  "2 servings (4 waffles each): 409 kcal (28.5P / 40.5C / 14.5F) | 8 waffles: 102 kcal (7.1P / 10.1C / 3.6F) per waffle"
+                   },
         "ingredients":  [
                             {
                                 "item":  "High protein cottage cheese",
@@ -113,7 +119,7 @@ const RECIPES_DATA = [
         "category":  "Breakfast \u0026 Sweets",
         "status":  "tried",
         "rating":  "they-liked",
-        "yield":  "4–6 waffles",
+        "yield":  "4-6 waffles (2-3 servings)",
         "prepTime":  "5m",
         "cookTime":  "12m",
         "temp":  "Preheated waffle iron",
@@ -121,7 +127,10 @@ const RECIPES_DATA = [
                      "Breakfast \u0026 Sweets",
                      "Baking \u0026 Doughs"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "1,083 kcal | 41P | 143C | 44F",
+                       "perServing":  "2 servings: 542 kcal (20.5P / 71.5C / 22F) | 4 waffles: 271 kcal (10.3P / 35.8C / 11F) per waffle"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Rolled oats",
@@ -170,7 +179,7 @@ const RECIPES_DATA = [
         "category":  "Sauces \u0026 Dressings",
         "status":  "tried",
         "rating":  "staple",
-        "yield":  "About 1.5 cups",
+        "yield":  "About 1.5 cups (6 servings of 1/4 cup)",
         "prepTime":  "5m",
         "cookTime":  "None",
         "temp":  "Room temp / Warm",
@@ -178,7 +187,10 @@ const RECIPES_DATA = [
                      "Sauces \u0026 Dressings",
                      "Tofu \u0026 Plant-Based"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "390 kcal | 30P | 64C | 4F",
+                       "perServing":  "6 servings (1/4 cup): 65 kcal (5P / 10.7C / 0.7F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Cannellini beans (rinsed \u0026 drained)",
@@ -231,7 +243,7 @@ const RECIPES_DATA = [
         "category":  "Sauces \u0026 Dressings",
         "status":  "tried",
         "rating":  "unrated",
-        "yield":  "3–4 cups",
+        "yield":  "3-4 cups (8-10 servings)",
         "prepTime":  "15m",
         "cookTime":  "15m",
         "temp":  "Stovetop simmer",
@@ -239,7 +251,10 @@ const RECIPES_DATA = [
                      "Sauces \u0026 Dressings",
                      "Tofu \u0026 Plant-Based"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "1,630 kcal | 95P | 148C | 82F",
+                       "perServing":  "8 servings: 204 kcal (11.9P / 18.5C / 10.3F) | 10 servings: 163 kcal (9.5P / 14.8C / 8.2F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Red lentils",
@@ -316,14 +331,17 @@ const RECIPES_DATA = [
         "category":  "Tofu \u0026 Plant-Based",
         "status":  "tried",
         "rating":  "staple",
-        "yield":  "2–3 servings",
+        "yield":  "2-3 servings",
         "prepTime":  "5m (+ chill)",
         "cookTime":  "None (Raw or Pan-seared)",
         "temp":  "Chilled / Pan-sear",
         "tags":  [
                      "Tofu \u0026 Plant-Based"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "520 kcal | 45P | 32C | 24F",
+                       "perServing":  "2 servings: 260 kcal (22.5P / 16C / 12F) | 3 servings: 173 kcal (15P / 10.7C / 8F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Firm or extra firm tofu (sliced)",
@@ -376,7 +394,7 @@ const RECIPES_DATA = [
         "category":  "Slow Cooker \u0026 Meats",
         "status":  "tried",
         "rating":  "family-favorite",
-        "yield":  "4–6 servings",
+        "yield":  "4-6 servings",
         "prepTime":  "10m",
         "cookTime":  "6–8h on low",
         "temp":  "Slow Cooker Low",
@@ -384,7 +402,10 @@ const RECIPES_DATA = [
                      "Slow Cooker \u0026 Meats",
                      "Grill \u0026 Meats"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "3,950 kcal | 357P | 108C | 229F",
+                       "perServing":  "4 servings: 988 kcal (89P / 27C / 57F) | 6 servings: 658 kcal (59.5P / 18C / 38.2F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Beef chuck roast, round steak, or pork shoulder",
@@ -466,7 +487,7 @@ const RECIPES_DATA = [
         "category":  "Slow Cooker \u0026 Meats",
         "status":  "tried",
         "rating":  "family-favorite",
-        "yield":  "8–10 servings",
+        "yield":  "8-10 servings",
         "prepTime":  "25m",
         "cookTime":  "6–8h on low",
         "temp":  "Slow Cooker Low",
@@ -474,7 +495,10 @@ const RECIPES_DATA = [
                      "Slow Cooker \u0026 Meats",
                      "Stews \u0026 Skillets"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "3,750 kcal | 372P | 45C | 234F",
+                       "perServing":  "8 servings: 469 kcal (46.5P / 5.6C / 29.3F) | 10 servings: 375 kcal (37.2P / 4.5C / 23.4F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Beef chuck roast (cut into 3\" chunks)",
@@ -561,14 +585,17 @@ const RECIPES_DATA = [
         "category":  "Stews \u0026 Skillets",
         "status":  "tried",
         "rating":  "unrated",
-        "yield":  "2–3 servings",
+        "yield":  "2-3 servings",
         "prepTime":  "10m",
         "cookTime":  "2h on low",
         "temp":  "Stovetop low or Slow Cooker",
         "tags":  [
                      "Stews \u0026 Skillets"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "1,075 kcal | 71P | 84C | 46F",
+                       "perServing":  "2 servings: 538 kcal (35.5P / 42C / 23F) | 3 servings: 358 kcal (23.7P / 28C / 15.3F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Diced lamb",
@@ -637,7 +664,10 @@ const RECIPES_DATA = [
         "tags":  [
                      "Stews \u0026 Skillets"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "1,480 kcal | 148P | 58C | 69F",
+                       "perServing":  "4 servings: 370 kcal (37P / 14.5C / 17.3F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Ground beef (85/15 or 90/10)",
@@ -694,14 +724,17 @@ const RECIPES_DATA = [
         "category":  "Stews \u0026 Skillets",
         "status":  "tried",
         "rating":  "family-favorite",
-        "yield":  "6–8 servings",
+        "yield":  "6-8 servings",
         "prepTime":  "30m",
         "cookTime":  "2.5h",
         "temp":  "500°F sear / 325°F braise",
         "tags":  [
                      "Stews \u0026 Skillets"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "6,750 kcal | 520P | 265C | 390F",
+                       "perServing":  "6 servings: 1,125 kcal (86.7P / 44.2C / 65F) | 8 servings: 844 kcal (65P / 33.1C / 48.8F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Beef chuck roast (large 2\" cubes)",
@@ -777,7 +810,10 @@ const RECIPES_DATA = [
                      "Stews \u0026 Skillets",
                      "Bakes \u0026 Sheet Pan"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "2,240 kcal | 188P | 103C | 118F",
+                       "perServing":  "4 servings: 560 kcal (47P / 25.8C / 29.5F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Protein of choice (beef, lamb, chicken, or chickpeas)",
@@ -823,7 +859,7 @@ const RECIPES_DATA = [
         "category":  "Stews \u0026 Skillets",
         "status":  "tried",
         "rating":  "loved",
-        "yield":  "3–4 servings",
+        "yield":  "3-4 servings",
         "prepTime":  "10m",
         "cookTime":  "25m",
         "temp":  "Stovetop simmer",
@@ -831,7 +867,10 @@ const RECIPES_DATA = [
                      "Stews \u0026 Skillets",
                      "Tofu \u0026 Plant-Based"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "1,410 kcal | 50P | 186C | 55F",
+                       "perServing":  "3 servings: 470 kcal (16.7P / 62C / 18.3F) | 4 servings: 353 kcal (12.5P / 46.5C / 13.8F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Chickpeas (cooked from dry or 2 cans)",
@@ -894,7 +933,10 @@ const RECIPES_DATA = [
                      "Stews \u0026 Skillets",
                      "Tofu \u0026 Plant-Based"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "3,120 kcal | 98P | 392C | 138F",
+                       "perServing":  "6 servings: 520 kcal (16.3P / 65.3C / 23F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Dried chickpeas (soaked overnight)",
@@ -982,7 +1024,10 @@ const RECIPES_DATA = [
                      "Soups \u0026 Ramen",
                      "Pastas"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "3,265 kcal | 115P | 325C | 163F",
+                       "perServing":  "6 servings: 544 kcal (19.2P / 54.2C / 27.2F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Cheese tortellini (fresh or refrigerated)",
@@ -1061,14 +1106,17 @@ const RECIPES_DATA = [
         "category":  "Soups \u0026 Ramen",
         "status":  "tried",
         "rating":  "family-favorite",
-        "yield":  "3–4 bowls",
+        "yield":  "3-4 bowls (3-4 servings)",
         "prepTime":  "15m",
         "cookTime":  "10m",
         "temp":  "Boiling broth",
         "tags":  [
                      "Soups \u0026 Ramen"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "1,720 kcal | 46P | 196C | 84F",
+                       "perServing":  "3 bowls: 573 kcal (15.3P / 65.3C / 28F) | 4 bowls: 430 kcal (11.5P / 49C / 21F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Grapeseed oil (heated smoking hot)",
@@ -1150,14 +1198,17 @@ const RECIPES_DATA = [
         "category":  "Rice \u0026 Grains",
         "status":  "tried",
         "rating":  "loved",
-        "yield":  "3–4 servings",
+        "yield":  "3-4 servings",
         "prepTime":  "10m",
         "cookTime":  "Rice cooker cycle (~40m)",
         "temp":  "Rice Cooker Normal",
         "tags":  [
                      "Rice \u0026 Grains"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "1,440 kcal | 118P | 98C | 67F",
+                       "perServing":  "3 servings: 480 kcal (39.3P / 32.7C / 22.3F) | 4 servings: 360 kcal (29.5P / 24.5C / 16.8F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Chicken thigh",
@@ -1249,8 +1300,8 @@ const RECIPES_DATA = [
                      "Stews \u0026 Skillets"
                  ],
         "macros":  {
-                       "total":  "3,376 kcal | 316C | 106F | 215P",
-                       "perServing":  "675 kcal | 63C | 21F | 43P (1 of 5 servings)"
+                       "total":  "3,376 kcal | 215P | 316C | 106F",
+                       "perServing":  "5 servings: 675 kcal (43P / 63C / 21F)"
                    },
         "ingredients":  [
                             {
@@ -1311,7 +1362,7 @@ const RECIPES_DATA = [
         "category":  "Pastas",
         "status":  "tried",
         "rating":  "family-favorite",
-        "yield":  "8–10 servings",
+        "yield":  "8-10 servings",
         "prepTime":  "25m",
         "cookTime":  "50m",
         "temp":  "400°F (204°C) / 450°F finish",
@@ -1379,14 +1430,17 @@ const RECIPES_DATA = [
         "category":  "Grill \u0026 Meats",
         "status":  "tried",
         "rating":  "loved",
-        "yield":  "6–8 skewers",
+        "yield":  "6-8 skewers (4-6 servings)",
         "prepTime":  "15m",
         "cookTime":  "10m",
         "temp":  "High Heat Grill / Broiler",
         "tags":  [
                      "Grill \u0026 Meats"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "2,480 kcal | 275P | 16C | 137F",
+                       "perServing":  "6 skewers (4 servings): 620 kcal (68.8P / 4C / 34.3F) | 8 skewers (6 servings): 413 kcal (45.8P / 2.7C / 22.8F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Ground beef (85/15 or 90/10)",
@@ -1448,14 +1502,17 @@ const RECIPES_DATA = [
         "category":  "Sauces \u0026 Dressings",
         "status":  "tried",
         "rating":  "staple",
-        "yield":  "About 1 cup",
+        "yield":  "About 1 cup (8 servings of 2 tbsp)",
         "prepTime":  "5m",
         "cookTime":  "None",
         "temp":  "Chilled",
         "tags":  [
                      "Sauces \u0026 Dressings"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "345 kcal | 20P | 10C | 25F",
+                       "perServing":  "8 servings (2 tbsp): 43 kcal (2.5P / 1.3C / 3.1F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Plain Greek yogurt (whole or nonfat)",
@@ -1496,14 +1553,17 @@ const RECIPES_DATA = [
         "category":  "Sauces \u0026 Dressings",
         "status":  "tried",
         "rating":  "staple",
-        "yield":  "About 1 cup",
+        "yield":  "About 1 cup (8 servings of 2 tbsp)",
         "prepTime":  "5m",
         "cookTime":  "None",
         "temp":  "Room Temp",
         "tags":  [
                      "Sauces \u0026 Dressings"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "805 kcal | 21P | 27C | 74F",
+                       "perServing":  "8 servings (2 tbsp): 101 kcal (2.6P / 3.4C / 9.3F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Tahini paste",
@@ -1548,14 +1608,17 @@ const RECIPES_DATA = [
         "category":  "Bakes \u0026 Sheet Pan",
         "status":  "tried",
         "rating":  "staple",
-        "yield":  "3–4 servings",
+        "yield":  "3-4 servings",
         "prepTime":  "5m",
         "cookTime":  "45m",
         "temp":  "375°F (190°C)",
         "tags":  [
                      "Bakes \u0026 Sheet Pan"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "937 kcal | 98P | 15C | 50F",
+                       "perServing":  "3 servings: 312 kcal (32.7P / 5C / 16.7F) | 4 servings: 234 kcal (24.5P / 3.8C / 12.5F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Ground meat (beef, turkey, or pork)",
@@ -1589,14 +1652,17 @@ const RECIPES_DATA = [
         "category":  "Bakes \u0026 Sheet Pan",
         "status":  "tried",
         "rating":  "unrated",
-        "yield":  "4–6 servings",
+        "yield":  "4-6 servings",
         "prepTime":  "10m",
         "cookTime":  "45m",
         "temp":  "375°F (190°C)",
         "tags":  [
                      "Bakes \u0026 Sheet Pan"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "1,779 kcal | 75P | 59C | 141F",
+                       "perServing":  "4 servings: 445 kcal (18.8P / 14.8C / 35.3F) | 6 servings: 297 kcal (12.5P / 9.8C / 23.5F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Broccoli florets (fresh)",
@@ -1665,7 +1731,10 @@ const RECIPES_DATA = [
         "tags":  [
                      "Bakes \u0026 Sheet Pan"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "1,955 kcal | 158P | 98C | 107F",
+                       "perServing":  "4 servings: 489 kcal (39.5P / 24.5C / 26.8F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Boneless, skinless chicken thighs",
@@ -1719,7 +1788,10 @@ const RECIPES_DATA = [
         "tags":  [
                      "Bakes \u0026 Sheet Pan"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "1,660 kcal | 160P | 40C | 91F",
+                       "perServing":  "4 servings: 415 kcal (40P / 10C / 22.8F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Chicken tenders or breast (sliced)",
@@ -1781,14 +1853,17 @@ const RECIPES_DATA = [
         "category":  "Bakes \u0026 Sheet Pan",
         "status":  "tried",
         "rating":  "loved",
-        "yield":  "3–4 servings",
+        "yield":  "3-4 servings",
         "prepTime":  "10m",
         "cookTime":  "25m",
         "temp":  "425°F (220°C)",
         "tags":  [
                      "Bakes \u0026 Sheet Pan"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "1,945 kcal | 156P | 68C | 112F",
+                       "perServing":  "3 servings: 648 kcal (52P / 22.7C / 37.3F) | 4 servings: 486 kcal (39P / 17C / 28F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Skin-on salmon fillets",
@@ -1842,14 +1917,17 @@ const RECIPES_DATA = [
         "category":  "Bakes \u0026 Sheet Pan",
         "status":  "tried",
         "rating":  "unrated",
-        "yield":  "3–4 servings",
+        "yield":  "3-4 servings",
         "prepTime":  "10m",
         "cookTime":  "12m",
         "temp":  "425°F (220°C)",
         "tags":  [
                      "Bakes \u0026 Sheet Pan"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "1,050 kcal | 81P | 97C | 38F",
+                       "perServing":  "3 servings: 350 kcal (27P / 32.3C / 12.7F) | 4 servings: 263 kcal (20.3P / 24.3C / 9.5F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Raw shrimp (peeled \u0026 deveined)",
@@ -1903,14 +1981,17 @@ const RECIPES_DATA = [
         "category":  "Breakfast \u0026 Sweets",
         "status":  "tried",
         "rating":  "loved",
-        "yield":  "8 toasts",
+        "yield":  "8 toasts (4-8 servings)",
         "prepTime":  "10m",
         "cookTime":  "None",
         "temp":  "Room Temp",
         "tags":  [
                      "Breakfast \u0026 Sweets"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "1,876 kcal | 111P | 174C | 98F",
+                       "perServing":  "8 toasts: 235 kcal (13.9P / 21.8C / 12.3F) per toast | 4 servings (2 toasts): 469 kcal (27.8P / 43.5C / 24.5F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Shelled frozen edamame (defrosted)",
@@ -1976,14 +2057,17 @@ const RECIPES_DATA = [
         "category":  "Sauces \u0026 Dressings",
         "status":  "tried",
         "rating":  "staple",
-        "yield":  "About 1.5 cups",
+        "yield":  "About 1.5 cups (12 servings of 2 tbsp)",
         "prepTime":  "5m",
         "cookTime":  "15m",
         "temp":  "Simmer",
         "tags":  [
                      "Sauces \u0026 Dressings"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "505 kcal | 11P | 118C | 1.5F",
+                       "perServing":  "12 servings (2 tbsp): 42 kcal (0.9P / 9.8C / 0.1F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Tomato paste",
@@ -2035,14 +2119,17 @@ const RECIPES_DATA = [
         "category":  "Sauces \u0026 Dressings",
         "status":  "tried",
         "rating":  "staple",
-        "yield":  "Custom",
+        "yield":  "Custom batch (~1 cup / 4-8 servings)",
         "prepTime":  "5m",
         "cookTime":  "None",
         "temp":  "Room Temp",
         "tags":  [
                      "Sauces \u0026 Dressings"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "560 kcal | 12P | 24C | 48F (base estimate)",
+                       "perServing":  "8 servings (2 tbsp): ~70 kcal (1.5P / 3C / 6F) [varies with base ingredients]"
+                   },
         "ingredients":  [
                             {
                                 "item":  "BASE FLAVOR",
@@ -2083,14 +2170,17 @@ const RECIPES_DATA = [
         "category":  "Sauces \u0026 Dressings",
         "status":  "tried",
         "rating":  "loved",
-        "yield":  "8 servings",
+        "yield":  "About 1 cup (8 servings of 2 tbsp)",
         "prepTime":  "5m",
         "cookTime":  "None",
         "temp":  "Room Temp",
         "tags":  [
                      "Sauces \u0026 Dressings"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "578 kcal | 16P | 54C | 37F",
+                       "perServing":  "8 servings (2 tbsp): 72 kcal (2P / 6.8C / 4.6F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Creamy peanut butter",
@@ -2147,14 +2237,17 @@ const RECIPES_DATA = [
         "category":  "Sauces \u0026 Dressings",
         "status":  "tried",
         "rating":  "staple",
-        "yield":  "About 2 cups",
+        "yield":  "About 2 cups (8 servings of 1/4 cup)",
         "prepTime":  "5m",
         "cookTime":  "None",
         "temp":  "Room Temp / Warm",
         "tags":  [
                      "Sauces \u0026 Dressings"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "395 kcal | 47P | 24C | 15F",
+                       "perServing":  "8 servings (1/4 cup): 49 kcal (5.9P / 3C / 1.9F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Silken tofu",
@@ -2196,14 +2289,17 @@ const RECIPES_DATA = [
         "category":  "Sauces \u0026 Dressings",
         "status":  "tried",
         "rating":  "loved",
-        "yield":  "About 1 cup",
+        "yield":  "About 1 cup (8 servings of 2 tbsp)",
         "prepTime":  "5m",
         "cookTime":  "None",
         "temp":  "Room Temp",
         "tags":  [
                      "Sauces \u0026 Dressings"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "1,110 kcal | 31P | 122C | 65F",
+                       "perServing":  "8 servings (2 tbsp): 139 kcal (3.9P / 15.3C / 8.1F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Creamy peanut butter",
@@ -2256,14 +2352,17 @@ const RECIPES_DATA = [
         "category":  "Sauces \u0026 Dressings",
         "status":  "tried",
         "rating":  "staple",
-        "yield":  "About 3/4 cup",
+        "yield":  "About 3/4 cup (6 servings of 2 tbsp)",
         "prepTime":  "5m",
         "cookTime":  "None",
         "temp":  "Room Temp",
         "tags":  [
                      "Sauces \u0026 Dressings"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "400 kcal | 12P | 40C | 25F",
+                       "perServing":  "6 servings (2 tbsp): 67 kcal (2P / 6.7C / 4.2F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Tahini",
@@ -2308,7 +2407,7 @@ const RECIPES_DATA = [
         "category":  "Sauces \u0026 Dressings",
         "status":  "tried",
         "rating":  "loved",
-        "yield":  "About 1.5 cups",
+        "yield":  "About 1.5 cups (10-12 servings)",
         "prepTime":  "10m",
         "cookTime":  "None",
         "temp":  "Chilled",
@@ -2316,7 +2415,10 @@ const RECIPES_DATA = [
                      "Sauces \u0026 Dressings",
                      "Salads"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "915 kcal | 5P | 50C | 80F",
+                       "perServing":  "10 servings: 92 kcal (0.5P / 5C / 8F) | 12 servings: 76 kcal (0.4P / 4.2C / 6.7F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Large carrots (chopped)",
@@ -2369,14 +2471,17 @@ const RECIPES_DATA = [
         "category":  "Sauces \u0026 Dressings",
         "status":  "tried",
         "rating":  "loved",
-        "yield":  "About 1 cup",
+        "yield":  "About 1 cup (8 servings of 2 tbsp)",
         "prepTime":  "10m",
         "cookTime":  "None",
         "temp":  "Chilled",
         "tags":  [
                      "Sauces \u0026 Dressings"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "385 kcal | 13P | 21C | 29F",
+                       "perServing":  "8 servings (2 tbsp): 48 kcal (1.6P / 2.6C / 3.6F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Raw cashews (soaked in boiling water 15m)",
@@ -2429,7 +2534,7 @@ const RECIPES_DATA = [
         "category":  "Sauces \u0026 Dressings",
         "status":  "tried",
         "rating":  "unrated",
-        "yield":  "About 1 cup",
+        "yield":  "About 1 cup (8 servings of 2 tbsp)",
         "prepTime":  "5m",
         "cookTime":  "None",
         "temp":  "Chilled",
@@ -2437,7 +2542,10 @@ const RECIPES_DATA = [
                      "Sauces \u0026 Dressings",
                      "Salads"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "460 kcal | 18P | 24C | 37F",
+                       "perServing":  "8 servings (2 tbsp): 58 kcal (2.3P / 3C / 4.6F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Toasted sunflower seeds",
@@ -2481,14 +2589,17 @@ const RECIPES_DATA = [
         "category":  "Sauces \u0026 Dressings",
         "status":  "tried",
         "rating":  "staple",
-        "yield":  "About 1 cup",
+        "yield":  "About 1 cup (8 servings of 2 tbsp)",
         "prepTime":  "5m",
         "cookTime":  "None",
         "temp":  "Room Temp",
         "tags":  [
                      "Sauces \u0026 Dressings"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "685 kcal | 21P | 27C | 60F",
+                       "perServing":  "8 servings (2 tbsp): 86 kcal (2.6P / 3.4C / 7.5F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Tahini",
@@ -2529,7 +2640,7 @@ const RECIPES_DATA = [
         "category":  "Sauces \u0026 Dressings",
         "status":  "tried",
         "rating":  "loved",
-        "yield":  "About 1.5 cups",
+        "yield":  "About 1.5 cups (12 servings of 2 tbsp)",
         "prepTime":  "10m",
         "cookTime":  "None",
         "temp":  "Room Temp",
@@ -2537,7 +2648,10 @@ const RECIPES_DATA = [
                      "Sauces \u0026 Dressings",
                      "Pastas"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "810 kcal | 40P | 28C | 67F",
+                       "perServing":  "12 servings (2 tbsp): 68 kcal (3.3P / 2.3C / 5.6F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Fresh basil leaves",
@@ -2586,14 +2700,17 @@ const RECIPES_DATA = [
         "category":  "Sauces \u0026 Dressings",
         "status":  "tried",
         "rating":  "loved",
-        "yield":  "About 1 cup",
+        "yield":  "About 1 cup (8 servings of 2 tbsp)",
         "prepTime":  "5m",
         "cookTime":  "None",
         "temp":  "Room Temp",
         "tags":  [
                      "Sauces \u0026 Dressings"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "805 kcal | 22P | 54C | 62F",
+                       "perServing":  "8 servings (2 tbsp): 101 kcal (2.8P / 6.8C / 7.8F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Tahini",
@@ -2650,14 +2767,17 @@ const RECIPES_DATA = [
         "category":  "Sauces \u0026 Dressings",
         "status":  "tried",
         "rating":  "staple",
-        "yield":  "About 1 cup",
+        "yield":  "About 1 cup (8 servings of 2 tbsp)",
         "prepTime":  "5m",
         "cookTime":  "None",
         "temp":  "Chilled",
         "tags":  [
                      "Sauces \u0026 Dressings"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "85 kcal | 3P | 15C | 1.5F",
+                       "perServing":  "8 servings (2 tbsp): 11 kcal (0.4P / 1.9C / 0.2F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Fresh parsley or cilantro",
@@ -2708,14 +2828,17 @@ const RECIPES_DATA = [
         "category":  "Sauces \u0026 Dressings",
         "status":  "tried",
         "rating":  "staple",
-        "yield":  "About 1 cup",
+        "yield":  "About 1 cup (8 servings of 2 tbsp)",
         "prepTime":  "5m",
         "cookTime":  "None",
         "temp":  "Chilled",
         "tags":  [
                      "Sauces \u0026 Dressings"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "145 kcal | 20P | 9C | 3F",
+                       "perServing":  "8 servings (2 tbsp): 18 kcal (2.5P / 1.1C / 0.4F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Greek yogurt",
@@ -2758,14 +2881,17 @@ const RECIPES_DATA = [
         "category":  "Sauces \u0026 Dressings",
         "status":  "tried",
         "rating":  "loved",
-        "yield":  "About 3/4 cup",
+        "yield":  "About 3/4 cup (6 servings of 2 tbsp)",
         "prepTime":  "5m",
         "cookTime":  "None",
         "temp":  "Room Temp",
         "tags":  [
                      "Sauces \u0026 Dressings"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "550 kcal | 16P | 40C | 41F",
+                       "perServing":  "6 servings (2 tbsp): 92 kcal (2.7P / 6.7C / 6.8F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Tahini",
@@ -2808,14 +2934,17 @@ const RECIPES_DATA = [
         "category":  "Sauces \u0026 Dressings",
         "status":  "tried",
         "rating":  "unrated",
-        "yield":  "About 1 cup",
+        "yield":  "About 1 cup (8 servings of 2 tbsp)",
         "prepTime":  "5m",
         "cookTime":  "None",
         "temp":  "Chilled",
         "tags":  [
                      "Sauces \u0026 Dressings"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "260 kcal | 10P | 44C | 9F",
+                       "perServing":  "8 servings (2 tbsp): 33 kcal (1.3P / 5.5C / 1.1F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Water",
@@ -2870,14 +2999,17 @@ const RECIPES_DATA = [
         "category":  "Sauces \u0026 Dressings",
         "status":  "tried",
         "rating":  "loved",
-        "yield":  "About 3/4 cup",
+        "yield":  "About 3/4 cup (6 servings of 2 tbsp)",
         "prepTime":  "5m",
         "cookTime":  "None",
         "temp":  "Chilled",
         "tags":  [
                      "Sauces \u0026 Dressings"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "158 kcal | 4P | 28C | 4.5F",
+                       "perServing":  "6 servings (2 tbsp): 26 kcal (0.7P / 4.7C / 0.8F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Fresh orange juice",
@@ -2924,14 +3056,17 @@ const RECIPES_DATA = [
         "category":  "Sauces \u0026 Dressings",
         "status":  "tried",
         "rating":  "loved",
-        "yield":  "About 1 cup",
+        "yield":  "About 1 cup (8 servings of 2 tbsp)",
         "prepTime":  "5m",
         "cookTime":  "None",
         "temp":  "Room Temp",
         "tags":  [
                      "Sauces \u0026 Dressings"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "985 kcal | 31P | 86C | 65F",
+                       "perServing":  "8 servings (2 tbsp): 123 kcal (3.9P / 10.8C / 8.1F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Unsweetened peanut butter (or tahini)",
@@ -2979,14 +3114,17 @@ const RECIPES_DATA = [
         "category":  "Sauces \u0026 Dressings",
         "status":  "tried",
         "rating":  "staple",
-        "yield":  "About 1/2 cup",
+        "yield":  "About 1/2 cup (8 servings of 1 tbsp)",
         "prepTime":  "3m",
         "cookTime":  "None",
         "temp":  "Room Temp",
         "tags":  [
                      "Sauces \u0026 Dressings"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "350 kcal | 5P | 52C | 15F",
+                       "perServing":  "8 servings (1 tbsp): 44 kcal (0.6P / 6.5C / 1.9F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Gochujang paste",
@@ -3029,14 +3167,17 @@ const RECIPES_DATA = [
         "category":  "Sauces \u0026 Dressings",
         "status":  "tried",
         "rating":  "loved",
-        "yield":  "About 1.5 cups",
+        "yield":  "About 1.5 cups (10-12 servings)",
         "prepTime":  "5m",
         "cookTime":  "None",
         "temp":  "Chilled",
         "tags":  [
                      "Sauces \u0026 Dressings"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "1,735 kcal | 11P | 66C | 163F",
+                       "perServing":  "10 servings: 174 kcal (1.1P / 6.6C / 16.3F) | 12 servings: 145 kcal (0.9P / 5.5C / 13.6F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "--- VARIATION A (Soy Honey) ---",
@@ -3124,14 +3265,17 @@ const RECIPES_DATA = [
         "category":  "Sauces \u0026 Dressings",
         "status":  "tried",
         "rating":  "unrated",
-        "yield":  "About 1 cup",
+        "yield":  "About 1 cup (8 servings of 2 tbsp)",
         "prepTime":  "5m",
         "cookTime":  "None",
         "temp":  "Chilled",
         "tags":  [
                      "Sauces \u0026 Dressings"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "450 kcal | 2P | 18C | 42F",
+                       "perServing":  "8 servings (2 tbsp): 56 kcal (0.3P / 2.3C / 5.3F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Fresh basil leaves",
@@ -3177,7 +3321,10 @@ const RECIPES_DATA = [
         "tags":  [
                      "Grill \u0026 Meats"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "1,310 kcal | 154P | 4C | 72F",
+                       "perServing":  "4 servings: 328 kcal (38.5P / 1C / 18F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Skinless boneless chicken breast halves (cut bite-sized)",
@@ -3218,14 +3365,17 @@ const RECIPES_DATA = [
         "category":  "Salads",
         "status":  "tried",
         "rating":  "loved",
-        "yield":  "4–6 servings",
+        "yield":  "4-6 servings",
         "prepTime":  "15m",
         "cookTime":  "None",
         "temp":  "Chilled",
         "tags":  [
                      "Salads"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "1,235 kcal | 38P | 160C | 62.5F",
+                       "perServing":  "4 servings: 309 kcal (9.5P / 40C / 15.6F) | 6 servings: 206 kcal (6.3P / 26.7C / 10.4F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Raw broccoli (finely chopped florets)",
@@ -3297,7 +3447,10 @@ const RECIPES_DATA = [
         "tags":  [
                      "Salads"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "640 kcal | 32P | 130C | 5F",
+                       "perServing":  "4 servings: 160 kcal (8P / 32.5C / 1.3F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Cherry tomatoes (halved)",
@@ -3354,14 +3507,17 @@ const RECIPES_DATA = [
         "category":  "Salads",
         "status":  "tried",
         "rating":  "loved",
-        "yield":  "3–4 servings",
+        "yield":  "3-4 servings",
         "prepTime":  "10m",
         "cookTime":  "None",
         "temp":  "Chilled",
         "tags":  [
                      "Salads"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "1,130 kcal | 62P | 132C | 46F",
+                       "perServing":  "3 servings: 377 kcal (20.7P / 44C / 15.3F) | 4 servings: 283 kcal (15.5P / 33C / 11.5F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Canned chickpeas (mashed with fork)",
@@ -3421,7 +3577,10 @@ const RECIPES_DATA = [
         "tags":  [
                      "Salads"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "630 kcal | 26P | 120C | 10F",
+                       "perServing":  "4 servings: 158 kcal (6.5P / 30C / 2.5F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Fire-roasted corn",
@@ -3489,7 +3648,10 @@ const RECIPES_DATA = [
         "tags":  [
                      "Salads"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "1,610 kcal | 186P | 18C | 87F",
+                       "perServing":  "4 servings: 403 kcal (46.5P / 4.5C / 21.8F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Shrimp (peeled, deveined, cooked \u0026 chilled)",
@@ -3551,14 +3713,17 @@ const RECIPES_DATA = [
         "category":  "Salads",
         "status":  "tried",
         "rating":  "staple",
-        "yield":  "4–6 servings",
+        "yield":  "4-6 servings",
         "prepTime":  "10m",
         "cookTime":  "None",
         "temp":  "Chilled",
         "tags":  [
                      "Salads"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "1,430 kcal | 57P | 142C | 75F",
+                       "perServing":  "4 servings: 358 kcal (14.3P / 35.5C / 18.8F) | 6 servings: 238 kcal (9.5P / 23.7C / 12.5F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Chickpeas (rinsed and drained)",
@@ -3614,7 +3779,10 @@ const RECIPES_DATA = [
         "tags":  [
                      "Salads"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "2,330 kcal | 177P | 80C | 144F",
+                       "perServing":  "4 servings: 583 kcal (44.3P / 20C / 36F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Poached chicken breast (diced or shredded)",
@@ -3671,14 +3839,17 @@ const RECIPES_DATA = [
         "category":  "Tofu \u0026 Plant-Based",
         "status":  "tried",
         "rating":  "staple",
-        "yield":  "About 2 cups",
+        "yield":  "About 2 cups (4 servings of 1/2 cup)",
         "prepTime":  "5m",
         "cookTime":  "None",
         "temp":  "Chilled",
         "tags":  [
                      "Tofu \u0026 Plant-Based"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "605 kcal | 40P | 16C | 45F",
+                       "perServing":  "4 servings (1/2 cup): 151 kcal (10P / 4C / 11.3F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Firm tofu (drained)",
@@ -3727,14 +3898,17 @@ const RECIPES_DATA = [
         "category":  "Tofu \u0026 Plant-Based",
         "status":  "tried",
         "rating":  "loved",
-        "yield":  "About 1 cup",
+        "yield":  "About 1 cup (4 servings)",
         "prepTime":  "10m (+ overnight)",
         "cookTime":  "None",
         "temp":  "Chilled",
         "tags":  [
                      "Tofu \u0026 Plant-Based"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "725 kcal | 26P | 14C | 64F",
+                       "perServing":  "4 servings: 181 kcal (6.5P / 3.5C / 16F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Firm tofu (cubed into 1/2\" cubes)",
@@ -3798,7 +3972,10 @@ const RECIPES_DATA = [
         "tags":  [
                      "Tofu \u0026 Plant-Based"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "925 kcal | 42P | 92C | 44F",
+                       "perServing":  "3 servings: 308 kcal (14P / 30.7C / 14.7F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Extra firm tofu (frozen then thawed for texture)",
@@ -3849,14 +4026,17 @@ const RECIPES_DATA = [
         "category":  "Tofu \u0026 Plant-Based",
         "status":  "tried",
         "rating":  "staple",
-        "yield":  "2–3 servings",
+        "yield":  "2-3 servings",
         "prepTime":  "5m",
         "cookTime":  "25m",
         "temp":  "400°F (204°C)",
         "tags":  [
                      "Tofu \u0026 Plant-Based"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "615 kcal | 38P | 48C | 32F",
+                       "perServing":  "2 servings: 308 kcal (19P / 24C / 16F) | 3 servings: 205 kcal (12.7P / 16C / 10.7F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Extra firm tofu (pressed dry)",
@@ -3902,7 +4082,10 @@ const RECIPES_DATA = [
         "tags":  [
                      "Tofu \u0026 Plant-Based"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "1,020 kcal | 46P | 32C | 79F",
+                       "perServing":  "4 servings: 255 kcal (11.5P / 8C / 19.8F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Firm tofu (patted dry \u0026 shredded on grater)",
@@ -3972,14 +4155,17 @@ const RECIPES_DATA = [
         "category":  "Tofu \u0026 Plant-Based",
         "status":  "tried",
         "rating":  "loved",
-        "yield":  "1 block tofu (14 oz)",
+        "yield":  "1 block tofu (3-4 servings)",
         "prepTime":  "5m",
         "cookTime":  "15m",
         "temp":  "375°F (190°C) Bake or Skillet",
         "tags":  [
                      "Tofu \u0026 Plant-Based"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "810 kcal | 45P | 68C | 42F",
+                       "perServing":  "3 servings: 270 kcal (15P / 22.7C / 14F) | 4 servings: 203 kcal (11.3P / 17C / 10.5F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Extra firm tofu (cubed)",
@@ -4028,14 +4214,17 @@ const RECIPES_DATA = [
         "category":  "Tofu \u0026 Plant-Based",
         "status":  "tried",
         "rating":  "loved",
-        "yield":  "1 block tofu (14 oz)",
+        "yield":  "1 block tofu (3-4 servings)",
         "prepTime":  "5m",
         "cookTime":  "15m",
         "temp":  "375°F (190°C) Bake or Skillet",
         "tags":  [
                      "Tofu \u0026 Plant-Based"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "855 kcal | 34P | 25C | 71F",
+                       "perServing":  "3 servings: 285 kcal (11.3P / 8.3C / 23.7F) | 4 servings: 214 kcal (8.5P / 6.3C / 17.8F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Extra firm tofu (cubed)",
@@ -4092,14 +4281,17 @@ const RECIPES_DATA = [
         "category":  "Tofu \u0026 Plant-Based",
         "status":  "tried",
         "rating":  "loved",
-        "yield":  "1 block tofu (14 oz)",
+        "yield":  "1 block tofu (3-4 servings)",
         "prepTime":  "10m",
         "cookTime":  "20m",
         "temp":  "375°F (190°C)",
         "tags":  [
                      "Tofu \u0026 Plant-Based"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "385 kcal | 35P | 18C | 18F",
+                       "perServing":  "3 servings: 128 kcal (11.7P / 6C / 6F) | 4 servings: 96 kcal (8.8P / 4.5C / 4.5F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Extra firm tofu (cubed)",
@@ -4156,14 +4348,17 @@ const RECIPES_DATA = [
         "category":  "Tofu \u0026 Plant-Based",
         "status":  "tried",
         "rating":  "unrated",
-        "yield":  "1 block tofu (14 oz)",
+        "yield":  "1 block tofu (3-4 servings)",
         "prepTime":  "5m",
         "cookTime":  "20m",
         "temp":  "375°F (190°C)",
         "tags":  [
                      "Tofu \u0026 Plant-Based"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "475 kcal | 38P | 41C | 20F",
+                       "perServing":  "3 servings: 158 kcal (12.7P / 13.7C / 6.7F) | 4 servings: 119 kcal (9.5P / 10.3C / 5F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Extra firm tofu (cubed)",
@@ -4208,14 +4403,17 @@ const RECIPES_DATA = [
         "category":  "Tofu \u0026 Plant-Based",
         "status":  "tried",
         "rating":  "unrated",
-        "yield":  "1 block tofu (14 oz)",
+        "yield":  "1 block tofu (3-4 servings)",
         "prepTime":  "5m",
         "cookTime":  "20m",
         "temp":  "375°F (190°C)",
         "tags":  [
                      "Tofu \u0026 Plant-Based"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "830 kcal | 34P | 14C | 71F",
+                       "perServing":  "3 servings: 277 kcal (11.3P / 4.7C / 23.7F) | 4 servings: 208 kcal (8.5P / 3.5C / 17.8F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Extra firm tofu (cubed)",
@@ -4264,14 +4462,17 @@ const RECIPES_DATA = [
         "category":  "Rice \u0026 Grains",
         "status":  "tried",
         "rating":  "staple",
-        "yield":  "About 3 cups cooked",
+        "yield":  "About 3 cups cooked (4-6 servings)",
         "prepTime":  "2m",
         "cookTime":  "20m (Off-Stove)",
         "temp":  "Boil then burner OFF",
         "tags":  [
                      "Rice \u0026 Grains"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "660 kcal | 24P | 118C | 10F",
+                       "perServing":  "4 servings: 165 kcal (6P / 29.5C / 2.5F) | 6 servings: 110 kcal (4P / 19.7C / 1.7F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Quinoa (rinsed)",
@@ -4302,14 +4503,17 @@ const RECIPES_DATA = [
         "category":  "Sauces \u0026 Dressings",
         "status":  "tried",
         "rating":  "staple",
-        "yield":  "About 1 cup",
+        "yield":  "About 1 cup (16 servings of 1 tbsp)",
         "prepTime":  "3m",
         "cookTime":  "None",
         "temp":  "Room Temp",
         "tags":  [
                      "Sauces \u0026 Dressings"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "625 kcal | 30P | 36C | 45F",
+                       "perServing":  "16 servings (1 tbsp): 39 kcal (1.9P / 2.3C / 2.8F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Raw cashews",
@@ -4349,7 +4553,10 @@ const RECIPES_DATA = [
         "tags":  [
                      "Baking \u0026 Doughs"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "2,218 kcal | 50P | 358C | 77F",
+                       "perServing":  "12 muffins: 185 kcal (4.2P / 29.8C / 6.4F) per muffin"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Whole wheat flour",
@@ -4420,7 +4627,8 @@ const RECIPES_DATA = [
                      "Pizza"
                  ],
         "macros":  {
-                       "total":  "685 kcal | 69C | 27F | 41P"
+                       "total":  "685 kcal | 41P | 69C | 27F",
+                       "perServing":  "1 pizza: 685 kcal (41P / 69C / 27F)"
                    },
         "ingredients":  [
                             {
@@ -4472,14 +4680,17 @@ const RECIPES_DATA = [
         "category":  "Pizza",
         "status":  "tried",
         "rating":  "worked-well",
-        "yield":  "4 dough balls (~400g each, 2 meals per ball)",
+        "yield":  "4 dough balls (4 pizzas / 8 servings)",
         "prepTime":  "20m (+ 48h fridge)",
         "cookTime":  "8–10m bake",
         "temp":  "500°F–550°F (max oven)",
         "tags":  [
                      "Pizza"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "1,598 kcal | 51P | 294C | 24F (dough total)",
+                       "perServing":  "1 pizza crust (of 4): 400 kcal (12.8P / 73.5C / 6F) | 8 servings: 200 kcal (6.4P / 36.8C / 3F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "All-purpose white flour",
@@ -4530,14 +4741,17 @@ const RECIPES_DATA = [
         "category":  "Pizza",
         "status":  "tried",
         "rating":  "loved",
-        "yield":  "2 Detroit pans (8x10\" or 10x14\")",
+        "yield":  "2 Detroit pans (8-10 servings)",
         "prepTime":  "20m (+ 6h rise)",
         "cookTime":  "25m total",
         "temp":  "525°F (275°C) par-bake / 480°F finish",
         "tags":  [
                      "Pizza"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "2,550 kcal | 140P | 260C | 104F",
+                       "perServing":  "8 servings: 319 kcal (17.5P / 32.5C / 13F) | 10 servings: 255 kcal (14P / 26C / 10.4F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "High protein bread flour",
@@ -4580,14 +4794,17 @@ const RECIPES_DATA = [
         "category":  "Pizza",
         "status":  "tried",
         "rating":  "staple",
-        "yield":  "Scaled for 10\", 12\", 14\", or 16\" pies",
+        "yield":  "1-2 pies (4-6 servings, scalable)",
         "prepTime":  "20m (+ 24–72h cold ferment)",
         "cookTime":  "10–12m",
         "temp":  "500°F (260°C)",
         "tags":  [
                      "Pizza"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "1,519 kcal | 80P | 170C | 52F (single 14-inch pie)",
+                       "perServing":  "4 servings (1/4 of 14-inch pie): 380 kcal (20P / 42.5C / 13F) | 6 servings (1/6 pie): 253 kcal (13.3P / 28.3C / 8.7F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "--- MASTER FORMULA (55% Hydration) ---",
@@ -4625,14 +4842,17 @@ const RECIPES_DATA = [
         "category":  "Pizza",
         "status":  "tried",
         "rating":  "staple",
-        "yield":  "About 7 cups (Freezes in batches)",
+        "yield":  "About 7 cups (sauces ~14 pizzas / 28 servings)",
         "prepTime":  "5m",
         "cookTime":  "None",
         "temp":  "Room Temp",
         "tags":  [
                      "Pizza"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "685 kcal | 28P | 154C | 3F",
+                       "perServing":  "1/4 cup (28 servings): 24 kcal (1P / 5.5C / 0.1F) | 1/2 cup per pizza (14 servings): 49 kcal (2P / 11C / 0.2F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Crushed tomatoes",
@@ -4685,14 +4905,17 @@ const RECIPES_DATA = [
         "category":  "Pizza",
         "status":  "tried",
         "rating":  "family-favorite",
-        "yield":  "3 dough balls (~270g each)",
+        "yield":  "3 dough balls (3 pizzas / 6 servings)",
         "prepTime":  "20m (+ 72h ferment)",
         "cookTime":  "2–3m bake",
         "temp":  "Max oven / Ooni",
         "tags":  [
                      "Pizza"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "1,700 kcal | 56P | 348C | 5F (dough total)",
+                       "perServing":  "1 pizza crust (of 3): 567 kcal (18.7P / 116C / 1.7F) | 6 servings: 283 kcal (9.3P / 58C / 0.8F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Type \u002700\u0027 flour",
@@ -4728,14 +4951,17 @@ const RECIPES_DATA = [
         "category":  "Stews \u0026 Skillets",
         "status":  "tried",
         "rating":  "loved",
-        "yield":  "3–4 servings",
+        "yield":  "3-4 servings",
         "prepTime":  "15m",
         "cookTime":  "25m",
         "temp":  "Medium-Low Simmer",
         "tags":  [
                      "Stews \u0026 Skillets"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "1,412 kcal | 192P | 41C | 46F",
+                       "perServing":  "3 servings: 471 kcal (64P / 13.7C / 15.3F) | 4 servings: 353 kcal (48P / 10.3C / 11.5F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Chicken breast (thick pieces)",
@@ -4813,14 +5039,17 @@ const RECIPES_DATA = [
         "category":  "Breakfast \u0026 Sweets",
         "status":  "staple",
         "rating":  "family-favorite",
-        "yield":  "1 jar",
+        "yield":  "1 jar (1 serving)",
         "prepTime":  "3m",
         "cookTime":  "None",
         "temp":  "Chilled",
         "tags":  [
                      "Breakfast \u0026 Sweets"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "512 kcal | 40P | 49C | 16F",
+                       "perServing":  "1 jar: 512 kcal (40P / 49C / 16F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Rolled oats",
@@ -4872,7 +5101,10 @@ const RECIPES_DATA = [
         "tags":  [
                      "Soups \u0026 Ramen"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "730 kcal | 35P | 81C | 29F",
+                       "perServing":  "4 servings: 183 kcal (8.8P / 20.3C / 7.3F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Mixed roasting veggies (tomatoes, bell peppers, carrots, squash, onions, garlic)",
@@ -4906,7 +5138,7 @@ const RECIPES_DATA = [
         "category":  "Grill \u0026 Meats",
         "status":  "want-to-try",
         "rating":  "unrated",
-        "yield":  "4 servings (21g protein / serving)",
+        "yield":  "4 servings",
         "prepTime":  "15m",
         "cookTime":  "12–15m",
         "temp":  "400°F (200°C) Air Fryer",
@@ -4914,7 +5146,8 @@ const RECIPES_DATA = [
                      "Grill \u0026 Meats"
                  ],
         "macros":  {
-                       "perServing":  "239 kcal | 12C | 11F | 21P (per serving)"
+                       "total":  "956 kcal | 84P | 48C | 44F",
+                       "perServing":  "4 servings: 239 kcal (21P / 12C / 11F)"
                    },
         "ingredients":  [
                             {
@@ -4968,7 +5201,10 @@ const RECIPES_DATA = [
         "tags":  [
                      "Pastas"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "2,390 kcal | 160P | 227C | 94F",
+                       "perServing":  "4 servings: 598 kcal (40P / 56.8C / 23.5F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Beef shin or beef brisket",
@@ -5042,7 +5278,10 @@ const RECIPES_DATA = [
         "tags":  [
                      "Rice \u0026 Grains"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "2,042 kcal | 137P | 215C | 70F",
+                       "perServing":  "4 servings: 511 kcal (34.3P / 53.8C / 17.5F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Chicken breast (diced)",
@@ -5113,7 +5352,10 @@ const RECIPES_DATA = [
         "tags":  [
                      "Stews \u0026 Skillets"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "3,150 kcal | 128P | 353C | 147F",
+                       "perServing":  "6 servings: 525 kcal (21.3P / 58.8C / 24.5F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Dried chickpeas (soaked 8–12h)",
@@ -5179,7 +5421,7 @@ const RECIPES_DATA = [
         "category":  "Salads",
         "status":  "want-to-try",
         "rating":  "unrated",
-        "yield":  "1 massive meal prep bowl (50g protein)",
+        "yield":  "1 massive meal prep bowl (1 serving)",
         "prepTime":  "10m",
         "cookTime":  "10m",
         "temp":  "Chilled",
@@ -5187,7 +5429,8 @@ const RECIPES_DATA = [
                      "Salads"
                  ],
         "macros":  {
-                       "perServing":  "Approx 580 kcal | 50g Protein"
+                       "total":  "580 kcal | 50P | 68C | 12F",
+                       "perServing":  "1 bowl: 580 kcal (50P / 68C / 12F)"
                    },
         "ingredients":  [
                             {
@@ -5262,7 +5505,10 @@ const RECIPES_DATA = [
         "tags":  [
                      "Pastas"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "1,832 kcal | 133P | 172C | 67F",
+                       "perServing":  "4 servings: 458 kcal (33.3P / 43C / 16.8F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Protein Plus pasta (boiled al dente)",
@@ -5325,7 +5571,8 @@ const RECIPES_DATA = [
                      "Bakes \u0026 Sheet Pan"
                  ],
         "macros":  {
-                       "perServing":  "Approx 450 kcal | 40g Protein per pizza"
+                       "total":  "2,250 kcal | 200P | 215C | 65F",
+                       "perServing":  "5 personal pizzas: 450 kcal (40P / 43C / 13F) per pizza"
                    },
         "ingredients":  [
                             {
@@ -5389,14 +5636,17 @@ const RECIPES_DATA = [
         "category":  "Pizza",
         "status":  "want-to-try",
         "rating":  "unrated",
-        "yield":  "Two 10\" cast iron pizzas",
+        "yield":  "Two 10-inch cast iron pizzas (4-6 servings)",
         "prepTime":  "15m (+ 8–24h ferment)",
         "cookTime":  "15m",
         "temp":  "550°F (285°C) Max Oven",
         "tags":  [
                      "Pizza"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "2,851 kcal | 110P | 310C | 120F",
+                       "perServing":  "1 pizza (of 2): 1,425 kcal (55P / 155C / 60F) | 4 servings: 713 kcal (27.5P / 77.5C / 30F) | 6 servings: 475 kcal (18.3P / 51.7C / 20F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Bread flour",
@@ -5439,14 +5689,17 @@ const RECIPES_DATA = [
         "category":  "Pizza",
         "status":  "want-to-try",
         "rating":  "unrated",
-        "yield":  "2 personal pizzas (High-protein crust)",
+        "yield":  "2 personal pizzas (2 servings)",
         "prepTime":  "20m",
         "cookTime":  "10m",
         "temp":  "500°F (260°C) Pizza Steel",
         "tags":  [
                      "Pizza"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "1,760 kcal | 154P | 140C | 46F",
+                       "perServing":  "2 personal pizzas: 880 kcal (77P / 70C / 23F) per pizza"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Bread flour",
@@ -5505,14 +5758,17 @@ const RECIPES_DATA = [
         "category":  "Pizza",
         "status":  "want-to-try",
         "rating":  "unrated",
-        "yield":  "1 personal pita pizza",
+        "yield":  "1 personal pita pizza (1 serving)",
         "prepTime":  "5m",
         "cookTime":  "5m",
         "temp":  "450°F (230°C) Preheated Sheet Pan",
         "tags":  [
                      "Pizza"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "665 kcal | 51P | 47C | 32F",
+                       "perServing":  "1 personal pizza: 665 kcal (51P / 47C / 32F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Lebanese-style flat pita",
@@ -5551,14 +5807,17 @@ const RECIPES_DATA = [
         "category":  "Pizza",
         "status":  "want-to-try",
         "rating":  "unrated",
-        "yield":  "One 13x9\" sheet pan pizza",
+        "yield":  "One 13x9-inch sheet pan pizza (4-6 servings)",
         "prepTime":  "15m (+ 6–24h ferment)",
         "cookTime":  "18–20m",
         "temp":  "475°F (245°C)",
         "tags":  [
                      "Pizza"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "2,371 kcal | 106P | 310C | 66F",
+                       "perServing":  "4 servings: 593 kcal (26.5P / 77.5C / 16.5F) | 6 servings: 395 kcal (17.7P / 51.7C / 11F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Bread flour or all-purpose flour",
@@ -5597,14 +5856,17 @@ const RECIPES_DATA = [
         "category":  "Pizza",
         "status":  "want-to-try",
         "rating":  "unrated",
-        "yield":  "Two 12\" pizzas (360g dough balls)",
+        "yield":  "Two 12-inch pizzas (4-6 servings)",
         "prepTime":  "20m (+ 90m rise)",
         "cookTime":  "8–10m",
         "temp":  "500°F–550°F (Max Oven)",
         "tags":  [
                      "Pizza"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "2,421 kcal | 106P | 310C | 72F",
+                       "perServing":  "1 pizza (of 2): 1,210 kcal (53P / 155C / 36F) | 4 servings: 605 kcal (26.5P / 77.5C / 18F) | 6 servings: 403 kcal (17.7P / 51.7C / 12F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Bread flour or all-purpose flour",
@@ -5644,14 +5906,17 @@ const RECIPES_DATA = [
         "category":  "Pizza",
         "status":  "want-to-try",
         "rating":  "unrated",
-        "yield":  "Two 14–16\" NY style pies",
+        "yield":  "Two 14-16 inch NY style pies (6-8 servings)",
         "prepTime":  "25m (+ 48–72h cold ferment)",
         "cookTime":  "6–8m",
         "temp":  "550°F (285°C) Pizza Steel",
         "tags":  [
                      "Pizza"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "2,720 kcal | 135P | 335C | 75F",
+                       "perServing":  "1 pizza (of 2): 1,360 kcal (67.5P / 167.5C / 37.5F) | 6 servings: 453 kcal (22.5P / 55.8C / 12.5F) | 8 servings: 340 kcal (16.9P / 41.9C / 9.4F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "High-protein bread flour (e.g. King Arthur)",
@@ -5699,14 +5964,17 @@ const RECIPES_DATA = [
         "category":  "Pizza",
         "status":  "want-to-try",
         "rating":  "unrated",
-        "yield":  "3–4 dough balls (~250g each)",
+        "yield":  "3-4 dough balls (3-4 pizzas / 6-8 servings)",
         "prepTime":  "20m (+ overnight ferment)",
         "cookTime":  "8m",
         "temp":  "550°F (285°C)",
         "tags":  [
                      "Pizza"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "4,320 kcal | 212P | 565C | 102F",
+                       "perServing":  "1 pizza (of 3): 1,440 kcal (70.7P / 188.3C / 34F) | 6 servings: 720 kcal (35.3P / 94.2C / 17F) | 8 servings: 540 kcal (26.5P / 70.6C / 12.8F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Bread flour",
@@ -5753,7 +6021,8 @@ const RECIPES_DATA = [
                      "Rice \u0026 Grains"
                  ],
         "macros":  {
-                       "perServing":  "Approx 520 kcal | 54g Protein | 48g Carbs | 12g Fat"
+                       "total":  "2,080 kcal | 216P | 192C | 48F",
+                       "perServing":  "4 bowls: 520 kcal (54P / 48C / 12F)"
                    },
         "ingredients":  [
                             {
@@ -5813,14 +6082,17 @@ const RECIPES_DATA = [
         "category":  "Baking \u0026 Doughs",
         "status":  "tried",
         "rating":  "family-favorite",
-        "yield":  "16–20 bakery-style cookies (1/4 cup scoop)",
+        "yield":  "16-20 bakery-style cookies (1/4 cup scoop)",
         "prepTime":  "15m (+ 30m chill butter)",
         "cookTime":  "11–13m",
         "temp":  "350°F (175°C)",
         "tags":  [
                      "Baking \u0026 Doughs"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "5,531 kcal | 66P | 660C | 297F",
+                       "perServing":  "16 cookies: 346 kcal (4.1P / 41.3C / 18.6F) | 20 cookies: 277 kcal (3.3P / 33C / 14.9F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Unsalted Butter (browned \u0026 partially chilled)",
@@ -5899,7 +6171,10 @@ const RECIPES_DATA = [
         "tags":  [
                      "Baking \u0026 Doughs"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "4,895 kcal | 92P | 503C | 347F",
+                       "perServing":  "12 muffins: 408 kcal (7.7P / 41.9C / 28.9F) per muffin"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Almond Flour",
@@ -5970,14 +6245,17 @@ const RECIPES_DATA = [
         "category":  "Breakfast \u0026 Sweets",
         "status":  "tried",
         "rating":  "family-favorite",
-        "yield":  "10–12 energy bites",
+        "yield":  "10-12 energy bites",
         "prepTime":  "10m",
         "cookTime":  "0m (No-Bake)",
         "temp":  "No Bake / Refrigerator",
         "tags":  [
                      "Breakfast \u0026 Sweets"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "1,273 kcal | 32P | 172C | 64F",
+                       "perServing":  "10 bites: 127 kcal (3.2P / 17.2C / 6.4F) | 12 bites: 106 kcal (2.7P / 14.3C / 5.3F) per bite"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Dates (pitted)",
@@ -6025,14 +6303,17 @@ const RECIPES_DATA = [
         "category":  "Breakfast \u0026 Sweets",
         "status":  "tried",
         "rating":  "family-favorite",
-        "yield":  "8–10 small pancakes",
+        "yield":  "8-10 small pancakes (3 servings)",
         "prepTime":  "5m",
         "cookTime":  "8m",
         "temp":  "Low to Medium Skillet Heat",
         "tags":  [
                      "Breakfast \u0026 Sweets"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "937 kcal | 53P | 55C | 57F",
+                       "perServing":  "3 servings: 312 kcal (17.7P / 18.3C / 19F) | 9 pancakes: 104 kcal (5.9P / 6.1C / 6.3F) per pancake"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Whole Milk Ricotta Cheese",
@@ -6081,7 +6362,7 @@ const RECIPES_DATA = [
         "category":  "Breakfast \u0026 Sweets",
         "status":  "tried",
         "rating":  "family-favorite",
-        "yield":  "12–16 servings (9x13 or two 9-inch layers)",
+        "yield":  "12-16 servings (9x13 or two 9-inch layers)",
         "prepTime":  "25m",
         "cookTime":  "35–40m",
         "temp":  "350°F (175°C)",
@@ -6089,7 +6370,10 @@ const RECIPES_DATA = [
                      "Breakfast \u0026 Sweets",
                      "Baking \u0026 Doughs"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "8,273 kcal | 78P | 1,137C | 405F",
+                       "perServing":  "12 servings: 689 kcal (6.5P / 94.8C / 33.8F) | 16 servings: 517 kcal (4.9P / 71.1C / 25.3F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "--- WET BASE (#1) ---",
@@ -6214,7 +6498,7 @@ const RECIPES_DATA = [
         "category":  "Breakfast \u0026 Sweets",
         "status":  "want-to-try",
         "rating":  "unrated",
-        "yield":  "12–16 servings (2 molded cakes)",
+        "yield":  "12-16 servings (2 molded cakes)",
         "prepTime":  "25m",
         "cookTime":  "35m",
         "temp":  "350°F (175°C)",
@@ -6222,7 +6506,10 @@ const RECIPES_DATA = [
                      "Breakfast \u0026 Sweets",
                      "Baking \u0026 Doughs"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "7,922 kcal | 64P | 1,074C | 399F",
+                       "perServing":  "12 servings: 660 kcal (5.3P / 89.5C / 33.3F) | 16 servings: 495 kcal (4P / 67.1C / 24.9F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Cocoa Powder (for batter + dusting)",
@@ -6318,14 +6605,17 @@ const RECIPES_DATA = [
         "category":  "Baking \u0026 Doughs",
         "status":  "tried",
         "rating":  "family-favorite",
-        "yield":  "10–12 servings (11-inch cake)",
+        "yield":  "10-12 servings (11-inch cake)",
         "prepTime":  "20m",
         "cookTime":  "40m",
         "temp":  "170°C (340°F) / Fan 150°C",
         "tags":  [
                      "Baking \u0026 Doughs"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "3,013 kcal | 93P | 327C | 159F",
+                       "perServing":  "10 servings: 301 kcal (9.3P / 32.7C / 15.9F) | 12 servings: 251 kcal (7.8P / 27.3C / 13.3F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Ground Almonds / Almond Flour",
@@ -6386,14 +6676,17 @@ const RECIPES_DATA = [
         "category":  "Baking \u0026 Doughs",
         "status":  "want-to-try",
         "rating":  "unrated",
-        "yield":  "1 large monogram / number cake (2 layers)",
+        "yield":  "1 large monogram cake (12-14 servings)",
         "prepTime":  "35m (+ 30m chill)",
         "cookTime":  "10m",
         "temp":  "330°F (165°C)",
         "tags":  [
                      "Baking \u0026 Doughs"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "6,977 kcal | 81P | 496C | 520F",
+                       "perServing":  "12 servings: 581 kcal (6.8P / 41.3C / 43.3F) | 14 servings: 498 kcal (5.8P / 35.4C / 37.1F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "--- ALMOND SABLÉ DOUGH ---",
@@ -6489,14 +6782,17 @@ const RECIPES_DATA = [
         "category":  "Baking \u0026 Doughs",
         "status":  "tried",
         "rating":  "family-favorite",
-        "yield":  "8-inch or 9-inch cake (8–10 servings)",
+        "yield":  "8-inch or 9-inch cake (8-10 servings)",
         "prepTime":  "20m",
         "cookTime":  "30m",
         "temp":  "350°F (175°C) Convection",
         "tags":  [
                      "Baking \u0026 Doughs"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "4,351 kcal | 30P | 628C | 201F",
+                       "perServing":  "8 servings: 544 kcal (3.8P / 78.5C / 25.1F) | 10 servings: 435 kcal (3P / 62.8C / 20.1F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "--- CAKE ---",
@@ -6587,14 +6883,17 @@ const RECIPES_DATA = [
         "category":  "Baking \u0026 Doughs",
         "status":  "want-to-try",
         "rating":  "unrated",
-        "yield":  "3-layer 8-inch cake (14–16 servings)",
+        "yield":  "3-layer 8-inch cake (14-16 servings)",
         "prepTime":  "40m",
         "cookTime":  "18–22m",
         "temp":  "350°F (175°C)",
         "tags":  [
                      "Baking \u0026 Doughs"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "14,898 kcal | 90P | 1,813C | 817F",
+                       "perServing":  "14 servings: 1,064 kcal (6.4P / 129.5C / 58.4F) | 16 servings: 931 kcal (5.6P / 113.3C / 51.1F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "--- BLUEBERRY REDUCTION ---",
@@ -6732,14 +7031,17 @@ const RECIPES_DATA = [
         "category":  "Baking \u0026 Doughs",
         "status":  "tried",
         "rating":  "family-favorite",
-        "yield":  "1 tube / bundt cake (10–12 servings)",
+        "yield":  "1 tube / bundt cake (10-12 servings)",
         "prepTime":  "15m",
         "cookTime":  "40m",
         "temp":  "350°F (180°C)",
         "tags":  [
                      "Baking \u0026 Doughs"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "3,437 kcal | 50P | 497C | 141F",
+                       "perServing":  "10 servings: 344 kcal (5P / 49.7C / 14.1F) | 12 servings: 286 kcal (4.2P / 41.4C / 11.8F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Eggs",
@@ -6813,7 +7115,10 @@ const RECIPES_DATA = [
         "tags":  [
                      "Baking \u0026 Doughs"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "6,239 kcal | 71P | 785C | 211F",
+                       "perServing":  "16 servings (1 slice): 390 kcal (4.4P / 49.1C / 13.2F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "--- CAKE BATTER ---",
@@ -6924,14 +7229,17 @@ const RECIPES_DATA = [
         "category":  "Baking \u0026 Doughs",
         "status":  "tried",
         "rating":  "family-favorite",
-        "yield":  "1 nine-inch macaron cake + 8 mini macarons",
+        "yield":  "1 nine-inch macaron cake + 8 mini macarons (10-12 servings)",
         "prepTime":  "30m (+ 20m rest)",
         "cookTime":  "20–25m",
         "temp":  "325°F (160°C)",
         "tags":  [
                      "Baking \u0026 Doughs"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "4,326 kcal | 60P | 329C | 303F",
+                       "perServing":  "10 servings: 433 kcal (6P / 32.9C / 30.3F) | 12 servings: 361 kcal (5P / 27.4C / 25.3F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "--- MACARON SHELLS ---",
@@ -7022,14 +7330,17 @@ const RECIPES_DATA = [
         "category":  "Baking \u0026 Doughs",
         "status":  "tried",
         "rating":  "family-favorite",
-        "yield":  "12–16 small financiers",
+        "yield":  "12-16 small financiers",
         "prepTime":  "15m",
         "cookTime":  "12–15m",
         "temp":  "425°F (220°C) down to 350°F (170°C)",
         "tags":  [
                      "Baking \u0026 Doughs"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "2,172 kcal | 33P | 190C | 146F",
+                       "perServing":  "12 financiers: 181 kcal (2.8P / 15.8C / 12.2F) | 16 financiers: 136 kcal (2.1P / 11.9C / 9.1F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Caster / Granulated Sugar",
@@ -7104,14 +7415,17 @@ const RECIPES_DATA = [
         "category":  "Baking \u0026 Doughs",
         "status":  "tried",
         "rating":  "family-favorite",
-        "yield":  "8-inch cake (10–12 servings)",
+        "yield":  "8-inch cake (10-12 servings)",
         "prepTime":  "25m",
         "cookTime":  "30–40m",
         "temp":  "325°F (165°C)",
         "tags":  [
                      "Baking \u0026 Doughs"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "3,492 kcal | 58P | 237C | 258F",
+                       "perServing":  "10 servings: 349 kcal (5.8P / 23.7C / 25.8F) | 12 servings: 291 kcal (4.8P / 19.8C / 21.5F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "--- TORTE ---",
@@ -7221,14 +7535,17 @@ const RECIPES_DATA = [
         "category":  "Baking \u0026 Doughs",
         "status":  "tried",
         "rating":  "family-favorite",
-        "yield":  "8-inch round or standard loaf (8–10 servings)",
+        "yield":  "8-inch round or standard loaf (8-10 servings)",
         "prepTime":  "15m",
         "cookTime":  "35–40m",
         "temp":  "350°F (175°C)",
         "tags":  [
                      "Baking \u0026 Doughs"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "2,975 kcal | 53P | 341C | 165F",
+                       "perServing":  "8 servings: 372 kcal (6.6P / 42.6C / 20.6F) | 10 servings: 298 kcal (5.3P / 34.1C / 16.5F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "All-Purpose Flour",
@@ -7321,7 +7638,10 @@ const RECIPES_DATA = [
         "tags":  [
                      "Baking \u0026 Doughs"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "4,543 kcal | 61P | 311C | 347F",
+                       "perServing":  "8 servings: 568 kcal (7.6P / 38.9C / 43.4F) per slice"
+                   },
         "ingredients":  [
                             {
                                 "item":  "--- ROUGH PUFF PASTRY ---",
@@ -7412,14 +7732,17 @@ const RECIPES_DATA = [
         "category":  "Baking \u0026 Doughs",
         "status":  "tried",
         "rating":  "family-favorite",
-        "yield":  "8-inch round cake (8–10 servings)",
+        "yield":  "8-inch round cake (8-10 servings)",
         "prepTime":  "15m",
         "cookTime":  "30–40m",
         "temp":  "350°F (180°C)",
         "tags":  [
                      "Baking \u0026 Doughs"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "3,135 kcal | 86P | 297C | 197F",
+                       "perServing":  "8 servings: 392 kcal (10.8P / 37.1C / 24.6F) | 10 servings: 314 kcal (8.6P / 29.7C / 19.7F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Blanched Almond Flour",
@@ -7494,14 +7817,17 @@ const RECIPES_DATA = [
         "category":  "Baking \u0026 Doughs",
         "status":  "tried",
         "rating":  "family-favorite",
-        "yield":  "~5 cups frosting (covers one 8–9 inch layer cake)",
+        "yield":  "~5 cups frosting (covers one 8-9 inch cake, 16-20 servings)",
         "prepTime":  "20m",
         "cookTime":  "10m",
         "temp":  "160°F (71°C) Double Boiler",
         "tags":  [
                      "Baking \u0026 Doughs"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "4,479 kcal | 20P | 301C | 366F",
+                       "perServing":  "16 servings (~1/3 cup): 280 kcal (1.3P / 18.8C / 22.9F) | 20 servings (~1/4 cup): 224 kcal (1P / 15.1C / 18.3F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Egg Whites (room temperature, zero yolk traces)",
@@ -7546,7 +7872,7 @@ const RECIPES_DATA = [
         "category":  "Slow Cooker \u0026 Meats",
         "status":  "want-to-try",
         "rating":  "unrated",
-        "yield":  "6–8 servings",
+        "yield":  "6-8 servings",
         "prepTime":  "15m",
         "cookTime":  "4h high / 8h low (or 45m Instant Pot)",
         "temp":  "450°F (230°C) Oven Broil",
@@ -7554,7 +7880,10 @@ const RECIPES_DATA = [
                      "Slow Cooker \u0026 Meats",
                      "Grill \u0026 Meats"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "3,420 kcal | 383P | 28C | 200F",
+                       "perServing":  "6 servings: 570 kcal (63.8P / 4.7C / 33.3F) | 8 servings: 428 kcal (47.9P / 3.5C / 25F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Boneless pork shoulder / pork butt (cut into 2-inch chunks)",
@@ -7632,7 +7961,10 @@ const RECIPES_DATA = [
                      "Stews \u0026 Skillets",
                      "Grill \u0026 Meats"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "1,245 kcal | 116P | 56C | 65F",
+                       "perServing":  "4 servings: 311 kcal (29P / 14C / 16.3F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Flank steak or sirloin (thinly sliced across the grain)",
@@ -7741,7 +8073,8 @@ const RECIPES_DATA = [
                      "Grill \u0026 Meats"
                  ],
         "macros":  {
-                       "perServing":  "490 kcal | 52g Protein | 44g Carbs | 11g Fat (per bowl)"
+                       "total":  "1,960 kcal | 208P | 176C | 44F",
+                       "perServing":  "4 bowls: 490 kcal (52P / 44C / 11F)"
                    },
         "ingredients":  [
                             {
@@ -7825,7 +8158,7 @@ const RECIPES_DATA = [
         "category":  "Slow Cooker \u0026 Meats",
         "status":  "want-to-try",
         "rating":  "unrated",
-        "yield":  "5–6 servings",
+        "yield":  "5-6 servings",
         "prepTime":  "15m",
         "cookTime":  "35m Pressure Cook",
         "temp":  "High Pressure (Instant Pot)",
@@ -7833,7 +8166,10 @@ const RECIPES_DATA = [
                      "Slow Cooker \u0026 Meats",
                      "Stews \u0026 Skillets"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "1,930 kcal | 210P | 60C | 93F",
+                       "perServing":  "5 servings: 386 kcal (42P / 12C / 18.6F) | 6 servings: 322 kcal (35P / 10C / 15.5F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Top round or bottom round steak (cut into 3-inch portions)",
@@ -7920,7 +8256,10 @@ const RECIPES_DATA = [
                      "Slow Cooker \u0026 Meats",
                      "Stews \u0026 Skillets"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "2,470 kcal | 261P | 62C | 117F",
+                       "perServing":  "6 servings: 412 kcal (43.5P / 10.3C / 19.5F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Beef flank steak or chuck roast (cut with grain into large pieces)",
@@ -8005,7 +8344,7 @@ const RECIPES_DATA = [
         "category":  "Soups \u0026 Ramen",
         "status":  "want-to-try",
         "rating":  "unrated",
-        "yield":  "6–8 generous bowls",
+        "yield":  "6-8 generous bowls (6-8 servings)",
         "prepTime":  "20m",
         "cookTime":  "40m",
         "temp":  "Medium Stovetop Simmer",
@@ -8013,7 +8352,10 @@ const RECIPES_DATA = [
                      "Soups \u0026 Ramen",
                      "Slow Cooker \u0026 Meats"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "1,890 kcal | 200P | 146C | 54F",
+                       "perServing":  "6 bowls: 315 kcal (33.3P / 24.3C / 9F) | 8 bowls: 236 kcal (25P / 18.3C / 6.8F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Bone-in, skinless chicken thighs or breasts",
@@ -8090,7 +8432,10 @@ const RECIPES_DATA = [
                      "Stews \u0026 Skillets",
                      "Tofu \u0026 Plant-Based"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "1,615 kcal | 48P | 153C | 96F",
+                       "perServing":  "4 servings: 404 kcal (12P / 38.3C / 24F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Chickpeas (rinsed and drained)",
@@ -8159,7 +8504,7 @@ const RECIPES_DATA = [
         "category":  "Stews \u0026 Skillets",
         "status":  "want-to-try",
         "rating":  "unrated",
-        "yield":  "6–8 servings",
+        "yield":  "6-8 servings",
         "prepTime":  "15m",
         "cookTime":  "30m",
         "temp":  "Medium Stovetop Simmer",
@@ -8167,7 +8512,10 @@ const RECIPES_DATA = [
                      "Stews \u0026 Skillets",
                      "Slow Cooker \u0026 Meats"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "2,120 kcal | 189P | 172C | 73F",
+                       "perServing":  "6 servings: 353 kcal (31.5P / 28.7C / 12.2F) | 8 servings: 265 kcal (23.6P / 21.5C / 9.1F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Lean ground beef (90/10)",
@@ -8241,7 +8589,7 @@ const RECIPES_DATA = [
         "category":  "Soups \u0026 Ramen",
         "status":  "want-to-try",
         "rating":  "unrated",
-        "yield":  "6–8 servings",
+        "yield":  "6-8 servings",
         "prepTime":  "15m",
         "cookTime":  "25m",
         "temp":  "Medium Stovetop Simmer",
@@ -8249,7 +8597,10 @@ const RECIPES_DATA = [
                      "Soups \u0026 Ramen",
                      "Stews \u0026 Skillets"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "1,335 kcal | 58P | 205C | 35F",
+                       "perServing":  "6 servings: 223 kcal (9.7P / 34.2C / 5.8F) | 8 servings: 167 kcal (7.3P / 25.6C / 4.4F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Olive oil",
@@ -8323,7 +8674,7 @@ const RECIPES_DATA = [
         "category":  "Soups \u0026 Ramen",
         "status":  "want-to-try",
         "rating":  "unrated",
-        "yield":  "4–6 servings",
+        "yield":  "4-6 servings",
         "prepTime":  "10m",
         "cookTime":  "35m",
         "temp":  "400°F (200°C) Oven Roast",
@@ -8331,7 +8682,10 @@ const RECIPES_DATA = [
                      "Soups \u0026 Ramen",
                      "Bakes \u0026 Sheet Pan"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "1,015 kcal | 20P | 78C | 73F",
+                       "perServing":  "4 servings: 254 kcal (5P / 19.5C / 18.3F) | 6 servings: 169 kcal (3.3P / 13C / 12.2F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Ripe Roma or plum tomatoes (halved lengthwise)",
@@ -8398,7 +8752,10 @@ const RECIPES_DATA = [
                      "Soups \u0026 Ramen",
                      "Stews \u0026 Skillets"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "1,514 kcal | 66P | 90C | 99F",
+                       "perServing":  "4 servings: 379 kcal (16.5P / 22.5C / 24.8F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Fresh broccoli heads and tender stems (chopped)",
@@ -8465,7 +8822,10 @@ const RECIPES_DATA = [
                      "Pastas",
                      "Bakes \u0026 Sheet Pan"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "2,480 kcal | 64P | 197C | 160F",
+                       "perServing":  "4 servings: 620 kcal (16P / 49.3C / 40F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Greek feta cheese (in brine, drained block)",
@@ -8532,7 +8892,10 @@ const RECIPES_DATA = [
                      "Bakes \u0026 Sheet Pan",
                      "Grill \u0026 Meats"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "1,582 kcal | 115P | 113C | 72F",
+                       "perServing":  "4 servings: 396 kcal (28.8P / 28.3C / 18F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "--- MEATBALLS ---",
@@ -8611,7 +8974,7 @@ const RECIPES_DATA = [
         "category":  "Stews \u0026 Skillets",
         "status":  "want-to-try",
         "rating":  "unrated",
-        "yield":  "4–6 servings",
+        "yield":  "4-6 servings",
         "prepTime":  "20m",
         "cookTime":  "30m",
         "temp":  "Medium Stovetop Simmer",
@@ -8619,7 +8982,10 @@ const RECIPES_DATA = [
                      "Stews \u0026 Skillets",
                      "Tofu \u0026 Plant-Based"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "1,075 kcal | 31P | 114C | 59F",
+                       "perServing":  "4 servings: 269 kcal (7.8P / 28.5C / 14.8F) | 6 servings: 179 kcal (5.2P / 19C / 9.8F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Eggplant (cut into 1/2-inch cubes)",
@@ -8688,7 +9054,7 @@ const RECIPES_DATA = [
         "category":  "Breakfast \u0026 Sweets",
         "status":  "want-to-try",
         "rating":  "unrated",
-        "yield":  "3 large crispy pancakes",
+        "yield":  "3 large crispy pancakes (3 servings)",
         "prepTime":  "15m",
         "cookTime":  "10m",
         "temp":  "Medium-High Skillet Heat",
@@ -8697,7 +9063,10 @@ const RECIPES_DATA = [
                      "Tofu \u0026 Plant-Based",
                      "Stews \u0026 Skillets"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "1,302 kcal | 19P | 158C | 67F",
+                       "perServing":  "3 pancakes: 434 kcal (6.3P / 52.7C / 22.3F) per pancake"
+                   },
         "ingredients":  [
                             {
                                 "item":  "All-purpose flour \u0026 cornstarch",
@@ -8757,7 +9126,7 @@ const RECIPES_DATA = [
         "category":  "Breakfast \u0026 Sweets",
         "status":  "want-to-try",
         "rating":  "unrated",
-        "yield":  "6–8 fluffy pancakes",
+        "yield":  "6-8 fluffy pancakes (2 servings)",
         "prepTime":  "5m",
         "cookTime":  "8m",
         "temp":  "Medium-Low Skillet Heat",
@@ -8766,7 +9135,8 @@ const RECIPES_DATA = [
                      "Baking \u0026 Doughs"
                  ],
         "macros":  {
-                       "perServing":  "360 kcal | 34g Protein | 38g Carbs | 7g Fat (per serving)"
+                       "total":  "720 kcal | 68P | 76C | 14F",
+                       "perServing":  "2 servings (3-4 pancakes each): 360 kcal (34P / 38C / 7F) | 6 pancakes: 120 kcal (11.3P / 12.7C / 2.3F) per pancake"
                    },
         "ingredients":  [
                             {
@@ -8821,7 +9191,7 @@ const RECIPES_DATA = [
         "category":  "Sandwiches \u0026 Toast",
         "status":  "want-to-try",
         "rating":  "unrated",
-        "yield":  "3–4 sandwiches",
+        "yield":  "3-4 sandwiches",
         "prepTime":  "10m",
         "cookTime":  "0m (No-Cook)",
         "temp":  "No Heat",
@@ -8829,7 +9199,10 @@ const RECIPES_DATA = [
                      "Sandwiches \u0026 Toast",
                      "Tofu \u0026 Plant-Based"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "1,150 kcal | 49P | 172C | 30F",
+                       "perServing":  "3 sandwiches: 383 kcal (16.3P / 57.3C / 10F) | 4 sandwiches: 288 kcal (12.3P / 43C / 7.5F) per sandwich"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Chickpeas (rinsed and well-drained)",
@@ -8887,7 +9260,7 @@ const RECIPES_DATA = [
         "category":  "Tofu \u0026 Plant-Based",
         "status":  "want-to-try",
         "rating":  "unrated",
-        "yield":  "6 burger patties",
+        "yield":  "6 burger patties (6 servings)",
         "prepTime":  "15m",
         "cookTime":  "15m",
         "temp":  "Medium Skillet / 375°F (190°C) Oven",
@@ -8896,7 +9269,10 @@ const RECIPES_DATA = [
                      "Grill \u0026 Meats",
                      "Sandwiches \u0026 Toast"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "1,385 kcal | 56P | 125C | 78F",
+                       "perServing":  "6 patties: 231 kcal (9.3P / 20.8C / 13F) per patty"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Cooked brown lentils (drained and dry)",
@@ -8955,7 +9331,7 @@ const RECIPES_DATA = [
         "category":  "Breakfast \u0026 Sweets",
         "status":  "want-to-try",
         "rating":  "unrated",
-        "yield":  "2 hearty toasts",
+        "yield":  "2 hearty toasts (2 servings)",
         "prepTime":  "5m",
         "cookTime":  "5m",
         "temp":  "Toasted Bread",
@@ -8963,7 +9339,10 @@ const RECIPES_DATA = [
                      "Breakfast \u0026 Sweets",
                      "Sandwiches \u0026 Toast"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "725 kcal | 39P | 82C | 32F",
+                       "perServing":  "2 toasts: 363 kcal (19.5P / 41C / 16F) per toast"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Sourdough or sprouted grain bread (Ezekiel)",
@@ -9031,7 +9410,7 @@ const RECIPES_DATA = [
         "category":  "Sauces \u0026 Dressings",
         "status":  "want-to-try",
         "rating":  "unrated",
-        "yield":  "1.5 cups dressing",
+        "yield":  "1.5 cups dressing (12 servings of 2 tbsp)",
         "prepTime":  "5m",
         "cookTime":  "0m (No-Cook)",
         "temp":  "Blender / Chilled",
@@ -9040,7 +9419,10 @@ const RECIPES_DATA = [
                      "Tofu \u0026 Plant-Based",
                      "Salads"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "460 kcal | 22P | 12C | 38F",
+                       "perServing":  "12 servings (2 tbsp): 38 kcal (1.8P / 1C / 3.2F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Silken tofu (drained)",
@@ -9095,7 +9477,10 @@ const RECIPES_DATA = [
                      "Tofu \u0026 Plant-Based",
                      "Bakes \u0026 Sheet Pan"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "600 kcal | 44P | 22C | 39F",
+                       "perServing":  "4 servings: 150 kcal (11P / 5.5C / 9.8F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Extra firm or super firm tofu (pressed and drained)",
@@ -9147,7 +9532,10 @@ const RECIPES_DATA = [
                      "Stews \u0026 Skillets",
                      "Grill \u0026 Meats"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "1,040 kcal | 114P | 50C | 42F",
+                       "perServing":  "4 servings: 260 kcal (28.5P / 12.5C / 10.5F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Chicken breast or pork tenderloin (thinly sliced)",
@@ -9196,7 +9584,7 @@ const RECIPES_DATA = [
         "category":  "Sauces \u0026 Dressings",
         "status":  "want-to-try",
         "rating":  "unrated",
-        "yield":  "1 cup marinade",
+        "yield":  "1 cup marinade (4-6 servings)",
         "prepTime":  "5m",
         "cookTime":  "0m",
         "temp":  "No Heat",
@@ -9204,7 +9592,10 @@ const RECIPES_DATA = [
                      "Sauces \u0026 Dressings",
                      "Grill \u0026 Meats"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "915 kcal | 3P | 68C | 73F",
+                       "perServing":  "4 servings: 229 kcal (0.8P / 17C / 18.3F) | 6 servings: 153 kcal (0.5P / 11.3C / 12.2F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Pomegranate molasses",
@@ -9252,7 +9643,7 @@ const RECIPES_DATA = [
         "category":  "Sauces \u0026 Dressings",
         "status":  "want-to-try",
         "rating":  "unrated",
-        "yield":  "1 cup sauce",
+        "yield":  "1 cup sauce (8 servings of 2 tbsp)",
         "prepTime":  "5m",
         "cookTime":  "0m",
         "temp":  "Whisk in Bowl",
@@ -9260,7 +9651,10 @@ const RECIPES_DATA = [
                      "Sauces \u0026 Dressings",
                      "Tofu \u0026 Plant-Based"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "1,005 kcal | 32P | 54C | 79F",
+                       "perServing":  "8 servings (2 tbsp): 126 kcal (4P / 6.8C / 9.9F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Creamy natural peanut butter",
@@ -9313,7 +9707,7 @@ const RECIPES_DATA = [
         "category":  "Sauces \u0026 Dressings",
         "status":  "want-to-try",
         "rating":  "unrated",
-        "yield":  "1.5 cups dressing",
+        "yield":  "1.5 cups dressing (10-12 servings of 2 tbsp)",
         "prepTime":  "5m",
         "cookTime":  "0m",
         "temp":  "High-Speed Blender",
@@ -9321,7 +9715,10 @@ const RECIPES_DATA = [
                      "Sauces \u0026 Dressings",
                      "Salads"
                  ],
-        "macros":  null,
+        "macros":  {
+                       "total":  "642 kcal | 17P | 74C | 35F",
+                       "perServing":  "10 servings: 64 kcal (1.7P / 7.4C / 3.5F) | 12 servings: 54 kcal (1.4P / 6.2C / 2.9F)"
+                   },
         "ingredients":  [
                             {
                                 "item":  "Raw cashews (soaked in hot water 15 min if needed)",
