@@ -1,4 +1,4 @@
-const CACHE_NAME = 'kitchen-index-v1';
+const CACHE_NAME = 'kitchen-index-v2';
 
 const STATIC_ASSETS = [
   './',

@@ -6544,5 +6544,1796 @@
                                 ],
         "notes":  "Consolidates all ~30 placeholder titles from your Google Doc into a single organized wishlist so your app remains clean and clutter-free.",
         "sourceUrl":  null
+    },
+    {
+        "id":  "elsies-chocolate-chip-cookies",
+        "title":  "Elsie\u0027s Brown Butter Chocolate Chip Cookies",
+        "category":  "Baking \u0026 Doughs",
+        "status":  "tried",
+        "rating":  "family-favorite",
+        "yield":  "16–20 bakery-style cookies (1/4 cup scoop)",
+        "prepTime":  "15m (+ 30m chill butter)",
+        "cookTime":  "11–13m",
+        "temp":  "350°F (175°C)",
+        "tags":  [
+                     "Baking",
+                     "Cookies",
+                     "Brown Butter",
+                     "Family Favorite"
+                 ],
+        "macros":  null,
+        "ingredients":  [
+                            {
+                                "item":  "Unsalted Butter (browned \u0026 partially chilled)",
+                                "amount":  "2 sticks (1 cup / 226g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "All-Purpose Flour",
+                                "amount":  "2 cups (240g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Baking Powder",
+                                "amount":  "1 tsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Kosher Salt",
+                                "amount":  "1 tsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Granulated White Sugar",
+                                "amount":  "2/3 cup (135g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Light Brown Sugar",
+                                "amount":  "2/3 cup packed (145g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Eggs",
+                                "amount":  "2 large",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Pure Vanilla Extract",
+                                "amount":  "1 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Milk Chocolate (chopped chunks)",
+                                "amount":  "12 oz (340g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Flaky Sea Salt (Maldon)",
+                                "amount":  "For finishing tops",
+                                "ratio":  null
+                            }
+                        ],
+        "conciseInstructions":  [
+                                    "Brown Butter: Melt 2 sticks butter in saucepan over medium heat until nutty and amber browned. Chill in freezer ~30 min until partially solidified.",
+                                    "Dry Ingredients: In medium bowl, whisk flour, baking powder, and salt.",
+                                    "Cream Butter \u0026 Sugars: In mixer, beat brown sugar, white sugar, and partially solidified brown butter 3–4 min until lightened and slightly fluffy.",
+                                    "Eggs: Add eggs and vanilla. Beat on medium-high 1–2 min until fluffy.",
+                                    "Combine: On low speed, gradually add flour mixture; beat 30–60 sec just until incorporated.",
+                                    "Fold Chocolate: Fold in 10 oz chocolate chunks just until distributed.",
+                                    "Shape \u0026 Salt: Preheat oven to 350°F (175°C). Scoop 1/4 cup balls, roll with moistened hands, press extra chunks on top.",
+                                    "Bake: Bake 6 min until just spread. Quickly remove, sprinkle with flaky sea salt, return to oven and bake 5–7 min longer until golden with crisp edges and soft centers. Cool 5 min, then wire rack."
+                                ],
+        "notes":  "Browning the butter and topping with flaky sea salt gives a rich, nutty caramel flavor and bakery texture.",
+        "sourceUrl":  null
+    },
+    {
+        "id":  "bee-chocolate-muffins",
+        "title":  "Bee Chocolate Almond Flour Muffins",
+        "category":  "Baking \u0026 Doughs",
+        "status":  "tried",
+        "rating":  "family-favorite",
+        "yield":  "12 muffins",
+        "prepTime":  "15m (+ optional 1h chill)",
+        "cookTime":  "12m",
+        "temp":  "350°F (175°C)",
+        "tags":  [
+                     "Gluten-Free",
+                     "Almond Flour",
+                     "Naturally Sweetened",
+                     "Muffins"
+                 ],
+        "macros":  null,
+        "ingredients":  [
+                            {
+                                "item":  "Almond Flour",
+                                "amount":  "2 1/2 cups (240g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Cocoa Powder",
+                                "amount":  "1/2 cup (50g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Baking Soda",
+                                "amount":  "1/2 tsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Kosher Salt",
+                                "amount":  "1/2 tsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Unsalted Butter (softened)",
+                                "amount":  "8 tbsp (1 stick / 113g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Medjool Dates (pitted)",
+                                "amount":  "12 oz (340g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Egg",
+                                "amount":  "1 large",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Vanilla Extract",
+                                "amount":  "1 tsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Bittersweet Chocolate Chips",
+                                "amount":  "1 cup (170g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Pecans (chopped)",
+                                "amount":  "1 cup (100g)",
+                                "ratio":  null
+                            }
+                        ],
+        "conciseInstructions":  [
+                                    "Date Paste: Soak dates in hot water 10 min. Drain (reserving a splash of water), blend into smooth paste.",
+                                    "Dry Mix: Blend almond flour, cocoa powder, baking soda, and salt directly with the date paste.",
+                                    "Butter \u0026 Wet: Add softened butter and beat 2 min. Beat in egg and vanilla until smooth.",
+                                    "Fold-ins: Fold in chocolate chips and pecans to just combine.",
+                                    "Shape: Scoop into muffin tins or refrigerate dough 1 hour and roll into balls on a lined baking sheet.",
+                                    "Bake: Bake at 350°F (175°C) for 12 min until dry on top but still fudgy and soft in the center.",
+                                    "Cool: Rest 3 min on sheet, then transfer to wire rack."
+                                ],
+        "notes":  "Naturally sweetened exclusively with date paste; pecans and bittersweet chocolate provide great texture and richness.",
+        "sourceUrl":  null
+    },
+    {
+        "id":  "stuffed-energy-balls",
+        "title":  "Peanut Butter Stuffed Date \u0026 Cashew Energy Balls",
+        "category":  "Breakfast \u0026 Sweets",
+        "status":  "tried",
+        "rating":  "family-favorite",
+        "yield":  "10–12 energy bites",
+        "prepTime":  "10m",
+        "cookTime":  "0m (No-Bake)",
+        "temp":  "No Bake / Refrigerator",
+        "tags":  [
+                     "No-Bake",
+                     "Snack",
+                     "High-Protein",
+                     "Naturally Sweetened",
+                     "Vegan Option"
+                 ],
+        "macros":  null,
+        "ingredients":  [
+                            {
+                                "item":  "Dates (pitted)",
+                                "amount":  "1 cup packed",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Cashews (raw or roasted unsalted)",
+                                "amount":  "1/2 cup",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Cocoa Powder",
+                                "amount":  "2 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Sesame Seeds",
+                                "amount":  "1 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Ground Flaxseed",
+                                "amount":  "1 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Creamy Peanut Butter",
+                                "amount":  "2–3 tbsp (for center stuffing)",
+                                "ratio":  null
+                            }
+                        ],
+        "conciseInstructions":  [
+                                    "Process: Combine dates, cashews, cocoa powder, sesame seeds, and flaxseed in food processor. Pulse until thick dough paste forms.",
+                                    "Portion: Roll mixture into 1-inch balls.",
+                                    "Stuff: Press thumb in the center of each ball to make an indentation. Spoon a small dollop of peanut butter into the center.",
+                                    "Seal \u0026 Chill: Gently fold edges over peanut butter to seal and reshape into balls. Store in airtight container in fridge."
+                                ],
+        "notes":  "High in healthy fats and fiber with zero added refined sugars; keep chilled for grab-and-go energy.",
+        "sourceUrl":  null
+    },
+    {
+        "id":  "fluffy-ricotta-pancakes",
+        "title":  "Fluffy High-Protein Ricotta Pancakes",
+        "category":  "Breakfast \u0026 Sweets",
+        "status":  "tried",
+        "rating":  "family-favorite",
+        "yield":  "8–10 small pancakes",
+        "prepTime":  "5m",
+        "cookTime":  "8m",
+        "temp":  "Low to Medium Skillet Heat",
+        "tags":  [
+                     "Breakfast",
+                     "High-Protein",
+                     "Quick Dinners",
+                     "Pancakes"
+                 ],
+        "macros":  null,
+        "ingredients":  [
+                            {
+                                "item":  "Whole Milk Ricotta Cheese",
+                                "amount":  "1 cup (250g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Eggs",
+                                "amount":  "3 large",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "All-Purpose Flour",
+                                "amount":  "1/2 cup (60g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Salt",
+                                "amount":  "1/4 tsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Baking Powder",
+                                "amount":  "1/2 tsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Coconut Oil or Butter",
+                                "amount":  "2 tsp (for greasing pan)",
+                                "ratio":  null
+                            }
+                        ],
+        "conciseInstructions":  [
+                                    "Whisk Wet: In bowl, whisk eggs and mix in ricotta cheese until smooth and creamy.",
+                                    "Add Dry: Add flour, salt, and baking powder. Gently whisk just until combined.",
+                                    "Heat Pan: Heat 1 tsp coconut oil or butter in skillet over low-to-medium heat.",
+                                    "Cook: Spoon batter (~1 tbsp per pancake). When small bubbles appear on top, flip and cook other side 1–2 min until golden.",
+                                    "Serve: Repeat with remaining batter and serve warm with berries, honey, or pure maple syrup."
+                                ],
+        "notes":  "Ricotta keeps the crumb exceptionally tender, light, and naturally high in protein.",
+        "sourceUrl":  null
+    },
+    {
+        "id":  "nanas-carrot-cake",
+        "title":  "Nana\u0027s Pineapple Carrot Cake with Cream Cheese Frosting",
+        "category":  "Baking \u0026 Doughs",
+        "status":  "tried",
+        "rating":  "family-favorite",
+        "yield":  "12–16 servings (9x13 or two 9-inch layers)",
+        "prepTime":  "25m",
+        "cookTime":  "35–40m",
+        "temp":  "350°F (175°C)",
+        "tags":  [
+                     "Baking",
+                     "Cakes",
+                     "Family Recipe",
+                     "Cream Cheese Frosting"
+                 ],
+        "macros":  null,
+        "ingredients":  [
+                            {
+                                "item":  "--- WET BASE (#1) ---",
+                                "amount":  "",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Unsweetened Applesauce or Vegetable Oil",
+                                "amount":  "1 1/4 cups",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Granulated Sugar",
+                                "amount":  "2 cups",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Eggs (room temperature)",
+                                "amount":  "3 large",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "--- DRY FLOUR (#2) ---",
+                                "amount":  "",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "All-Purpose Flour",
+                                "amount":  "2 cups (240g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Baking Soda",
+                                "amount":  "1 tsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Baking Powder",
+                                "amount":  "1 1/2 tsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Salt",
+                                "amount":  "1/2 tsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Ground Cinnamon",
+                                "amount":  "1 tsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "--- FOLD-INS (#3) ---",
+                                "amount":  "",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Carrots (freshly grated)",
+                                "amount":  "2 cups",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Sweetened Shredded Coconut",
+                                "amount":  "1 cup",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Crushed Pineapple in 100% Juice (NOT drained)",
+                                "amount":  "1 cup (with juice)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Chopped Walnuts or Pecans (optional)",
+                                "amount":  "1 cup",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Vanilla Extract",
+                                "amount":  "1 tsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "--- CREAM CHEESE FROSTING ---",
+                                "amount":  "",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Unsalted Butter (softened)",
+                                "amount":  "1/2 cup (1 stick / 113g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Cream Cheese (softened full fat)",
+                                "amount":  "8 oz (226g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Vanilla Extract",
+                                "amount":  "1 tsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Powdered Sugar",
+                                "amount":  "1 lb (3 3/4 cups / 450g)",
+                                "ratio":  null
+                            }
+                        ],
+        "conciseInstructions":  [
+                                    "Prep: Preheat oven to 350°F (175°C). Line pans (two 9-inch or 9x13) with parchment and grease.",
+                                    "Batter Mix: Whisk #1 wet ingredients. Add #2 sifted dry ingredients. Fold in #3 carrots, coconut, pineapple with juice, vanilla, and nuts.",
+                                    "Bake: Pour into prepared pans. Bake 35–40 min (9x13 or two 9-inch) or 25–30 min (three 8-inch) until toothpick inserted into center comes out clean.",
+                                    "Cool: Cool 10 min in pans, invert onto wire racks to cool completely.",
+                                    "Frosting: Beat butter and cream cheese fluffy. Beat in vanilla and powdered sugar until smooth.",
+                                    "Assemble: Frost cooled cake layers generously. Top with toasted pecans or coconut. Chill 1 hour before serving."
+                                ],
+        "notes":  "Using crushed pineapple with its juice plus applesauce creates an ultra-moist crumb without heaviness.",
+        "sourceUrl":  null
+    },
+    {
+        "id":  "sandwich-cookie-cake",
+        "title":  "Williams-Sonoma Giant Sandwich Cookie Cake",
+        "category":  "Baking \u0026 Doughs",
+        "status":  "want-to-try",
+        "rating":  "unrated",
+        "yield":  "12–16 servings (2 molded cakes)",
+        "prepTime":  "25m",
+        "cookTime":  "35m",
+        "temp":  "350°F (175°C)",
+        "tags":  [
+                     "Baking",
+                     "Cakes",
+                     "Chocolate",
+                     "Specialty Mold"
+                 ],
+        "macros":  null,
+        "ingredients":  [
+                            {
+                                "item":  "Cocoa Powder (for batter + dusting)",
+                                "amount":  "1/2 cup",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Bittersweet Chocolate (broken into pieces)",
+                                "amount":  "7 oz (200g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Unsalted Butter (cubed)",
+                                "amount":  "14 tbsp (1 3/4 sticks / 200g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "All-Purpose Flour",
+                                "amount":  "1 cup (120g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Baking Powder",
+                                "amount":  "1 tsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Salt",
+                                "amount":  "3/4 tsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Granulated Sugar",
+                                "amount":  "1 3/4 cups (350g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Eggs (room temperature)",
+                                "amount":  "4 large",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Vanilla Extract",
+                                "amount":  "1 3/4 tsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "--- BUTTERCREAM FILLING ---",
+                                "amount":  "",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Confectioners\u0027 Sugar",
+                                "amount":  "4 1/2 cups (500g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Unsalted Butter (softened)",
+                                "amount":  "12 tbsp (1 1/2 sticks / 170g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Milk",
+                                "amount":  "3 1/2 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Vanilla Extract",
+                                "amount":  "1 1/2 tsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Pinch of Kosher Salt",
+                                "amount":  "Pinch",
+                                "ratio":  null
+                            }
+                        ],
+        "conciseInstructions":  [
+                                    "Prep: Preheat oven to 350°F (175°C). Grease 2 sandwich cookie molds with butter and dust thoroughly with cocoa powder.",
+                                    "Melt Chocolate: Microwave chocolate and butter in heatproof bowl ~90 sec or melt over simmering water; cool slightly.",
+                                    "Dry: Whisk flour, 1/2 cup cocoa powder, baking powder, and salt.",
+                                    "Wet \u0026 Batter: Whisk sugar, eggs, and vanilla. Whisk in chocolate mixture, then stir in flour mixture just until smooth. Divide between pans.",
+                                    "Bake: Tap pans on counter to remove air bubbles. Bake ~35 min until tops are shiny and toothpick tests clean with crumbs. Cool 15 min, invert onto board.",
+                                    "Buttercream: Beat confectioners\u0027 sugar, butter, milk, vanilla, and salt on low 1 min, then medium 3 min until fluffy.",
+                                    "Assemble: Turn 1 cake printed-side down, spread buttercream evenly, top with second cake printed-side up."
+                                ],
+        "notes":  "Can also be filled with 2 1/2 cups vanilla or mint chocolate chip ice cream and frozen for an ice cream cake sandwich.",
+        "sourceUrl":  null
+    },
+    {
+        "id":  "torta-de-santiago",
+        "title":  "Torta de Santiago (Galician Almond Cake)",
+        "category":  "Baking \u0026 Doughs",
+        "status":  "tried",
+        "rating":  "family-favorite",
+        "yield":  "10–12 servings (11-inch cake)",
+        "prepTime":  "20m",
+        "cookTime":  "40m",
+        "temp":  "170°C (340°F) / Fan 150°C",
+        "tags":  [
+                     "Gluten-Free",
+                     "Spanish Classic",
+                     "Almond Flour",
+                     "Dairy-Free"
+                 ],
+        "macros":  null,
+        "ingredients":  [
+                            {
+                                "item":  "Ground Almonds / Almond Flour",
+                                "amount":  "260g",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Unrefined Golden Caster Sugar (divided: 180g + 75g)",
+                                "amount":  "255g",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Orange (finely grated zest only)",
+                                "amount":  "1 orange",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Lemon (finely grated zest only)",
+                                "amount":  "1 lemon",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Eggs (separated)",
+                                "amount":  "6 large free-range",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Almond Extract",
+                                "amount":  "1/2 tsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Ground Cinnamon",
+                                "amount":  "1/2 tsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Powdered / Icing Sugar (for Cross stencil dusting)",
+                                "amount":  "2 tbsp",
+                                "ratio":  null
+                            }
+                        ],
+        "conciseInstructions":  [
+                                    "Prep: Preheat oven to 170°C (340°F). Grease an 11-inch (28cm) springform pan and line base with parchment.",
+                                    "Egg Yolks: Cream 180g sugar, orange zest, lemon zest, and 6 egg yolks together until pale, thick, and fluffy.",
+                                    "Almond Mix: Stir ground almonds, almond extract, and cinnamon into yolk mixture.",
+                                    "Egg Whites: In separate clean bowl, whip egg whites with remaining 75g sugar until stiff peaks form.",
+                                    "Fold: Fold egg whites into thick almond batter in 3 additions (beating first quarter to lighten, then gently folding remainder).",
+                                    "Bake: Transfer to pan, bake 40 min until golden and set. Cool 10 min in tin, transfer to wire rack.",
+                                    "Finish: Place Cross of St. James stencil on top and dust heavily with powdered sugar; remove stencil."
+                                ],
+        "notes":  "A completely flourless and butterless Spanish heritage cake celebrated along the Camino de Santiago.",
+        "sourceUrl":  null
+    },
+    {
+        "id":  "letter-cookie-cake",
+        "title":  "Letter / Number Sablé Cookie Cake (Tarta Tendencia)",
+        "category":  "Baking \u0026 Doughs",
+        "status":  "want-to-try",
+        "rating":  "unrated",
+        "yield":  "1 large monogram / number cake (2 layers)",
+        "prepTime":  "35m (+ 30m chill)",
+        "cookTime":  "10m",
+        "temp":  "330°F (165°C)",
+        "tags":  [
+                     "Baking",
+                     "Cakes",
+                     "Sablé",
+                     "Celebration Cake"
+                 ],
+        "macros":  null,
+        "ingredients":  [
+                            {
+                                "item":  "--- ALMOND SABLÉ DOUGH ---",
+                                "amount":  "",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "All-Purpose Flour",
+                                "amount":  "300g (2.5 cups minus 1 tbsp)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Ground Almonds",
+                                "amount":  "75g (5/8 cup)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Powdered Sugar",
+                                "amount":  "75g (2/3 cup)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Cold Unsalted Butter (diced)",
+                                "amount":  "200g (7 oz)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Salt",
+                                "amount":  "1 pinch",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Egg",
+                                "amount":  "1 large",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Vanilla Extract",
+                                "amount":  "1/2 tsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "--- MASCARPONE PIPING CREAM ---",
+                                "amount":  "",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Mascarpone Cheese (cold)",
+                                "amount":  "400g (7.9 oz)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Powdered Sugar",
+                                "amount":  "150g (1 1/3 cups)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Vanilla Extract",
+                                "amount":  "1 tsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Heavy Whipping Cream (cold)",
+                                "amount":  "400 ml (1 2/3 cups)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "--- GARNISH ---",
+                                "amount":  "",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Fresh Berries, French Macarons \u0026 Edible Flowers",
+                                "amount":  "Assorted",
+                                "ratio":  null
+                            }
+                        ],
+        "conciseInstructions":  [
+                                    "Make Crumbs: In food processor, pulse flour, ground almonds, powdered sugar, cold diced butter, and salt until fine sandy crumbs form.",
+                                    "Form Dough: Whisk egg and vanilla; add to processor and pulse until dough clumps together. Wrap in plastic wrap.",
+                                    "Roll \u0026 Chill: Roll dough between two parchment sheets to ~2mm thickness. Refrigerate rolled sheet 30 min.",
+                                    "Cut \u0026 Bake: Use printed number or letter stencils to cut 2 matching shapes. Bake at 330°F (165°C) for 10 min until edges are golden. Cool completely.",
+                                    "Frosting: Whisk mascarpone and powdered sugar smooth. Add vanilla and cold heavy cream; whip on high to stiff piping peaks. Transfer to piping bag with round tip.",
+                                    "Assemble: Pipe cream dollops over bottom cookie shape. Gently place second cookie shape on top, pipe dollops across top surface.",
+                                    "Decorate: Adorn top with fresh berries, macarons, chocolate shavings, and edible flowers. Refrigerate 2 hours to soften cookie slightly before serving."
+                                ],
+        "notes":  "Refrigerating the assembled cake for a couple hours allows the crisp sablé cookie to absorb just enough moisture to slice cleanly.",
+        "sourceUrl":  null
+    },
+    {
+        "id":  "mollys-jam-cake",
+        "title":  "Molly\u0027s Jam Cake \u0026 Vanilla Buttercream",
+        "category":  "Baking \u0026 Doughs",
+        "status":  "tried",
+        "rating":  "family-favorite",
+        "yield":  "8-inch or 9-inch cake (8–10 servings)",
+        "prepTime":  "20m",
+        "cookTime":  "30m",
+        "temp":  "350°F (175°C) Convection",
+        "tags":  [
+                     "Baking",
+                     "Cakes",
+                     "Jam Cake",
+                     "Botanical"
+                 ],
+        "macros":  null,
+        "ingredients":  [
+                            {
+                                "item":  "--- CAKE ---",
+                                "amount":  "",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "All-Purpose Flour (T45/T55)",
+                                "amount":  "160g (1 cup + 2 tbsp)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Granulated Sugar",
+                                "amount":  "170g (3/4 cup)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Baking Powder",
+                                "amount":  "1 3/4 tsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Pinch of Salt",
+                                "amount":  "1 pinch",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Whole Milk",
+                                "amount":  "170 ml (3/4 cup)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Unsalted Butter (room temperature)",
+                                "amount":  "60g (4.2 tbsp)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Egg",
+                                "amount":  "1 large",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Fruit Jam (firm, not runny)",
+                                "amount":  "2 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "--- BUTTERCREAM ICING ---",
+                                "amount":  "",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Unsalted Butter (room temperature)",
+                                "amount":  "170g (10 tbsp)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Powdered Sugar",
+                                "amount":  "300g (2 cups)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Whole Milk",
+                                "amount":  "2 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Vanilla (paste or extract)",
+                                "amount":  "1/2 tsp extract or 1/4 tsp paste",
+                                "ratio":  null
+                            }
+                        ],
+        "conciseInstructions":  [
+                                    "Prep: Preheat oven to 350°F (175°C) convection. Grease and flour 8\" or 9\" tin, lining base with parchment.",
+                                    "Butter: In mixer, beat 60g butter until soft and mayonnaise-like texture.",
+                                    "Dry \u0026 Wet: Whisk flour, sugar, baking powder, and salt. Alternately add dry ingredients and milk to butter on low speed; turn to medium-high and beat smooth.",
+                                    "Fold: Add egg and 2 tbsp jam; mix to combine. Pour into prepared pan.",
+                                    "Bake: Bake 30 min until golden brown, pulling away from edges, and springy when touched. Cool completely.",
+                                    "Buttercream: Whip 170g butter with whisk attachment. Gradually add powdered sugar, whipping until pale and thick. Add 1-2 tbsp milk and vanilla to spreadable consistency.",
+                                    "Decorate: Frost cooled cake. Decorate with fresh edible flowers and fresh culinary herbs (rosemary, thyme, mint)."
+                                ],
+        "notes":  "Best served within hours of decorating so fresh garden herbs and edible flowers look crisp and vibrant.",
+        "sourceUrl":  null
+    },
+    {
+        "id":  "white-cake-blueberry-icing",
+        "title":  "White Velvet Cake with Blueberry Icing \u0026 White Chocolate Drip",
+        "category":  "Baking \u0026 Doughs",
+        "status":  "want-to-try",
+        "rating":  "unrated",
+        "yield":  "3-layer 8-inch cake (14–16 servings)",
+        "prepTime":  "40m",
+        "cookTime":  "18–22m",
+        "temp":  "350°F (175°C)",
+        "tags":  [
+                     "Baking",
+                     "Cakes",
+                     "Blueberry",
+                     "Layer Cake"
+                 ],
+        "macros":  null,
+        "ingredients":  [
+                            {
+                                "item":  "--- BLUEBERRY REDUCTION ---",
+                                "amount":  "",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Blueberries (fresh or frozen)",
+                                "amount":  "12 oz (340g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Granulated Sugar",
+                                "amount":  "1 cup",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Water",
+                                "amount":  "1 cup",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "--- WHITE CAKE LAYERS ---",
+                                "amount":  "",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Egg Whites (large)",
+                                "amount":  "6 egg whites",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Unsalted Butter (softened)",
+                                "amount":  "1 cup (2 sticks / 226g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Granulated Sugar",
+                                "amount":  "2 1/4 cups (424g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Vanilla Extract",
+                                "amount":  "2 tsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Light Sour Cream",
+                                "amount":  "1 cup",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Whole Milk",
+                                "amount":  "1/2 cup",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "All-Purpose Flour",
+                                "amount":  "2 3/4 cups (340g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Sea Salt",
+                                "amount":  "1 tsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Baking Soda",
+                                "amount":  "1 tsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "--- BLUEBERRY FROSTING ---",
+                                "amount":  "",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Unsalted Butter (softened)",
+                                "amount":  "2 cups (4 sticks / 452g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Powdered Sugar",
+                                "amount":  "8 cups",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Heavy Whipping Cream",
+                                "amount":  "2 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Chilled Blueberry Sauce",
+                                "amount":  "All strained reduction",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "--- GANACHE DRIP \u0026 TOPPING ---",
+                                "amount":  "",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "White Chocolate Chips",
+                                "amount":  "1 cup",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Heavy Whipping Cream",
+                                "amount":  "3/4 to 1 cup",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Crushed Pistachios (for garnish)",
+                                "amount":  "1/4 cup",
+                                "ratio":  null
+                            }
+                        ],
+        "conciseInstructions":  [
+                                    "Blueberry Syrup: Simmer blueberries, sugar, and water in saucepan over medium ~20 min until reduced by half. Strain through fine sieve, pushing pulp through. Chill juice completely.",
+                                    "Cake Prep: Preheat oven to 350°F (175°C). Grease three 8\" pans and line with parchment.",
+                                    "Egg Whites: Whisk 6 egg whites at medium-high to stiff peaks; transfer to bowl and set aside.",
+                                    "Batter: Cream butter, sugar, and vanilla 3 min. Beat in sour cream and milk on low. Whisk flour, salt, and baking soda; slowly add to mixer on low.",
+                                    "Fold: Gently fold whipped egg whites into batter in batches with spatula until just combined.",
+                                    "Bake: Divide evenly across 3 pans. Bake at 350°F for 18–22 min until toothpick comes out clean. Cool completely.",
+                                    "Frosting: Whip butter 4 min until light. Alternate 8 cups powdered sugar, blueberry sauce, and cream. Whip on high 1 min.",
+                                    "Assemble: Level cake tops. Pipe blueberry frosting between layers and smooth exterior.",
+                                    "Ganache \u0026 Finish: Microwave white chocolate and cream in 30s bursts at 50% power; drizzle drip down sides and top with crushed pistachios."
+                                ],
+        "notes":  "Straining the reduced blueberries produces an all-natural vibrant lavender-purple buttercream with concentrated berry flavor.",
+        "sourceUrl":  null
+    },
+    {
+        "id":  "moroccan-orange-cake",
+        "title":  "Moroccan Orange Cake (Meskouta)",
+        "category":  "Baking \u0026 Doughs",
+        "status":  "tried",
+        "rating":  "family-favorite",
+        "yield":  "1 tube / bundt cake (10–12 servings)",
+        "prepTime":  "15m",
+        "cookTime":  "40m",
+        "temp":  "350°F (180°C)",
+        "tags":  [
+                     "Dairy-Free",
+                     "Citrus",
+                     "Tube Cake",
+                     "Moroccan Classic"
+                 ],
+        "macros":  null,
+        "ingredients":  [
+                            {
+                                "item":  "Eggs",
+                                "amount":  "4 large",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Granulated Sugar",
+                                "amount":  "1 1/2 cups (300g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Vegetable Oil",
+                                "amount":  "1/2 cup (120 ml)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "All-Purpose Flour",
+                                "amount":  "2 cups (240g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Baking Powder",
+                                "amount":  "4 tsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Salt",
+                                "amount":  "1/2 tsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Fresh Orange Juice",
+                                "amount":  "1/2 cup (120 ml)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Fresh Orange Zest (from 1–2 oranges)",
+                                "amount":  "2 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Vanilla Extract",
+                                "amount":  "1 tsp",
+                                "ratio":  null
+                            }
+                        ],
+        "conciseInstructions":  [
+                                    "Prep: Preheat oven to 350°F (180°C). Grease and flour a tube or bundt pan thoroughly.",
+                                    "Zest \u0026 Juice: Zest oranges to get 2 tbsp, then juice for 1/2 cup.",
+                                    "Beat Eggs \u0026 Sugar: In stand mixer, beat eggs and sugar together on high 3–4 min until pale, thick, and ribbon-like.",
+                                    "Stream Oil: Gradually stream in vegetable oil while mixer runs on low.",
+                                    "Flour \u0026 Juice: Whisk flour, baking powder, and salt. Alternately stir flour mixture and orange juice into batter on low.",
+                                    "Finish: Mix in orange zest and vanilla just until smooth.",
+                                    "Bake: Pour into prepared tube pan. Bake at 350°F for ~40 min until skewer comes out clean.",
+                                    "Unmold: Cool 10 min in pan, then invert onto rack to cool completely."
+                                ],
+        "notes":  "Dairy-free classic made with neutral oil and freshly squeezed orange juice for an airy, aromatic morning sponge.",
+        "sourceUrl":  null
+    },
+    {
+        "id":  "lemon-pound-cake-ina",
+        "title":  "Ina Garten\u0027s Lemon Pound Cake with Lemon Glaze",
+        "category":  "Baking \u0026 Doughs",
+        "status":  "tried",
+        "rating":  "family-favorite",
+        "yield":  "2 loaf cakes (16 servings)",
+        "prepTime":  "25m",
+        "cookTime":  "45–60m",
+        "temp":  "350°F (175°C)",
+        "tags":  [
+                     "Baking",
+                     "Cakes",
+                     "Citrus",
+                     "Ina Garten",
+                     "Loaf Cake"
+                 ],
+        "macros":  null,
+        "ingredients":  [
+                            {
+                                "item":  "--- CAKE BATTER ---",
+                                "amount":  "",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Unsalted Butter (room temperature)",
+                                "amount":  "1/2 lb (2 sticks / 226g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Granulated Sugar (for batter)",
+                                "amount":  "2 cups (400g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Extra-Large Eggs (room temperature)",
+                                "amount":  "4 eggs",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Grated Lemon Zest (6 to 8 lemons)",
+                                "amount":  "1/3 cup",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "All-Purpose Flour",
+                                "amount":  "3 cups (360g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Baking Powder",
+                                "amount":  "1/2 tsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Baking Soda",
+                                "amount":  "1/2 tsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Kosher Salt",
+                                "amount":  "1 tsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Fresh Lemon Juice (for batter)",
+                                "amount":  "1/4 cup",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Buttermilk (room temperature)",
+                                "amount":  "3/4 cup",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Pure Vanilla Extract",
+                                "amount":  "1 tsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "--- LEMON SOAKING SYRUP ---",
+                                "amount":  "",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Granulated Sugar",
+                                "amount":  "1/2 cup",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Fresh Lemon Juice",
+                                "amount":  "1/2 cup",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "--- LEMON GLAZE ---",
+                                "amount":  "",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Confectioners\u0027 Sugar (sifted)",
+                                "amount":  "2 cups",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Fresh Lemon Juice",
+                                "amount":  "3 1/2 tbsp",
+                                "ratio":  null
+                            }
+                        ],
+        "conciseInstructions":  [
+                                    "Prep: Preheat oven to 350°F (175°C). Grease and flour two 8.5 x 4.25-inch loaf pans, line bottoms with parchment.",
+                                    "Cream: Beat butter and 2 cups granulated sugar with paddle attachment 5 min until light and fluffy. Add eggs 1 at a time, then lemon zest.",
+                                    "Dry \u0026 Wet: Sift flour, baking powder, baking soda, and salt. Combine 1/4 cup lemon juice, buttermilk, and vanilla.",
+                                    "Alternating Mix: Alternately add flour and buttermilk mixtures to batter in 3 additions, beginning and ending with flour.",
+                                    "Bake: Divide batter between loaf pans, smooth tops. Bake at 350°F for 45–60 min until tester comes out clean.",
+                                    "Lemon Syrup: Dissolve 1/2 cup sugar in 1/2 cup lemon juice in small saucepan over low heat. Cool baked loaves 10 min, invert onto rack over baking sheet, spoon warm syrup over cakes.",
+                                    "Glaze: Whisk confectioners\u0027 sugar and 3 1/2 tbsp lemon juice until smooth. Drizzle over completely cooled cakes."
+                                ],
+        "notes":  "Soaking the warm cakes with hot lemon syrup infuses intense lemon moisture all the way through the crumb.",
+        "sourceUrl":  null
+    },
+    {
+        "id":  "molly-giant-macaron-cake",
+        "title":  "Molly\u0027s Giant Berry Macaron Cake \u0026 French Macarons",
+        "category":  "Baking \u0026 Doughs",
+        "status":  "tried",
+        "rating":  "family-favorite",
+        "yield":  "1 nine-inch macaron cake + 8 mini macarons",
+        "prepTime":  "30m (+ 20m rest)",
+        "cookTime":  "20–25m",
+        "temp":  "325°F (160°C)",
+        "tags":  [
+                     "Gluten-Free",
+                     "French Classic",
+                     "Almond Flour",
+                     "Macarons"
+                 ],
+        "macros":  null,
+        "ingredients":  [
+                            {
+                                "item":  "--- MACARON SHELLS ---",
+                                "amount":  "",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Egg Whites (from 3 large eggs)",
+                                "amount":  "100g",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Granulated Sugar",
+                                "amount":  "100g (1/2 cup)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Almond Flour (finely sifted)",
+                                "amount":  "135g (1 1/3 cups)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Powdered Sugar (finely sifted)",
+                                "amount":  "120g (1 cup)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Gel Food Coloring (optional)",
+                                "amount":  "1 drop",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "--- MASCARPONE WHIPPED CREAM ---",
+                                "amount":  "",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Mascarpone (cold full fat)",
+                                "amount":  "8 oz (250g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Heavy Whipping Cream (cold)",
+                                "amount":  "1 1/2 cups (360 ml)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Powdered Sugar",
+                                "amount":  "1/2 cup (60g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Fresh Lemon Juice (or 1 tbsp vanilla)",
+                                "amount":  "2 tbsp (30 ml)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "--- GARNISH ---",
+                                "amount":  "",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Fresh Strawberries, Blueberries \u0026 Raspberries",
+                                "amount":  "Assorted fresh",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Fruit Jam (for filling mini macarons)",
+                                "amount":  "3 tbsp",
+                                "ratio":  null
+                            }
+                        ],
+        "conciseInstructions":  [
+                                    "Sieve: Sieve almond flour and powdered sugar together twice. Set aside.",
+                                    "Meringue: Whip egg whites on medium until foaming. Gradually add granulated sugar over 2 min, whip ~8 min until stiff, glossy peaks form. Add gel food color.",
+                                    "Macaronage: Fold in almond flour/sugar in thirds with spatula until batter flows like thick lava and ribbons smoothly from spatula.",
+                                    "Pipe \u0026 Tap: Trace 9-inch circle on parchment. Pipe circle from inside out, pipe extra mini macarons with remaining batter. Tap tray firmly to release bubbles. Rest 20 min until dry skin forms.",
+                                    "Bake: Bake large circle at 325°F (160°C) for 20–25 min until firm. Bake small macarons 13–14 min. Cool completely.",
+                                    "Mascarpone Cream: Whip cold mascarpone and cream to soft peaks. Slowly beat in powdered sugar and lemon juice. Transfer to piping bag with star tip.",
+                                    "Assemble: Peel 9\" macaron shell, pipe cream across top, arrange fresh berries, and top with jam-filled mini macarons."
+                                ],
+        "notes":  "A showstopping centerpiece macaron cake. Best eaten the day it is made at room temperature.",
+        "sourceUrl":  null
+    },
+    {
+        "id":  "financiers-and-tigres",
+        "title":  "French Brown Butter Financiers \u0026 Tigrés",
+        "category":  "Baking \u0026 Doughs",
+        "status":  "tried",
+        "rating":  "family-favorite",
+        "yield":  "12–16 small financiers",
+        "prepTime":  "15m",
+        "cookTime":  "12–15m",
+        "temp":  "425°F (220°C) down to 350°F (170°C)",
+        "tags":  [
+                     "French Classic",
+                     "Brown Butter",
+                     "Almond Flour",
+                     "Small Cakes"
+                 ],
+        "macros":  null,
+        "ingredients":  [
+                            {
+                                "item":  "Caster / Granulated Sugar",
+                                "amount":  "120g (2/3 cup)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "All-Purpose Flour",
+                                "amount":  "40g (1/3 cup)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Almond Flour or Meal",
+                                "amount":  "60g (1/2 cup)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Egg Whites",
+                                "amount":  "3 large",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Unsalted Butter (browned)",
+                                "amount":  "100g (7 tbsp)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Vanilla Extract",
+                                "amount":  "1/2 tsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Cardamom or Cinnamon (optional)",
+                                "amount":  "1/4 tsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Fresh Raspberries or Shaved Chocolate",
+                                "amount":  "For topping",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "--- TIGRÉ GANACHE (OPTIONAL) ---",
+                                "amount":  "",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Bittersweet Chocolate",
+                                "amount":  "50g (1/4 cup)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Heavy Cream",
+                                "amount":  "50g (1/4 cup)",
+                                "ratio":  null
+                            }
+                        ],
+        "conciseInstructions":  [
+                                    "Brown Butter: Melt butter in saucepan over medium heat until foam subsides, nutty aroma develops, and milk solids turn golden brown. Remove from heat.",
+                                    "Batter: In bowl, whisk together sugar, flour, almond flour, egg whites, and vanilla.",
+                                    "Slow Emulsion: Slowly stream in warm browned butter while whisking until smooth glossy batter forms.",
+                                    "Molds: Pipe or spoon batter into greased financier or donut-shaped molds. Press a fresh raspberry or shaved chocolate on each.",
+                                    "Bake: Preheat oven to 425°F (220°C). Place tray in oven and immediately reduce heat to 350°F (170°C). Bake 12–15 min until golden brown and springy.",
+                                    "Tigré Ganache: If using indented molds, heat cream and chocolate, whisk smooth, and fill cooled financier centers."
+                                ],
+        "notes":  "Beurre noisette (brown butter) combined with almond flour gives financiers their classic Parisian bakery aroma.",
+        "sourceUrl":  null
+    },
+    {
+        "id":  "gluten-free-chocolate-torte",
+        "title":  "Flourless Chocolate Torte with Raspberry Caramel (Molly)",
+        "category":  "Baking \u0026 Doughs",
+        "status":  "tried",
+        "rating":  "family-favorite",
+        "yield":  "8-inch cake (10–12 servings)",
+        "prepTime":  "25m",
+        "cookTime":  "30–40m",
+        "temp":  "325°F (165°C)",
+        "tags":  [
+                     "Gluten-Free",
+                     "Flourless",
+                     "Chocolate",
+                     "Caramel"
+                 ],
+        "macros":  null,
+        "ingredients":  [
+                            {
+                                "item":  "--- TORTE ---",
+                                "amount":  "",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Almond or Hazelnut Flour",
+                                "amount":  "100g (3/4 cup)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Bittersweet Chocolate (melted)",
+                                "amount":  "100g (2/3 cup)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Granulated Sugar",
+                                "amount":  "50g (1/4 cup)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Dark Brown Sugar",
+                                "amount":  "2.5 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Eggs",
+                                "amount":  "4 large",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Unsalted Butter (room temperature, cubed)",
+                                "amount":  "6 tbsp (85g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Vanilla Extract",
+                                "amount":  "1 tsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Pinch of Salt",
+                                "amount":  "1 pinch",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "--- RASPBERRY CARAMEL SAUCE ---",
+                                "amount":  "",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Granulated Sugar",
+                                "amount":  "65g (1/3 cup)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Water",
+                                "amount":  "2 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Heavy Whipping Cream",
+                                "amount":  "1/4 cup",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Raspberry Puree (fresh or frozen blended)",
+                                "amount":  "1.5 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Unsalted Butter (cubed)",
+                                "amount":  "1 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "--- WHIPPED CHOCOLATE GANACHE ---",
+                                "amount":  "",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Bittersweet Chocolate (chopped)",
+                                "amount":  "100g (2/3 cup)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Heavy Whipping Cream",
+                                "amount":  "1/2 cup",
+                                "ratio":  null
+                            }
+                        ],
+        "conciseInstructions":  [
+                                    "Whip Eggs: Whip 4 eggs with mixer whisk attachment on medium 5–7 min until pale, tripled in volume, and thick.",
+                                    "Dry: Whisk almond flour, white sugar, and brown sugar; fold into whipped eggs.",
+                                    "Chocolate \u0026 Butter: Fold in melted bittersweet chocolate. Add room-temp cubed butter, vanilla, and salt. Whip on medium-high until thick ribbon falls from beater.",
+                                    "Bake: Pour into greased, parchment-lined 8\" pan. Bake at 325°F (165°C) for 30–40 min until edges and center are set. Cool completely.",
+                                    "Raspberry Caramel: Heat sugar and water in saucepan without stirring until deep amber. Remove from heat, add cream (bubbles will form), then stir in raspberry puree and butter until melted. Pour over torte.",
+                                    "Ganache: Heat 1/2 cup cream, pour over 100g chocolate, whisk and chill until firm. Whip with mixer into fluffy frosting and pipe onto cake."
+                                ],
+        "notes":  "Completely flourless torte with a rich fudge-like texture; the tart raspberry caramel cuts through the bittersweet chocolate.",
+        "sourceUrl":  null
+    },
+    {
+        "id":  "lemon-olive-oil-yogurt-cake",
+        "title":  "French Lemon Olive Oil Yogurt Cake",
+        "category":  "Baking \u0026 Doughs",
+        "status":  "tried",
+        "rating":  "family-favorite",
+        "yield":  "8-inch round or standard loaf (8–10 servings)",
+        "prepTime":  "15m",
+        "cookTime":  "35–40m",
+        "temp":  "350°F (175°C)",
+        "tags":  [
+                     "Baking",
+                     "Cakes",
+                     "Citrus",
+                     "Olive Oil",
+                     "Yogurt Cake"
+                 ],
+        "macros":  null,
+        "ingredients":  [
+                            {
+                                "item":  "All-Purpose Flour",
+                                "amount":  "1 cup (120g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Almond Flour",
+                                "amount":  "1/2 cup (50g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Baking Powder",
+                                "amount":  "2 tsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Sea Salt",
+                                "amount":  "3/4 tsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Cane Sugar",
+                                "amount":  "1/2 cup (100g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Fresh Lemon Zest",
+                                "amount":  "1 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Whole Milk Greek Yogurt",
+                                "amount":  "3/4 cup (180g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Extra-Virgin Olive Oil",
+                                "amount":  "1/2 cup (120 ml)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Eggs",
+                                "amount":  "2 large",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Vanilla Extract",
+                                "amount":  "1 tsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "--- LEMON GLAZE ---",
+                                "amount":  "",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Confectioners\u0027 Sugar",
+                                "amount":  "1 cup",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Fresh Lemon Juice",
+                                "amount":  "2–3 tbsp",
+                                "ratio":  null
+                            }
+                        ],
+        "conciseInstructions":  [
+                                    "Prep: Preheat oven to 350°F (175°C). Grease an 8-inch round or loaf pan with olive oil and line with parchment.",
+                                    "Lemon Sugar: In large bowl, rub lemon zest into cane sugar with fingertips until fragrant and yellow.",
+                                    "Dry Mix: Whisk in all-purpose flour, almond flour, baking powder, and sea salt.",
+                                    "Wet Mix: In separate bowl, whisk Greek yogurt, olive oil, eggs, and vanilla until emulsion forms.",
+                                    "Combine: Pour wet into dry; gently fold with spatula until just combined (do not overmix).",
+                                    "Bake: Pour into prepared pan. Bake at 350°F for 35–40 min until top is golden and tester comes out clean.",
+                                    "Glaze: Cool 10 min, remove from pan. Whisk powdered sugar with lemon juice and drizzle generously over warm cake."
+                                ],
+        "notes":  "Combining extra virgin olive oil with whole milk Greek yogurt yields an ultra-tender crumb that stays moist for days.",
+        "sourceUrl":  null
+    },
+    {
+        "id":  "mollys-galette-des-rois",
+        "title":  "Molly\u0027s Galette des Rois (French King\u0027s Cake)",
+        "category":  "Baking \u0026 Doughs",
+        "status":  "tried",
+        "rating":  "family-favorite",
+        "yield":  "1 nine-inch galette (8 servings)",
+        "prepTime":  "40m (+ chilling)",
+        "cookTime":  "35–45m",
+        "temp":  "400°F (200°C)",
+        "tags":  [
+                     "French Classic",
+                     "Puff Pastry",
+                     "Almond Frangipane",
+                     "Holiday"
+                 ],
+        "macros":  null,
+        "ingredients":  [
+                            {
+                                "item":  "--- ROUGH PUFF PASTRY ---",
+                                "amount":  "",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "All-Purpose Flour",
+                                "amount":  "250g",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Cold Unsalted Butter (big cubes)",
+                                "amount":  "250g (2 sticks + 2 tbsp)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Cold Water (to bind)",
+                                "amount":  "6–8 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "--- CRÈME D\u0027AMANDE (ALMOND CREAM) ---",
+                                "amount":  "",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Ground Almonds / Almond Flour",
+                                "amount":  "100g",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Confectioners\u0027 / Powdered Sugar",
+                                "amount":  "100g",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Unsalted Butter (room temperature, cubed)",
+                                "amount":  "100g",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "All-Purpose Flour",
+                                "amount":  "1 tsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Egg",
+                                "amount":  "1 large",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Dark Rum",
+                                "amount":  "1 tbsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Vanilla Extract",
+                                "amount":  "1 1/2 tsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "--- EGG WASH ---",
+                                "amount":  "",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Egg (beaten)",
+                                "amount":  "1 large",
+                                "ratio":  null
+                            }
+                        ],
+        "conciseInstructions":  [
+                                    "Puff Dough: Toss flour with cold cubed butter; smear butter pieces between fingers leaving visible large butter chunks. Add cold water 1 tbsp at a time until dough comes together. Wrap and chill 30 min.",
+                                    "Laminating: Roll into long rectangle, do 1 single letter fold. Turn 90°, roll and do 1 book fold. Chill 20 min, repeat 1 book fold. Chill 30 min (or use 2 sheets quality store-bought puff pastry).",
+                                    "Almond Cream: Cream butter and powdered sugar. Stir in ground almonds, 1 tsp flour, egg, rum, and vanilla until smooth. Transfer to piping bag.",
+                                    "Assembly: Roll puff pastry into two 9-inch circles. Brush border of bottom circle with water. Pipe concentric circles of almond cream in center leaving a 1-inch border.",
+                                    "Seal: Place second circle on top, gently press around cream to push out air, and press border to seal. Trim edge cleanly with round cutter or knife.",
+                                    "Score \u0026 Vent: Brush with egg wash. Cut small steam hole in dead center. Score spiral arcs across top with back of knife. Chill 20 min; brush with light second egg wash.",
+                                    "Bake: Bake at 400°F (200°C) for 35–45 min until deeply golden brown and puffed. Serve warm."
+                                ],
+        "notes":  "Classic Epiphany tart with shatteringly crisp laminated rough puff and a rich rum-scented almond frangipane center.",
+        "sourceUrl":  null
+    },
+    {
+        "id":  "almond-flour-chocolate-cake",
+        "title":  "Gluten-Free Almond Flour Chocolate Cake (Rich \u0026 Delish)",
+        "category":  "Baking \u0026 Doughs",
+        "status":  "tried",
+        "rating":  "family-favorite",
+        "yield":  "8-inch round cake (8–10 servings)",
+        "prepTime":  "15m",
+        "cookTime":  "30–40m",
+        "temp":  "350°F (180°C)",
+        "tags":  [
+                     "Gluten-Free",
+                     "Almond Flour",
+                     "Naturally Sweetened",
+                     "Chocolate"
+                 ],
+        "macros":  null,
+        "ingredients":  [
+                            {
+                                "item":  "Blanched Almond Flour",
+                                "amount":  "2 cups (200g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Dutch-Process Cocoa Powder",
+                                "amount":  "1/2 cup (50g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Espresso Powder",
+                                "amount":  "1 tsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Baking Soda",
+                                "amount":  "1/2 tsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Kosher Salt",
+                                "amount":  "1/2 tsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Eggs (room temperature)",
+                                "amount":  "4 large",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Vanilla Extract",
+                                "amount":  "2 tsp",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Honey or Maple Syrup",
+                                "amount":  "3/4 cup (255g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "--- CHOCOLATE GANACHE TOPPING ---",
+                                "amount":  "",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Dark Chocolate (chopped)",
+                                "amount":  "3.5 oz (100g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Heavy Cream",
+                                "amount":  "3.5 oz (100g / 1/2 cup minus 1 tbsp)",
+                                "ratio":  null
+                            }
+                        ],
+        "conciseInstructions":  [
+                                    "Prep: Preheat oven to 350°F (180°C). Grease an 8-inch round cake pan and line bottom with parchment paper.",
+                                    "Dry Mix: Whisk almond flour, Dutch cocoa powder, espresso powder, baking soda, and kosher salt in a large bowl.",
+                                    "Wet \u0026 Combine: Add room-temperature eggs, vanilla extract, and honey (or maple syrup). Whisk until completely smooth.",
+                                    "Bake: Pour into prepared pan and smooth top. Bake at 350°F for 30–40 min until wooden toothpick in center comes out clean.",
+                                    "Cool: Cool in pan for 15 min, invert onto wire rack to cool completely (at least 1 hour).",
+                                    "Ganache: Microwave chopped dark chocolate and heavy cream in 30-second bursts until mostly melted. Let sit 5 min, whisk until glossy. Pour over cake and spread with offset spatula."
+                                ],
+        "notes":  "Naturally sweetened with honey or maple syrup and 100% grain-free. Espresso powder deepens the rich cocoa profile.",
+        "sourceUrl":  "https://richanddelish.com/almond-flour-chocolate-cake/#recipe"
+    },
+    {
+        "id":  "swiss-meringue-buttercream",
+        "title":  "Silky Swiss Meringue Buttercream (SMBC Master Technique)",
+        "category":  "Baking \u0026 Doughs",
+        "status":  "tried",
+        "rating":  "family-favorite",
+        "yield":  "~5 cups frosting (covers one 8–9 inch layer cake)",
+        "prepTime":  "20m",
+        "cookTime":  "10m",
+        "temp":  "160°F (71°C) Double Boiler",
+        "tags":  [
+                     "Frosting",
+                     "Bakery Technique",
+                     "Buttercream",
+                     "Swiss Meringue"
+                 ],
+        "macros":  null,
+        "ingredients":  [
+                            {
+                                "item":  "Egg Whites (room temperature, zero yolk traces)",
+                                "amount":  "5 large egg whites (150g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Granulated White Sugar",
+                                "amount":  "1 1/2 cups (300g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Kosher Salt",
+                                "amount":  "1 pinch",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Unsalted Butter (room temperature, cut into 1-tbsp cubes)",
+                                "amount":  "2 cups (4 sticks / 452g)",
+                                "ratio":  null
+                            },
+                            {
+                                "item":  "Pure Vanilla Extract",
+                                "amount":  "1 tsp (or seeds of 1 vanilla bean)",
+                                "ratio":  null
+                            }
+                        ],
+        "conciseInstructions":  [
+                                    "Clean Equipment: Ensure stand mixer bowl and whisk are grease-free (wipe with lemon juice or vinegar if needed).",
+                                    "Double Boiler: Whisk egg whites, granulated sugar, and pinch of salt in mixer bowl. Place over pot of simmering water (water must not touch bowl bottom).",
+                                    "Heat \u0026 Dissolve: Whisk continuously over heat until candy thermometer reads 160°F (71°C) and sugar granules are completely dissolved when rubbed between fingertips (~5–7 min).",
+                                    "Whip Meringue: Move bowl to stand mixer with whisk attachment. Whip on high speed 10–12 min until stiff, glossy peaks form and the bowl feels neutral/room temperature to the touch.",
+                                    "Incorporate Butter: Switch to paddle attachment on low speed. Add room-temp butter 1 tablespoon at a time, letting each piece blend in before adding the next.",
+                                    "Emulsify \u0026 Flavor: Add vanilla extract. Whip on medium until smooth, velvety, and fluffy (if soupy, chill 15 min and re-whip; if curdled, keep whipping until emulsion breaks through)."
+                                ],
+        "notes":  "Unlike American buttercream, Swiss Meringue is not cloying, never crusts, and pipes with a mirror-smooth finish. Can be refrigerated 2 weeks or frozen 3 months.",
+        "sourceUrl":  null
     }
 ]
