@@ -41,7 +41,6 @@
   const modalCategoriesGrid = document.getElementById('modal-categories-grid');
   const btnModalResetAll = document.getElementById('btn-modal-reset-all');
   const btnModalApply = document.getElementById('btn-modal-apply');
-  const btnModalRandom = document.getElementById('btn-modal-random');
   const toastContainer = document.getElementById('toast-container');
 
   // Register PWA Service Worker
@@ -700,16 +699,6 @@
           tag: 'all'
         };
         syncModalChoices();
-      });
-    }
-
-    // Modal: Random recipe
-    if (btnModalRandom) {
-      btnModalRandom.addEventListener('click', () => {
-        closeFilterModal();
-        const pool = recipes.filter(r => r.status === 'tried' || r.status === 'staple');
-        const chosen = pool.length > 0 ? pool[Math.floor(Math.random() * pool.length)] : recipes[Math.floor(Math.random() * recipes.length)];
-        if (chosen) openRecipe(chosen.id);
       });
     }
 
