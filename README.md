@@ -12,6 +12,7 @@ A curated monorepo of completely independent, frontend-only Single-Page Applicat
 | --- | --- | --- | --- |
 | **[Green Light, Red Light](apps/green-light-red-light-game/)** | Games / Kids | Vanilla JS, CSS3, HTML5 | [`apps/green-light-red-light-game/`](apps/green-light-red-light-game/) |
 | **[Toddler Snake Timer](apps/toddler-snake-timer/)** | Timers / Kids | Tailwind CSS, Tone.js, Canvas | [`apps/toddler-snake-timer/`](apps/toddler-snake-timer/) |
+| **[Racing Rampage](apps/racing-rampage/)** | Games / Arcade Racing | Three.js (3D WebGL), Web Audio API, HTML5 | [`apps/racing-rampage/`](apps/racing-rampage/) |
 | **[React + Tailwind Template](apps/_template-react-tailwind/)** | Template / Starter | React 18, Tailwind CSS, Babel | [`apps/_template-react-tailwind/`](apps/_template-react-tailwind/) |
 
 ---

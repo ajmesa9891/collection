@@ -1,0 +1,3278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>Racing Rampage - Highway Vehicular Combat</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💥</text></svg>" />
+  <meta name="theme-color" content="#0f172a" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <style>
+    :root {
+      --accent: #f97316;
+      --accent-glow: rgba(249, 115, 22, 0.55);
+      --danger: #ef4444;
+      --fuel: #22c55e;
+      --nitro: #38bdf8;
+      --cash: #facc15;
+      --bg-dark: #090d16;
+      --panel-bg: rgba(15, 23, 42, 0.88);
+      --panel-border: rgba(255, 255, 255, 0.14);
+    }
+
+    * {
+      box-sizing: border-box;
+      user-select: none;
+      -webkit-user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      height: 100dvh;
+      overflow: hidden;
+      background: #090d16;
+      font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+      color: #f8fafc;
+      touch-action: none;
+    }
+
+    #gameCanvasContainer {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Screen Overlays & Vignettes */
+    #fxOverlay {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 2;
+      transition: box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    #fxOverlay.low-fuel {
+      box-shadow: inset 0 0 90px rgba(239, 68, 68, 0.65);
+      animation: pulseDanger 0.75s infinite alternate;
+    }
+
+    #fxOverlay.nitro-active {
+      box-shadow: inset 0 0 110px rgba(56, 189, 248, 0.6);
+    }
+
+    #fxOverlay.rampage-active {
+      box-shadow: inset 0 0 120px rgba(249, 115, 22, 0.65);
+    }
+
+    @keyframes pulseDanger {
+      from { opacity: 0.45; }
+      to { opacity: 1; }
+    }
+
+    /* HUD Layout */
+    #hud {
+      position: fixed;
+      inset: 0;
+      z-index: 5;
+      pointer-events: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: max(12px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right)) max(16px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    .hud-top {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 12px;
+      align-items: start;
+    }
+
+    .hud-card {
+      background: rgba(15, 23, 42, 0.78);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 14px;
+      padding: 10px 14px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Left Bars: Armor & Fuel */
+    .vitals-box {
+      max-width: 280px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .vital-row {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .vital-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .bar-track {
+      width: 100%;
+      height: 12px;
+      background: rgba(15, 23, 42, 0.95);
+      border-radius: 999px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      position: relative;
+    }
+
+    .bar-fill {
+      height: 100%;
+      width: 100%;
+      border-radius: 999px;
+      transition: width 0.12s linear, background-color 0.2s ease;
+    }
+
+    .bar-armor {
+      background: linear-gradient(90deg, #ef4444, #f97316, #38bdf8);
+    }
+
+    .bar-fuel {
+      background: linear-gradient(90deg, #16a34a, #4ade80);
+    }
+
+    .bar-fuel.critical {
+      background: linear-gradient(90deg, #dc2626, #f87171);
+      animation: blinkBar 0.35s infinite alternate;
+    }
+
+    @keyframes blinkBar {
+      from { filter: brightness(0.8); }
+      to { filter: brightness(1.5); }
+    }
+
+    /* Center Telemetry */
+    .telemetry-box {
+      text-align: center;
+      min-width: 190px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .biome-pill {
+      font-size: 10px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 2px 10px;
+      border-radius: 999px;
+      background: rgba(249, 115, 22, 0.22);
+      border: 1px solid rgba(249, 115, 22, 0.5);
+      color: #fdba74;
+    }
+
+    .distance-readout {
+      font-size: clamp(20px, 3.5vw, 30px);
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+      text-shadow: 0 2px 10px rgba(249, 115, 22, 0.5);
+    }
+
+    .speed-readout {
+      font-size: 12px;
+      font-weight: 700;
+      color: #94a3b8;
+    }
+
+    .checkpoint-track {
+      width: 100%;
+      height: 5px;
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 99px;
+      overflow: hidden;
+      margin-top: 2px;
+    }
+
+    .checkpoint-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #f97316, #facc15);
+      width: 0%;
+    }
+
+    /* Right Score & Utility */
+    .hud-right-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 8px;
+    }
+
+    .score-stats {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    .stat-label {
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: #94a3b8;
+      letter-spacing: 0.06em;
+    }
+
+    .stat-value {
+      font-size: 18px;
+      font-weight: 900;
+    }
+
+    .stat-cash { color: var(--cash); }
+    .stat-kills { color: #fb923c; }
+
+    .utility-btns {
+      display: flex;
+      gap: 8px;
+      pointer-events: auto;
+    }
+
+    .icon-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(15, 23, 42, 0.82);
+      color: #f8fafc;
+      font-size: 17px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: transform 0.12s ease, background 0.15s ease;
+    }
+
+    .icon-btn:hover {
+      background: rgba(30, 41, 59, 0.95);
+      transform: translateY(-1px);
+    }
+
+    .icon-btn:active {
+      transform: scale(0.93);
+    }
+
+    /* Combo & Center Callouts */
+    #comboBadge {
+      align-self: flex-end;
+      background: linear-gradient(135deg, #ea580c, #dc2626);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-weight: 900;
+      font-size: 15px;
+      letter-spacing: 0.05em;
+      box-shadow: 0 6px 20px rgba(234, 88, 12, 0.55);
+      border: 2px solid #fde047;
+      transform: scale(1);
+      transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    #calloutContainer {
+      position: fixed;
+      top: 24%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 6;
+      pointer-events: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      text-align: center;
+    }
+
+    .callout-msg {
+      font-size: clamp(20px, 4vw, 34px);
+      font-weight: 900;
+      font-style: italic;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      text-shadow: 0 4px 16px rgba(0, 0, 0, 0.85);
+      animation: popCallout 1.15s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes popCallout {
+      0% { opacity: 0; transform: scale(0.5) translateY(20px); }
+      20% { opacity: 1; transform: scale(1.12) translateY(0); }
+      35% { transform: scale(1) translateY(0); }
+      80% { opacity: 1; transform: translateY(-10px); }
+      100% { opacity: 0; transform: translateY(-28px) scale(0.9); }
+    }
+
+    /* Bottom Action Controls */
+    .hud-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 16px;
+      width: 100%;
+    }
+
+    /* Steering Controls (Left) */
+    .steer-cluster {
+      display: flex;
+      gap: 10px;
+      pointer-events: auto;
+      align-items: center;
+    }
+
+    .steer-btn {
+      width: clamp(64px, 14vw, 82px);
+      height: clamp(64px, 14vw, 82px);
+      border-radius: 20px;
+      background: rgba(15, 23, 42, 0.78);
+      border: 2px solid rgba(255, 255, 255, 0.22);
+      color: #ffffff;
+      font-size: 28px;
+      font-weight: 900;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+      transition: transform 0.08s ease, background 0.12s ease, border-color 0.12s ease;
+    }
+
+    .steer-btn span.key-hint {
+      font-size: 10px;
+      font-weight: 800;
+      color: #94a3b8;
+      margin-top: 2px;
+    }
+
+    .steer-btn.active, .steer-btn:active {
+      background: rgba(249, 115, 22, 0.35);
+      border-color: #f97316;
+      transform: scale(0.93);
+    }
+
+    /* Weapons & Nitro Cluster (Right) */
+    .combat-cluster {
+      display: flex;
+      gap: 10px;
+      align-items: flex-end;
+      pointer-events: auto;
+    }
+
+    .action-btn {
+      position: relative;
+      width: clamp(62px, 13.5vw, 78px);
+      height: clamp(62px, 13.5vw, 78px);
+      border-radius: 20px;
+      border: 2px solid rgba(255, 255, 255, 0.24);
+      background: rgba(15, 23, 42, 0.85);
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+      transition: transform 0.08s ease, filter 0.15s ease;
+    }
+
+    .action-btn:active {
+      transform: scale(0.92);
+    }
+
+    .action-btn.rocket-btn {
+      border-color: rgba(249, 115, 22, 0.7);
+      background: radial-gradient(circle at 50% 30%, rgba(234, 88, 12, 0.45), rgba(15, 23, 42, 0.9));
+    }
+
+    .action-btn.bomb-btn {
+      border-color: rgba(239, 68, 68, 0.7);
+      background: radial-gradient(circle at 50% 30%, rgba(220, 38, 38, 0.45), rgba(15, 23, 42, 0.9));
+    }
+
+    .action-btn.nitro-btn {
+      width: clamp(70px, 15vw, 88px);
+      height: clamp(70px, 15vw, 88px);
+      border-color: rgba(56, 189, 248, 0.8);
+      background: radial-gradient(circle at 50% 30%, rgba(14, 165, 233, 0.5), rgba(15, 23, 42, 0.9));
+    }
+
+    .action-btn.gun-btn {
+      width: 54px;
+      height: 54px;
+      border-radius: 15px;
+      border-color: rgba(250, 204, 21, 0.65);
+    }
+
+    .action-btn.gun-btn.autofire-on {
+      background: radial-gradient(circle at 50% 30%, rgba(234, 179, 8, 0.42), rgba(15, 23, 42, 0.9));
+      box-shadow: 0 0 15px rgba(250, 204, 21, 0.35);
+    }
+
+    .action-btn .emoji {
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    .action-btn .btn-label {
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 0.05em;
+      margin-top: 3px;
+      text-transform: uppercase;
+    }
+
+    .action-btn .key-pill {
+      font-size: 9px;
+      color: #cbd5e1;
+      opacity: 0.8;
+    }
+
+    .ammo-badge {
+      position: absolute;
+      top: -6px;
+      right: -6px;
+      min-width: 24px;
+      height: 24px;
+      padding: 0 6px;
+      border-radius: 999px;
+      background: #f97316;
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid #0f172a;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+    }
+
+    /* Fullscreen Modal Screens (Menu, Garage, Game Over, Pause) */
+    .modal-screen {
+      position: fixed;
+      inset: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      background: radial-gradient(circle at 50% 30%, rgba(15, 23, 42, 0.55) 0%, rgba(9, 13, 22, 0.88) 100%);
+      backdrop-filter: blur(6px);
+      overflow-y: auto;
+    }
+
+    .modal-card {
+      width: 100%;
+      max-width: 680px;
+      background: rgba(15, 23, 42, 0.92);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 24px;
+      padding: clamp(16px, 3vw, 24px);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.75), 0 0 40px rgba(249, 115, 22, 0.15);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      max-height: 94dvh;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(255, 255, 255, 0.22) transparent;
+    }
+
+    .modal-card::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .modal-card::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .modal-card::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.22);
+      border-radius: 99px;
+    }
+
+    .game-logo-wrap {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .logo-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: rgba(249, 115, 22, 0.2);
+      border: 1px solid rgba(249, 115, 22, 0.5);
+      color: #fdba74;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .game-title {
+      margin: 0;
+      font-size: clamp(32px, 7vw, 56px);
+      font-weight: 900;
+      font-style: italic;
+      letter-spacing: -0.02em;
+      line-height: 0.95;
+      text-transform: uppercase;
+      background: linear-gradient(180deg, #ffffff 0%, #fde047 45%, #f97316 85%, #dc2626 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 6px 18px rgba(234, 88, 12, 0.45));
+    }
+
+    .game-subtitle {
+      margin: 0;
+      color: #cbd5e1;
+      font-size: clamp(13px, 2.2vw, 15px);
+      max-width: 480px;
+    }
+
+    /* Profile Summary Strip */
+    .profile-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      background: rgba(9, 13, 22, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 12px;
+      text-align: center;
+    }
+
+    .profile-stat-val {
+      font-size: clamp(18px, 3vw, 24px);
+      font-weight: 900;
+    }
+
+    .profile-stat-lbl {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #94a3b8;
+      letter-spacing: 0.05em;
+    }
+
+    /* Primary & Secondary CTA Buttons */
+    .btn-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .cta-btn {
+      flex: 1;
+      min-width: 170px;
+      padding: 15px 22px;
+      border-radius: 16px;
+      border: none;
+      font-size: 17px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: transform 0.12s ease, box-shadow 0.15s ease, filter 0.15s ease;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.08);
+    }
+
+    .cta-btn:active {
+      transform: scale(0.97);
+    }
+
+    .cta-primary {
+      background: linear-gradient(135deg, #f97316 0%, #dc2626 100%);
+      color: #ffffff;
+      box-shadow: 0 10px 28px rgba(234, 88, 12, 0.5);
+      border: 1px solid rgba(253, 224, 71, 0.45);
+    }
+
+    .cta-secondary {
+      background: rgba(30, 41, 59, 0.9);
+      color: #f8fafc;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .badge-notify {
+      background: #22c55e;
+      color: #052e16;
+      font-size: 11px;
+      font-weight: 900;
+      padding: 2px 7px;
+      border-radius: 999px;
+    }
+
+    /* Garage Specific Styles */
+    .garage-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      padding-bottom: 10px;
+    }
+
+    .garage-title {
+      font-size: 22px;
+      font-weight: 900;
+      text-transform: uppercase;
+      font-style: italic;
+      margin: 0;
+    }
+
+    .bank-pill {
+      background: rgba(250, 204, 21, 0.16);
+      border: 1px solid rgba(250, 204, 21, 0.55);
+      color: #facc15;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 18px;
+      font-weight: 900;
+    }
+
+    .car-selector-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 10px;
+    }
+
+    .car-card {
+      background: rgba(15, 23, 42, 0.75);
+      border: 2px solid rgba(255, 255, 255, 0.12);
+      border-radius: 14px;
+      padding: 10px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      transition: border-color 0.15s ease, transform 0.12s ease, background 0.15s ease;
+    }
+
+    .car-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .car-card.selected {
+      border-color: #f97316;
+      background: rgba(249, 115, 22, 0.15);
+      box-shadow: 0 0 20px rgba(249, 115, 22, 0.25);
+    }
+
+    .car-card-name {
+      font-size: 14px;
+      font-weight: 900;
+      color: #ffffff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .car-card-role {
+      font-size: 11px;
+      color: #94a3b8;
+    }
+
+    .car-card-status {
+      margin-top: auto;
+      font-size: 11px;
+      font-weight: 900;
+      text-transform: uppercase;
+      padding: 4px 8px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .status-equipped {
+      background: #f97316;
+      color: #ffffff;
+    }
+
+    .status-owned {
+      background: rgba(255, 255, 255, 0.12);
+      color: #e2e8f0;
+    }
+
+    .status-buy {
+      background: rgba(34, 197, 94, 0.2);
+      border: 1px solid #22c55e;
+      color: #4ade80;
+    }
+
+    .status-locked {
+      background: rgba(255, 255, 255, 0.06);
+      color: #64748b;
+    }
+
+    .upgrades-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 10px;
+    }
+
+    .upgrade-item {
+      background: rgba(9, 13, 22, 0.78);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 14px;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .upg-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .upg-name {
+      font-size: 14px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .upg-lvl {
+      font-size: 11px;
+      font-weight: 900;
+      color: #38bdf8;
+      background: rgba(56, 189, 248, 0.14);
+      padding: 2px 8px;
+      border-radius: 99px;
+    }
+
+    .upg-desc {
+      font-size: 11px;
+      color: #94a3b8;
+    }
+
+    .upg-pips {
+      display: flex;
+      gap: 4px;
+    }
+
+    .pip {
+      flex: 1;
+      height: 6px;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .pip.filled {
+      background: linear-gradient(90deg, #f97316, #facc15);
+    }
+
+    .upg-buy-btn {
+      margin-top: 2px;
+      padding: 8px 12px;
+      border-radius: 10px;
+      border: none;
+      font-size: 13px;
+      font-weight: 900;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #22c55e;
+      color: #052e16;
+      transition: filter 0.12s ease, transform 0.08s ease;
+    }
+
+    .upg-buy-btn:disabled {
+      background: rgba(255, 255, 255, 0.08);
+      color: #64748b;
+      cursor: not-allowed;
+    }
+
+    .upg-buy-btn:not(:disabled):active {
+      transform: scale(0.96);
+    }
+
+    /* Controls / Help Grid */
+    .controls-mini-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+      gap: 10px;
+      background: rgba(9, 13, 22, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 14px;
+      padding: 12px 14px;
+    }
+
+    .ctrl-chip {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: #cbd5e1;
+    }
+
+    .kbd {
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 3px 7px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 800;
+      color: #ffffff;
+      white-space: nowrap;
+    }
+
+    /* Breakdown List on Game Over */
+    .breakdown-list {
+      background: rgba(9, 13, 22, 0.75);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 16px;
+      padding: 14px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .breakdown-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      color: #cbd5e1;
+    }
+
+    .breakdown-row.total {
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding-top: 8px;
+      margin-top: 4px;
+      font-size: 18px;
+      font-weight: 900;
+      color: #facc15;
+    }
+
+    @media (max-width: 640px) {
+      .hud-top {
+        grid-template-columns: 1fr 1fr;
+      }
+      .telemetry-box {
+        grid-column: 1 / -1;
+        order: -1;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+      }
+      .checkpoint-track {
+        display: none;
+      }
+      .vitals-box {
+        max-width: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- 3D Viewport Container -->
+  <div id="gameCanvasContainer"></div>
+  <div id="fxOverlay"></div>
+
+  <!-- Center Dynamic Callouts -->
+  <div id="calloutContainer" aria-live="polite"></div>
+
+  <!-- IN-GAME HUD -->
+  <div id="hud" class="hidden">
+    <div class="hud-top">
+      <!-- Left: Armor & Fuel -->
+      <div class="hud-card vitals-box">
+        <div class="vital-row">
+          <div class="vital-header">
+            <span>🛡️ Armor</span>
+            <span id="armorText">100%</span>
+          </div>
+          <div class="bar-track">
+            <div id="armorBar" class="bar-fill bar-armor"></div>
+          </div>
+        </div>
+        <div class="vital-row">
+          <div class="vital-header">
+            <span>⛽ Fuel</span>
+            <span id="fuelText">100%</span>
+          </div>
+          <div class="bar-track">
+            <div id="fuelBar" class="bar-fill bar-fuel"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Center: Distance, Speed & Biome -->
+      <div class="hud-card telemetry-box">
+        <span id="biomeBadge" class="biome-pill">Scorched Canyon</span>
+        <div id="distanceText" class="distance-readout">0 m</div>
+        <div id="speedText" class="speed-readout">120 MPH</div>
+        <div class="checkpoint-track" title="Progress to next Checkpoint (+Fuel)">
+          <div id="checkpointBar" class="checkpoint-fill"></div>
+        </div>
+      </div>
+
+      <!-- Right: Cash, Takedowns, Combo & Utility Buttons -->
+      <div class="hud-right-wrap">
+        <div class="hud-card score-stats">
+          <div class="stat-item">
+            <span class="stat-label">Cash</span>
+            <span id="hudCash" class="stat-value stat-cash">$0</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Wrecks</span>
+            <span id="hudKills" class="stat-value stat-kills">0 💥</span>
+          </div>
+          <div class="utility-btns">
+            <button id="camBtn" class="icon-btn" title="Switch Camera View (C)" aria-label="Switch Camera">🎥</button>
+            <button id="muteBtn" class="icon-btn" title="Toggle Sound (M)" aria-label="Toggle Sound">🔊</button>
+            <button id="pauseBtn" class="icon-btn" title="Pause Game (P / Esc)" aria-label="Pause Game">⏸️</button>
+          </div>
+        </div>
+        <div id="comboBadge" class="hidden">x2 RAMPAGE!</div>
+      </div>
+    </div>
+
+    <!-- Bottom Controls: Steering + Weapons -->
+    <div class="hud-bottom">
+      <div class="steer-cluster">
+        <button id="steerLeftBtn" class="steer-btn" aria-label="Steer Left">
+          <span>◀</span>
+          <span class="key-hint">A / ◀</span>
+        </button>
+        <button id="steerRightBtn" class="steer-btn" aria-label="Steer Right">
+          <span>▶</span>
+          <span class="key-hint">D / ▶</span>
+        </button>
+      </div>
+
+      <div class="combat-cluster">
+        <button id="gunToggleBtn" class="action-btn gun-btn autofire-on" title="Toggle Auto-Gatling Gun (F)">
+          <span class="emoji">🔥</span>
+          <span class="btn-label" id="gunStateLabel">AUTO</span>
+        </button>
+        <button id="bombBtn" class="action-btn bomb-btn" title="Drop Shockwave Bomb (E / B)">
+          <span id="bombAmmoBadge" class="ammo-badge">3</span>
+          <span class="emoji">💣</span>
+          <span class="btn-label">Bomb</span>
+          <span class="key-pill">[E]</span>
+        </button>
+        <button id="rocketBtn" class="action-btn rocket-btn" title="Fire Homing Rocket (Space)">
+          <span id="rocketAmmoBadge" class="ammo-badge">5</span>
+          <span class="emoji">🚀</span>
+          <span class="btn-label">Rocket</span>
+          <span class="key-pill">[Space]</span>
+        </button>
+        <button id="nitroBtn" class="action-btn nitro-btn" title="Activate Nitro Boost (Shift / W)">
+          <span id="nitroPctBadge" class="ammo-badge" style="background:#0284c7;">100%</span>
+          <span class="emoji">⚡</span>
+          <span class="btn-label">Nitro</span>
+          <span class="key-pill">[Shift]</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN MENU MODAL -->
+  <section id="menuScreen" class="modal-screen" aria-label="Main Menu">
+    <div class="modal-card">
+      <div class="game-logo-wrap">
+        <span class="logo-badge">🔥 High-Octane Vehicular Mayhem</span>
+        <h1 class="game-title">Racing Rampage</h1>
+        <p class="game-subtitle">
+          Smash rival cars into scrap metal, launch off mega-ramps with rockets blazing, grab fuel canisters, and upgrade your combat rig!
+        </p>
+      </div>
+
+      <div class="profile-strip">
+        <div>
+          <div id="menuBankText" class="profile-stat-val stat-cash">$0</div>
+          <div class="profile-stat-lbl">Garage Cash</div>
+        </div>
+        <div>
+          <div id="menuBestDistText" class="profile-stat-val">0 m</div>
+          <div class="profile-stat-lbl">Best Distance</div>
+        </div>
+        <div>
+          <div id="menuTotalKillsText" class="profile-stat-val stat-kills">0</div>
+          <div class="profile-stat-lbl">Total Wrecks</div>
+        </div>
+      </div>
+
+      <div class="controls-mini-grid">
+        <div class="ctrl-chip"><span class="kbd">A/D, ◀/▶</span> Steer</div>
+        <div class="ctrl-chip"><span class="kbd">Space</span> Fire Rocket</div>
+        <div class="ctrl-chip"><span class="kbd">E / B</span> Drop Bomb</div>
+        <div class="ctrl-chip"><span class="kbd">Shift / W</span> Nitro Boost</div>
+      </div>
+
+      <div class="btn-row">
+        <button id="startRunBtn" class="cta-btn cta-primary">
+          <span>🏁 Launch Rampage</span>
+        </button>
+        <button id="openGarageBtn" class="cta-btn cta-secondary">
+          <span>🔧 Garage & Upgrades</span>
+          <span id="menuUpgradeBadge" class="badge-notify hidden">!</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- GARAGE & UPGRADES MODAL -->
+  <section id="garageScreen" class="modal-screen hidden" aria-label="Garage and Upgrades">
+    <div class="modal-card">
+      <div class="garage-header">
+        <h2 class="garage-title">🔧 Combat Garage</h2>
+        <div id="garageBankText" class="bank-pill">$0</div>
+      </div>
+
+      <div>
+        <div style="font-size:12px;font-weight:800;text-transform:uppercase;color:#94a3b8;margin-bottom:8px;letter-spacing:0.06em;">
+          Select Combat Vehicle
+        </div>
+        <div id="carListGrid" class="car-selector-grid"></div>
+      </div>
+
+      <div>
+        <div style="font-size:12px;font-weight:800;text-transform:uppercase;color:#94a3b8;margin-bottom:8px;letter-spacing:0.06em;">
+          Performance & Weapon Upgrades
+        </div>
+        <div id="upgradesGrid" class="upgrades-grid"></div>
+      </div>
+
+      <div class="btn-row">
+        <button id="garageLaunchBtn" class="cta-btn cta-primary">
+          <span>🏁 Hit The Road</span>
+        </button>
+        <button id="garageBackBtn" class="cta-btn cta-secondary" style="flex:0.45;">
+          <span>↩ Main Menu</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- GAME OVER / CARNAGE REPORT MODAL -->
+  <section id="gameOverScreen" class="modal-screen hidden" aria-label="Run Complete">
+    <div class="modal-card">
+      <div class="game-logo-wrap">
+        <span id="gameOverReasonBadge" class="logo-badge">⛽ OUT OF FUEL!</span>
+        <h2 class="game-title" style="font-size:clamp(28px,6vw,44px);">Carnage Report</h2>
+      </div>
+
+      <div class="breakdown-list">
+        <div class="breakdown-row">
+          <span>Distance Driven (<strong id="goDistVal">0 m</strong>)</span>
+          <span id="goDistCash">+$0</span>
+        </div>
+        <div class="breakdown-row">
+          <span>Rivals Wrecked (<strong id="goKillsVal">0 💥</strong>)</span>
+          <span id="goKillsCash">+$0</span>
+        </div>
+        <div class="breakdown-row">
+          <span>Airtime & Stunt Bonus (<strong id="goAirVal">0.0s</strong>)</span>
+          <span id="goAirCash">+$0</span>
+        </div>
+        <div class="breakdown-row">
+          <span>Cash Pickups & Max Combo (<strong id="goComboVal">x1</strong>)</span>
+          <span id="goPickupCash">+$0</span>
+        </div>
+        <div class="breakdown-row total">
+          <span>Total Run Earnings</span>
+          <span id="goTotalCash">+$0</span>
+        </div>
+      </div>
+
+      <div class="btn-row">
+        <button id="retryRunBtn" class="cta-btn cta-primary">
+          <span>🔄 Race Again</span>
+        </button>
+        <button id="goGarageBtn" class="cta-btn cta-secondary">
+          <span>🔧 Upgrade Rig</span>
+          <span id="goUpgradeBadge" class="badge-notify hidden">UPGRADE!</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAUSE MODAL -->
+  <section id="pauseScreen" class="modal-screen hidden" aria-label="Game Paused">
+    <div class="modal-card" style="max-width:420px;text-align:center;">
+      <h2 class="garage-title" style="font-size:28px;">⏸️ Rampage Paused</h2>
+      <p class="game-subtitle" style="margin:0 auto;">Catch your breath before diving back into the highway chaos.</p>
+      <div class="btn-row" style="flex-direction:column;">
+        <button id="resumeBtn" class="cta-btn cta-primary">▶️ Resume Run</button>
+        <button id="pauseGarageBtn" class="cta-btn cta-secondary">🔧 Retire to Garage</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Three.js Local Script -->
+  <script src="./three.min.js"></script>
+  <script>
+    (function () {
+      'use strict';
+
+      // ==========================================
+      // 1. GAME DATA: VEHICLES, UPGRADES & BIOMES
+      // ==========================================
+      const STORAGE_KEY = 'racing_rampage_save_v1';
+
+      const VEHICLES = [
+        {
+          id: 'rebel',
+          name: 'Rust Rebel',
+          role: 'Muscle Interceptor',
+          cost: 0,
+          bodyColor: 0xea580c,
+          accentColor: 0xfacc15,
+          speedMult: 1.0,
+          armorMult: 1.0,
+          ramMult: 1.0,
+          scaleX: 1.0,
+          scaleY: 1.0,
+          scaleZ: 1.0
+        },
+        {
+          id: 'viper',
+          name: 'Viper GT',
+          role: 'Cyber Twin-Turbo',
+          cost: 500,
+          bodyColor: 0x06b6d4,
+          accentColor: 0xf43f5e,
+          speedMult: 1.18,
+          armorMult: 0.95,
+          ramMult: 1.1,
+          scaleX: 1.04,
+          scaleY: 0.86,
+          scaleZ: 1.06
+        },
+        {
+          id: 'warhound',
+          name: 'War Hound 4x4',
+          role: 'Armored Brawler',
+          cost: 1200,
+          bodyColor: 0x65a30d,
+          accentColor: 0xfbbf24,
+          speedMult: 1.08,
+          armorMult: 1.35,
+          ramMult: 1.45,
+          scaleX: 1.14,
+          scaleY: 1.18,
+          scaleZ: 1.05
+        },
+        {
+          id: 'juggernaut',
+          name: 'Doom Juggernaut',
+          role: 'Apocalypse War-Rig',
+          cost: 2500,
+          bodyColor: 0x1e293b,
+          accentColor: 0xef4444,
+          speedMult: 1.22,
+          armorMult: 1.7,
+          ramMult: 2.0,
+          scaleX: 1.24,
+          scaleY: 1.26,
+          scaleZ: 1.16
+        }
+      ];
+
+      const UPGRADE_DEFS = [
+        {
+          key: 'engine',
+          name: '⚡ V8 Twin-Turbo & Nitro',
+          desc: 'Boosts top speed, acceleration, and Nitro duration.',
+          baseCost: 120,
+          costScale: 1.55,
+          maxLevel: 8
+        },
+        {
+          key: 'armor',
+          name: '🛡️ Reinforced Plated Hull',
+          desc: 'Increases max Armor HP and head-on ramming damage.',
+          baseCost: 120,
+          costScale: 1.55,
+          maxLevel: 8
+        },
+        {
+          key: 'guns',
+          name: '🔥 Roof Gatling Cannons',
+          desc: 'Increases mounted machine gun fire rate and bullet damage.',
+          baseCost: 140,
+          costScale: 1.6,
+          maxLevel: 8
+        },
+        {
+          key: 'ordinance',
+          name: '🚀 Ordinance & Fuel Tank',
+          desc: 'More starting Rockets/Bombs, blast power, and slower fuel burn.',
+          baseCost: 150,
+          costScale: 1.6,
+          maxLevel: 8
+        }
+      ];
+
+      const BIOMES = [
+        {
+          name: 'Scorched Canyon',
+          skyHex: 0x1e1b2e,
+          fogHex: 0x432330,
+          groundHex: 0x7c2d12,
+          roadHex: 0x1e293b,
+          propColor: 0x9a3412,
+          edgeHex: 0xf97316
+        },
+        {
+          name: 'Neon Overdrive',
+          skyHex: 0x090d24,
+          fogHex: 0x1e1035,
+          groundHex: 0x0f172a,
+          roadHex: 0x111827,
+          propColor: 0xec4899,
+          edgeHex: 0x38bdf8
+        },
+        {
+          name: 'Toxic Refinery',
+          skyHex: 0x141e19,
+          fogHex: 0x223327,
+          groundHex: 0x1c2826,
+          roadHex: 0x1f2937,
+          propColor: 0x84cc16,
+          edgeHex: 0xeab308
+        },
+        {
+          name: 'Magma Meltdown',
+          skyHex: 0x1f0909,
+          fogHex: 0x450a0a,
+          groundHex: 0x270909,
+          roadHex: 0x18181b,
+          propColor: 0xef4444,
+          edgeHex: 0xfacc15
+        }
+      ];
+
+      // Load or initialize persistent player save
+      const defaultSave = {
+        cash: 150,
+        bestDistance: 0,
+        totalKills: 0,
+        selectedCar: 'rebel',
+        ownedCars: ['rebel'],
+        upgrades: {
+          engine: 1,
+          armor: 1,
+          guns: 1,
+          ordinance: 1
+        }
+      };
+
+      let save = loadSave();
+
+      function loadSave() {
+        try {
+          const raw = localStorage.getItem(STORAGE_KEY);
+          if (!raw) return JSON.parse(JSON.stringify(defaultSave));
+          const parsed = JSON.parse(raw);
+          return {
+            cash: typeof parsed.cash === 'number' ? parsed.cash : 150,
+            bestDistance: typeof parsed.bestDistance === 'number' ? parsed.bestDistance : 0,
+            totalKills: typeof parsed.totalKills === 'number' ? parsed.totalKills : 0,
+            selectedCar: parsed.selectedCar || 'rebel',
+            ownedCars: Array.isArray(parsed.ownedCars) ? parsed.ownedCars : ['rebel'],
+            upgrades: Object.assign({}, defaultSave.upgrades, parsed.upgrades || {})
+          };
+        } catch (e) {
+          return JSON.parse(JSON.stringify(defaultSave));
+        }
+      }
+
+      function persistSave() {
+        try {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(save));
+        } catch (e) {}
+      }
+
+      function getUpgradeCost(def, currentLevel) {
+        return Math.round(def.baseCost * Math.pow(def.costScale, currentLevel - 1));
+      }
+
+      function canAffordAnything() {
+        for (const def of UPGRADE_DEFS) {
+          const lvl = save.upgrades[def.key] || 1;
+          if (lvl < def.maxLevel && save.cash >= getUpgradeCost(def, lvl)) return true;
+        }
+        for (const car of VEHICLES) {
+          if (!save.ownedCars.includes(car.id) && save.cash >= car.cost) return true;
+        }
+        return false;
+      }
+
+      // ==========================================
+      // 2. SYNTHESIZED WEB AUDIO ENGINE
+      // ==========================================
+      class SoundEngine {
+        constructor() {
+          this.ctx = null;
+          this.muted = false;
+          this.engineOsc = null;
+          this.engineGain = null;
+        }
+
+        init() {
+          if (this.ctx) {
+            if (this.ctx.state === 'suspended') this.ctx.resume().catch(() => {});
+            return;
+          }
+          const AudioCtx = window.AudioContext || window.webkitAudioContext;
+          if (!AudioCtx) return;
+          try {
+            this.ctx = new AudioCtx();
+          } catch (e) {}
+        }
+
+        toggleMute() {
+          this.muted = !this.muted;
+          if (this.engineGain && this.ctx) {
+            this.engineGain.gain.setTargetAtTime(this.muted ? 0 : 0.04, this.ctx.currentTime, 0.05);
+          }
+          return this.muted;
+        }
+
+        startEngineHum() {
+          this.init();
+          if (!this.ctx || this.engineOsc) return;
+          try {
+            const osc = this.ctx.createOscillator();
+            const gain = this.ctx.createGain();
+            osc.type = 'sawtooth';
+            osc.frequency.value = 55;
+            gain.gain.value = this.muted ? 0 : 0.035;
+            osc.connect(gain);
+            gain.connect(this.ctx.destination);
+            osc.start();
+            this.engineOsc = osc;
+            this.engineGain = gain;
+          } catch (e) {}
+        }
+
+        updateEngineHum(speedRatio, airborne, nitro) {
+          if (!this.ctx || !this.engineOsc) return;
+          const now = this.ctx.currentTime;
+          const targetFreq = 48 + speedRatio * 75 + (nitro ? 35 : 0) + (airborne ? 22 : 0);
+          this.engineOsc.frequency.setTargetAtTime(targetFreq, now, 0.06);
+          const targetGain = this.muted ? 0 : (0.032 + (nitro ? 0.02 : 0));
+          this.engineGain.gain.setTargetAtTime(targetGain, now, 0.08);
+        }
+
+        stopEngineHum() {
+          if (this.engineOsc) {
+            try { this.engineOsc.stop(); } catch (e) {}
+            this.engineOsc = null;
+            this.engineGain = null;
+          }
+        }
+
+        playGunShot() {
+          if (this.muted || !this.ctx) return;
+          try {
+            const now = this.ctx.currentTime;
+            const osc = this.ctx.createOscillator();
+            const gain = this.ctx.createGain();
+            osc.type = 'square';
+            osc.frequency.setValueAtTime(210, now);
+            osc.frequency.exponentialRampToValueAtTime(55, now + 0.045);
+            gain.gain.setValueAtTime(0.05, now);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + 0.045);
+            osc.connect(gain);
+            gain.connect(this.ctx.destination);
+            osc.start(now);
+            osc.stop(now + 0.05);
+          } catch (e) {}
+        }
+
+        playRocketLaunch() {
+          this.init();
+          if (this.muted || !this.ctx) return;
+          try {
+            const now = this.ctx.currentTime;
+            const osc = this.ctx.createOscillator();
+            const gain = this.ctx.createGain();
+            osc.type = 'sawtooth';
+            osc.frequency.setValueAtTime(140, now);
+            osc.frequency.exponentialRampToValueAtTime(520, now + 0.18);
+            osc.frequency.exponentialRampToValueAtTime(90, now + 0.38);
+            gain.gain.setValueAtTime(0.14, now);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + 0.38);
+            osc.connect(gain);
+            gain.connect(this.ctx.destination);
+            osc.start(now);
+            osc.stop(now + 0.4);
+          } catch (e) {}
+        }
+
+        playExplosion(big = false) {
+          this.init();
+          if (this.muted || !this.ctx) return;
+          try {
+            const now = this.ctx.currentTime;
+            const dur = big ? 0.55 : 0.32;
+            const bufferSize = Math.floor(this.ctx.sampleRate * dur);
+            const buffer = this.ctx.createBuffer(1, bufferSize, this.ctx.sampleRate);
+            const data = buffer.getChannelData(0);
+            for (let i = 0; i < bufferSize; i++) {
+              data[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / bufferSize, 1.6);
+            }
+            const noise = this.ctx.createBufferSource();
+            noise.buffer = buffer;
+
+            const filter = this.ctx.createBiquadFilter();
+            filter.type = 'lowpass';
+            filter.frequency.setValueAtTime(big ? 420 : 600, now);
+            filter.frequency.exponentialRampToValueAtTime(65, now + dur);
+
+            const gain = this.ctx.createGain();
+            gain.gain.setValueAtTime(big ? 0.32 : 0.2, now);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + dur);
+
+            noise.connect(filter);
+            filter.connect(gain);
+            gain.connect(this.ctx.destination);
+            noise.start(now);
+          } catch (e) {}
+        }
+
+        playPickup(type) {
+          this.init();
+          if (this.muted || !this.ctx) return;
+          try {
+            const now = this.ctx.currentTime;
+            const osc = this.ctx.createOscillator();
+            const gain = this.ctx.createGain();
+            osc.type = 'triangle';
+            const base = type === 'fuel' ? 440 : type === 'cash' ? 587 : 523;
+            osc.frequency.setValueAtTime(base, now);
+            osc.frequency.setValueAtTime(base * 1.35, now + 0.07);
+            gain.gain.setValueAtTime(0.12, now);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + 0.22);
+            osc.connect(gain);
+            gain.connect(this.ctx.destination);
+            osc.start(now);
+            osc.stop(now + 0.23);
+          } catch (e) {}
+        }
+
+        playRampJump() {
+          this.init();
+          if (this.muted || !this.ctx) return;
+          try {
+            const now = this.ctx.currentTime;
+            const osc = this.ctx.createOscillator();
+            const gain = this.ctx.createGain();
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(180, now);
+            osc.frequency.exponentialRampToValueAtTime(660, now + 0.35);
+            gain.gain.setValueAtTime(0.14, now);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + 0.36);
+            osc.connect(gain);
+            gain.connect(this.ctx.destination);
+            osc.start(now);
+            osc.stop(now + 0.38);
+          } catch (e) {}
+        }
+      }
+
+      const sfx = new SoundEngine();
+
+      // ==========================================
+      // 3. 3D SCENE & PROCEDURAL MESH BUILDERS
+      // ==========================================
+      const container = document.getElementById('gameCanvasContainer');
+      const LANE_WIDTH = 4.2;
+      const ROAD_WIDTH = LANE_WIDTH * 4; // 4 lanes: -6.3, -2.1, +2.1, +6.3
+      const LANE_CENTERS = [-6.3, -2.1, 2.1, 6.3];
+
+      let renderer, scene, camera;
+      let useFallback2D = false;
+      let fallbackCanvas, fallbackCtx;
+
+      // Scene Groups
+      let roadGroup, sceneryGroup, entitiesGroup, particlesGroup;
+      let groundMat, roadMat, leftEdgeMat, rightEdgeMat;
+      const dashMeshes = [];
+      const sceneryProps = [];
+
+      function initGraphics() {
+        try {
+          if (typeof THREE === 'undefined') throw new Error('THREE not loaded');
+          renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: 'high-performance' });
+          renderer.setSize(window.innerWidth, window.innerHeight);
+          renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+          renderer.shadowMap.enabled = false;
+          container.innerHTML = '';
+          container.appendChild(renderer.domElement);
+
+          scene = new THREE.Scene();
+          scene.background = new THREE.Color(BIOMES[0].skyHex);
+          scene.fog = new THREE.FogExp2(BIOMES[0].fogHex, 0.0075);
+
+          camera = new THREE.PerspectiveCamera(62, window.innerWidth / window.innerHeight, 0.5, 260);
+          camera.position.set(0, 6.8, 13.5);
+          camera.lookAt(0, 1.5, -18);
+
+          // Lights
+          const ambientLight = new THREE.AmbientLight(0xffffff, 0.72);
+          scene.add(ambientLight);
+
+          const dirLight = new THREE.DirectionalLight(0xfffbeb, 0.95);
+          dirLight.position.set(25, 48, 30);
+          scene.add(dirLight);
+
+          const backLight = new THREE.DirectionalLight(0xf97316, 0.4);
+          backLight.position.set(-20, 15, -40);
+          scene.add(backLight);
+
+          roadGroup = new THREE.Group();
+          sceneryGroup = new THREE.Group();
+          entitiesGroup = new THREE.Group();
+          particlesGroup = new THREE.Group();
+          scene.add(roadGroup, sceneryGroup, entitiesGroup, particlesGroup);
+
+          buildHighwayEnvironment();
+        } catch (err) {
+          console.warn('WebGL unavailable, activating high-speed 2.5D Canvas renderer:', err);
+          useFallback2D = true;
+          fallbackCanvas = document.createElement('canvas');
+          fallbackCanvas.width = window.innerWidth;
+          fallbackCanvas.height = window.innerHeight;
+          container.innerHTML = '';
+          container.appendChild(fallbackCanvas);
+          fallbackCtx = fallbackCanvas.getContext('2d');
+        }
+      }
+
+      function buildHighwayEnvironment() {
+        // Infinite Desert/Biome Ground Plane
+        const groundGeo = new THREE.PlaneGeometry(500, 420);
+        groundMat = new THREE.MeshLambertMaterial({ color: BIOMES[0].groundHex });
+        const ground = new THREE.Mesh(groundGeo, groundMat);
+        ground.rotation.x = -Math.PI / 2;
+        ground.position.set(0, -0.1, -140);
+        roadGroup.add(ground);
+
+        // Main 4-Lane Asphalt Highway
+        const roadGeo = new THREE.PlaneGeometry(ROAD_WIDTH, 420);
+        roadMat = new THREE.MeshPhongMaterial({ color: BIOMES[0].roadHex, shininess: 18 });
+        const road = new THREE.Mesh(roadGeo, roadMat);
+        road.rotation.x = -Math.PI / 2;
+        road.position.set(0, 0, -140);
+        roadGroup.add(road);
+
+        // Glowing Highway Borders / Guardrails
+        const edgeGeo = new THREE.BoxGeometry(0.55, 0.45, 420);
+        leftEdgeMat = new THREE.MeshBasicMaterial({ color: BIOMES[0].edgeHex });
+        rightEdgeMat = leftEdgeMat;
+        const leftEdge = new THREE.Mesh(edgeGeo, leftEdgeMat);
+        leftEdge.position.set(-ROAD_WIDTH / 2 - 0.3, 0.22, -140);
+        const rightEdge = new THREE.Mesh(edgeGeo, rightEdgeMat);
+        rightEdge.position.set(ROAD_WIDTH / 2 + 0.3, 0.22, -140);
+        roadGroup.add(leftEdge, rightEdge);
+
+        // Dashed Lane Dividers
+        const dashGeo = new THREE.PlaneGeometry(0.24, 4.2);
+        const dashMat = new THREE.MeshBasicMaterial({ color: 0xfacc15 });
+        const laneDividersX = [-LANE_WIDTH, 0, LANE_WIDTH];
+
+        for (let z = 20; z > -260; z -= 11) {
+          for (const lx of laneDividersX) {
+            const dash = new THREE.Mesh(dashGeo, dashMat);
+            dash.rotation.x = -Math.PI / 2;
+            dash.position.set(lx, 0.03, z);
+            roadGroup.add(dash);
+            dashMeshes.push(dash);
+          }
+        }
+
+        // Roadside Pillars, Mesas & Arches
+        const mesaGeo = new THREE.ConeGeometry(7, 16, 5);
+        const pillarGeo = new THREE.BoxGeometry(1.4, 8, 1.4);
+        for (let z = 10; z > -260; z -= 18) {
+          const side = (Math.abs(z) % 36 === 0) ? -1 : 1;
+          const propMat = new THREE.MeshLambertMaterial({ color: BIOMES[0].propColor });
+          const mesa = new THREE.Mesh(mesaGeo, propMat);
+          mesa.position.set(side * (ROAD_WIDTH / 2 + 14 + (Math.abs(z) % 15)), 7.5, z);
+          sceneryGroup.add(mesa);
+          sceneryProps.push(mesa);
+
+          // Streetlight / Highway Pylon on opposite side
+          const pylon = new THREE.Mesh(pillarGeo, propMat);
+          pylon.position.set(-side * (ROAD_WIDTH / 2 + 3.2), 4, z);
+          sceneryGroup.add(pylon);
+          sceneryProps.push(pylon);
+        }
+      }
+
+      function createVehicleMesh(options) {
+        if (useFallback2D) return { options };
+        const group = new THREE.Group();
+
+        const bodyColor = options.bodyColor || 0xea580c;
+        const accentColor = options.accentColor || 0xfacc15;
+        const isTruck = !!options.isTruck;
+        const isTanker = !!options.isTanker;
+
+        // Chassis lower body
+        const chassisW = isTruck ? 2.6 : 2.15;
+        const chassisH = isTruck ? 1.35 : 0.78;
+        const chassisL = isTruck ? 5.6 : 4.3;
+
+        const bodyGeo = new THREE.BoxGeometry(chassisW, chassisH, chassisL);
+        const bodyMat = new THREE.MeshPhongMaterial({ color: bodyColor, shininess: 45 });
+        const bodyMesh = new THREE.Mesh(bodyGeo, bodyMat);
+        bodyMesh.position.y = chassisH / 2 + 0.35;
+        group.add(bodyMesh);
+
+        // Racing Stripe / Accent Trim
+        const stripeGeo = new THREE.BoxGeometry(chassisW * 0.36, 0.06, chassisL + 0.04);
+        const stripeMat = new THREE.MeshBasicMaterial({ color: accentColor });
+        const stripe = new THREE.Mesh(stripeGeo, stripeMat);
+        stripe.position.y = chassisH + 0.36;
+        group.add(stripe);
+
+        // Cabin / Windshield
+        if (isTanker) {
+          const tankGeo = new THREE.CylinderGeometry(1.05, 1.05, 3.6, 10);
+          const tankMat = new THREE.MeshPhongMaterial({ color: 0xf97316, emissive: 0x431407 });
+          const tank = new THREE.Mesh(tankGeo, tankMat);
+          tank.rotation.x = Math.PI / 2;
+          tank.position.set(0, 1.65, 0.4);
+          group.add(tank);
+        } else {
+          const cabW = chassisW * 0.82;
+          const cabH = isTruck ? 0.95 : 0.62;
+          const cabL = isTruck ? 2.2 : 2.1;
+          const cabGeo = new THREE.BoxGeometry(cabW, cabH, cabL);
+          const cabMat = new THREE.MeshPhongMaterial({ color: 0x0f172a, shininess: 90 });
+          const cab = new THREE.Mesh(cabGeo, cabMat);
+          cab.position.set(0, chassisH + cabH / 2 + 0.32, isTruck ? -1.1 : -0.15);
+          group.add(cab);
+        }
+
+        // Wheels (4)
+        const wheelGeo = new THREE.CylinderGeometry(0.46, 0.46, 0.42, 12);
+        const wheelMat = new THREE.MeshLambertMaterial({ color: 0x111827 });
+        const wheelPositions = [
+          [-chassisW / 2 - 0.1, 0.46, -chassisL * 0.32],
+          [chassisW / 2 + 0.1, 0.46, -chassisL * 0.32],
+          [-chassisW / 2 - 0.1, 0.46, chassisL * 0.32],
+          [chassisW / 2 + 0.1, 0.46, chassisL * 0.32]
+        ];
+        for (const [wx, wy, wz] of wheelPositions) {
+          const w = new THREE.Mesh(wheelGeo, wheelMat);
+          w.rotation.z = Math.PI / 2;
+          w.position.set(wx, wy, wz);
+          group.add(w);
+        }
+
+        // Player-specific Weapon Mounts, Ram Bumper & Nitro Plumes
+        let leftFlame = null;
+        let rightFlame = null;
+        let muzzleFlash = null;
+
+        if (options.isPlayer) {
+          // Heavy Front Ram Bar
+          const ramGeo = new THREE.BoxGeometry(chassisW + 0.35, 0.42, 0.45);
+          const ramMat = new THREE.MeshPhongMaterial({ color: 0x94a3b8, shininess: 80 });
+          const ram = new THREE.Mesh(ramGeo, ramMat);
+          ram.position.set(0, 0.58, -chassisL / 2 - 0.2);
+          group.add(ram);
+
+          // Roof-Mounted Twin Gatling Barrels
+          const gunMat = new THREE.MeshPhongMaterial({ color: 0x334155 });
+          const barrelGeo = new THREE.CylinderGeometry(0.09, 0.09, 1.45, 8);
+          for (const side of [-0.45, 0.45]) {
+            const barrel = new THREE.Mesh(barrelGeo, gunMat);
+            barrel.rotation.x = Math.PI / 2;
+            barrel.position.set(side, chassisH + 0.98, -0.65);
+            group.add(barrel);
+          }
+
+          // Muzzle Flash Mesh
+          const flashGeo = new THREE.ConeGeometry(0.28, 0.85, 6);
+          const flashMat = new THREE.MeshBasicMaterial({ color: 0xfef08a });
+          muzzleFlash = new THREE.Mesh(flashGeo, flashMat);
+          muzzleFlash.rotation.x = -Math.PI / 2;
+          muzzleFlash.position.set(0, chassisH + 0.98, -1.65);
+          muzzleFlash.visible = false;
+          group.add(muzzleFlash);
+
+          // Side Rocket Pods
+          const podGeo = new THREE.BoxGeometry(0.32, 0.32, 1.15);
+          const podMat = new THREE.MeshLambertMaterial({ color: 0xdc2626 });
+          for (const side of [-1, 1]) {
+            const pod = new THREE.Mesh(podGeo, podMat);
+            pod.position.set(side * (chassisW / 2 + 0.16), 0.95, 0.2);
+            group.add(pod);
+          }
+
+          // Rear Nitro Exhaust Flames
+          const flameGeo = new THREE.ConeGeometry(0.24, 1.35, 7);
+          const flameMat = new THREE.MeshBasicMaterial({ color: 0x38bdf8 });
+          leftFlame = new THREE.Mesh(flameGeo, flameMat);
+          leftFlame.rotation.x = Math.PI / 2;
+          leftFlame.position.set(-0.55, 0.55, chassisL / 2 + 0.65);
+
+          rightFlame = new THREE.Mesh(flameGeo, flameMat.clone());
+          rightFlame.rotation.x = Math.PI / 2;
+          rightFlame.position.set(0.55, 0.55, chassisL / 2 + 0.65);
+
+          group.add(leftFlame, rightFlame);
+        }
+
+        // Taillights
+        const tailGeo = new THREE.BoxGeometry(chassisW * 0.8, 0.18, 0.1);
+        const tailMat = new THREE.MeshBasicMaterial({ color: 0xef4444 });
+        const tail = new THREE.Mesh(tailGeo, tailMat);
+        tail.position.set(0, chassisH * 0.75 + 0.3, chassisL / 2 + 0.02);
+        group.add(tail);
+
+        if (options.scaleX) {
+          group.scale.set(options.scaleX, options.scaleY || 1, options.scaleZ || 1);
+        }
+
+        group.userData = { bodyMesh, bodyMat, baseColor: bodyColor, leftFlame, rightFlame, muzzleFlash };
+        return group;
+      }
+
+      // ==========================================
+      // 4. GAME STATE & RUNTIME VARIABLES
+      // ==========================================
+      let gameState = 'MENU'; // 'MENU' | 'GARAGE' | 'PLAYING' | 'PAUSED' | 'GAMEOVER'
+      let cameraMode = 0; // 0: Dynamic Chase, 1: Close Action, 2: High Tactical
+      const CAMERA_PRESETS = [
+        { y: 6.6, z: 13.2, lookZ: -18 },
+        { y: 4.2, z: 8.8, lookZ: -24 },
+        { y: 12.5, z: 17.5, lookZ: -16 }
+      ];
+
+      // Input state
+      const keys = {
+        left: false,
+        right: false,
+        nitro: false,
+        brake: false
+      };
+
+      // Active Run Object
+      let run = null;
+      let playerMesh = null;
+      let enemies = [];
+      let projectiles = [];
+      let pickups = [];
+      let ramps = [];
+      let particles = [];
+      let shockwaves = [];
+
+      function getSelectedVehicleDef() {
+        return VEHICLES.find(v => v.id === save.selectedCar) || VEHICLES[0];
+      }
+
+      function clearWorldEntities() {
+        if (!useFallback2D && entitiesGroup && particlesGroup) {
+          while (entitiesGroup.children.length > 0) {
+            entitiesGroup.remove(entitiesGroup.children[0]);
+          }
+          while (particlesGroup.children.length > 0) {
+            particlesGroup.remove(particlesGroup.children[0]);
+          }
+        }
+        enemies = [];
+        projectiles = [];
+        pickups = [];
+        ramps = [];
+        particles = [];
+        shockwaves = [];
+      }
+
+      function initRunState() {
+        clearWorldEntities();
+        const car = getSelectedVehicleDef();
+        const upg = save.upgrades;
+
+        const maxHp = Math.round((100 + (upg.armor - 1) * 28) * car.armorMult);
+        const maxFuel = 100 + (upg.ordinance - 1) * 14;
+        const baseMaxSpeed = (78 + (upg.engine - 1) * 7.5) * car.speedMult;
+        const startRockets = 4 + Math.floor(upg.ordinance * 1.2);
+        const startBombs = 2 + Math.floor((upg.ordinance + 1) * 0.7);
+
+        run = {
+          car,
+          x: 0,
+          vx: 0,
+          y: 0,
+          vy: 0,
+          pitch: 0,
+          roll: 0,
+          speed: baseMaxSpeed * 0.75,
+          baseMaxSpeed,
+          hp: maxHp,
+          maxHp,
+          fuel: maxFuel,
+          maxFuel,
+          nitro: 100,
+          nitroActive: false,
+          autoFire: true,
+          rockets: startRockets,
+          maxRockets: startRockets + 4,
+          rocketRechargeTimer: 0,
+          bombs: startBombs,
+          maxBombs: startBombs + 3,
+          gunCooldown: 0,
+          distance: 0,
+          nextCheckpoint: 1000,
+          biomeIndex: 0,
+          kills: 0,
+          pickupCash: 0,
+          airtimeSec: 0,
+          currentJumpSec: 0,
+          combo: 1,
+          maxCombo: 1,
+          comboTimer: 0,
+          shake: 0,
+          spawnEnemyTimer: 0.4,
+          spawnPickupTimer: 1.2,
+          spawnRampTimer: 2.5,
+          lowFuelWarned: false
+        };
+
+        playerMesh = createVehicleMesh({
+          isPlayer: true,
+          bodyColor: car.bodyColor,
+          accentColor: car.accentColor,
+          scaleX: car.scaleX,
+          scaleY: car.scaleY,
+          scaleZ: car.scaleZ
+        });
+        if (!useFallback2D) {
+          entitiesGroup.add(playerMesh);
+        }
+
+        applyBiomeVisuals(0);
+
+        // Pre-populate initial traffic, ramps & pickups ahead so the road is immediately exciting
+        for (let z = -35; z >= -185; z -= 30) {
+          spawnEnemyAtZ(z);
+        }
+        spawnRampAtZ(-75);
+        spawnPickupAtZ(-55, 'cash');
+        spawnPickupAtZ(-115, 'fuel');
+      }
+
+      function applyBiomeVisuals(index) {
+        const b = BIOMES[index % BIOMES.length];
+        document.getElementById('biomeBadge').textContent = b.name;
+        if (!useFallback2D && scene) {
+          scene.background.setHex(b.skyHex);
+          scene.fog.color.setHex(b.fogHex);
+          groundMat.color.setHex(b.groundHex);
+          roadMat.color.setHex(b.roadHex);
+          leftEdgeMat.color.setHex(b.edgeHex);
+          for (const prop of sceneryProps) {
+            prop.material.color.setHex(b.propColor);
+          }
+        }
+      }
+
+      // ==========================================
+      // 5. SPAWNERS: ENEMIES, RAMPS, PICKUPS, FX
+      // ==========================================
+      function spawnEnemyAtZ(zPos = -210) {
+        if (!run) return;
+        const lane = Math.floor(Math.random() * 4);
+        const x = LANE_CENTERS[lane] + (Math.random() - 0.5) * 0.8;
+
+        // Avoid overlapping another enemy at same Z & lane
+        for (const e of enemies) {
+          if (Math.abs(e.z - zPos) < 13 && Math.abs(e.x - x) < 3.0) return;
+        }
+
+        const roll = Math.random();
+        let type = 'racer';
+        let hp = 36 + run.biomeIndex * 15;
+        let speed = run.baseMaxSpeed * (0.42 + Math.random() * 0.22);
+        let color = 0x3b82f6;
+        let accent = 0x93c5fd;
+        let bounty = 35;
+        let isTruck = false;
+        let isTanker = false;
+
+        if (roll < 0.2) {
+          type = 'tanker';
+          hp = 45 + run.biomeIndex * 18;
+          speed = run.baseMaxSpeed * 0.38;
+          color = 0xd97706;
+          accent = 0xfef08a;
+          bounty = 75;
+          isTruck = true;
+          isTanker = true;
+        } else if (roll < 0.45) {
+          type = 'enforcer';
+          hp = 78 + run.biomeIndex * 25;
+          speed = run.baseMaxSpeed * 0.45;
+          color = 0x475569;
+          accent = 0xef4444;
+          bounty = 65;
+          isTruck = true;
+        } else if (roll < 0.75) {
+          type = 'interceptor';
+          hp = 48 + run.biomeIndex * 16;
+          speed = run.baseMaxSpeed * 0.52;
+          color = 0x9333ea;
+          accent = 0xf472b6;
+          bounty = 45;
+        }
+
+        const mesh = createVehicleMesh({
+          bodyColor: color,
+          accentColor: accent,
+          isTruck,
+          isTanker
+        });
+
+        if (!useFallback2D) {
+          mesh.position.set(x, 0, zPos);
+          entitiesGroup.add(mesh);
+        }
+
+        enemies.push({
+          type,
+          x,
+          y: 0,
+          z: zPos,
+          vx: 0,
+          speed,
+          hp,
+          maxHp: hp,
+          bounty,
+          isTruck,
+          isTanker,
+          targetLane: lane,
+          laneTimer: 1.5 + Math.random() * 2.5,
+          hitFlash: 0,
+          mesh
+        });
+      }
+
+      function spawnRampAtZ(zPos = -215) {
+        const lane = Math.floor(Math.random() * 4);
+        const x = LANE_CENTERS[lane];
+
+        let mesh = null;
+        if (!useFallback2D) {
+          const group = new THREE.Group();
+          // Wedge Ramp Geometry
+          const rampGeo = new THREE.BoxGeometry(3.4, 1.3, 6.5);
+          const rampMat = new THREE.MeshPhongMaterial({ color: 0xf97316, emissive: 0x7c2d12 });
+          const wedge = new THREE.Mesh(rampGeo, rampMat);
+          wedge.rotation.x = 0.22;
+          wedge.position.set(0, 0.35, 0);
+          group.add(wedge);
+
+          // Glowing Neon Chevron Strip on top
+          const stripGeo = new THREE.PlaneGeometry(2.6, 5.6);
+          const stripMat = new THREE.MeshBasicMaterial({ color: 0xfef08a });
+          const strip = new THREE.Mesh(stripGeo, stripMat);
+          strip.rotation.x = -Math.PI / 2 + 0.22;
+          strip.position.set(0, 1.03, 0);
+          group.add(strip);
+
+          group.position.set(x, 0, zPos);
+          entitiesGroup.add(group);
+          mesh = group;
+        }
+
+        ramps.push({ x, z: zPos, used: false, mesh });
+      }
+
+      function spawnPickupAtZ(zPos = -210, forcedType = null) {
+        const lane = Math.floor(Math.random() * 4);
+        const x = LANE_CENTERS[lane];
+
+        let type = forcedType;
+        if (!type) {
+          if (run && run.fuel < run.maxFuel * 0.42) {
+            type = 'fuel';
+          } else {
+            const r = Math.random();
+            if (r < 0.34) type = 'fuel';
+            else if (r < 0.58) type = 'cash';
+            else if (r < 0.76) type = 'nitro';
+            else if (r < 0.90) type = 'ammo';
+            else type = 'repair';
+          }
+        }
+
+        const colorMap = {
+          fuel: 0x22c55e,
+          cash: 0xfacc15,
+          nitro: 0x38bdf8,
+          ammo: 0xf97316,
+          repair: 0xa855f7
+        };
+
+        let mesh = null;
+        if (!useFallback2D) {
+          const group = new THREE.Group();
+          const geo = type === 'fuel'
+            ? new THREE.BoxGeometry(1.25, 1.55, 0.9)
+            : new THREE.OctahedronGeometry(0.95, 0);
+          const mat = new THREE.MeshPhongMaterial({
+            color: colorMap[type] || 0xffffff,
+            emissive: colorMap[type] || 0xffffff,
+            emissiveIntensity: 0.38,
+            shininess: 80
+          });
+          const core = new THREE.Mesh(geo, mat);
+          core.position.y = 1.25;
+          group.add(core);
+
+          // Glowing Base Ring
+          const ringGeo = new THREE.RingGeometry(1.0, 1.35, 16);
+          const ringMat = new THREE.MeshBasicMaterial({ color: colorMap[type], side: THREE.DoubleSide });
+          const ring = new THREE.Mesh(ringGeo, ringMat);
+          ring.rotation.x = -Math.PI / 2;
+          ring.position.y = 0.08;
+          group.add(ring);
+
+          group.position.set(x, 0, zPos);
+          entitiesGroup.add(group);
+          mesh = group;
+        }
+
+        pickups.push({ type, x, z: zPos, rot: 0, mesh });
+      }
+
+      function spawnExplosionParticles(x, y, z, colorHex = 0xf97316, count = 22, scale = 1.0) {
+        if (!useFallback2D) {
+          for (let i = 0; i < count; i++) {
+            const size = (0.25 + Math.random() * 0.45) * scale;
+            const geo = new THREE.BoxGeometry(size, size, size);
+            const c = i % 3 === 0 ? 0xfef08a : i % 2 === 0 ? colorHex : 0xdc2626;
+            const mat = new THREE.MeshBasicMaterial({ color: c });
+            const pMesh = new THREE.Mesh(geo, mat);
+            pMesh.position.set(x, y + 0.8, z);
+            particlesGroup.add(pMesh);
+
+            const angle = Math.random() * Math.PI * 2;
+            const spd = (6 + Math.random() * 18) * scale;
+            particles.push({
+              x,
+              y: y + 0.8,
+              z,
+              vx: Math.cos(angle) * spd,
+              vy: 4 + Math.random() * 14 * scale,
+              vz: Math.sin(angle) * spd,
+              life: 0.45 + Math.random() * 0.45,
+              maxLife: 0.85,
+              mesh: pMesh
+            });
+          }
+
+          // Expanding Blast Shockwave Ring
+          const ringGeo = new THREE.RingGeometry(0.6, 1.4, 20);
+          const ringMat = new THREE.MeshBasicMaterial({
+            color: colorHex,
+            side: THREE.DoubleSide,
+            transparent: true,
+            opacity: 0.9
+          });
+          const ringMesh = new THREE.Mesh(ringGeo, ringMat);
+          ringMesh.rotation.x = -Math.PI / 2;
+          ringMesh.position.set(x, Math.max(0.15, y), z);
+          particlesGroup.add(ringMesh);
+          shockwaves.push({
+            x, y, z,
+            scale: 1,
+            maxScale: 9 * scale,
+            life: 0.38,
+            maxLife: 0.38,
+            mesh: ringMesh
+          });
+        } else {
+          particles.push({ x, y, z, vx: 0, vy: 0, vz: 0, life: 0.4, maxLife: 0.4, colorHex, scale });
+        }
+      }
+
+      function showCallout(text, color = '#fde047') {
+        const wrap = document.getElementById('calloutContainer');
+        while (wrap.children.length >= 2) {
+          wrap.removeChild(wrap.firstChild);
+        }
+        const el = document.createElement('div');
+        el.className = 'callout-msg';
+        el.style.color = color;
+        el.textContent = text;
+        wrap.appendChild(el);
+        setTimeout(() => {
+          if (el.parentNode) el.parentNode.removeChild(el);
+        }, 1150);
+      }
+
+      // ==========================================
+      // 6. WEAPONS, COMBAT & TAKEDOWN LOGIC
+      // ==========================================
+      function fireBulletPair() {
+        if (!run) return;
+        const upgGuns = save.upgrades.guns || 1;
+        const isOverdrive = run.combo >= 5;
+        const dmg = (14 + (upgGuns - 1) * 5.5) * (isOverdrive ? 1.5 : 1.0);
+
+        for (const offset of [-0.55, 0.55]) {
+          let mesh = null;
+          if (!useFallback2D) {
+            const geo = new THREE.BoxGeometry(0.16, 0.16, 1.6);
+            const mat = new THREE.MeshBasicMaterial({ color: isOverdrive ? 0xf97316 : 0xfef08a });
+            mesh = new THREE.Mesh(geo, mat);
+            mesh.position.set(run.x + offset, run.y + 1.15, -2.5);
+            entitiesGroup.add(mesh);
+          }
+          projectiles.push({
+            kind: 'bullet',
+            x: run.x + offset,
+            y: run.y + 1.15,
+            z: -2.5,
+            vz: -165,
+            dmg,
+            radius: 1.55,
+            mesh
+          });
+        }
+
+        if (playerMesh && playerMesh.userData && playerMesh.userData.muzzleFlash) {
+          playerMesh.userData.muzzleFlash.visible = true;
+          setTimeout(() => {
+            if (playerMesh && playerMesh.userData && playerMesh.userData.muzzleFlash) {
+              playerMesh.userData.muzzleFlash.visible = false;
+            }
+          }, 45);
+        }
+        sfx.playGunShot();
+      }
+
+      function fireRocket() {
+        if (!run || gameState !== 'PLAYING') return;
+        if (run.rockets <= 0) {
+          showCallout('NO ROCKETS!', '#f87171');
+          return;
+        }
+        run.rockets--;
+        const upgOrd = save.upgrades.ordinance || 1;
+        const dmg = 110 + (upgOrd - 1) * 28;
+
+        let mesh = null;
+        if (!useFallback2D) {
+          const group = new THREE.Group();
+          const bodyGeo = new THREE.CylinderGeometry(0.22, 0.22, 2.2, 8);
+          const bodyMat = new THREE.MeshBasicMaterial({ color: 0xf97316 });
+          const body = new THREE.Mesh(bodyGeo, bodyMat);
+          body.rotation.x = Math.PI / 2;
+          group.add(body);
+
+          const tipGeo = new THREE.ConeGeometry(0.28, 0.6, 8);
+          const tipMat = new THREE.MeshBasicMaterial({ color: 0xfef08a });
+          const tip = new THREE.Mesh(tipGeo, tipMat);
+          tip.rotation.x = -Math.PI / 2;
+          tip.position.z = -1.3;
+          group.add(tip);
+
+          group.position.set(run.x, run.y + 1.1, -2.2);
+          entitiesGroup.add(group);
+          mesh = group;
+        }
+
+        projectiles.push({
+          kind: 'rocket',
+          x: run.x,
+          y: run.y + 1.1,
+          z: -2.2,
+          vz: -115,
+          dmg,
+          blastRadius: 7.5 + upgOrd * 0.5,
+          airFired: run.y > 1.2,
+          mesh
+        });
+
+        run.shake = Math.max(run.shake, 0.22);
+        sfx.playRocketLaunch();
+        updateHud();
+      }
+
+      function triggerBombShockwave() {
+        if (!run || gameState !== 'PLAYING') return;
+        if (run.bombs <= 0) {
+          showCallout('NO BOMBS!', '#f87171');
+          return;
+        }
+        run.bombs--;
+        const upgOrd = save.upgrades.ordinance || 1;
+        const blastRadius = 24 + upgOrd * 2.5;
+        const dmg = 150 + (upgOrd - 1) * 35;
+
+        sfx.playExplosion(true);
+        run.shake = 0.65;
+        spawnExplosionParticles(run.x, run.y, -6, 0xef4444, 34, 1.8);
+        showCallout('💣 SHOCKWAVE BOMB!', '#f87171');
+
+        for (let i = enemies.length - 1; i >= 0; i--) {
+          const e = enemies[i];
+          const dist = Math.hypot(e.x - run.x, e.z - 0);
+          if (dist <= blastRadius) {
+            damageEnemy(i, dmg, 'BOMB');
+          }
+        }
+        updateHud();
+      }
+
+      function activateNitro() {
+        if (!run || gameState !== 'PLAYING') return;
+        if (run.nitro > 12) {
+          run.nitroActive = true;
+        }
+      }
+
+      function damageEnemy(index, amount, source = 'GUN') {
+        const e = enemies[index];
+        if (!e) return;
+        e.hp -= amount;
+        e.hitFlash = 0.12;
+        if (!useFallback2D && e.mesh && e.mesh.userData.bodyMat) {
+          e.mesh.userData.bodyMat.color.setHex(0xffffff);
+        }
+
+        if (e.hp <= 0) {
+          destroyEnemy(index, source);
+        }
+      }
+
+      function destroyEnemy(index, source = 'WRECK') {
+        const e = enemies[index];
+        if (!e) return;
+
+        const ex = e.x;
+        const ez = e.z;
+        const wasTanker = e.isTanker;
+
+        if (!useFallback2D && e.mesh) {
+          entitiesGroup.remove(e.mesh);
+        }
+        enemies.splice(index, 1);
+
+        // Increment Kills & Combo
+        run.kills++;
+        if (run.comboTimer > 0) {
+          run.combo = Math.min(10, run.combo + 1);
+        } else {
+          run.combo = 1;
+        }
+        run.maxCombo = Math.max(run.maxCombo, run.combo);
+        run.comboTimer = 4.5;
+
+        const earned = Math.round(e.bounty * (1 + (run.combo - 1) * 0.25));
+        run.pickupCash += earned;
+        run.nitro = Math.min(100, run.nitro + 12);
+
+        if (run.combo === 5) {
+          run.fuel = Math.min(run.maxFuel, run.fuel + 15);
+          showCallout('🔥 x5 RAMPAGE OVERDRIVE! +FUEL!', '#f97316');
+        } else if (source === 'AIR_ROCKET') {
+          run.pickupCash += 60;
+          showCallout('🚀 DEATH FROM ABOVE! +$60', '#38bdf8');
+        } else if (source === 'RAM') {
+          showCallout(`💥 CRUSHED! +$${earned}`, '#fde047');
+        }
+
+        sfx.playExplosion(wasTanker);
+        run.shake = Math.max(run.shake, wasTanker ? 0.65 : 0.35);
+        spawnExplosionParticles(ex, 0.5, ez, wasTanker ? 0xfacc15 : 0xf97316, wasTanker ? 32 : 20, wasTanker ? 1.6 : 1.0);
+
+        // Tanker Chain-Reaction Blast!
+        if (wasTanker) {
+          showCallout('🛢️ TANKER CHAIN BLAST!', '#facc15');
+          for (let j = enemies.length - 1; j >= 0; j--) {
+            const other = enemies[j];
+            if (Math.hypot(other.x - ex, other.z - ez) < 16) {
+              damageEnemy(j, 180, 'CHAIN');
+            }
+          }
+        }
+      }
+
+      // ==========================================
+      // 7. MAIN SIMULATION TICK
+      // ==========================================
+      function updateSimulation(dt) {
+        if (!run) return;
+
+        const upg = save.upgrades;
+        const car = run.car;
+
+        // 1. Nitro & Speed Management
+        const wantNitro = keys.nitro || run.nitroActive;
+        if (wantNitro && run.nitro > 0) {
+          run.nitroActive = true;
+          const drainRate = Math.max(11, 22 - (upg.engine - 1) * 1.4);
+          run.nitro = Math.max(0, run.nitro - drainRate * dt);
+          if (run.nitro <= 0) run.nitroActive = false;
+        } else {
+          run.nitroActive = false;
+          run.nitro = Math.min(100, run.nitro + 4.5 * dt);
+        }
+
+        const targetSpeed = run.nitroActive
+          ? run.baseMaxSpeed * 1.52
+          : (keys.brake ? run.baseMaxSpeed * 0.55 : run.baseMaxSpeed);
+
+        run.speed += (targetSpeed - run.speed) * Math.min(1, dt * 4.5);
+
+        // 2. Steering & Horizontal Physics
+        let steerDir = 0;
+        if (keys.left) steerDir -= 1;
+        if (keys.right) steerDir += 1;
+
+        const steerAccel = 62 * (1 + (upg.engine - 1) * 0.04);
+        if (steerDir !== 0) {
+          run.vx += steerDir * steerAccel * dt;
+        } else {
+          run.vx *= Math.pow(0.0015, dt);
+        }
+        const maxVx = 21;
+        run.vx = Math.max(-maxVx, Math.min(maxVx, run.vx));
+        run.x += run.vx * dt;
+
+        const roadLimit = ROAD_WIDTH / 2 - 1.35;
+        if (run.x < -roadLimit) {
+          run.x = -roadLimit;
+          run.vx = 0;
+        } else if (run.x > roadLimit) {
+          run.x = roadLimit;
+          run.vx = 0;
+        }
+
+        // 3. Airborne & Ramp Gravity Physics
+        if (run.y > 0 || run.vy > 0) {
+          run.y += run.vy * dt;
+          run.vy -= 28 * dt; // Arcade gravity
+          run.airtimeSec += dt;
+          run.currentJumpSec += dt;
+          run.pitch = Math.max(-0.35, Math.min(0.42, run.vy * 0.024));
+
+          if (run.y <= 0) {
+            run.y = 0;
+            run.vy = 0;
+            run.pitch = 0;
+            // Landing Shockwave!
+            if (run.currentJumpSec > 0.45) {
+              const airBonus = Math.round(run.currentJumpSec * 45);
+              run.pickupCash += airBonus;
+              showCallout(`🦅 STUNT LANDING! +$${airBonus}`, '#38bdf8');
+              spawnExplosionParticles(run.x, 0.1, 0, 0x38bdf8, 12, 0.9);
+              run.shake = Math.max(run.shake, 0.25);
+              // Slam nearby enemies on landing
+              for (let i = enemies.length - 1; i >= 0; i--) {
+                if (Math.hypot(enemies[i].x - run.x, enemies[i].z) < 7.5) {
+                  damageEnemy(i, 95, 'SLAM');
+                }
+              }
+            }
+            run.currentJumpSec = 0;
+          }
+        } else {
+          run.pitch = 0;
+        }
+
+        // Visual body roll
+        const targetRoll = -run.vx * 0.018;
+        run.roll += (targetRoll - run.roll) * Math.min(1, dt * 10);
+
+        // 4. Distance, Fuel & Checkpoints
+        const distDelta = run.speed * dt * 0.48;
+        run.distance += distDelta;
+
+        const fuelBurnRate = Math.max(2.6, 4.4 - (upg.ordinance - 1) * 0.22);
+        run.fuel = Math.max(0, run.fuel - fuelBurnRate * dt);
+
+        if (run.fuel < run.maxFuel * 0.25 && !run.lowFuelWarned) {
+          run.lowFuelWarned = true;
+          showCallout('⚠️ LOW FUEL! GRAB GAS!', '#ef4444');
+          // Ensure a fuel canister is reachable ahead
+          spawnPickupAtZ(-125, 'fuel');
+        } else if (run.fuel >= run.maxFuel * 0.3) {
+          run.lowFuelWarned = false;
+        }
+
+        if (run.distance >= run.nextCheckpoint) {
+          run.nextCheckpoint += 1000;
+          run.biomeIndex = (run.biomeIndex + 1) % BIOMES.length;
+          applyBiomeVisuals(run.biomeIndex);
+          run.fuel = Math.min(run.maxFuel, run.fuel + run.maxFuel * 0.42);
+          run.pickupCash += 150;
+          sfx.playPickup('fuel');
+          showCallout(`🏁 CHECKPOINT! +FUEL & +$150`, '#4ade80');
+        }
+
+        // 5. Combo Decay & Rocket Auto-Recharge
+        if (run.comboTimer > 0) {
+          run.comboTimer = Math.max(0, run.comboTimer - dt);
+          if (run.comboTimer === 0) run.combo = 1;
+        }
+
+        if (run.rockets < run.maxRockets) {
+          run.rocketRechargeTimer += dt;
+          const rechargeTime = Math.max(3.2, 6.0 - (upg.ordinance - 1) * 0.35);
+          if (run.rocketRechargeTimer >= rechargeTime) {
+            run.rocketRechargeTimer = 0;
+            run.rockets++;
+          }
+        }
+
+        // 6. Mounted Machine Gun Auto-Fire
+        if (run.gunCooldown > 0) run.gunCooldown -= dt;
+        const fireInterval = Math.max(0.085, 0.21 - (upg.guns - 1) * 0.015) * (run.combo >= 5 ? 0.65 : 1.0);
+        if (run.autoFire && run.gunCooldown <= 0) {
+          // Fire when an enemy is within frontal corridor or during overdrive
+          const hasTargetAhead = enemies.some(e => e.z < 2 && e.z > -135 && Math.abs(e.x - run.x) < 4.5);
+          if (hasTargetAhead || run. nitroActive) {
+            fireBulletPair();
+            run.gunCooldown = fireInterval;
+          }
+        }
+
+        // 7. Scroll Highway Dashes & Scenery
+        const worldScroll = run.speed * dt;
+        if (!useFallback2D) {
+          for (const dash of dashMeshes) {
+            dash.position.z += worldScroll;
+            if (dash.position.z > 22) dash.position.z -= 275;
+          }
+          for (const prop of sceneryProps) {
+            prop.position.z += worldScroll;
+            if (prop.position.z > 25) prop.position.z -= 270;
+          }
+        }
+
+        // 8. Spawn Timers
+        run.spawnEnemyTimer -= dt;
+        if (run.spawnEnemyTimer <= 0 && enemies.length < 11) {
+          spawnEnemyAtZ(-210 - Math.random() * 25);
+          run.spawnEnemyTimer = Math.max(0.42, 0.98 - run.biomeIndex * 0.08);
+        }
+
+        run.spawnPickupTimer -= dt;
+        if (run.spawnPickupTimer <= 0) {
+          spawnPickupAtZ(-215);
+          run.spawnPickupTimer = 1.65 + Math.random() * 0.9;
+        }
+
+        run.spawnRampTimer -= dt;
+        if (run.spawnRampTimer <= 0) {
+          spawnRampAtZ(-220);
+          run.spawnRampTimer = 3.2 + Math.random() * 1.8;
+        }
+
+        // 9. Update Ramps & Check Launch
+        for (let i = ramps.length - 1; i >= 0; i--) {
+          const r = ramps[i];
+          r.z += worldScroll;
+          if (!useFallback2D && r.mesh) r.mesh.position.z = r.z;
+
+          if (!r.used && Math.abs(r.z) < 3.6 && Math.abs(r.x - run.x) < 2.35 && run.y < 1.2) {
+            r.used = true;
+            run.vy = 16.5;
+            run.y = 0.35;
+            run.nitro = Math.min(100, run.nitro + 22);
+            sfx.playRampJump();
+            showCallout('🚀 MEGA RAMP LAUNCH!', '#38bdf8');
+          }
+
+          if (r.z > 25) {
+            if (!useFallback2D && r.mesh) entitiesGroup.remove(r.mesh);
+            ramps.splice(i, 1);
+          }
+        }
+
+        // 10. Update Pickups & Collect
+        for (let i = pickups.length - 1; i >= 0; i--) {
+          const p = pickups[i];
+          p.z += worldScroll;
+          p.rot += dt * 3.2;
+          if (!useFallback2D && p.mesh) {
+            p.mesh.position.z = p.z;
+            p.mesh.rotation.y = p.rot;
+          }
+
+          if (Math.abs(p.z) < 3.2 && Math.abs(p.x - run.x) < 2.4 && run.y < 3.2) {
+            sfx.playPickup(p.type);
+            if (p.type === 'fuel') {
+              const gain = run.maxFuel * 0.34;
+              run.fuel = Math.min(run.maxFuel, run.fuel + gain);
+              showCallout('⛽ +FUEL TANK!', '#4ade80');
+            } else if (p.type === 'cash') {
+              const amt = 65 * run.combo;
+              run.pickupCash += amt;
+              showCallout(`💵 +$${amt} CASH!`, '#facc15');
+            } else if (p.type === 'nitro') {
+              run.nitro = 100;
+              run.nitroActive = true;
+              showCallout('⚡ MAX NITRO BOOST!', '#38bdf8');
+            } else if (p.type === 'ammo') {
+              run.rockets = Math.min(run.maxRockets, run.rockets + 3);
+              run.bombs = Math.min(run.maxBombs, run.bombs + 1);
+              showCallout('🚀 +3 ROCKETS & +1 BOMB!', '#fb923c');
+            } else if (p.type === 'repair') {
+              run.hp = Math.min(run.maxHp, run.hp + run.maxHp * 0.38);
+              showCallout('🛠️ +ARMOR REPAIRED!', '#c084fc');
+            }
+
+            if (!useFallback2D && p.mesh) entitiesGroup.remove(p.mesh);
+            pickups.splice(i, 1);
+            continue;
+          }
+
+          if (p.z > 25) {
+            if (!useFallback2D && p.mesh) entitiesGroup.remove(p.mesh);
+            pickups.splice(i, 1);
+          }
+        }
+
+        // 11. Update Projectiles (Bullets & Homing Rockets)
+        for (let i = projectiles.length - 1; i >= 0; i--) {
+          const pr = projectiles[i];
+          pr.z += pr.vz * dt;
+
+          // Rockets slightly home in horizontally toward nearest enemy ahead
+          if (pr.kind === 'rocket') {
+            let bestTarget = null;
+            let bestDist = 999;
+            for (const e of enemies) {
+              if (e.z < pr.z && pr.z - e.z < 75) {
+                const d = Math.hypot(e.x - pr.x, e.z - pr.z);
+                if (d < bestDist) {
+                  bestDist = d;
+                  bestTarget = e;
+                }
+              }
+            }
+            if (bestTarget) {
+              const dx = bestTarget.x - pr.x;
+              pr.x += Math.sign(dx) * Math.min(Math.abs(dx), 18 * dt);
+            }
+          }
+
+          if (!useFallback2D && pr.mesh) {
+            pr.mesh.position.set(pr.x, Math.max(0.8, pr.y), pr.z);
+          }
+
+          let hit = false;
+          for (let j = enemies.length - 1; j >= 0; j--) {
+            const e = enemies[j];
+            if (Math.abs(pr.z - e.z) < 3.2 && Math.abs(pr.x - e.x) < 2.15) {
+              hit = true;
+              if (pr.kind === 'rocket') {
+                // Area of Effect Rocket Detonation!
+                sfx.playExplosion(true);
+                spawnExplosionParticles(e.x, 1.0, e.z, 0xf97316, 26, 1.45);
+                for (let k = enemies.length - 1; k >= 0; k--) {
+                  const other = enemies[k];
+                  if (Math.hypot(other.x - e.x, other.z - e.z) <= pr.blastRadius) {
+                    damageEnemy(k, pr.dmg, pr.airFired ? 'AIR_ROCKET' : 'ROCKET');
+                  }
+                }
+              } else {
+                spawnExplosionParticles(pr.x, 1.0, pr.z, 0xfef08a, 3, 0.45);
+                damageEnemy(j, pr.dmg, 'GUN');
+              }
+              break;
+            }
+          }
+
+          if (hit || pr.z < -220) {
+            if (!useFallback2D && pr.mesh) entitiesGroup.remove(pr.mesh);
+            projectiles.splice(i, 1);
+          }
+        }
+
+        // 12. Update Enemies & Ramming Collisions
+        for (let i = enemies.length - 1; i >= 0; i--) {
+          const e = enemies[i];
+          const relZ = (run.speed - e.speed) * dt;
+          e.z += relZ;
+
+          // AI Lane Weaving for Interceptors
+          e.laneTimer -= dt;
+          if (e.laneTimer <= 0 && e.z < -25) {
+            e.laneTimer = 2.0 + Math.random() * 2.5;
+            if (e.type === 'interceptor') {
+              // Steer toward player lane to challenge them
+              const shift = Math.sign(run.x - LANE_CENTERS[e.targetLane]);
+              e.targetLane = Math.max(0, Math.min(3, e.targetLane + shift));
+            } else {
+              e.targetLane = Math.max(0, Math.min(3, e.targetLane + (Math.random() < 0.5 ? -1 : 1)));
+            }
+          }
+          const targetX = LANE_CENTERS[e.targetLane];
+          e.x += (targetX - e.x) * Math.min(1, dt * 3.0);
+
+          if (e.hitFlash > 0) {
+            e.hitFlash -= dt;
+            if (e.hitFlash <= 0 && !useFallback2D && e.mesh && e.mesh.userData.bodyMat) {
+              e.mesh.userData.bodyMat.color.setHex(e.mesh.userData.baseColor);
+            }
+          }
+
+          if (!useFallback2D && e.mesh) {
+            e.mesh.position.set(e.x, e.y, e.z);
+          }
+
+          // Check Player-Enemy Collision (if not flying high over them)
+          if (run.y < 2.1 && Math.abs(e.z) < 3.95 && Math.abs(e.x - run.x) < 2.15) {
+            const ramPower = (65 + (upg.armor - 1) * 18) * car.ramMult * (run.nitroActive ? 2.6 : 1.0);
+            const selfDmg = (e.isTruck ? 22 : 14) * (run.nitroActive ? 0.25 : 1.0);
+
+            run.hp = Math.max(0, run.hp - selfDmg);
+            run.shake = Math.max(run.shake, 0.45);
+            spawnExplosionParticles((run.x + e.x) / 2, 0.9, 0, 0xfacc15, 14, 0.9);
+
+            // Push enemy or destroy them
+            damageEnemy(i, ramPower, 'RAM');
+            if (enemies[i]) {
+              // Knock enemy forward and sideways if still alive
+              enemies[i].z -= 9;
+              enemies[i].x += (e.x >= run.x ? 2.6 : -2.6);
+            }
+            continue;
+          }
+
+          if (e.z > 26) {
+            if (!useFallback2D && e.mesh) entitiesGroup.remove(e.mesh);
+            enemies.splice(i, 1);
+          }
+        }
+
+        // 13. Update Particles & Shockwaves
+        for (let i = particles.length - 1; i >= 0; i--) {
+          const p = particles[i];
+          p.life -= dt;
+          p.x += p.vx * dt;
+          p.y += p.vy * dt;
+          p.z += (p.vz + run.speed * 0.35) * dt;
+          p.vy -= 24 * dt;
+          if (!useFallback2D && p.mesh) {
+            p.mesh.position.set(p.x, Math.max(0.1, p.y), p.z);
+            p.mesh.rotation.x += 6 * dt;
+            p.mesh.rotation.y += 6 * dt;
+            const s = Math.max(0.05, p.life / p.maxLife);
+            p.mesh.scale.set(s, s, s);
+          }
+          if (p.life <= 0) {
+            if (!useFallback2D && p.mesh) particlesGroup.remove(p.mesh);
+            particles.splice(i, 1);
+          }
+        }
+
+        for (let i = shockwaves.length - 1; i >= 0; i--) {
+          const sw = shockwaves[i];
+          sw.life -= dt;
+          sw.z += worldScroll * 0.5;
+          const t = 1 - sw.life / sw.maxLife;
+          if (!useFallback2D && sw.mesh) {
+            const sc = 1 + t * sw.maxScale;
+            sw.mesh.scale.set(sc, sc, 1);
+            sw.mesh.position.z = sw.z;
+            sw.mesh.material.opacity = Math.max(0, 1 - t);
+          }
+          if (sw.life <= 0) {
+            if (!useFallback2D && sw.mesh) particlesGroup.remove(sw.mesh);
+            shockwaves.splice(i, 1);
+          }
+        }
+
+        // 14. Update Player Mesh, Exhaust Plumes & Chase Camera
+        if (!useFallback2D && playerMesh) {
+          playerMesh.position.set(run.x, run.y, 0);
+          playerMesh.rotation.x = run.pitch;
+          playerMesh.rotation.z = run.roll;
+          playerMesh.rotation.y = -run.vx * 0.012;
+
+          const { leftFlame, rightFlame } = playerMesh.userData;
+          if (leftFlame && rightFlame) {
+            const flameScale = run.nitroActive ? (1.45 + Math.random() * 0.5) : (0.55 + Math.random() * 0.25);
+            const flameColor = run.nitroActive ? 0x38bdf8 : 0xf97316;
+            leftFlame.scale.set(1, flameScale, 1);
+            rightFlame.scale.set(1, flameScale, 1);
+            leftFlame.material.color.setHex(flameColor);
+            rightFlame.material.color.setHex(flameColor);
+          }
+
+          // Dynamic Third-Person Chase Camera
+          const preset = CAMERA_PRESETS[cameraMode];
+          const targetFov = run.nitroActive ? 74 : (run.y > 1 ? 68 : 62);
+          camera.fov += (targetFov - camera.fov) * Math.min(1, dt * 6);
+          camera.updateProjectionMatrix();
+
+          let shakeX = 0, shakeY = 0;
+          if (run.shake > 0) {
+            run.shake = Math.max(0, run.shake - dt * 2.2);
+            shakeX = (Math.random() - 0.5) * run.shake * 1.6;
+            shakeY = (Math.random() - 0.5) * run.shake * 1.6;
+          }
+
+          const camTargetX = run.x * 0.62 + shakeX;
+          const camTargetY = preset.y + run.y * 0.55 + shakeY;
+          const camTargetZ = preset.z + (run.nitroActive ? 1.4 : 0);
+
+          camera.position.x += (camTargetX - camera.position.x) * Math.min(1, dt * 8);
+          camera.position.y += (camTargetY - camera.position.y) * Math.min(1, dt * 8);
+          camera.position.z += (camTargetZ - camera.position.z) * Math.min(1, dt * 8);
+          camera.lookAt(run.x * 0.45, 1.4 + run.y * 0.35, preset.lookZ);
+        }
+
+        // Update Engine Audio
+        sfx.updateEngineHum(run.speed / 120, run.y > 0.5, run.nitroActive);
+
+        // Screen FX Overlay classes
+        const fxOverlay = document.getElementById('fxOverlay');
+        fxOverlay.classList.toggle('low-fuel', run.fuel < run.maxFuel * 0.25);
+        fxOverlay.classList.toggle('nitro-active', run.nitroActive);
+        fxOverlay.classList.toggle('rampage-active', run.combo >= 5 && !run.nitroActive);
+
+        updateHud();
+
+        // Check End Conditions
+        if (run.hp <= 0) {
+          endRun('💥 VEHICLE WRECKED!');
+        } else if (run.fuel <= 0) {
+          endRun('⛽ OUT OF FUEL!');
+        }
+      }
+
+      // ==========================================
+      // 8. 2.5D CANVAS FALLBACK RENDERER (IF NO WEBGL)
+      // ==========================================
+      function renderFallback2D() {
+        if (!fallbackCtx) return;
+        const ctx = fallbackCtx;
+        const w = fallbackCanvas.width;
+        const h = fallbackCanvas.height;
+        const horizon = h * 0.36;
+
+        const b = BIOMES[run ? run.biomeIndex : 0];
+        ctx.fillStyle = '#' + b.skyHex.toString(16).padStart(6, '0');
+        ctx.fillRect(0, 0, w, horizon);
+
+        ctx.fillStyle = '#' + b.groundHex.toString(16).padStart(6, '0');
+        ctx.fillRect(0, horizon, w, h - horizon);
+
+        // Perspective Road Trapezoid
+        ctx.fillStyle = '#' + b.roadHex.toString(16).padStart(6, '0');
+        ctx.beginPath();
+        ctx.moveTo(w * 0.42, horizon);
+        ctx.lineTo(w * 0.58, horizon);
+        ctx.lineTo(w * 0.92, h);
+        ctx.lineTo(w * 0.08, h);
+        ctx.closePath();
+        ctx.fill();
+
+        const project = (wx, wy, wz) => {
+          const depth = Math.max(2, 16 - wz);
+          const scale = 14 / depth;
+          const sx = w * 0.5 + (wx - (run ? run.x * 0.4 : 0)) * scale * (w * 0.025);
+          const sy = horizon + (h - horizon) * scale - wy * scale * 18;
+          return { sx, sy, scale };
+        };
+
+        // Draw Entities back-to-front
+        for (const r of ramps) {
+          const p = project(r.x, 0, r.z);
+          ctx.fillStyle = '#f97316';
+          ctx.fillRect(p.sx - 28 * p.scale, p.sy - 18 * p.scale, 56 * p.scale, 24 * p.scale);
+        }
+        for (const pk of pickups) {
+          const p = project(pk.x, 0.8, pk.z);
+          ctx.fillStyle = pk.type === 'fuel' ? '#22c55e' : '#facc15';
+          ctx.beginPath();
+          ctx.arc(p.sx, p.sy, Math.max(4, 16 * p.scale), 0, Math.PI * 2);
+          ctx.fill();
+        }
+        for (const e of enemies) {
+          const p = project(e.x, e.y, e.z);
+          ctx.fillStyle = e.isTanker ? '#f59e0b' : '#ef4444';
+          ctx.fillRect(p.sx - 26 * p.scale, p.sy - 28 * p.scale, 52 * p.scale, 32 * p.scale);
+        }
+        if (run) {
+          const p = project(run.x, run.y, 0);
+          ctx.fillStyle = '#' + run.car.bodyColor.toString(16).padStart(6, '0');
+          ctx.fillRect(p.sx - 34, p.sy - 36, 68, 40);
+        }
+      }
+
+      // ==========================================
+      // 9. HUD & MODAL SCREEN CONTROLLERS
+      // ==========================================
+      function updateHud() {
+        if (!run) return;
+        const hpPct = Math.max(0, Math.round((run.hp / run.maxHp) * 100));
+        const fuelPct = Math.max(0, Math.round((run.fuel / run.maxFuel) * 100));
+
+        document.getElementById('armorText').textContent = hpPct + '%';
+        document.getElementById('armorBar').style.width = hpPct + '%';
+
+        document.getElementById('fuelText').textContent = fuelPct + '%';
+        const fuelBar = document.getElementById('fuelBar');
+        fuelBar.style.width = fuelPct + '%';
+        fuelBar.classList.toggle('critical', fuelPct < 25);
+
+        document.getElementById('distanceText').textContent = Math.floor(run.distance) + ' m';
+        document.getElementById('speedText').textContent = Math.round(run.speed * 1.45) + ' MPH';
+
+        const cpProgress = ((run.distance % 1000) / 1000) * 100;
+        document.getElementById('checkpointBar').style.width = cpProgress + '%';
+
+        const currentRunCash = Math.floor(run.distance * 0.12) + run.pickupCash;
+        document.getElementById('hudCash').textContent = '$' + currentRunCash;
+        document.getElementById('hudKills').textContent = run.kills + ' 💥';
+
+        const comboBadge = document.getElementById('comboBadge');
+        if (run.combo > 1) {
+          comboBadge.classList.remove('hidden');
+          comboBadge.textContent = `x${run.combo} ${run.combo >= 5 ? 'OVERDRIVE!' : 'RAMPAGE!'}`;
+        } else {
+          comboBadge.classList.add('hidden');
+        }
+
+        document.getElementById('rocketAmmoBadge').textContent = run.rockets;
+        document.getElementById('bombAmmoBadge').textContent = run.bombs;
+        document.getElementById('nitroPctBadge').textContent = Math.round(run.nitro) + '%';
+
+        const gunBtn = document.getElementById('gunToggleBtn');
+        gunBtn.classList.toggle('autofire-on', run.autoFire);
+        document.getElementById('gunStateLabel').textContent = run.autoFire ? 'AUTO' : 'OFF';
+      }
+
+      function updateMenuUI() {
+        document.getElementById('menuBankText').textContent = '$' + save.cash;
+        document.getElementById('menuBestDistText').textContent = save.bestDistance + ' m';
+        document.getElementById('menuTotalKillsText').textContent = save.totalKills;
+        document.getElementById('menuUpgradeBadge').classList.toggle('hidden', !canAffordAnything());
+      }
+
+      function renderGarageUI() {
+        document.getElementById('garageBankText').textContent = '$' + save.cash;
+
+        // Render Vehicles
+        const carGrid = document.getElementById('carListGrid');
+        carGrid.innerHTML = '';
+        for (const car of VEHICLES) {
+          const isOwned = save.ownedCars.includes(car.id);
+          const isSelected = save.selectedCar === car.id;
+          const canBuy = !isOwned && save.cash >= car.cost;
+
+          const card = document.createElement('div');
+          card.className = 'car-card' + (isSelected ? ' selected' : '');
+
+          const swatchHex = '#' + car.bodyColor.toString(16).padStart(6, '0');
+          let statusClass = 'status-locked';
+          let statusLabel = `$${car.cost}`;
+          if (isSelected) {
+            statusClass = 'status-equipped';
+            statusLabel = '✓ Equipped';
+          } else if (isOwned) {
+            statusClass = 'status-owned';
+            statusLabel = 'Select Rig';
+          } else if (canBuy) {
+            statusClass = 'status-buy';
+            statusLabel = `Buy $${car.cost}`;
+          }
+
+          card.innerHTML = `
+            <div class="car-card-name">
+              <span>${car.name}</span>
+              <span style="width:14px;height:14px;border-radius:50%;background:${swatchHex};display:inline-block;border:1px solid #fff;"></span>
+            </div>
+            <div class="car-card-role">${car.role}</div>
+            <div style="font-size:11px;color:#cbd5e1;">
+              Spd <strong>${Math.round(car.speedMult * 100)}%</strong> • Arm <strong>${Math.round(car.armorMult * 100)}%</strong>
+            </div>
+            <div class="car-card-status ${statusClass}">${statusLabel}</div>
+          `;
+
+          card.addEventListener('click', () => {
+            sfx.init();
+            if (isOwned) {
+              save.selectedCar = car.id;
+              persistSave();
+              sfx.playPickup('cash');
+              initRunState();
+              renderGarageUI();
+            } else if (save.cash >= car.cost) {
+              save.cash -= car.cost;
+              save.ownedCars.push(car.id);
+              save.selectedCar = car.id;
+              persistSave();
+              sfx.playPickup('cash');
+              initRunState();
+              renderGarageUI();
+            }
+          });
+
+          carGrid.appendChild(card);
+        }
+
+        // Render Upgrades
+        const upgGrid = document.getElementById('upgradesGrid');
+        upgGrid.innerHTML = '';
+        for (const def of UPGRADE_DEFS) {
+          const lvl = save.upgrades[def.key] || 1;
+          const isMax = lvl >= def.maxLevel;
+          const cost = getUpgradeCost(def, lvl);
+          const affordable = !isMax && save.cash >= cost;
+
+          let pipsHtml = '';
+          for (let i = 1; i <= def.maxLevel; i++) {
+            pipsHtml += `<div class="pip ${i <= lvl ? 'filled' : ''}"></div>`;
+          }
+
+          const item = document.createElement('div');
+          item.className = 'upgrade-item';
+          item.innerHTML = `
+            <div class="upg-top">
+              <span class="upg-name">${def.name}</span>
+              <span class="upg-lvl">LVL ${lvl}/${def.maxLevel}</span>
+            </div>
+            <div class="upg-desc">${def.desc}</div>
+            <div class="upg-pips">${pipsHtml}</div>
+            <button class="upg-buy-btn" ${(!affordable || isMax) ? 'disabled' : ''}>
+              <span>${isMax ? 'MAXED OUT' : 'Upgrade'}</span>
+              <span>${isMax ? '✓' : '$' + cost}</span>
+            </button>
+          `;
+
+          const btn = item.querySelector('.upg-buy-btn');
+          btn.addEventListener('click', () => {
+            if (!isMax && save.cash >= cost) {
+              save.cash -= cost;
+              save.upgrades[def.key] = lvl + 1;
+              persistSave();
+              sfx.playPickup('cash');
+              renderGarageUI();
+            }
+          });
+
+          upgGrid.appendChild(item);
+        }
+      }
+
+      function startNewRun() {
+        sfx.init();
+        sfx.startEngineHum();
+        initRunState();
+        gameState = 'PLAYING';
+        document.getElementById('menuScreen').classList.add('hidden');
+        document.getElementById('garageScreen').classList.add('hidden');
+        document.getElementById('gameOverScreen').classList.add('hidden');
+        document.getElementById('pauseScreen').classList.add('hidden');
+        document.getElementById('hud').classList.remove('hidden');
+        showCallout('🔥 SMASH EVERYTHING!', '#fde047');
+        updateHud();
+      }
+
+      function endRun(reasonText) {
+        gameState = 'GAMEOVER';
+        sfx.stopEngineHum();
+        sfx.playExplosion(true);
+
+        const distInt = Math.floor(run.distance);
+        const distCash = Math.floor(distInt * 0.14);
+        const killsCash = run.kills * 25;
+        const airCash = Math.round(run.airtimeSec * 30);
+        const pickupCash = run.pickupCash;
+        const totalEarned = distCash + killsCash + airCash + pickupCash;
+
+        save.cash += totalEarned;
+        save.bestDistance = Math.max(save.bestDistance, distInt);
+        save.totalKills += run.kills;
+        persistSave();
+
+        document.getElementById('hud').classList.add('hidden');
+        document.getElementById('fxOverlay').className = '';
+
+        document.getElementById('gameOverReasonBadge').textContent = reasonText;
+        document.getElementById('goDistVal').textContent = distInt + ' m';
+        document.getElementById('goDistCash').textContent = '+$' + distCash;
+        document.getElementById('goKillsVal').textContent = run.kills + ' 💥';
+        document.getElementById('goKillsCash').textContent = '+$' + killsCash;
+        document.getElementById('goAirVal').textContent = run.airtimeSec.toFixed(1) + 's';
+        document.getElementById('goAirCash').textContent = '+$' + airCash;
+        document.getElementById('goComboVal').textContent = 'x' + run.maxCombo;
+        document.getElementById('goPickupCash').textContent = '+$' + pickupCash;
+        document.getElementById('goTotalCash').textContent = '+$' + totalEarned;
+        document.getElementById('goUpgradeBadge').classList.toggle('hidden', !canAffordAnything());
+
+        document.getElementById('gameOverScreen').classList.remove('hidden');
+      }
+
+      function openGarage() {
+        sfx.stopEngineHum();
+        gameState = 'GARAGE';
+        document.getElementById('menuScreen').classList.add('hidden');
+        document.getElementById('gameOverScreen').classList.add('hidden');
+        document.getElementById('pauseScreen').classList.add('hidden');
+        document.getElementById('hud').classList.add('hidden');
+        renderGarageUI();
+        document.getElementById('garageScreen').classList.remove('hidden');
+      }
+
+      function openMainMenu() {
+        sfx.stopEngineHum();
+        gameState = 'MENU';
+        document.getElementById('garageScreen').classList.add('hidden');
+        document.getElementById('gameOverScreen').classList.add('hidden');
+        document.getElementById('pauseScreen').classList.add('hidden');
+        document.getElementById('hud').classList.add('hidden');
+        updateMenuUI();
+        document.getElementById('menuScreen').classList.remove('hidden');
+      }
+
+      function togglePause() {
+        if (gameState === 'PLAYING') {
+          gameState = 'PAUSED';
+          sfx.stopEngineHum();
+          document.getElementById('pauseScreen').classList.remove('hidden');
+        } else if (gameState === 'PAUSED') {
+          gameState = 'PLAYING';
+          sfx.startEngineHum();
+          document.getElementById('pauseScreen').classList.add('hidden');
+        }
+      }
+
+      // ==========================================
+      // 10. INPUT LISTENERS (KEYBOARD & TOUCH)
+      // ==========================================
+      window.addEventListener('keydown', (e) => {
+        if (e.repeat) return;
+        const code = e.code;
+        if (code === 'ArrowLeft' || code === 'KeyA') {
+          keys.left = true;
+          document.getElementById('steerLeftBtn').classList.add('active');
+        } else if (code === 'ArrowRight' || code === 'KeyD') {
+          keys.right = true;
+          document.getElementById('steerRightBtn').classList.add('active');
+        } else if (code === 'ShiftLeft' || code === 'ShiftRight' || code === 'ArrowUp' || code === 'KeyW') {
+          keys.nitro = true;
+          activateNitro();
+        } else if (code === 'ArrowDown' || code === 'KeyS') {
+          keys.brake = true;
+        } else if (code === 'Space' || code === 'KeyJ') {
+          if (gameState === 'PLAYING') {
+            e.preventDefault();
+            fireRocket();
+          }
+        } else if (code === 'KeyE' || code === 'KeyB' || code === 'KeyK') {
+          if (gameState === 'PLAYING') triggerBombShockwave();
+        } else if (code === 'KeyF') {
+          if (run && gameState === 'PLAYING') {
+            run.autoFire = !run.autoFire;
+            updateHud();
+          }
+        } else if (code === 'KeyC') {
+          cameraMode = (cameraMode + 1) % CAMERA_PRESETS.length;
+          showCallout('🎥 CAMERA VIEW ' + (cameraMode + 1), '#cbd5e1');
+        } else if (code === 'KeyM') {
+          const muted = sfx.toggleMute();
+          document.getElementById('muteBtn').textContent = muted ? '🔇' : '🔊';
+        } else if (code === 'KeyP' || code === 'Escape') {
+          if (gameState === 'PLAYING' || gameState === 'PAUSED') togglePause();
+        }
+      });
+
+      window.addEventListener('keyup', (e) => {
+        const code = e.code;
+        if (code === 'ArrowLeft' || code === 'KeyA') {
+          keys.left = false;
+          document.getElementById('steerLeftBtn').classList.remove('active');
+        } else if (code === 'ArrowRight' || code === 'KeyD') {
+          keys.right = false;
+          document.getElementById('steerRightBtn').classList.remove('active');
+        } else if (code === 'ShiftLeft' || code === 'ShiftRight' || code === 'ArrowUp' || code === 'KeyW') {
+          keys.nitro = false;
+        } else if (code === 'ArrowDown' || code === 'KeyS') {
+          keys.brake = false;
+        }
+      });
+
+      function bindHoldButton(btnId, onDown, onUp) {
+        const btn = document.getElementById(btnId);
+        const start = (ev) => {
+          ev.preventDefault();
+          btn.classList.add('active');
+          onDown();
+        };
+        const end = (ev) => {
+          ev.preventDefault();
+          btn.classList.remove('active');
+          onUp();
+        };
+        btn.addEventListener('pointerdown', start);
+        btn.addEventListener('pointerup', end);
+        btn.addEventListener('pointerleave', end);
+        btn.addEventListener('pointercancel', end);
+      }
+
+      bindHoldButton('steerLeftBtn', () => { keys.left = true; }, () => { keys.left = false; });
+      bindHoldButton('steerRightBtn', () => { keys.right = true; }, () => { keys.right = false; });
+      bindHoldButton('nitroBtn', () => { keys.nitro = true; activateNitro(); }, () => { keys.nitro = false; });
+
+      document.getElementById('rocketBtn').addEventListener('pointerdown', (e) => {
+        e.preventDefault();
+        fireRocket();
+      });
+      document.getElementById('bombBtn').addEventListener('pointerdown', (e) => {
+        e.preventDefault();
+        triggerBombShockwave();
+      });
+      document.getElementById('gunToggleBtn').addEventListener('click', () => {
+        if (run) {
+          run.autoFire = !run.autoFire;
+          updateHud();
+        }
+      });
+
+      document.getElementById('camBtn').addEventListener('click', () => {
+        cameraMode = (cameraMode + 1) % CAMERA_PRESETS.length;
+        showCallout('🎥 CAMERA VIEW ' + (cameraMode + 1), '#cbd5e1');
+      });
+      document.getElementById('muteBtn').addEventListener('click', () => {
+        const muted = sfx.toggleMute();
+        document.getElementById('muteBtn').textContent = muted ? '🔇' : '🔊';
+      });
+      document.getElementById('pauseBtn').addEventListener('click', togglePause);
+
+      // Menu Navigation Buttons
+      document.getElementById('startRunBtn').addEventListener('click', startNewRun);
+      document.getElementById('openGarageBtn').addEventListener('click', openGarage);
+      document.getElementById('garageLaunchBtn').addEventListener('click', startNewRun);
+      document.getElementById('garageBackBtn').addEventListener('click', openMainMenu);
+      document.getElementById('retryRunBtn').addEventListener('click', startNewRun);
+      document.getElementById('goGarageBtn').addEventListener('click', openGarage);
+      document.getElementById('resumeBtn').addEventListener('click', togglePause);
+      document.getElementById('pauseGarageBtn').addEventListener('click', openGarage);
+
+      window.addEventListener('resize', () => {
+        if (!useFallback2D && renderer && camera) {
+          camera.aspect = window.innerWidth / window.innerHeight;
+          camera.updateProjectionMatrix();
+          renderer.setSize(window.innerWidth, window.innerHeight);
+        } else if (fallbackCanvas) {
+          fallbackCanvas.width = window.innerWidth;
+          fallbackCanvas.height = window.innerHeight;
+        }
+      });
+
+      // ==========================================
+      // 11. MAIN ANIMATION LOOP & ATTRACT MODE
+      // ==========================================
+      let lastTime = performance.now();
+      let attractAngle = 0;
+
+      function animate(now) {
+        requestAnimationFrame(animate);
+        const dt = Math.min(0.05, (now - lastTime) / 1000);
+        lastTime = now;
+
+        if (gameState === 'PLAYING') {
+          updateSimulation(dt);
+        } else if (!useFallback2D && playerMesh && camera) {
+          // Showcase Turntable / Attract Mode Camera in Menu & Garage
+          attractAngle += dt * 0.65;
+          for (const dash of dashMeshes) {
+            dash.position.z += 28 * dt;
+            if (dash.position.z > 22) dash.position.z -= 275;
+          }
+          playerMesh.position.set(0, 0, 0);
+          playerMesh.rotation.y = Math.sin(attractAngle) * 0.45;
+          camera.position.set(Math.sin(attractAngle * 0.7) * 5.5, 4.2, 10.5);
+          camera.lookAt(0, 1.2, -4);
+        }
+
+        if (!useFallback2D && renderer && scene && camera) {
+          renderer.render(scene, camera);
+        } else {
+          renderFallback2D();
+        }
+      }
+
+      // Initialize Everything
+      initGraphics();
+      initRunState();
+      updateMenuUI();
+      requestAnimationFrame(animate);
+
+      // Expose debug hook for automated browser testing
+      window.__RACING_RAMPAGE__ = {
+        getState: () => ({ gameState, run, save, enemiesCount: enemies.length, useFallback2D }),
+        startNewRun,
+        openGarage,
+        fireRocket,
+        triggerBombShockwave,
+        activateNitro
+      };
+    })();
+  </script>
+</body>
+</html>
