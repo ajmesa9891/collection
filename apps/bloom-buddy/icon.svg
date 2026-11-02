@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="100%" stop-color="#86efac"/>
+    </linearGradient>
+    <linearGradient id="bee" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fde047"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <clipPath id="bodyClip">
+      <ellipse cx="256" cy="285" rx="135" ry="125"/>
+    </clipPath>
+  </defs>
+  <rect width="512" height="512" rx="115" fill="url(#bg)"/>
+  <!-- Wings -->
+  <ellipse cx="140" cy="190" rx="78" ry="52" transform="rotate(-25 140 190)" fill="#e0f2fe" stroke="#38bdf8" stroke-width="10"/>
+  <ellipse cx="372" cy="190" rx="78" ry="52" transform="rotate(25 372 190)" fill="#e0f2fe" stroke="#38bdf8" stroke-width="10"/>
+  <!-- Stinger -->
+  <polygon points="236,405 276,405 256,450" fill="#451a03"/>
+  <!-- Body -->
+  <ellipse cx="256" cy="285" rx="135" ry="125" fill="url(#bee)" stroke="#451a03" stroke-width="14"/>
+  <g clip-path="url(#bodyClip)">
+    <rect x="100" y="325" width="312" height="32" fill="#451a03"/>
+    <rect x="100" y="375" width="312" height="28" fill="#451a03"/>
+  </g>
+  <!-- Antennae -->
+  <path d="M215 168 Q185 100 145 110" stroke="#451a03" stroke-width="14" stroke-linecap="round" fill="none"/>
+  <circle cx="140" cy="110" r="20" fill="#f59e0b" stroke="#451a03" stroke-width="10"/>
+  <path d="M297 168 Q327 100 367 110" stroke="#451a03" stroke-width="14" stroke-linecap="round" fill="none"/>
+  <circle cx="372" cy="110" r="20" fill="#f59e0b" stroke="#451a03" stroke-width="10"/>
+  <!-- Cheeks -->
+  <ellipse cx="170" cy="275" rx="22" ry="14" fill="#fb7185" opacity="0.8"/>
+  <ellipse cx="342" cy="275" rx="22" ry="14" fill="#fb7185" opacity="0.8"/>
+  <!-- Eyes -->
+  <circle cx="202" cy="240" r="24" fill="#1e1b4b"/>
+  <circle cx="210" cy="232" r="8" fill="#ffffff"/>
+  <circle cx="310" cy="240" r="24" fill="#1e1b4b"/>
+  <circle cx="318" cy="232" r="8" fill="#ffffff"/>
+  <!-- Smile -->
+  <path d="M212 290 Q256 332 300 290" stroke="#7c2d12" stroke-width="16" stroke-linecap="round" fill="none"/>
+  <!-- Flower crown -->
+  <circle cx="256" cy="145" r="26" fill="#fb7185" stroke="#451a03" stroke-width="8"/>
+  <circle cx="256" cy="145" r="11" fill="#fde047"/>
+</svg>

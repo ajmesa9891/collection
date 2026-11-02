@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json.schemastore.org/web-manifest.json",
+  "id": "./",
+  "name": "Bloom Buddy — Nature & Seasons Explorer",
+  "short_name": "Bloom Buddy",
+  "description": "Bilingual (English & Español) nature, seasons, and plant explorer game for preschoolers.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["standalone", "fullscreen"],
+  "orientation": "portrait",
+  "background_color": "#fef9c3",
+  "theme_color": "#fef9c3",
+  "categories": ["education", "kids", "games"],
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
