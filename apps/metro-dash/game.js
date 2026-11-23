@@ -52,12 +52,13 @@
   const btnSound = document.getElementById('btn-sound');
   const btnHome = document.getElementById('btn-home');
   const powerToast = document.getElementById('power-toast');
-  const touchPad = document.getElementById('touch-pad');
+  const gestureHint = document.getElementById('gesture-hint');
   const startScreen = document.getElementById('start-screen');
   const bestPill = document.getElementById('best-pill');
   const btnPlay = document.getElementById('btn-play');
   const btnShop = document.getElementById('btn-shop');
   const btnMode = document.getElementById('btn-mode');
+  const btnResetAll = document.getElementById('btn-reset-all');
   const overScreen = document.getElementById('over-screen');
   const overSub = document.getElementById('over-sub');
   const stDist = document.getElementById('st-dist');
@@ -265,31 +266,42 @@
     }
   }
 
-  // Swipe + Keyboard + Touch Buttons
+  // Pure Touch Gestures (Swipe Left/Right to change lane, Swipe Up or Quick Tap to jump) + Keyboard
   let swipeStart = null;
+  let swipeHandled = false;
   renderer.domElement.addEventListener('pointerdown', (e) => {
+    if (state !== 'playing') return;
     swipeStart = { x: e.clientX, y: e.clientY };
+    swipeHandled = false;
   });
-  window.addEventListener('pointerup', (e) => {
-    if (!swipeStart || state !== 'playing') return;
+  window.addEventListener('pointermove', (e) => {
+    if (!swipeStart || swipeHandled || state !== 'playing') return;
     const dx = e.clientX - swipeStart.x;
     const dy = e.clientY - swipeStart.y;
-    swipeStart = null;
-    if (Math.hypot(dx, dy) < 22) return;
-    if (Math.abs(dx) > Math.abs(dy)) moveLane(dx > 0 ? 1 : -1);
-    else if (dy < -18) doJump();
+    if (Math.hypot(dx, dy) >= 26) {
+      swipeHandled = true;
+      gestureHint.classList.add('hidden');
+      if (Math.abs(dx) > Math.abs(dy)) moveLane(dx > 0 ? 1 : -1);
+      else if (dy < -16) doJump();
+    }
   });
+  window.addEventListener('pointerup', () => {
+    if (swipeStart && !swipeHandled && state === 'playing') {
+      gestureHint.classList.add('hidden');
+      doJump();
+    }
+    swipeStart = null;
+    swipeHandled = false;
+  });
+  window.addEventListener('pointercancel', () => { swipeStart = null; swipeHandled = false; });
 
   window.addEventListener('keydown', (e) => {
     if (state !== 'playing') return;
+    gestureHint.classList.add('hidden');
     if (e.key === 'ArrowLeft' || e.key === 'a' || e.key === 'A') moveLane(-1);
     if (e.key === 'ArrowRight' || e.key === 'd' || e.key === 'D') moveLane(1);
     if (e.key === 'ArrowUp' || e.key === 'w' || e.key === 'W' || e.code === 'Space') { e.preventDefault(); doJump(); }
   });
-
-  document.getElementById('pad-left').addEventListener('click', () => moveLane(-1));
-  document.getElementById('pad-right').addEventListener('click', () => moveLane(1));
-  document.getElementById('pad-jump').addEventListener('click', () => doJump());
 
   function updateHud() {
     hudHearts.textContent = '❤️'.repeat(Math.max(0, hearts)) + '🤍'.repeat(Math.max(0, (save.kidMode ? 3 : 1) - hearts));
@@ -317,7 +329,7 @@
     startScreen.classList.add('hidden');
     overScreen.classList.add('hidden');
     btnHome.classList.remove('hidden');
-    touchPad.classList.remove('hidden');
+    gestureHint.classList.remove('hidden');
     updateHud();
     beep(523, 0.12, 'triangle', 0.14, 784);
   }
@@ -328,7 +340,7 @@
     const d = Math.floor(distance);
     if (d > save.best) save.best = d;
     persist();
-    touchPad.classList.add('hidden');
+    gestureHint.classList.add('hidden');
     stDist.textContent = `${d}m`;
     stCoins.textContent = `+${runCoins} 🪙`;
     overSub.textContent = d >= save.best && d > 0 ? '🌟 NEW RECORD!' : 'Awesome dodging!';
@@ -343,7 +355,7 @@
     startScreen.classList.remove('hidden');
     overScreen.classList.add('hidden');
     btnHome.classList.add('hidden');
-    touchPad.classList.add('hidden');
+    gestureHint.classList.add('hidden');
     updateHud();
   }
 
@@ -383,6 +395,14 @@
   btnMode.addEventListener('click', () => { save.kidMode = !save.kidMode; persist(); updateHud(); });
   btnShop.addEventListener('click', () => { renderShop(); shopDialog.showModal(); });
   btnOverShop.addEventListener('click', () => { renderShop(); shopDialog.showModal(); });
+  btnResetAll.addEventListener('click', () => {
+    if (window.confirm('Restart Metro Dash from the very beginning (0m, 0 coins)?')) {
+      save = { ...DEFAULT_SAVE, owned: ['kid'] };
+      persist();
+      rebuildPlayer();
+      updateHud();
+    }
+  });
 
   window.addEventListener('resize', () => {
     camera.aspect = window.innerWidth / window.innerHeight;

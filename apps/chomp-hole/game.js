@@ -53,6 +53,7 @@
   const hudEaten = document.getElementById('hud-eaten');
   const hudSize = document.getElementById('hud-size');
   const hudTimer = document.getElementById('hud-timer');
+  const btnRestart = document.getElementById('btn-restart');
   const btnSound = document.getElementById('btn-sound');
   const btnHome = document.getElementById('btn-home');
   const startScreen = document.getElementById('start-screen');
@@ -128,6 +129,7 @@
     startScreen.classList.add('hidden');
     winScreen.classList.add('hidden');
     btnHome.classList.remove('hidden');
+    btnRestart.classList.remove('hidden');
     updateHud();
     tone(440, 0.14, 'triangle', 0.14, 660);
   }
@@ -171,8 +173,9 @@
 
   btnPlay.addEventListener('click', startPlay);
   btnAgain.addEventListener('click', startPlay);
-  btnMenu.addEventListener('click', () => { state = 'menu'; winScreen.classList.add('hidden'); btnHome.classList.add('hidden'); startScreen.classList.remove('hidden'); });
-  btnHome.addEventListener('click', () => { state = 'menu'; winScreen.classList.add('hidden'); btnHome.classList.add('hidden'); startScreen.classList.remove('hidden'); updateHud(); });
+  btnRestart.addEventListener('click', startPlay);
+  btnMenu.addEventListener('click', () => { state = 'menu'; winScreen.classList.add('hidden'); btnHome.classList.add('hidden'); btnRestart.classList.add('hidden'); startScreen.classList.remove('hidden'); });
+  btnHome.addEventListener('click', () => { state = 'menu'; winScreen.classList.add('hidden'); btnHome.classList.add('hidden'); btnRestart.classList.add('hidden'); startScreen.classList.remove('hidden'); updateHud(); });
   btnSound.addEventListener('click', () => { sfx = !sfx; updateHud(); });
   btnMode.addEventListener('click', () => { zenMode = !zenMode; updateHud(); tone(480, 0.08, 'sine', 0.1, 600); });
   btnSkin.addEventListener('click', () => { ringIdx = (ringIdx + 1) % RINGS.length; tone(600, 0.08, 'triangle', 0.12, 760); });

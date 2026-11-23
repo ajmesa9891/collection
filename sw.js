@@ -1,4 +1,4 @@
-const CACHE_NAME = 'apps-collection-v1';
+const CACHE_NAME = 'apps-collection-v2';
 
 const PRECACHE_ASSETS = [
   './',
@@ -63,13 +63,10 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Static assets: Cache-first with network fallback and runtime caching
+  // Static assets: Network-first with cache fallback so updates never mismatch HTML & JS
   event.respondWith(
-    caches.match(request).then((cachedResponse) => {
-      if (cachedResponse) {
-        return cachedResponse;
-      }
-      return fetch(request).then((networkResponse) => {
+    fetch(request)
+      .then((networkResponse) => {
         if (networkResponse && networkResponse.status === 200) {
           const responseToCache = networkResponse.clone();
           caches.open(CACHE_NAME).then((cache) => {
@@ -77,7 +74,7 @@ self.addEventListener('fetch', (event) => {
           });
         }
         return networkResponse;
-      });
-    })
+      })
+      .catch(() => caches.match(request))
   );
 });

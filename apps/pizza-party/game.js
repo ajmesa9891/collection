@@ -42,6 +42,7 @@
   const hudDay = document.getElementById('hud-day');
   const hudCoins = document.getElementById('hud-coins');
   const btnMode = document.getElementById('btn-mode');
+  const btnResetDay = document.getElementById('btn-reset-day');
   const btnSound = document.getElementById('btn-sound');
   const animalEmoji = document.getElementById('animal-emoji');
   const orderLabel = document.getElementById('order-label');
@@ -253,6 +254,16 @@
     save.sfx = !save.sfx;
     persist();
     updateHud();
+  });
+
+  btnResetDay.addEventListener('click', () => {
+    if (window.confirm('Restart Pizza Party from Day 1 (0 coins)?')) {
+      save = { day: 1, coins: 0, sfx: save.sfx };
+      ordersDoneToday = 0;
+      persist();
+      updateHud();
+      nextOrder();
+    }
   });
 
   function updateHud() {

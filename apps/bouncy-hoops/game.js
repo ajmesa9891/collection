@@ -78,6 +78,7 @@
   const modeProBtn = document.getElementById('mode-pro');
   const toggleSfxBtn = document.getElementById('toggle-sfx');
   const toggleUnlockBtn = document.getElementById('toggle-unlock');
+  const btnResetSave = document.getElementById('btn-reset-save');
 
   // Safari fallback for <dialog closedby="any">
   if (!('closedBy' in HTMLDialogElement.prototype)) {
@@ -1247,6 +1248,15 @@
     persistSave();
     window.BounceAudio.playClick();
     syncSettings();
+  });
+  btnResetSave.addEventListener('click', () => {
+    if (window.confirm('Restart Bouncy Hoops from Level 1?')) {
+      save = JSON.parse(JSON.stringify(DEFAULT_SAVE));
+      persistSave();
+      window.BounceAudio.setSfx(save.sfx);
+      settingsDialog.close();
+      goToMenu();
+    }
   });
 
   // Boot

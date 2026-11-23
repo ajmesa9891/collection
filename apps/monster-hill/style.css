@@ -30,18 +30,17 @@ html, body {
 #prog-fill { height: 100%; width: 0%; border-radius: 999px; background: linear-gradient(90deg,#f97316,#facc15,#22c55e); }
 #prog-flag { position: absolute; right: -8px; top: 50%; transform: translateY(-50%); font-size: 1.25rem; }
 
-#pedals {
-  position: fixed; bottom: max(18px, env(safe-area-inset-bottom)); left: 0; right: 0; z-index: 30;
-  display: flex; justify-content: space-between; padding: 0 18px; pointer-events: none;
+#drive-hint {
+  position: fixed; bottom: max(20px, env(safe-area-inset-bottom)); left: 50%;
+  transform: translateX(-50%); z-index: 30; pointer-events: none;
+  background: rgba(15,23,42,0.72); color: #fff; padding: 9px 20px; border-radius: 999px;
+  font-weight: 800; font-size: 0.96rem; white-space: nowrap; max-width: 92vw;
+  overflow: hidden; text-overflow: ellipsis;
 }
-.pedal {
-  pointer-events: auto; font-family: var(--font); font-weight: 900; font-size: 1.3rem;
-  padding: 20px 26px; border-radius: 24px; border: 4px solid #fff; color: #fff;
-  cursor: pointer; touch-action: none; text-shadow: 0 2px 0 rgba(0,0,0,0.2);
+.reset-link {
+  margin-top: 12px; background: none; border: none; font-family: var(--font);
+  font-weight: 800; font-size: 0.9rem; color: #64748b; cursor: pointer; text-decoration: underline;
 }
-.pedal-brake { background: linear-gradient(180deg,#fb7185,#e11d48); box-shadow: 0 7px 0 #9f1239; }
-.pedal-gas   { background: linear-gradient(180deg,#4ade80,#22c55e); box-shadow: 0 7px 0 #15803d; }
-.pedal:active, .pedal.pressed { transform: translateY(4px); }
 
 .overlay {
   position: fixed; inset: 0; z-index: 40; display: flex; align-items: center; justify-content: center;

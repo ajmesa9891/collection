@@ -41,19 +41,17 @@ html, body {
 }
 #power-toast.show { opacity: 1; transform: translate(-50%,-50%) scale(1); }
 
-#touch-pad {
-  position: fixed; bottom: max(16px, env(safe-area-inset-bottom)); left: 0; right: 0;
-  z-index: 30; display: flex; justify-content: center; gap: 14px; padding: 0 16px;
-  pointer-events: none;
+#gesture-hint {
+  position: fixed; bottom: max(20px, env(safe-area-inset-bottom)); left: 50%;
+  transform: translateX(-50%); z-index: 30; pointer-events: none;
+  background: rgba(15,23,42,0.72); color: #fff; padding: 9px 20px; border-radius: 999px;
+  font-weight: 800; font-size: 0.96rem; white-space: nowrap; max-width: 92vw;
+  overflow: hidden; text-overflow: ellipsis;
 }
-.pad-btn {
-  pointer-events: auto; font-family: var(--font); font-weight: 900; font-size: 1.35rem;
-  padding: 14px 24px; border-radius: 22px; border: 4px solid #fff;
-  background: rgba(255,255,255,0.88); color: var(--ink);
-  box-shadow: 0 6px 0 rgba(15,23,42,0.22); cursor: pointer;
+.reset-link {
+  margin-top: 12px; background: none; border: none; font-family: var(--font);
+  font-weight: 800; font-size: 0.9rem; color: #64748b; cursor: pointer; text-decoration: underline;
 }
-.pad-jump { background: linear-gradient(180deg, #fde047, #f59e0b); color: #713f12; }
-.pad-btn:active { transform: translateY(3px); }
 
 .overlay-screen {
   position: fixed; inset: 0; z-index: 40; display: flex; align-items: center; justify-content: center;

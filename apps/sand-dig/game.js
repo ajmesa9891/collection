@@ -45,6 +45,7 @@
   const hudLevel = document.getElementById('hud-level');
   const hudStars = document.getElementById('hud-stars');
   const btnReset = document.getElementById('btn-reset');
+  const btnResetAll = document.getElementById('btn-reset-all');
   const btnSound = document.getElementById('btn-sound');
   const winScreen = document.getElementById('win-screen');
   const winStars = document.getElementById('win-stars');
@@ -196,6 +197,13 @@
   window.addEventListener('pointercancel', () => { digging = false; lastDigPt = null; });
 
   btnReset.addEventListener('click', () => { tone(360, 0.08, 'sine', 0.1, 480); loadLevel(lvl); });
+  btnResetAll.addEventListener('click', () => {
+    if (window.confirm('Restart Sand Dig from Level 1?')) {
+      save = { level: 1, stars: 0, sfx: save.sfx };
+      persist();
+      loadLevel(LEVELS[0]);
+    }
+  });
   btnSound.addEventListener('click', () => { save.sfx = !save.sfx; persist(); updateHud(); });
   btnAgain.addEventListener('click', () => loadLevel(lvl));
   btnNext.addEventListener('click', () => {

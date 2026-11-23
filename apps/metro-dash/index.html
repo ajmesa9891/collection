@@ -24,13 +24,7 @@
   </header>
 
   <div id="power-toast" aria-live="polite"></div>
-
-  <!-- Big Touch Buttons for 4-5yo Tablet Play -->
-  <div id="touch-pad" class="hidden" aria-label="Touch controls">
-    <button type="button" class="pad-btn" id="pad-left" aria-label="Move left">◀</button>
-    <button type="button" class="pad-btn pad-jump" id="pad-jump" aria-label="Jump">⬆ JUMP</button>
-    <button type="button" class="pad-btn" id="pad-right" aria-label="Move right">▶</button>
-  </div>
+  <div id="gesture-hint" class="hidden">👆 Swipe ◀ ▶ to switch lanes • Swipe ⬆ or Tap to jump!</div>
 
   <!-- Start Overlay -->
   <main id="start-screen" class="overlay-screen">
@@ -43,6 +37,7 @@
         <button type="button" id="btn-shop" class="btn-toy btn-pink">🏃 Runners</button>
         <button type="button" id="btn-mode" class="btn-toy btn-blue">🧸 Kid Mode</button>
       </div>
+      <button type="button" id="btn-reset-all" class="reset-link">🧹 Restart from Beginning</button>
     </div>
   </main>
 

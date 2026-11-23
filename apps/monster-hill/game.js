@@ -53,14 +53,13 @@
   const btnHome = document.getElementById('btn-home');
   const progBar = document.getElementById('prog-bar');
   const progFill = document.getElementById('prog-fill');
-  const pedals = document.getElementById('pedals');
-  const btnBrake = document.getElementById('btn-brake');
-  const btnGas = document.getElementById('btn-gas');
+  const driveHint = document.getElementById('drive-hint');
   const startScreen = document.getElementById('start-screen');
   const startStage = document.getElementById('start-stage');
   const btnPlay = document.getElementById('btn-play');
   const btnStages = document.getElementById('btn-stages');
   const btnGarage = document.getElementById('btn-garage');
+  const btnResetAll = document.getElementById('btn-reset-all');
   const winScreen = document.getElementById('win-screen');
   const winStars = document.getElementById('win-stars');
   const winSub = document.getElementById('win-sub');
@@ -136,13 +135,15 @@
     winScreen.classList.add('hidden');
     btnHome.classList.remove('hidden');
     progBar.classList.remove('hidden');
-    pedals.classList.remove('hidden');
+    driveHint.classList.remove('hidden');
     tone(440, 0.14, 'triangle', 0.14, 660);
   }
 
   function finishStage() {
     state = 'win';
-    pedals.classList.add('hidden');
+    gasHeld = false;
+    brakeHeld = false;
+    driveHint.classList.add('hidden');
     const rating = collected >= Math.ceil(stageStars.length * 0.65) ? 3 : collected >= 3 ? 2 : 1;
     const earned = 6 + collected * 2;
     save.stars += earned;
@@ -160,18 +161,36 @@
     tone(523, 0.15, 'triangle', 0.15, 1046);
   }
 
-  // Controls
-  const bindPedal = (el, onChange) => {
-    el.addEventListener('pointerdown', (e) => { e.preventDefault(); el.classList.add('pressed'); onChange(true); });
-    const up = () => { el.classList.remove('pressed'); onChange(false); };
-    el.addEventListener('pointerup', up);
-    el.addEventListener('pointerleave', up);
-    el.addEventListener('pointercancel', up);
+  // Pure Screen-Half Touch Controls (Hold Right half = Drive/Gas, Hold Left half = Brake/Reverse) + Keyboard
+  const activeTouches = new Map();
+  function syncTouchDrive() {
+    let g = false, b = false;
+    for (const side of activeTouches.values()) {
+      if (side === 'right') g = true;
+      if (side === 'left') b = true;
+    }
+    gasHeld = g;
+    brakeHeld = b;
+  }
+  canvas.addEventListener('pointerdown', (e) => {
+    if (state !== 'playing') return;
+    driveHint.classList.add('hidden');
+    activeTouches.set(e.pointerId, e.clientX >= window.innerWidth * 0.45 ? 'right' : 'left');
+    syncTouchDrive();
+  });
+  window.addEventListener('pointermove', (e) => {
+    if (!activeTouches.has(e.pointerId)) return;
+    activeTouches.set(e.pointerId, e.clientX >= window.innerWidth * 0.45 ? 'right' : 'left');
+    syncTouchDrive();
+  });
+  const endTouch = (e) => {
+    if (activeTouches.delete(e.pointerId)) syncTouchDrive();
   };
-  bindPedal(btnGas, (v) => { gasHeld = v; });
-  bindPedal(btnBrake, (v) => { brakeHeld = v; });
+  window.addEventListener('pointerup', endTouch);
+  window.addEventListener('pointercancel', endTouch);
 
   window.addEventListener('keydown', (e) => {
+    if (state === 'playing') driveHint.classList.add('hidden');
     if (e.key === 'ArrowRight' || e.key === 'd' || e.key === 'D') gasHeld = true;
     if (e.key === 'ArrowLeft' || e.key === 'a' || e.key === 'A') brakeHeld = true;
   });
@@ -224,13 +243,21 @@
   btnNext.addEventListener('click', () => startPlay(STAGES[stage.id < STAGES.length ? stage.id : 0]));
   btnReplay.addEventListener('click', () => startPlay(stage));
   btnHome.addEventListener('click', () => {
-    state = 'menu'; btnHome.classList.add('hidden'); progBar.classList.add('hidden');
-    pedals.classList.add('hidden'); winScreen.classList.add('hidden'); startScreen.classList.remove('hidden');
+    state = 'menu'; gasHeld = false; brakeHeld = false; activeTouches.clear();
+    btnHome.classList.add('hidden'); progBar.classList.add('hidden');
+    driveHint.classList.add('hidden'); winScreen.classList.add('hidden'); startScreen.classList.remove('hidden');
     loadStage(STAGES[Math.min(save.current - 1, STAGES.length - 1)]);
   });
   btnSound.addEventListener('click', () => { save.sfx = !save.sfx; persist(); updateHud(); });
   btnStages.addEventListener('click', () => { renderStages(); stagesDialog.showModal(); });
   btnGarage.addEventListener('click', () => { renderGarage(); garageDialog.showModal(); });
+  btnResetAll.addEventListener('click', () => {
+    if (window.confirm('Restart Monster Hill from Stage 1?')) {
+      save = { ...DEFAULT_SAVE, owned: ['red'] };
+      persist();
+      loadStage(STAGES[0]);
+    }
+  });
 
   // Main Physics + Draw Loop
   let last = performance.now();
