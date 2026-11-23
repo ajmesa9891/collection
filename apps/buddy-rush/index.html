@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>Buddy Rush! — 3D Crowd Adventure</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
+  <meta name="theme-color" content="#7dd3fc" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <!-- 3D WebGL Canvas Host -->
+  <div id="game-container" aria-label="Buddy Rush 3D Game"></div>
+
+  <!-- Top HUD -->
+  <header id="hud">
+    <div class="hud-row">
+      <div class="hud-pill" id="hud-level">🌻 Lv 1</div>
+      <div class="hud-pill hud-stars" id="hud-stars">⭐ 0</div>
+      <div class="hud-actions">
+        <button type="button" class="icon-btn" id="btn-sound" aria-label="Toggle sound">🔊</button>
+        <button type="button" class="icon-btn hidden" id="btn-home" aria-label="Back to menu">🏠</button>
+      </div>
+    </div>
+    <div id="progress-wrap" class="hidden" aria-hidden="true">
+      <div id="progress-fill"></div>
+      <span id="progress-runner">🤖</span>
+      <span id="progress-boss">🏰</span>
+    </div>
+  </header>
+
+  <!-- Floating Squad Count Badge -->
+  <div id="squad-badge" class="hidden" aria-live="polite">3</div>
+
+  <!-- Boss HP HUD -->
+  <div id="boss-hud" class="hidden">
+    <div id="boss-name">Boss</div>
+    <div class="boss-bar-bg">
+      <div id="boss-bar-fill"></div>
+    </div>
+  </div>
+
+  <!-- Celebratory Toast Banner -->
+  <div id="toast-banner" aria-live="polite"></div>
+
+  <!-- Touch / Drag Hint -->
+  <div id="drag-hint" class="hidden">👆 Slide left &amp; right!</div>
+
+  <!-- Start Menu Overlay -->
+  <main id="start-screen" class="overlay-screen">
+    <div class="title-card">
+      <h1 class="game-logo">Buddy Rush!</h1>
+      <p class="game-subtitle">Grow your team, dodge &amp; pop silly bosses!</p>
+
+      <div id="mode-pill" class="mode-badge">🧸 Little Explorer (Ages 4–5)</div>
+
+      <div>
+        <div class="level-preview-pill" id="start-level-preview">
+          <span>🌻</span>
+          <span>Level 1: First Steps</span>
+        </div>
+      </div>
+
+      <button type="button" id="btn-play" class="btn-toy btn-play">
+        <span>▶</span>
+        <span>PLAY!</span>
+      </button>
+
+      <div class="btn-row">
+        <button type="button" id="btn-worlds" class="btn-toy btn-blue">
+          <span class="btn-emoji">🗺️</span>
+          <span>Worlds</span>
+        </button>
+        <button type="button" id="btn-shop" class="btn-toy btn-pink">
+          <span class="btn-emoji">🛒</span>
+          <span>Shop</span>
+        </button>
+        <button type="button" id="btn-settings" class="btn-toy btn-purple">
+          <span class="btn-emoji">⚙️</span>
+          <span>Mode</span>
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Victory / Try Again Overlay -->
+  <section id="result-screen" class="overlay-screen hidden" aria-live="polite">
+    <div class="result-card">
+      <h2 id="result-title" class="game-logo">YAY! YOU WON!</h2>
+      <div id="result-stars" class="result-stars">⭐⭐⭐</div>
+      <p id="result-subtitle" class="game-subtitle">Awesome teamwork!</p>
+
+      <div class="result-stats">
+        <div class="stat-box">
+          <div class="stat-label">Buddies Left</div>
+          <div class="stat-val" id="stat-buddies">12</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">Stars Won</div>
+          <div class="stat-val" id="stat-stars">+45 ⭐</div>
+        </div>
+      </div>
+
+      <div class="result-actions">
+        <button type="button" id="btn-next" class="btn-toy btn-play">NEXT LEVEL ▶</button>
+        <div class="result-sub-actions">
+          <button type="button" id="btn-replay" class="btn-toy btn-gold">↻ Replay</button>
+          <button type="button" id="btn-result-shop" class="btn-toy btn-pink" style="flex-direction:row;padding:12px;">🛒 Shop</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- World & Level Map Modal -->
+  <dialog id="worlds-dialog" closedby="any" aria-labelledby="worlds-title">
+    <div class="dialog-header">
+      <h1 id="worlds-title">🗺️ Choose a Level</h1>
+      <form method="dialog">
+        <button type="submit" value="close" class="dialog-close-btn" aria-label="Close" autofocus>✕</button>
+      </form>
+    </div>
+    <div class="dialog-body" id="worlds-list"></div>
+  </dialog>
+
+  <!-- Shop & Buddy Skins Modal -->
+  <dialog id="shop-dialog" closedby="any" aria-labelledby="shop-title">
+    <div class="dialog-header">
+      <h1 id="shop-title">🛒 Buddies &amp; Upgrades</h1>
+      <form method="dialog">
+        <button type="submit" value="close" class="dialog-close-btn" aria-label="Close" autofocus>✕</button>
+      </form>
+    </div>
+    <div class="dialog-body" id="shop-body"></div>
+  </dialog>
+
+  <!-- Settings & Age Mode Modal -->
+  <dialog id="settings-dialog" closedby="any" aria-labelledby="settings-title">
+    <div class="dialog-header">
+      <h1 id="settings-title">⚙️ Play Mode &amp; Settings</h1>
+      <form method="dialog">
+        <button type="submit" value="close" class="dialog-close-btn" aria-label="Close" autofocus>✕</button>
+      </form>
+    </div>
+    <div class="dialog-body">
+      <div>
+        <div class="shop-section-title" style="margin-bottom:8px;">Choose Difficulty</div>
+        <div class="mode-toggle-group">
+          <button type="button" id="mode-little" class="mode-btn">
+            <span class="m-emoji">🧸</span>
+            <strong>Little Explorer</strong><br />
+            <small>Ages 4–5 • Visual dots, gentle speed &amp; Fairy Rescue</small>
+          </button>
+          <button type="button" id="mode-big" class="mode-btn">
+            <span class="m-emoji">⚡</span>
+            <strong>Big Kid</strong><br />
+            <small>Ages 6+ • Faster pace &amp; bigger numbers</small>
+          </button>
+        </div>
+      </div>
+
+      <div class="setting-row">
+        <div class="setting-info">
+          <strong>🔊 Sound Effects</strong>
+          <span>Pops, chimes, and fanfares</span>
+        </div>
+        <button type="button" id="toggle-sfx" class="pill-toggle on">ON</button>
+      </div>
+
+      <div class="setting-row">
+        <div class="setting-info">
+          <strong>🎵 Cheerful Music</strong>
+          <span>Soft melody while playing</span>
+        </div>
+        <button type="button" id="toggle-music" class="pill-toggle on">ON</button>
+      </div>
+
+      <div class="setting-row">
+        <div class="setting-info">
+          <strong>🔓 Unlock All 5 Worlds</strong>
+          <span>Let kids jump to Candy, Dino, Frost, or Space anytime</span>
+        </div>
+        <button type="button" id="toggle-unlock" class="pill-toggle">OFF</button>
+      </div>
+
+      <div class="setting-row">
+        <div class="setting-info">
+          <strong>🧹 Reset Save</strong>
+          <span>Start fresh from Level 1</span>
+        </div>
+        <button type="button" id="btn-reset" class="danger-btn">Reset</button>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="./three.min.js"></script>
+  <script src="./audio.js"></script>
+  <script src="./levels.js"></script>
+  <script src="./game.js"></script>
+</body>
+</html>
