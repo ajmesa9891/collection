@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="garden" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#38bdf8"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#garden)"/>
+  <!-- Four-Season Wheel Background Ring -->
+  <circle cx="200" cy="200" r="150" fill="#ffffff" opacity="0.25"/>
+  <path d="M200,200 L200,56 A144,144 0 0,1 344,200 Z" fill="#f472b6" opacity="0.85"/>
+  <path d="M200,200 L344,200 A144,144 0 0,1 200,344 Z" fill="#facc15" opacity="0.9"/>
+  <path d="M200,200 L200,344 A144,144 0 0,1 56,200 Z" fill="#fb923c" opacity="0.9"/>
+  <path d="M200,200 L56,200 A144,144 0 0,1 200,56 Z" fill="#60a5fa" opacity="0.9"/>
+  <circle cx="200" cy="200" r="144" fill="none" stroke="#ffffff" stroke-width="10"/>
+  <!-- Cute Smiling Sunflower Center -->
+  <g transform="translate(200,200)">
+    <g fill="#fde047" stroke="#ffffff" stroke-width="4">
+      <ellipse rx="24" ry="48" transform="rotate(0) translate(0,-64)"/>
+      <ellipse rx="24" ry="48" transform="rotate(45) translate(0,-64)"/>
+      <ellipse rx="24" ry="48" transform="rotate(90) translate(0,-64)"/>
+      <ellipse rx="24" ry="48" transform="rotate(135) translate(0,-64)"/>
+      <ellipse rx="24" ry="48" transform="rotate(180) translate(0,-64)"/>
+      <ellipse rx="24" ry="48" transform="rotate(225) translate(0,-64)"/>
+      <ellipse rx="24" ry="48" transform="rotate(270) translate(0,-64)"/>
+      <ellipse rx="24" ry="48" transform="rotate(315) translate(0,-64)"/>
+    </g>
+    <circle r="54" fill="#92400e" stroke="#ffffff" stroke-width="6"/>
+    <circle cx="-18" cy="-8" r="10" fill="#ffffff"/><circle cx="-16" cy="-8" r="5" fill="#0f172a"/>
+    <circle cx="18" cy="-8" r="10" fill="#ffffff"/><circle cx="20" cy="-8" r="5" fill="#0f172a"/>
+    <path d="M -16 14 Q 0 28 16 14" fill="none" stroke="#fef08a" stroke-width="5" stroke-linecap="round"/>
+  </g>
+</svg>

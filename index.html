@@ -3,60 +3,143 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Apps</title>
+  <title>PlayBox — Kids Games &amp; Apps</title>
 
   <!-- PWA & Mobile Capabilities -->
   <link rel="manifest" href="./manifest.webmanifest" />
-  <meta name="theme-color" content="#ffffff" />
+  <meta name="theme-color" content="#2ec4b6" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="apple-mobile-web-app-title" content="Apps" />
+  <meta name="apple-mobile-web-app-title" content="PlayBox" />
 
   <!-- Icons -->
   <link rel="icon" type="image/svg+xml" href="./icons/icon.svg" />
   <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png" />
   <link rel="apple-touch-icon" href="./icons/icon-192.png" />
 
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      margin: 0;
-      padding: max(2rem, env(safe-area-inset-top)) max(2rem, env(safe-area-inset-right)) max(2rem, env(safe-area-inset-bottom)) max(2rem, env(safe-area-inset-left));
-      line-height: 1.6;
-      background-color: #ffffff;
-    }
-    ul {
-      list-style-type: square;
-      padding-left: 1.5rem;
-      margin: 0;
-    }
-    li {
-      margin-bottom: 0.35rem;
-    }
-    a {
-      color: #0000ee;
-      text-decoration: underline;
-    }
-    a:visited {
-      color: #551a8b;
-    }
-  </style>
+  <link rel="stylesheet" href="./home.css" />
 </head>
 <body>
-  <ul>
-    <li><a href="apps/bloom-buddy/">Bloom Buddy (Nature &amp; Seasons Explorer)</a></li>
-    <li><a href="apps/kitchen-index/">The Kitchen Index (Family Recipe Archive)</a></li>
-    <li><a href="apps/green-light-red-light-game/">Green Light, Red Light</a></li>
-    <li><a href="apps/toddler-snake-timer/">Toddler Snake Timer</a></li>
-    <li><a href="apps/flag-matching-game/">Flag Match (Momma Snake)</a></li>
-    <li><a href="apps/flag-racecar-game/">Flag Racer (Grand Prix Track)</a></li>
-    <li><a href="apps/racing-rampage/">Racing Rampage (Highway Vehicular Combat)</a></li>
-    <li><a href="apps/buddy-rush/">Buddy Rush! (3D Crowd Adventure)</a></li>
-    <li><a href="apps/_template-react-tailwind/">React + Tailwind Template</a></li>
-  </ul>
+  <div class="portal-shell">
+    <header class="portal-header">
+      <a class="brand-pill" href="./" aria-label="PlayBox Home">
+        <span class="brand-icon" aria-hidden="true">🎮</span>
+        <span class="brand-name">PlayBox</span>
+      </a>
+
+      <nav class="filter-bar" aria-label="Game categories">
+        <button type="button" class="filter-pill" data-filter="all" aria-pressed="true">✨ All</button>
+        <button type="button" class="filter-pill" data-filter="action" aria-pressed="false">🏃 Action</button>
+        <button type="button" class="filter-pill" data-filter="racing" aria-pressed="false">🏎️ Racing</button>
+        <button type="button" class="filter-pill" data-filter="puzzle" aria-pressed="false">🧩 Puzzle</button>
+        <button type="button" class="filter-pill" data-filter="explore" aria-pressed="false">🌱 Explore</button>
+      </nav>
+    </header>
+
+    <main class="game-grid" id="game-grid">
+      <!-- Featured 2x2 Tile: Buddy Rush! -->
+      <a class="tile-link featured" href="apps/buddy-rush/" data-cats="action">
+        <article class="game-tile">
+          <img src="./thumbnails/buddy-rush.svg" alt="Buddy Rush 3D Crowd Adventure" />
+          <span class="tile-badge badge-3d">3D • NEW</span>
+          <h2>Buddy Rush!</h2>
+        </article>
+      </a>
+
+      <!-- Featured 2x2 Tile: Bouncy Hoops! -->
+      <a class="tile-link featured" href="apps/bouncy-hoops/" data-cats="action puzzle">
+        <article class="game-tile">
+          <img src="./thumbnails/bouncy-hoops.svg" alt="Bouncy Hoops Trick-Shot Basketball" />
+          <span class="tile-badge badge-new">NEW</span>
+          <h2>Bouncy Hoops!</h2>
+        </article>
+      </a>
+
+      <!-- Racing Rampage -->
+      <a class="tile-link" href="apps/racing-rampage/" data-cats="racing action">
+        <article class="game-tile">
+          <img src="./thumbnails/racing-rampage.svg" alt="Racing Rampage 3D Highway Stunt Game" />
+          <span class="tile-badge badge-hot">3D</span>
+          <h2>Racing Rampage</h2>
+        </article>
+      </a>
+
+      <!-- Flag Racer -->
+      <a class="tile-link" href="apps/flag-racecar-game/" data-cats="racing puzzle">
+        <article class="game-tile">
+          <img src="./thumbnails/flag-racecar-game.svg" alt="Flag Racer Grand Prix Track" />
+          <span class="tile-badge badge-kid">4+</span>
+          <h2>Flag Racer</h2>
+        </article>
+      </a>
+
+      <!-- Flag Match -->
+      <a class="tile-link" href="apps/flag-matching-game/" data-cats="puzzle">
+        <article class="game-tile">
+          <img src="./thumbnails/flag-matching-game.svg" alt="Flag Match Momma Snake" />
+          <span class="tile-badge badge-kid">4+</span>
+          <h2>Flag Match</h2>
+        </article>
+      </a>
+
+      <!-- Green Light, Red Light -->
+      <a class="tile-link" href="apps/green-light-red-light-game/" data-cats="action">
+        <article class="game-tile">
+          <img src="./thumbnails/green-light-red-light-game.svg" alt="Green Light Red Light Game" />
+          <span class="tile-badge badge-kid">4+</span>
+          <h2>Green Light, Red Light</h2>
+        </article>
+      </a>
+
+      <!-- Toddler Snake Timer -->
+      <a class="tile-link" href="apps/toddler-snake-timer/" data-cats="explore">
+        <article class="game-tile">
+          <img src="./thumbnails/toddler-snake-timer.svg" alt="Toddler Snake Timer" />
+          <h2>Snake Timer</h2>
+        </article>
+      </a>
+
+      <!-- Bloom Buddy -->
+      <a class="tile-link" href="apps/bloom-buddy/" data-cats="explore">
+        <article class="game-tile">
+          <img src="./thumbnails/bloom-buddy.svg" alt="Bloom Buddy Nature and Seasons Explorer" />
+          <h2>Bloom Buddy</h2>
+        </article>
+      </a>
+
+      <!-- The Kitchen Index -->
+      <a class="tile-link" href="apps/kitchen-index/" data-cats="explore">
+        <article class="game-tile">
+          <img src="./thumbnails/kitchen-index.svg" alt="The Kitchen Index Family Recipes" />
+          <h2>Kitchen Index</h2>
+        </article>
+      </a>
+    </main>
+
+    <footer class="portal-footer">
+      <span>Tap any picture to play!</span>
+      <a href="apps/_template-react-tailwind/">Developer Template</a>
+    </footer>
+  </div>
 
   <script>
+    // Category filter pills
+    const filterButtons = document.querySelectorAll('.filter-pill');
+    const tiles = document.querySelectorAll('.tile-link');
+
+    filterButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const chosen = btn.dataset.filter;
+        filterButtons.forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+        tiles.forEach((tile) => {
+          const cats = (tile.dataset.cats || '').split(' ');
+          const match = chosen === 'all' || cats.includes(chosen);
+          tile.classList.toggle('hidden-tile', !match);
+        });
+      });
+    });
+
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('./sw.js', { scope: './' }).catch((err) => {

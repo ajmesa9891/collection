@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="split" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="50%" stop-color="#4ade80"/>
+      <stop offset="50.1%" stop-color="#fb7185"/>
+      <stop offset="100%" stop-color="#ef4444"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#split)"/>
+  <!-- Big Chunky Cartoon Traffic Light -->
+  <rect x="122" y="36" width="156" height="304" rx="44" fill="#1e293b" stroke="#ffffff" stroke-width="10"/>
+  <!-- Red Light -->
+  <circle cx="200" cy="116" r="52" fill="#ef4444" stroke="#fca5a5" stroke-width="8"/>
+  <ellipse cx="182" cy="96" rx="16" ry="10" fill="#ffffff" opacity="0.55" transform="rotate(-25 182 96)"/>
+  <!-- Green Light -->
+  <circle cx="200" cy="256" r="52" fill="#22c55e" stroke="#86efac" stroke-width="8"/>
+  <ellipse cx="182" cy="236" rx="16" ry="10" fill="#ffffff" opacity="0.55" transform="rotate(-25 182 236)"/>
+  <!-- Playful Sparkles -->
+  <polygon points="62,92 69,110 88,112 73,124 77,143 62,133 47,143 51,124 36,112 55,110" fill="#fef08a" stroke="#ffffff" stroke-width="3"/>
+  <polygon points="342,272 348,287 364,289 351,299 355,315 342,306 329,315 333,299 320,289 336,287" fill="#fef08a" stroke="#ffffff" stroke-width="3"/>
+</svg>

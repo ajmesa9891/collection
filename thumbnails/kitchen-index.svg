@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="warm" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fed7aa"/>
+      <stop offset="100%" stop-color="#fb923c"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#warm)"/>
+  <!-- Cozy Table -->
+  <rect y="275" width="400" height="125" fill="#92400e"/>
+  <rect y="275" width="400" height="14" fill="#b45309"/>
+  <!-- Open Recipe Book -->
+  <g transform="translate(65,148)">
+    <rect x="0" y="12" width="135" height="148" rx="14" fill="#fffbeb" stroke="#78350f" stroke-width="6"/>
+    <rect x="135" y="12" width="135" height="148" rx="14" fill="#fef3c7" stroke="#78350f" stroke-width="6"/>
+    <!-- Left Page Lines -->
+    <rect x="22" y="38" width="90" height="12" rx="6" fill="#f97316"/>
+    <rect x="22" y="64" width="76" height="9" rx="4" fill="#cbd5e1"/>
+    <rect x="22" y="84" width="88" height="9" rx="4" fill="#cbd5e1"/>
+    <rect x="22" y="104" width="68" height="9" rx="4" fill="#cbd5e1"/>
+    <!-- Right Page Cute Pie Icon -->
+    <circle cx="202" cy="86" r="40" fill="#fde047" stroke="#f59e0b" stroke-width="6"/>
+    <path d="M 176 86 Q 202 64 228 86" fill="none" stroke="#b45309" stroke-width="5"/>
+    <path d="M 182 100 Q 202 82 222 100" fill="none" stroke="#b45309" stroke-width="5"/>
+  </g>
+  <!-- Cute Chef Hat Above -->
+  <g transform="translate(200,88)">
+    <circle cx="-36" cy="-12" r="28" fill="#ffffff" stroke="#cbd5e1" stroke-width="4"/>
+    <circle cx="0" cy="-24" r="32" fill="#ffffff" stroke="#cbd5e1" stroke-width="4"/>
+    <circle cx="36" cy="-12" r="28" fill="#ffffff" stroke="#cbd5e1" stroke-width="4"/>
+    <rect x="-46" y="-4" width="92" height="34" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="4"/>
+  </g>
+</svg>

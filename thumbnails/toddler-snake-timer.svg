@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#60a5fa"/>
+      <stop offset="100%" stop-color="#dbeafe"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#sky)"/>
+  <!-- Cheerful Clock Sun -->
+  <g transform="translate(305,88)">
+    <circle r="52" fill="#facc15" stroke="#ffffff" stroke-width="7"/>
+    <line x1="0" y1="0" x2="0" y2="-28" stroke="#713f12" stroke-width="7" stroke-linecap="round"/>
+    <line x1="0" y1="0" x2="22" y2="12" stroke="#713f12" stroke-width="7" stroke-linecap="round"/>
+    <circle r="6" fill="#713f12"/>
+  </g>
+  <!-- Grassy Hill -->
+  <ellipse cx="200" cy="375" rx="260" ry="125" fill="#4ade80"/>
+  <!-- Cute Hungry Snake -->
+  <path d="M 48 286 Q 115 215 182 276" fill="none" stroke="#16a34a" stroke-width="52" stroke-linecap="round"/>
+  <path d="M 48 286 Q 115 215 182 276" fill="none" stroke="#86efac" stroke-width="20" stroke-linecap="round" stroke-dasharray="12 22"/>
+  <g transform="translate(198,272)">
+    <circle r="44" fill="#22c55e" stroke="#ffffff" stroke-width="6"/>
+    <circle cx="-10" cy="-12" r="11" fill="#ffffff"/><circle cx="-7" cy="-12" r="6" fill="#0f172a"/>
+    <circle cx="16" cy="-12" r="11" fill="#ffffff"/><circle cx="19" cy="-12" r="6" fill="#0f172a"/>
+    <path d="M 6 12 Q 22 24 34 8" fill="none" stroke="#0f172a" stroke-width="5" stroke-linecap="round"/>
+  </g>
+  <!-- Shiny Red Apples -->
+  <g transform="translate(300,295)">
+    <circle r="28" fill="#ef4444" stroke="#ffffff" stroke-width="5"/>
+    <ellipse cx="-8" cy="-10" rx="7" ry="4" fill="#ffffff" opacity="0.55" transform="rotate(-30 -8 -10)"/>
+    <path d="M 0,-28 Q 10,-46 22,-36 Q 10,-26 0,-28" fill="#22c55e"/>
+  </g>
+  <g transform="translate(358,318) scale(0.8)">
+    <circle r="28" fill="#ef4444" stroke="#ffffff" stroke-width="5"/>
+    <path d="M 0,-28 Q 10,-46 22,-36 Q 10,-26 0,-28" fill="#22c55e"/>
+  </g>
+</svg>

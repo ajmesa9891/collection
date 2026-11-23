@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#e0f2fe"/>
+    </linearGradient>
+    <radialGradient id="slime" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#fde047"/>
+      <stop offset="55%" stop-color="#fb923c"/>
+      <stop offset="100%" stop-color="#ea580c"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#bg)"/>
+  <!-- Floor -->
+  <rect y="335" width="400" height="65" fill="#4ade80"/>
+  <rect y="335" width="400" height="10" fill="#16a34a"/>
+  <!-- Trampoline Pad -->
+  <rect x="70" y="320" width="125" height="22" rx="11" fill="#22c55e" stroke="#15803d" stroke-width="5"/>
+  <text x="132" y="336" font-family="Arial, sans-serif" font-weight="900" font-size="14" fill="#fef08a" text-anchor="middle">▲  ▲  ▲</text>
+  <!-- Rainbow Dotted Bounce Arc -->
+  <circle cx="95" cy="285" r="8" fill="#f43f5e" stroke="#fff" stroke-width="2.5"/>
+  <circle cx="115" cy="240" r="8" fill="#fb923c" stroke="#fff" stroke-width="2.5"/>
+  <circle cx="145" cy="185" r="8" fill="#facc15" stroke="#fff" stroke-width="2.5"/>
+  <circle cx="190" cy="132" r="8" fill="#4ade80" stroke="#fff" stroke-width="2.5"/>
+  <circle cx="242" cy="112" r="8" fill="#38bdf8" stroke="#fff" stroke-width="2.5"/>
+  <circle cx="288" cy="135" r="8" fill="#a855f7" stroke="#fff" stroke-width="2.5"/>
+  <!-- Basketball Hoop -->
+  <g transform="translate(260,125)">
+    <rect x="86" y="-20" width="18" height="105" rx="7" fill="#ffffff" stroke="#ef4444" stroke-width="5"/>
+    <!-- Net -->
+    <polygon points="8,56 78,56 64,120 22,120" fill="rgba(255,255,255,0.28)" stroke="#ffffff" stroke-width="4"/>
+    <line x1="20" y1="56" x2="58" y2="120" stroke="#ffffff" stroke-width="3"/>
+    <line x1="66" y1="56" x2="28" y2="120" stroke="#ffffff" stroke-width="3"/>
+    <!-- Rim -->
+    <line x1="0" y1="56" x2="86" y2="56" stroke="#f97316" stroke-width="11" stroke-linecap="round"/>
+  </g>
+  <!-- Cute Bouncy Slime Mid-Air -->
+  <g transform="translate(155,148) rotate(-14)">
+    <ellipse cx="0" cy="0" rx="50" ry="44" fill="url(#slime)" stroke="#ffffff" stroke-width="7"/>
+    <ellipse cx="-16" cy="-18" rx="14" ry="8" fill="#ffffff" opacity="0.55" transform="rotate(-22 -16 -18)"/>
+    <circle cx="-15" cy="-4" r="11" fill="#ffffff"/>
+    <circle cx="-11" cy="-5" r="6" fill="#0f172a"/>
+    <circle cx="16" cy="-4" r="11" fill="#ffffff"/>
+    <circle cx="20" cy="-5" r="6" fill="#0f172a"/>
+    <path d="M -10 12 Q 2 24 14 12" fill="none" stroke="#0f172a" stroke-width="4.5" stroke-linecap="round"/>
+    <circle cx="-26" cy="8" r="6" fill="#f43f5e" opacity="0.5"/>
+    <circle cx="26" cy="8" r="6" fill="#f43f5e" opacity="0.5"/>
+  </g>
+  <!-- Sparkle Stars -->
+  <polygon points="225,52 232,68 249,70 236,81 240,97 225,88 210,97 214,81 201,70 218,68" fill="#facc15" stroke="#ffffff" stroke-width="3"/>
+  <polygon points="62,110 66,121 78,122 69,130 71,141 62,135 53,141 55,130 46,122 58,121" fill="#fef08a" stroke="#ffffff" stroke-width="2.5"/>
+</svg>
