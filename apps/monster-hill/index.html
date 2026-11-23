@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>Monster Hill! — Kids Truck Adventure</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛻</text></svg>" />
+  <meta name="theme-color" content="#38bdf8" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <canvas id="game-canvas" aria-label="Monster Hill truck driving game"></canvas>
+
+  <header id="hud">
+    <div class="hud-left">
+      <div class="hud-pill" id="hud-stage">🌻 Stage 1</div>
+      <div class="hud-pill hud-gold" id="hud-stars">⭐ 0</div>
+    </div>
+    <div class="hud-right">
+      <button type="button" class="icon-btn" id="btn-sound" aria-label="Toggle sound">🔊</button>
+      <button type="button" class="icon-btn hidden" id="btn-home" aria-label="Home">🏠</button>
+    </div>
+  </header>
+
+  <div id="prog-bar" class="hidden"><div id="prog-fill"></div><span id="prog-flag">🏁</span></div>
+
+  <!-- Giant Kid-Friendly Gas & Brake Pedals -->
+  <div id="pedals" class="hidden">
+    <button type="button" class="pedal pedal-brake" id="btn-brake">◀ BRAKE</button>
+    <button type="button" class="pedal pedal-gas" id="btn-gas">GAS ▶</button>
+  </div>
+
+  <!-- Start Screen -->
+  <main id="start-screen" class="overlay">
+    <div class="card">
+      <h1 class="title">Monster Hill!</h1>
+      <p class="sub">Bounce over hills &amp; race to the checkered flag!</p>
+      <div class="stage-pill" id="start-stage">🌻 Stage 1: Sunny Meadow</div>
+      <button type="button" id="btn-play" class="btn-toy btn-green">▶ DRIVE!</button>
+      <div class="row-2">
+        <button type="button" id="btn-stages" class="btn-toy btn-blue">🗺️ Stages</button>
+        <button type="button" id="btn-garage" class="btn-toy btn-pink">🛻 Trucks</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Win Screen -->
+  <section id="win-screen" class="overlay hidden" aria-live="polite">
+    <div class="card">
+      <h2 class="title">🏁 FINISH LINE!!</h2>
+      <div class="win-stars" id="win-stars">⭐⭐⭐</div>
+      <p class="sub" id="win-sub">Awesome monster driving!</p>
+      <button type="button" id="btn-next" class="btn-toy btn-green">NEXT STAGE ▶</button>
+      <button type="button" id="btn-replay" class="btn-toy btn-blue" style="width:100%;">↻ Drive Again</button>
+    </div>
+  </section>
+
+  <!-- Stages Dialog -->
+  <dialog id="stages-dialog" closedby="any" aria-labelledby="stages-title">
+    <div class="dlg-head">
+      <h1 id="stages-title">🗺️ Pick a Stage</h1>
+      <form method="dialog"><button type="submit" class="dlg-close" aria-label="Close" autofocus>✕</button></form>
+    </div>
+    <div class="dlg-body" id="stages-body"></div>
+  </dialog>
+
+  <!-- Garage Dialog -->
+  <dialog id="garage-dialog" closedby="any" aria-labelledby="garage-title">
+    <div class="dlg-head">
+      <h1 id="garage-title">🛻 Monster Garage</h1>
+      <form method="dialog"><button type="submit" class="dlg-close" aria-label="Close" autofocus>✕</button></form>
+    </div>
+    <div class="dlg-body" id="garage-body"></div>
+  </dialog>
+
+  <script src="./game.js"></script>
+</body>
+</html>

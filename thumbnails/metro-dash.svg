@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0ea5e9"/>
+      <stop offset="100%" stop-color="#bae6fd"/>
+    </linearGradient>
+    <linearGradient id="trainRed" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fb7185"/>
+      <stop offset="100%" stop-color="#e11d48"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#sky)"/>
+  <!-- City Skyline -->
+  <rect x="18" y="95" width="58" height="140" rx="8" fill="#6366f1" opacity="0.7"/>
+  <rect x="86" y="65" width="64" height="170" rx="8" fill="#8b5cf6" opacity="0.7"/>
+  <rect x="255" y="78" width="62" height="155" rx="8" fill="#ec4899" opacity="0.65"/>
+  <rect x="326" y="105" width="56" height="130" rx="8" fill="#3b82f6" opacity="0.7"/>
+  <!-- 3-Lane Subway Track -->
+  <polygon points="120,200 280,200 390,400 10,400" fill="#475569"/>
+  <line x1="173" y1="200" x2="136" y2="400" stroke="#facc15" stroke-width="5" stroke-dasharray="16 14"/>
+  <line x1="227" y1="200" x2="264" y2="400" stroke="#facc15" stroke-width="5" stroke-dasharray="16 14"/>
+  <!-- Left Toy Train -->
+  <g transform="translate(52,186)">
+    <rect width="84" height="110" rx="16" fill="url(#trainRed)" stroke="#ffffff" stroke-width="5"/>
+    <rect x="12" y="16" width="60" height="36" rx="8" fill="#bae6fd"/>
+    <circle cx="24" cy="82" r="9" fill="#fef08a"/>
+    <circle cx="60" cy="82" r="9" fill="#fef08a"/>
+  </g>
+  <!-- Right Golden Coins Trail -->
+  <circle cx="295" cy="242" r="18" fill="#facc15" stroke="#ffffff" stroke-width="4"/>
+  <circle cx="310" cy="285" r="20" fill="#facc15" stroke="#ffffff" stroke-width="4"/>
+  <circle cx="326" cy="332" r="22" fill="#facc15" stroke="#ffffff" stroke-width="4"/>
+  <!-- Cute Runner Character Jumping Center -->
+  <g transform="translate(200,255)">
+    <ellipse cx="0" cy="95" rx="34" ry="10" fill="rgba(0,0,0,0.22)"/>
+    <!-- Cape / Jetpack glow -->
+    <polygon points="-24,20 -52,65 -10,48" fill="#facc15"/>
+    <polygon points="24,20 52,65 10,48" fill="#f97316"/>
+    <!-- Body -->
+    <rect x="-26" y="-8" width="52" height="58" rx="18" fill="#22c55e" stroke="#ffffff" stroke-width="5"/>
+    <!-- Head + Cap -->
+    <circle cx="0" cy="-32" r="30" fill="#fde68a" stroke="#ffffff" stroke-width="5"/>
+    <path d="M -30,-38 Q 0,-74 34,-38 Z" fill="#ef4444" stroke="#ffffff" stroke-width="4"/>
+    <circle cx="-10" cy="-32" r="5" fill="#0f172a"/>
+    <circle cx="10" cy="-32" r="5" fill="#0f172a"/>
+    <path d="M -8,-18 Q 0,-10 8,-18" fill="none" stroke="#0f172a" stroke-width="4" stroke-linecap="round"/>
+  </g>
+</svg>

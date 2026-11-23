@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>Pizza Party! — Kids Cooking Kitchen</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍕</text></svg>" />
+  <meta name="theme-color" content="#fb923c" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="kitchen-app">
+    <header class="top-bar">
+      <div class="pill" id="hud-day">☀️ Day 1</div>
+      <div class="pill pill-gold" id="hud-coins">🪙 0</div>
+      <div class="bar-right">
+        <button type="button" class="mode-pill" id="btn-mode">📋 Orders</button>
+        <button type="button" class="icon-btn" id="btn-sound" aria-label="Sound">🔊</button>
+      </div>
+    </header>
+
+    <!-- Cute Animal Customer + Visual Order Bubble -->
+    <section class="customer-stage" aria-live="polite">
+      <div class="animal-avatar" id="animal-emoji">🐻</div>
+      <div class="order-bubble" id="order-bubble">
+        <div class="order-label" id="order-label">I want:</div>
+        <div class="order-icons" id="order-icons"></div>
+      </div>
+    </section>
+
+    <!-- Interactive Pizza Board -->
+    <main class="board-area">
+      <div class="pizza-pan" id="pizza-pan">
+        <canvas id="pizza-canvas" width="320" height="320" aria-label="Your pizza"></canvas>
+        <div class="oven-badge hidden" id="oven-badge">🔥 BAKING...</div>
+      </div>
+    </main>
+
+    <!-- Tactile Sauce & Toppings Tray -->
+    <section class="tray">
+      <div class="tray-row" aria-label="Sauces">
+        <button type="button" class="ing-btn" data-sauce="tomato">🍅<span>Tomato</span></button>
+        <button type="button" class="ing-btn" data-sauce="cheese">🧀<span>Cheese</span></button>
+        <button type="button" class="ing-btn" data-sauce="berry">🍓<span>Berry</span></button>
+      </div>
+      <div class="tray-row" aria-label="Toppings">
+        <button type="button" class="ing-btn" data-top="pepperoni">🍕<span>Roni</span></button>
+        <button type="button" class="ing-btn" data-top="mushroom">🍄<span>Shroom</span></button>
+        <button type="button" class="ing-btn" data-top="pineapple">🍍<span>Pine</span></button>
+        <button type="button" class="ing-btn" data-top="olive">🫒<span>Olive</span></button>
+        <button type="button" class="ing-btn" data-top="sprinkles">🌈<span>Party</span></button>
+      </div>
+      <div class="action-row">
+        <button type="button" class="act-btn act-clear" id="btn-clear">🧹 New</button>
+        <button type="button" class="act-btn act-bake" id="btn-bake">🔥 BAKE!</button>
+        <button type="button" class="act-btn act-serve" id="btn-serve" disabled>🍽️ SERVE!</button>
+      </div>
+    </section>
+  </div>
+
+  <div id="celebrate-toast" aria-live="polite"></div>
+  <script src="./game.js"></script>
+</body>
+</html>

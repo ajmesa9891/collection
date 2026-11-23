@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>Metro Dash! — 3D Kids Endless Runner</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚆</text></svg>" />
+  <meta name="theme-color" content="#38bdf8" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div id="game-host" aria-label="Metro Dash 3D Runner"></div>
+
+  <header id="hud">
+    <div class="hud-left">
+      <div class="hud-pill" id="hud-hearts">❤️❤️❤️</div>
+      <div class="hud-pill hud-gold" id="hud-coins">🪙 0</div>
+    </div>
+    <div class="hud-right">
+      <div class="hud-pill" id="hud-dist">0m</div>
+      <button type="button" class="icon-btn" id="btn-sound" aria-label="Toggle sound">🔊</button>
+      <button type="button" class="icon-btn hidden" id="btn-home" aria-label="Home">🏠</button>
+    </div>
+  </header>
+
+  <div id="power-toast" aria-live="polite"></div>
+
+  <!-- Big Touch Buttons for 4-5yo Tablet Play -->
+  <div id="touch-pad" class="hidden" aria-label="Touch controls">
+    <button type="button" class="pad-btn" id="pad-left" aria-label="Move left">◀</button>
+    <button type="button" class="pad-btn pad-jump" id="pad-jump" aria-label="Jump">⬆ JUMP</button>
+    <button type="button" class="pad-btn" id="pad-right" aria-label="Move right">▶</button>
+  </div>
+
+  <!-- Start Overlay -->
+  <main id="start-screen" class="overlay-screen">
+    <div class="card">
+      <h1 class="title">Metro Dash!</h1>
+      <p class="sub">Swipe, jump &amp; zoom past colorful toy trains!</p>
+      <div id="best-pill" class="pill-info">🏆 Best: 0m • 🪙 0</div>
+      <button type="button" id="btn-play" class="btn-toy btn-green">▶ RUN!</button>
+      <div class="row-2">
+        <button type="button" id="btn-shop" class="btn-toy btn-pink">🏃 Runners</button>
+        <button type="button" id="btn-mode" class="btn-toy btn-blue">🧸 Kid Mode</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Run End Overlay -->
+  <section id="over-screen" class="overlay-screen hidden" aria-live="polite">
+    <div class="card">
+      <h2 class="title">🎉 GREAT RUN!</h2>
+      <p class="sub" id="over-sub">Awesome dodging!</p>
+      <div class="stats-2">
+        <div class="stat"><span>Distance</span><strong id="st-dist">0m</strong></div>
+        <div class="stat"><span>Coins</span><strong id="st-coins">+0 🪙</strong></div>
+      </div>
+      <button type="button" id="btn-again" class="btn-toy btn-green">↻ RUN AGAIN!</button>
+      <button type="button" id="btn-over-shop" class="btn-toy btn-pink" style="width:100%;margin-top:8px;">🏃 Runners Shop</button>
+    </div>
+  </section>
+
+  <!-- Runners Shop Modal -->
+  <dialog id="shop-dialog" closedby="any" aria-labelledby="shop-title">
+    <div class="dlg-head">
+      <h1 id="shop-title">🏃 Pick a Runner</h1>
+      <form method="dialog"><button type="submit" class="dlg-close" aria-label="Close" autofocus>✕</button></form>
+    </div>
+    <div class="dlg-body" id="shop-body"></div>
+  </dialog>
+
+  <script src="./three.min.js"></script>
+  <script src="./game.js"></script>
+</body>
+</html>

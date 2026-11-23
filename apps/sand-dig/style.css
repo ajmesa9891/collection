@@ -1,0 +1,54 @@
+:root { --font: "Fredoka", "Nunito", ui-rounded, system-ui, sans-serif; --ink: #0f172a; }
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html, body {
+  margin: 0; padding: 0; width: 100%; height: 100dvh; overflow: hidden;
+  font-family: var(--font); background: #78350f; color: var(--ink);
+  user-select: none; -webkit-user-select: none;
+}
+#game-canvas { position: fixed; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; }
+#hud {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 45;
+  padding: max(10px, env(safe-area-inset-top)) 14px 8px;
+  display: flex; justify-content: space-between; align-items: center; pointer-events: none;
+}
+.hud-left, .hud-right { display: flex; gap: 8px; align-items: center; pointer-events: auto; }
+.hud-pill {
+  background: rgba(255,255,255,0.94); border: 3px solid #fff; border-radius: 999px;
+  padding: 6px 14px; font-weight: 900; box-shadow: 0 4px 0 rgba(15,23,42,0.18);
+}
+.hud-gold { background: linear-gradient(180deg,#fef08a,#fde047); color: #713f12; }
+.icon-btn {
+  width: 44px; height: 44px; border-radius: 50%; border: 3px solid #fff;
+  background: rgba(255,255,255,0.94); font-size: 1.3rem; cursor: pointer;
+  box-shadow: 0 4px 0 rgba(15,23,42,0.18);
+}
+#tip-pill {
+  position: fixed; bottom: max(16px, env(safe-area-inset-bottom)); left: 50%;
+  transform: translateX(-50%); z-index: 25; pointer-events: none;
+  background: rgba(15,23,42,0.72); color: #fff; padding: 8px 20px; border-radius: 999px;
+  font-weight: 800; font-size: 0.98rem; white-space: nowrap;
+}
+.overlay {
+  position: fixed; inset: 0; z-index: 40; display: flex; align-items: center; justify-content: center;
+  padding: 16px; background: rgba(15,23,42,0.42); backdrop-filter: blur(2px);
+}
+.hidden { display: none !important; }
+.card {
+  width: min(400px, 92vw); background: rgba(255,255,255,0.96); border: 5px solid #fff;
+  border-radius: 28px; padding: 24px 20px; text-align: center;
+  box-shadow: 0 14px 0 rgba(15,23,42,0.18);
+}
+.title {
+  margin: 0 0 6px; font-size: 2.1rem; font-weight: 900;
+  background: linear-gradient(180deg,#f59e0b,#ec4899);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.sub { margin: 0 0 14px; font-weight: 700; color: #475569; }
+.win-stars { font-size: 2.8rem; letter-spacing: 6px; margin: 6px 0; }
+.btn-toy {
+  font-family: var(--font); font-weight: 900; font-size: 1.35rem; color: #fff;
+  border: 4px solid #fff; border-radius: 20px; padding: 13px 16px; cursor: pointer;
+  text-shadow: 0 2px 0 rgba(0,0,0,0.2);
+}
+.btn-green { width: 100%; background: linear-gradient(180deg,#4ade80,#22c55e); box-shadow: 0 6px 0 #15803d; margin-bottom: 10px; }
+.btn-blue  { background: linear-gradient(180deg,#60a5fa,#3b82f6); box-shadow: 0 5px 0 #1d4ed8; }

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <rect width="400" height="400" fill="#86efac"/>
+  <!-- Toy Town Roads -->
+  <rect x="0" y="165" width="400" height="70" fill="#94a3b8"/>
+  <rect x="165" y="0" width="70" height="400" fill="#94a3b8"/>
+  <line x1="0" y1="200" x2="400" y2="200" stroke="#fef08a" stroke-width="5" stroke-dasharray="18 14"/>
+  <line x1="200" y1="0" x2="200" y2="400" stroke="#fef08a" stroke-width="5" stroke-dasharray="18 14"/>
+  <!-- Cute Toy Houses & Trees -->
+  <g transform="translate(36,36)">
+    <rect width="84" height="74" rx="12" fill="#f97316" stroke="#ffffff" stroke-width="5"/>
+    <rect x="14" y="14" width="56" height="46" rx="8" fill="#fdba74"/>
+  </g>
+  <g transform="translate(282,42)">
+    <circle cx="40" cy="40" r="38" fill="#22c55e" stroke="#ffffff" stroke-width="5"/>
+    <circle cx="24" cy="26" r="14" fill="#4ade80"/>
+  </g>
+  <g transform="translate(46,286)">
+    <rect width="78" height="44" rx="14" fill="#ef4444" stroke="#ffffff" stroke-width="5"/>
+    <rect x="16" y="8" width="38" height="28" rx="6" fill="#bae6fd"/>
+  </g>
+  <g transform="translate(274,274)">
+    <rect width="86" height="82" rx="14" fill="#3b82f6" stroke="#ffffff" stroke-width="5"/>
+    <rect x="16" y="16" width="54" height="50" rx="8" fill="#93c5fd"/>
+  </g>
+  <!-- Giant Rainbow-Ringed Smiling Chomp Hole in Center -->
+  <g transform="translate(200,200)">
+    <circle r="92" fill="#0f172a" stroke="#facc15" stroke-width="14"/>
+    <circle r="76" fill="none" stroke="#ec4899" stroke-width="7" stroke-dasharray="22 14"/>
+    <circle r="54" fill="#020617"/>
+    <!-- Cute Googly Eyes on the Rim -->
+    <circle cx="-30" cy="-68" r="16" fill="#ffffff" stroke="#0f172a" stroke-width="4"/>
+    <circle cx="-26" cy="-64" r="7" fill="#0f172a"/>
+    <circle cx="30" cy="-68" r="16" fill="#ffffff" stroke="#0f172a" stroke-width="4"/>
+    <circle cx="26" cy="-64" r="7" fill="#0f172a"/>
+  </g>
+</svg>

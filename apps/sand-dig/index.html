@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>Sand Dig! — Tactile Tunnel Puzzle</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏖️</text></svg>" />
+  <meta name="theme-color" content="#f59e0b" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <canvas id="game-canvas" aria-label="Sand Dig tunnel puzzle"></canvas>
+
+  <header id="hud">
+    <div class="hud-left">
+      <div class="hud-pill" id="hud-level">🏖️ Level 1</div>
+      <div class="hud-pill hud-gold" id="hud-stars">⭐ 0</div>
+    </div>
+    <div class="hud-right">
+      <button type="button" class="icon-btn" id="btn-reset" aria-label="Reset sand">↻</button>
+      <button type="button" class="icon-btn" id="btn-sound" aria-label="Toggle sound">🔊</button>
+    </div>
+  </header>
+
+  <div id="tip-pill">👆 Dig a tunnel to the green cup!</div>
+
+  <section id="win-screen" class="overlay hidden" aria-live="polite">
+    <div class="card">
+      <h2 class="title">🎉 GREAT DIGGING!</h2>
+      <div class="win-stars" id="win-stars">⭐⭐⭐</div>
+      <p class="sub" id="win-sub">All marbles landed in the cup!</p>
+      <button type="button" id="btn-next" class="btn-toy btn-green">NEXT LEVEL ▶</button>
+      <button type="button" id="btn-again" class="btn-toy btn-blue" style="width:100%;">↻ Dig Again</button>
+    </div>
+  </section>
+
+  <script src="./game.js"></script>
+</body>
+</html>

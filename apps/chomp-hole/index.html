@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>Chomp Hole! — Toy Town Swallower</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🕳️</text></svg>" />
+  <meta name="theme-color" content="#86efac" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <canvas id="game-canvas" aria-label="Chomp Hole arcade game"></canvas>
+
+  <header id="hud">
+    <div class="hud-left">
+      <div class="hud-pill" id="hud-eaten">🍽️ 0 / 60</div>
+      <div class="hud-pill hud-gold" id="hud-size">⭐ Size 1</div>
+    </div>
+    <div class="hud-right">
+      <div class="hud-pill hidden" id="hud-timer">⏱️ 60s</div>
+      <button type="button" class="icon-btn" id="btn-sound" aria-label="Sound">🔊</button>
+      <button type="button" class="icon-btn hidden" id="btn-home" aria-label="Home">🏠</button>
+    </div>
+  </header>
+
+  <main id="start-screen" class="overlay">
+    <div class="card">
+      <h1 class="title">Chomp Hole!</h1>
+      <p class="sub">Slide around, gobble toys &amp; grow GIANT!</p>
+      <div class="map-row">
+        <button type="button" class="map-btn active" data-map="town">🏘️ Toy Town</button>
+        <button type="button" class="map-btn" data-map="candy">🍭 Candy Park</button>
+        <button type="button" class="map-btn" data-map="dino">🦕 Dino Island</button>
+      </div>
+      <button type="button" id="btn-play" class="btn-toy btn-green">▶ CHOMP!</button>
+      <div class="row-2">
+        <button type="button" id="btn-mode" class="btn-toy btn-blue">🧸 Zen Mode</button>
+        <button type="button" id="btn-skin" class="btn-toy btn-pink">🌈 Ring Color</button>
+      </div>
+    </div>
+  </main>
+
+  <section id="win-screen" class="overlay hidden" aria-live="polite">
+    <div class="card">
+      <h2 class="title" id="win-title">🎉 TOWN GOBBLED!!</h2>
+      <div class="win-big" id="win-big">🍽️ 60 / 60</div>
+      <p class="sub" id="win-sub">You grew SO giant!</p>
+      <button type="button" id="btn-again" class="btn-toy btn-green">↻ CHOMP AGAIN!</button>
+      <button type="button" id="btn-menu" class="btn-toy btn-blue" style="width:100%;">🗺️ Pick Map</button>
+    </div>
+  </section>
+
+  <script src="./game.js"></script>
+</body>
+</html>

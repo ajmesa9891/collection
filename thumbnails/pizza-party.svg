@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fde047"/>
+      <stop offset="100%" stop-color="#fb923c"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#wall)"/>
+  <!-- Red & White Pizzeria Awning -->
+  <g>
+    <rect x="0" y="0" width="50" height="58" rx="14" fill="#ef4444"/>
+    <rect x="50" y="0" width="50" height="58" rx="14" fill="#ffffff"/>
+    <rect x="100" y="0" width="50" height="58" rx="14" fill="#ef4444"/>
+    <rect x="150" y="0" width="50" height="58" rx="14" fill="#ffffff"/>
+    <rect x="200" y="0" width="50" height="58" rx="14" fill="#ef4444"/>
+    <rect x="250" y="0" width="50" height="58" rx="14" fill="#ffffff"/>
+    <rect x="300" y="0" width="50" height="58" rx="14" fill="#ef4444"/>
+    <rect x="350" y="0" width="50" height="58" rx="14" fill="#ffffff"/>
+  </g>
+  <!-- Wooden Counter -->
+  <rect y="285" width="400" height="115" fill="#92400e"/>
+  <rect y="285" width="400" height="14" fill="#b45309"/>
+  <!-- Big Smiling Cartoon Pizza -->
+  <g transform="translate(200,225)">
+    <circle r="122" fill="#f59e0b" stroke="#ffffff" stroke-width="8"/>
+    <circle r="98" fill="#ef4444"/>
+    <circle r="88" fill="#fde047"/>
+    <!-- Pepperonis -->
+    <circle cx="-42" cy="-34" r="18" fill="#dc2626"/>
+    <circle cx="44" cy="-30" r="18" fill="#dc2626"/>
+    <circle cx="-48" cy="34" r="18" fill="#dc2626"/>
+    <circle cx="46" cy="36" r="18" fill="#dc2626"/>
+    <circle cx="0" cy="56" r="16" fill="#dc2626"/>
+    <!-- Basil leaves -->
+    <ellipse cx="0" cy="-54" rx="14" ry="8" fill="#22c55e" transform="rotate(-18 0 -54)"/>
+    <ellipse cx="-14" cy="18" rx="12" ry="7" fill="#22c55e" transform="rotate(25 -14 18)"/>
+    <!-- Cute Pizza Face -->
+    <circle cx="-18" cy="-8" r="9" fill="#0f172a"/>
+    <circle cx="18" cy="-8" r="9" fill="#0f172a"/>
+    <circle cx="-15" cy="-11" r="3" fill="#ffffff"/>
+    <circle cx="21" cy="-11" r="3" fill="#ffffff"/>
+    <path d="M -14 12 Q 0 26 14 12" fill="none" stroke="#0f172a" stroke-width="5" stroke-linecap="round"/>
+  </g>
+</svg>
