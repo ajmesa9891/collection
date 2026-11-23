@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>Bouncy Hoops! — Trick-Shot Basketball</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏀</text></svg>" />
+  <meta name="theme-color" content="#38bdf8" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <canvas id="game-canvas" aria-label="Bouncy Hoops physics basketball game"></canvas>
+
+  <!-- Top HUD -->
+  <header id="hud">
+    <div class="hud-left">
+      <div class="hud-pill" id="hud-level">☀️ Lv 1</div>
+      <div class="hud-pill hud-stars" id="hud-stars">⭐ 0</div>
+    </div>
+    <div class="hud-right">
+      <button type="button" class="icon-btn hidden" id="btn-retry-shot" aria-label="Reset ball">↻</button>
+      <button type="button" class="icon-btn" id="btn-sound" aria-label="Toggle sound">🔊</button>
+      <button type="button" class="icon-btn hidden" id="btn-home" aria-label="Back to menu">🏠</button>
+    </div>
+  </header>
+
+  <div id="tip-pill" class="hidden">👆 Hold anywhere to aim, let go to shoot!</div>
+
+  <!-- Start Menu -->
+  <main id="start-screen" class="overlay-screen">
+    <div class="menu-card">
+      <h1 class="logo-title">Bouncy Hoops!</h1>
+      <p class="subtitle">Boing, bank &amp; swish into the hoop!</p>
+      <div id="mode-pill" class="mode-badge">🧸 Kid Mode (Ages 5+)</div>
+      <div>
+        <div class="level-pill" id="start-level-pill">☀️ Level 1: First Swish!</div>
+      </div>
+      <button type="button" id="btn-play" class="btn-toy btn-play">▶ PLAY!</button>
+      <div class="btn-row">
+        <button type="button" id="btn-levels" class="btn-toy btn-blue">
+          <span class="btn-emoji">🗺️</span>
+          <span>Levels</span>
+        </button>
+        <button type="button" id="btn-chars" class="btn-toy btn-pink">
+          <span class="btn-emoji">🟠</span>
+          <span>Buddies</span>
+        </button>
+        <button type="button" id="btn-settings" class="btn-toy btn-purple">
+          <span class="btn-emoji">⚙️</span>
+          <span>Mode</span>
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Level Cleared Overlay -->
+  <section id="win-screen" class="overlay-screen hidden" aria-live="polite">
+    <div class="menu-card">
+      <h2 id="win-title" class="logo-title">🏀 SWISH!!</h2>
+      <div id="win-stars" class="win-stars">⭐⭐⭐</div>
+      <p id="win-sub" class="subtitle">Awesome bounce shot!</p>
+      <button type="button" id="btn-next" class="btn-toy btn-play">NEXT LEVEL ▶</button>
+      <div class="win-sub-row">
+        <button type="button" id="btn-replay" class="btn-toy btn-gold">↻ Replay</button>
+        <button type="button" id="btn-win-chars" class="btn-toy btn-pink" style="flex-direction:row;padding:12px;">🟠 Buddies</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Levels Modal -->
+  <dialog id="levels-dialog" closedby="any" aria-labelledby="levels-title">
+    <div class="dialog-header">
+      <h1 id="levels-title">🗺️ Pick a Level</h1>
+      <form method="dialog">
+        <button type="submit" value="close" class="dialog-close-btn" aria-label="Close" autofocus>✕</button>
+      </form>
+    </div>
+    <div class="dialog-body" id="levels-body"></div>
+  </dialog>
+
+  <!-- Characters Modal -->
+  <dialog id="chars-dialog" closedby="any" aria-labelledby="chars-title">
+    <div class="dialog-header">
+      <h1 id="chars-title">🟠 Bouncy Buddies</h1>
+      <form method="dialog">
+        <button type="submit" value="close" class="dialog-close-btn" aria-label="Close" autofocus>✕</button>
+      </form>
+    </div>
+    <div class="dialog-body" id="chars-body"></div>
+  </dialog>
+
+  <!-- Settings Modal -->
+  <dialog id="settings-dialog" closedby="any" aria-labelledby="settings-title">
+    <div class="dialog-header">
+      <h1 id="settings-title">⚙️ Play Mode</h1>
+      <form method="dialog">
+        <button type="submit" value="close" class="dialog-close-btn" aria-label="Close" autofocus>✕</button>
+      </form>
+    </div>
+    <div class="dialog-body">
+      <div class="mode-group">
+        <button type="button" id="mode-kid" class="mode-btn">
+          🧸 <strong>Kid Mode (5+)</strong><br />
+          <small>Rainbow bounce guide &amp; bigger hoop</small>
+        </button>
+        <button type="button" id="mode-pro" class="mode-btn">
+          ⚡ <strong>Big Kid (7+)</strong><br />
+          <small>Short aim guide &amp; pro rim</small>
+        </button>
+      </div>
+
+      <div class="setting-row">
+        <div class="setting-info">
+          <strong>🔊 Sound Effects</strong>
+          <span>Boings, portals, and swishes</span>
+        </div>
+        <button type="button" id="toggle-sfx" class="pill-toggle on">ON</button>
+      </div>
+
+      <div class="setting-row">
+        <div class="setting-info">
+          <strong>🔓 Unlock All 15 Levels</strong>
+          <span>Jump to any puzzle anytime</span>
+        </div>
+        <button type="button" id="toggle-unlock" class="pill-toggle">OFF</button>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="./audio.js"></script>
+  <script src="./levels.js"></script>
+  <script src="./game.js"></script>
+</body>
+</html>
